@@ -1,13 +1,13 @@
 {
     "remoteAccessMFA": {
-        "description": "Missing Multi-Factor Authentication (MFA) on credentials that are used for a remote access services",
+        "description": "Lacking Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials.",
         "badPattern": [
-            "MATCH (app:Application)-[*0..4]->(:Network) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*'",
+            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*'",
             "WITH app",
-            "MATCH (app)<-[*0..2]-(usr:Identity)<--(cred:Credentials)",
-            "WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*')",
+            "MATCH (app)--(usr:Identity)--(cred:Credentials)",
+            "WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*|.*2FA.*|.*Multi-Factor.*|.*Two-Factor.*')",
             "RETURN DISTINCT cred.name;"
-        ],    
+        ], 
         "mitigation": [
             "MATCH (cred:Credentials) WHERE cred.name = '$?'",
             "WITH cred",
@@ -23,7 +23,7 @@
             }
     },
     "unencryptedData": {
-        "description": "Sensitive data stored without encryption",
+        "description": "Sensitive data (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.",
         "badPattern": [
             "MATCH (data:Data)-[:containedData]->(:Application)",
             "WHERE data.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials)",
@@ -43,7 +43,7 @@
             }
     },
     "unencryptedInfo": {
-        "description": "Sensitive information stored without encryption",
+        "description": "Sensitive information (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.",
         "badPattern": [
             "MATCH (info:Information)<-[:containerData]-(data:Data)",
             "WHERE info.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials)",
@@ -63,10 +63,10 @@
             }
     },
     "excessivePrivAccounts": {
-        "description": "Existence of service, support or any other temporarily accounts with excessive permissions",
+        "description": "Existence of service, guest or any other temporarily accounts with excessive permissions may facilitate initial access and lateral movement.",
         "badPattern": [
             "MATCH (acc:Identity)-[:highPrivAppIAMs]->(app:Application)",
-            "WHERE acc.name =~ '(?i).*Service.*|.*Support.*|.*Test.*'",
+            "WHERE acc.name =~ '(?i).*Service.*|.*Support.*|.*Test.*|.*Temporarily.*|.*Default.*|.*Guest.*'",
             "RETURN DISTINCT acc.name, app.name;"
         ],    
         "mitigation": [
@@ -78,9 +78,11 @@
         "attackData": 
             {
                 "Tactic": {
+                    "Initial Access": ["T1199", "T1078"],
+                    "Privilege Escalation": ["1078"]
                     
                 },
-                "Mitigations": []
+                "Mitigations": ["M1032", "M1018", "M1026", "M1036"]
             }
     }
 }

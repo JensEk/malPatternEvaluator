@@ -1,0 +1,2369 @@
+05-02 19:55 maltoolbox.language.specification INFO     Load language specfication from 'org.mal-lang.coreLang-1.0.0.mar' mar archive.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Hardware asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating SoftwareProduct asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Application asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating IDPS asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating PhysicalZone asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Information asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Data asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating IAMObject asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Identity asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Privileges asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Group asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Credentials asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating User asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Network asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating RoutingFirewall asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ConnectionRule asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Vulnerability asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating SoftwareVulnerability asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating HardwareVulnerability asset JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating SysExecution association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating AppExecution association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating AppProtection association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating AppSoftwareProduct association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Multiple associations with the same name, ZoneInclusion, exist. Creating subentries for each one.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ZoneInclusion association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Creating ZoneInclusion_PhysicalZone_Hardware subentry association.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ZoneInclusion association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Creating ZoneInclusion_PhysicalZone_Network subentry association.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating DataContainment association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating AppContainment association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating SendData association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ReceiveData association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating DataInTransit association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating DataHosting association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating InfoContainment association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Replica association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Multiple associations with the same name, Dependence, exist. Creating subentries for each one.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Dependence association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Creating Dependence_Data_Application subentry association.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating Dependence association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Creating Dependence_Information_Application subentry association.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating EncryptionCredentials association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating SigningCredentials association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating HashedCredentials association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ConditionalAuthentication association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating IdentityCredentials association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating CanAssume association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Multiple associations with the same name, MemberOf, exist. Creating subentries for each one.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating MemberOf association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Creating MemberOf_Group_Identity subentry association.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating MemberOf association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Creating MemberOf_Group_Group subentry association.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ExecutionPrivilegeAccess association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating HighPrivilegeApplicationAccess association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating LowPrivilegeApplicationAccess association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ReadPrivileges association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating WritePrivileges association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating DeletePrivileges association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating HasPrivileges association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating AccountManagement association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ZoneAccess association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating HardwareAccess association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating UserAssignedIdentities association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating FirewallConnectionRule association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ManagedBy association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating NetworkExposure association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ApplicationConnection association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating InApplicationConnection association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating OutApplicationConnection association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating NetworkConnection association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating InNetworkConnection association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating OutNetworkConnection association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating DiodeInNetworkConnection association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Multiple associations with the same name, ApplicationVulnerability, exist. Creating subentries for each one.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ApplicationVulnerability association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Creating ApplicationVulnerability_SoftwareVulnerability_Application subentry association.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating ApplicationVulnerability association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory INFO     Creating ApplicationVulnerability_SoftwareVulnerability_SoftwareProduct subentry association.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    Creating hardwareVulnerability association JSON schema entry.
+05-02 19:55 maltoolbox.language.classes_factory DEBUG    {
+  "title": "LanguageObject",
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "#/definitions/LanguageAsset"
+    },
+    {
+      "$ref": "#/definitions/LanguageAssociation"
+    }
+  ],
+  "definitions": {
+    "LanguageAsset": {
+      "title": "LanguageAsset",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/Hardware"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/SoftwareProduct"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/Application"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/IDPS"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/PhysicalZone"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/Information"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/Data"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/Identity"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/Privileges"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/Group"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/Credentials"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/User"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/Network"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/RoutingFirewall"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/ConnectionRule"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/Vulnerability"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/SoftwareVulnerability"
+        },
+        {
+          "$ref": "#/definitions/LanguageAsset/definitions/HardwareVulnerability"
+        }
+      ],
+      "definitions": {
+        "Hardware": {
+          "title": "Hardware",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "Hardware"
+            },
+            "supplyChainAuditing": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "hardwareModificationsProtection": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          }
+        },
+        "SoftwareProduct": {
+          "title": "SoftwareProduct",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "SoftwareProduct"
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/LanguageAsset/definitions/Information"
+            }
+          ]
+        },
+        "Application": {
+          "title": "Application",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "Application"
+            },
+            "notPresent": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "supplyChainAuditing": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          }
+        },
+        "IDPS": {
+          "title": "IDPS",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "IDPS"
+            },
+            "notPresent": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "effectiveness": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1.0
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/LanguageAsset/definitions/Application"
+            }
+          ]
+        },
+        "PhysicalZone": {
+          "title": "PhysicalZone",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "PhysicalZone"
+            }
+          }
+        },
+        "Information": {
+          "title": "Information",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "Information"
+            }
+          }
+        },
+        "Data": {
+          "title": "Data",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "Data"
+            },
+            "notPresent": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          }
+        },
+        "IAMObject": {
+          "title": "IAMObject",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "IAMObject"
+            },
+            "notPresent": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/LanguageAsset/definitions/Information"
+            }
+          ]
+        },
+        "Identity": {
+          "title": "Identity",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "Identity"
+            },
+            "notPresent": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+            }
+          ]
+        },
+        "Privileges": {
+          "title": "Privileges",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "Privileges"
+            },
+            "notPresent": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+            }
+          ]
+        },
+        "Group": {
+          "title": "Group",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "Group"
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+            }
+          ]
+        },
+        "Credentials": {
+          "title": "Credentials",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "Credentials"
+            },
+            "notDisclosed": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1.0
+            },
+            "notGuessable": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1.0
+            },
+            "unique": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1.0
+            },
+            "notPhishable": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/LanguageAsset/definitions/Information"
+            }
+          ]
+        },
+        "User": {
+          "title": "User",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "User"
+            },
+            "noPasswordReuse": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1.0
+            },
+            "noRemovableMediaUsage": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1.0
+            },
+            "securityAwareness": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          }
+        },
+        "Network": {
+          "title": "Network",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "Network"
+            },
+            "networkAccessControl": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "eavesdropDefense": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "adversaryInTheMiddleDefense": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          }
+        },
+        "RoutingFirewall": {
+          "title": "RoutingFirewall",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "RoutingFirewall"
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/LanguageAsset/definitions/Application"
+            }
+          ]
+        },
+        "ConnectionRule": {
+          "title": "ConnectionRule",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "ConnectionRule"
+            },
+            "restricted": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "payloadInspection": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          }
+        },
+        "Vulnerability": {
+          "title": "Vulnerability",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "Vulnerability"
+            },
+            "notPresent": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          }
+        },
+        "SoftwareVulnerability": {
+          "title": "SoftwareVulnerability",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "SoftwareVulnerability"
+            },
+            "networkAccessRequired": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "localAccessRequired": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "physicalAccessRequired": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "lowPrivilegesRequired": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "highPrivilegesRequired": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "userInteractionRequired": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "confidentialityImpactLimitations": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "availabilityImpactLimitations": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "integrityImpactLimitations": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "highComplexityExploitRequired": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/LanguageAsset/definitions/Vulnerability"
+            }
+          ]
+        },
+        "HardwareVulnerability": {
+          "title": "HardwareVulnerability",
+          "type": "object",
+          "properties": {
+            "metaconcept": {
+              "type": "string",
+              "default": "HardwareVulnerability"
+            },
+            "physicalAccessRequired": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "confidentialityImpactLimitations": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "availabilityImpactLimitations": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "integrityImpactLimitations": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            },
+            "effortRequiredToExploit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.0
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/definitions/LanguageAsset/definitions/Vulnerability"
+            }
+          ]
+        }
+      }
+    },
+    "LanguageAssociation": {
+      "title": "LanguageAssociation",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/SysExecution"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/AppExecution"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/AppProtection"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/AppSoftwareProduct"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/ZoneInclusion"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/DataContainment"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/AppContainment"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/SendData"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/ReceiveData"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/DataInTransit"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/DataHosting"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/InfoContainment"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/Replica"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/Dependence"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/EncryptionCredentials"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/SigningCredentials"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/HashedCredentials"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/ConditionalAuthentication"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/IdentityCredentials"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/CanAssume"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/MemberOf"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/ExecutionPrivilegeAccess"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/HighPrivilegeApplicationAccess"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/LowPrivilegeApplicationAccess"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/ReadPrivileges"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/WritePrivileges"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/DeletePrivileges"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/HasPrivileges"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/AccountManagement"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/ZoneAccess"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/HardwareAccess"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/UserAssignedIdentities"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/FirewallConnectionRule"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/ManagedBy"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/NetworkExposure"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/ApplicationConnection"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/InApplicationConnection"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/OutApplicationConnection"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/NetworkConnection"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/InNetworkConnection"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/OutNetworkConnection"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/DiodeInNetworkConnection"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/ApplicationVulnerability"
+        },
+        {
+          "$ref": "#/definitions/LanguageAssociation/definitions/hardwareVulnerability"
+        }
+      ],
+      "definitions": {
+        "SysExecution": {
+          "title": "SysExecution",
+          "type": "object",
+          "properties": {
+            "hostHardware": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Hardware"
+              },
+              "maxItems": 1
+            },
+            "sysExecutedApps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "AppExecution": {
+          "title": "AppExecution",
+          "type": "object",
+          "properties": {
+            "hostApp": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              },
+              "maxItems": 1
+            },
+            "appExecutedApps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "AppProtection": {
+          "title": "AppProtection",
+          "type": "object",
+          "properties": {
+            "protectorIDPSs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/IDPS"
+              }
+            },
+            "protectedApps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "AppSoftwareProduct": {
+          "title": "AppSoftwareProduct",
+          "type": "object",
+          "properties": {
+            "appSoftProduct": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/SoftwareProduct"
+              },
+              "maxItems": 1
+            },
+            "softApplications": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "ZoneInclusion": {
+          "title": "ZoneInclusion",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/LanguageAssociation/definitions/ZoneInclusion/definitions/ZoneInclusion_PhysicalZone_Hardware"
+            },
+            {
+              "$ref": "#/definitions/LanguageAssociation/definitions/ZoneInclusion/definitions/ZoneInclusion_PhysicalZone_Network"
+            }
+          ],
+          "definitions": {
+            "ZoneInclusion_PhysicalZone_Hardware": {
+              "title": "ZoneInclusion_PhysicalZone_Hardware",
+              "type": "object",
+              "properties": {
+                "physicalZones": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/PhysicalZone"
+                  }
+                },
+                "hardwareSystems": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Hardware"
+                  }
+                }
+              }
+            },
+            "ZoneInclusion_PhysicalZone_Network": {
+              "title": "ZoneInclusion_PhysicalZone_Network",
+              "type": "object",
+              "properties": {
+                "physicalZones": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/PhysicalZone"
+                  }
+                },
+                "networks": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Network"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "DataContainment": {
+          "title": "DataContainment",
+          "type": "object",
+          "properties": {
+            "containingData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            },
+            "containedData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            }
+          }
+        },
+        "AppContainment": {
+          "title": "AppContainment",
+          "type": "object",
+          "properties": {
+            "containedData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            },
+            "containingApp": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "SendData": {
+          "title": "SendData",
+          "type": "object",
+          "properties": {
+            "sentData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            },
+            "senderApp": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "ReceiveData": {
+          "title": "ReceiveData",
+          "type": "object",
+          "properties": {
+            "receivedData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            },
+            "receiverApp": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "DataInTransit": {
+          "title": "DataInTransit",
+          "type": "object",
+          "properties": {
+            "transitData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            },
+            "transitNetwork": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Network"
+              }
+            }
+          }
+        },
+        "DataHosting": {
+          "title": "DataHosting",
+          "type": "object",
+          "properties": {
+            "hostedData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            },
+            "hardware": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Hardware"
+              },
+              "maxItems": 1
+            }
+          }
+        },
+        "InfoContainment": {
+          "title": "InfoContainment",
+          "type": "object",
+          "properties": {
+            "containerData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            },
+            "information": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Information"
+              }
+            }
+          }
+        },
+        "Replica": {
+          "title": "Replica",
+          "type": "object",
+          "properties": {
+            "dataReplicas": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            },
+            "replicatedInformation": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Information"
+              }
+            }
+          }
+        },
+        "Dependence": {
+          "title": "Dependence",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/LanguageAssociation/definitions/Dependence/definitions/Dependence_Data_Application"
+            },
+            {
+              "$ref": "#/definitions/LanguageAssociation/definitions/Dependence/definitions/Dependence_Information_Application"
+            }
+          ],
+          "definitions": {
+            "Dependence_Data_Application": {
+              "title": "Dependence_Data_Application",
+              "type": "object",
+              "properties": {
+                "dataDependedUpon": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Data"
+                  }
+                },
+                "dependentApps": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Application"
+                  }
+                }
+              }
+            },
+            "Dependence_Information_Application": {
+              "title": "Dependence_Information_Application",
+              "type": "object",
+              "properties": {
+                "infoDependedUpon": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Information"
+                  }
+                },
+                "dependentApps": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Application"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "EncryptionCredentials": {
+          "title": "EncryptionCredentials",
+          "type": "object",
+          "properties": {
+            "encryptCreds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Credentials"
+              },
+              "maxItems": 1
+            },
+            "encryptedData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            }
+          }
+        },
+        "SigningCredentials": {
+          "title": "SigningCredentials",
+          "type": "object",
+          "properties": {
+            "signingCreds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Credentials"
+              },
+              "maxItems": 1
+            },
+            "signedData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            }
+          }
+        },
+        "HashedCredentials": {
+          "title": "HashedCredentials",
+          "type": "object",
+          "properties": {
+            "hashes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Credentials"
+              }
+            },
+            "origCreds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Credentials"
+              },
+              "maxItems": 1
+            }
+          }
+        },
+        "ConditionalAuthentication": {
+          "title": "ConditionalAuthentication",
+          "type": "object",
+          "properties": {
+            "credentials": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Credentials"
+              }
+            },
+            "requiredFactors": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Credentials"
+              }
+            }
+          }
+        },
+        "IdentityCredentials": {
+          "title": "IdentityCredentials",
+          "type": "object",
+          "properties": {
+            "identities": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Identity"
+              }
+            },
+            "credentials": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Credentials"
+              }
+            }
+          }
+        },
+        "CanAssume": {
+          "title": "CanAssume",
+          "type": "object",
+          "properties": {
+            "parentId": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Identity"
+              }
+            },
+            "childId": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Identity"
+              }
+            }
+          }
+        },
+        "MemberOf": {
+          "title": "MemberOf",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/LanguageAssociation/definitions/MemberOf/definitions/MemberOf_Group_Identity"
+            },
+            {
+              "$ref": "#/definitions/LanguageAssociation/definitions/MemberOf/definitions/MemberOf_Group_Group"
+            }
+          ],
+          "definitions": {
+            "MemberOf_Group_Identity": {
+              "title": "MemberOf_Group_Identity",
+              "type": "object",
+              "properties": {
+                "memberOf": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Group"
+                  }
+                },
+                "groupIds": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Identity"
+                  }
+                }
+              }
+            },
+            "MemberOf_Group_Group": {
+              "title": "MemberOf_Group_Group",
+              "type": "object",
+              "properties": {
+                "parentGroup": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Group"
+                  }
+                },
+                "childGroups": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Group"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ExecutionPrivilegeAccess": {
+          "title": "ExecutionPrivilegeAccess",
+          "type": "object",
+          "properties": {
+            "executionPrivIAMs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+              }
+            },
+            "execPrivApps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "HighPrivilegeApplicationAccess": {
+          "title": "HighPrivilegeApplicationAccess",
+          "type": "object",
+          "properties": {
+            "highPrivAppIAMs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+              }
+            },
+            "highPrivApps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "LowPrivilegeApplicationAccess": {
+          "title": "LowPrivilegeApplicationAccess",
+          "type": "object",
+          "properties": {
+            "lowPrivAppIAMs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+              }
+            },
+            "lowPrivApps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "ReadPrivileges": {
+          "title": "ReadPrivileges",
+          "type": "object",
+          "properties": {
+            "readingIAMs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+              }
+            },
+            "readPrivData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            }
+          }
+        },
+        "WritePrivileges": {
+          "title": "WritePrivileges",
+          "type": "object",
+          "properties": {
+            "writingIAMs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+              }
+            },
+            "writePrivData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            }
+          }
+        },
+        "DeletePrivileges": {
+          "title": "DeletePrivileges",
+          "type": "object",
+          "properties": {
+            "deletingIAMs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+              }
+            },
+            "deletePrivData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Data"
+              }
+            }
+          }
+        },
+        "HasPrivileges": {
+          "title": "HasPrivileges",
+          "type": "object",
+          "properties": {
+            "IAMOwners": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+              }
+            },
+            "subprivileges": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Privileges"
+              }
+            }
+          }
+        },
+        "AccountManagement": {
+          "title": "AccountManagement",
+          "type": "object",
+          "properties": {
+            "managers": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+              }
+            },
+            "managedIAMs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/IAMObject"
+              }
+            }
+          }
+        },
+        "ZoneAccess": {
+          "title": "ZoneAccess",
+          "type": "object",
+          "properties": {
+            "users": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/User"
+              }
+            },
+            "physicalZones": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/PhysicalZone"
+              }
+            }
+          }
+        },
+        "HardwareAccess": {
+          "title": "HardwareAccess",
+          "type": "object",
+          "properties": {
+            "users": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/User"
+              }
+            },
+            "hardwareSystems": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Hardware"
+              }
+            }
+          }
+        },
+        "UserAssignedIdentities": {
+          "title": "UserAssignedIdentities",
+          "type": "object",
+          "properties": {
+            "users": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/User"
+              }
+            },
+            "userIds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Identity"
+              }
+            }
+          }
+        },
+        "FirewallConnectionRule": {
+          "title": "FirewallConnectionRule",
+          "type": "object",
+          "properties": {
+            "routingFirewalls": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/RoutingFirewall"
+              },
+              "maxItems": 1
+            },
+            "connectionRules": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/ConnectionRule"
+              }
+            }
+          }
+        },
+        "ManagedBy": {
+          "title": "ManagedBy",
+          "type": "object",
+          "properties": {
+            "managedRoutingFw": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/RoutingFirewall"
+              }
+            },
+            "managerApp": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              },
+              "maxItems": 1
+            }
+          }
+        },
+        "NetworkExposure": {
+          "title": "NetworkExposure",
+          "type": "object",
+          "properties": {
+            "networks": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Network"
+              }
+            },
+            "applications": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            }
+          }
+        },
+        "ApplicationConnection": {
+          "title": "ApplicationConnection",
+          "type": "object",
+          "properties": {
+            "applications": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            },
+            "appConnections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/ConnectionRule"
+              }
+            }
+          }
+        },
+        "InApplicationConnection": {
+          "title": "InApplicationConnection",
+          "type": "object",
+          "properties": {
+            "inApplications": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            },
+            "ingoingAppConnections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/ConnectionRule"
+              }
+            }
+          }
+        },
+        "OutApplicationConnection": {
+          "title": "OutApplicationConnection",
+          "type": "object",
+          "properties": {
+            "outApplications": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Application"
+              }
+            },
+            "outgoingAppConnections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/ConnectionRule"
+              }
+            }
+          }
+        },
+        "NetworkConnection": {
+          "title": "NetworkConnection",
+          "type": "object",
+          "properties": {
+            "networks": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Network"
+              }
+            },
+            "netConnections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/ConnectionRule"
+              }
+            }
+          }
+        },
+        "InNetworkConnection": {
+          "title": "InNetworkConnection",
+          "type": "object",
+          "properties": {
+            "inNetworks": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Network"
+              }
+            },
+            "ingoingNetConnections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/ConnectionRule"
+              }
+            }
+          }
+        },
+        "OutNetworkConnection": {
+          "title": "OutNetworkConnection",
+          "type": "object",
+          "properties": {
+            "outNetworks": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Network"
+              }
+            },
+            "outgoingNetConnections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/ConnectionRule"
+              }
+            }
+          }
+        },
+        "DiodeInNetworkConnection": {
+          "title": "DiodeInNetworkConnection",
+          "type": "object",
+          "properties": {
+            "diodeInNetworks": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Network"
+              }
+            },
+            "diodeIngoingNetConnections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/ConnectionRule"
+              }
+            }
+          }
+        },
+        "ApplicationVulnerability": {
+          "title": "ApplicationVulnerability",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/LanguageAssociation/definitions/ApplicationVulnerability/definitions/ApplicationVulnerability_SoftwareVulnerability_Application"
+            },
+            {
+              "$ref": "#/definitions/LanguageAssociation/definitions/ApplicationVulnerability/definitions/ApplicationVulnerability_SoftwareVulnerability_SoftwareProduct"
+            }
+          ],
+          "definitions": {
+            "ApplicationVulnerability_SoftwareVulnerability_Application": {
+              "title": "ApplicationVulnerability_SoftwareVulnerability_Application",
+              "type": "object",
+              "properties": {
+                "vulnerabilities": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/SoftwareVulnerability"
+                  }
+                },
+                "application": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/Application"
+                  },
+                  "maxItems": 1
+                }
+              }
+            },
+            "ApplicationVulnerability_SoftwareVulnerability_SoftwareProduct": {
+              "title": "ApplicationVulnerability_SoftwareVulnerability_SoftwareProduct",
+              "type": "object",
+              "properties": {
+                "softProductVulnerabilities": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/SoftwareVulnerability"
+                  }
+                },
+                "softwareProduct": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAsset/definitions/SoftwareProduct"
+                  },
+                  "maxItems": 1
+                }
+              }
+            }
+          }
+        },
+        "hardwareVulnerability": {
+          "title": "hardwareVulnerability",
+          "type": "object",
+          "properties": {
+            "vulnerabilities": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/HardwareVulnerability"
+              }
+            },
+            "hardware": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAsset/definitions/Hardware"
+              },
+              "maxItems": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}
+05-02 19:55 maltoolbox.model.model INFO     Loading model from models/model_1.json file.
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Comp C1",
+  "metaconcept": "Hardware",
+  "eid": "0",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Server S1",
+  "metaconcept": "Hardware",
+  "eid": "1",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "App 1.0_OS_Windows",
+  "metaconcept": "Application",
+  "eid": "2",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "App 1.1_VPN",
+  "metaconcept": "Application",
+  "eid": "3",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "App 2.0_Server_Windows",
+  "metaconcept": "Application",
+  "eid": "4",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Data Secret",
+  "metaconcept": "Data",
+  "eid": "5",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Router FW_1",
+  "metaconcept": "RoutingFirewall",
+  "eid": "6",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Net 1_LAN",
+  "metaconcept": "Network",
+  "eid": "7",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "CR Net_1->Router_FW_1",
+  "metaconcept": "ConnectionRule",
+  "eid": "8",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "CR Net_1<->App_1.0",
+  "metaconcept": "ConnectionRule",
+  "eid": "9",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "CR Net_1<->App_2.0",
+  "metaconcept": "ConnectionRule",
+  "eid": "10",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Net 2_DMZ",
+  "metaconcept": "Network",
+  "eid": "11",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "CR Net_2_DMZ<-Router_FW_1",
+  "metaconcept": "ConnectionRule",
+  "eid": "12",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "CR Net_2_DMZ->App_1.1",
+  "metaconcept": "ConnectionRule",
+  "eid": "13",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Id Admin_1",
+  "metaconcept": "Identity",
+  "eid": "14",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Id Employee_1",
+  "metaconcept": "Identity",
+  "eid": "15",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Id ServiceAccount_1",
+  "metaconcept": "Identity",
+  "eid": "16",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Cred Admin_1",
+  "metaconcept": "Credentials",
+  "eid": "17",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "Cred Employee_1",
+  "metaconcept": "Credentials",
+  "eid": "18",
+  "defenses": {}
+}
+05-02 19:55 maltoolbox.model.model DEBUG    Loading asset from models/model_1.json:
+{
+  "name": "MFA",
+  "metaconcept": "Credentials",
+  "eid": "19",
+  "defenses": {}
+}
+05-02 19:55 py2neo.client DEBUG    Adding connection pool for profile ConnectionProfile('bolt://localhost:7687')
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E1935ECA50>
+05-02 19:55 py2neo.client.bolt DEBUG    [#0000] C: (Dialing <localhost:7687>)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: (Accepted)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: <BOLT>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: <PROTOCOL> 4.3~4.0 | 4.0 | 3.0 | 2.0
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: <PROTOCOL> 4.3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: HELLO {'user_agent': 'py2neo/2021.2.4 Python/3.11.9-final-0 (win32)', 'scheme': 'basic', 'principal': 'neo4j', 'credentials': '*******'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 117 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'server': 'Neo4j/5.12.0', 'connection_id': 'bolt-72', 'hints': {'connection.recv_timeout_seconds': 120}}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1934B4F50> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1934B4F50> does not belong to pool <py2neo.client.ConnectionPool object at 0x000001E1935ECA50>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1934B4F50> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1934B4F50> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Attempting to acquire read-write connection to 'neo4j'
+05-02 19:55 py2neo.client DEBUG    Using connection pool <py2neo.client.ConnectionPool object at 0x000001E1935ECA50>
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E1935ECA50>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1934B4F50> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'MATCH (a) DETACH DELETE a' {} {'db': 'neo4j'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 59 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 2, 'fields': []}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'bookmark': 'FB:kcwQSIyEovAPQ7KfNtCYVEHG38kDa5A=', 'stats': {'nodes-deleted': 20, 'relationships-deleted': 44}, 'type': 'w', 't_last': 0, 'db': 'neo4j'}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1934B4F50> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Attempting to acquire read-write connection to 'neo4j'
+05-02 19:55 py2neo.client DEBUG    Using connection pool <py2neo.client.ConnectionPool object at 0x000001E1935ECA50>
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E1935ECA50>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1934B4F50> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: BEGIN {'db': 'neo4j'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 16 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nCREATE (_:Identity)\nSET _ += r\nRETURN id(_)' {'data': [{'name': 'Id Employee_1', 'asset_id': '15', 'metaconcept': 'Identity'}, {'name': 'Id Admin_1', 'asset_id': '14', 'metaconcept': 'Identity'}, {'name': 'Id ServiceAccount_1', 'asset_id': '16', 'metaconcept': 'Identity'}]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 255 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 0}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'labels-added': 3, 'nodes-created': 3, 'properties-set': 9}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 56, 'line': 4}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nCREATE (_:Application)\nSET _ += r\nRETURN id(_)' {'data': [{'name': 'App 1.1_VPN', 'asset_id': '3', 'metaconcept': 'Application'}, {'name': 'App 1.0_OS_Windows', 'asset_id': '2', 'metaconcept': 'Application'}, {'name': 'App 2.0_Server_Windows', 'asset_id': '4', 'metaconcept': 'Application'}]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 274 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'labels-added': 3, 'nodes-created': 3, 'properties-set': 9}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 59, 'line': 4}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nCREATE (_:Credentials)\nSET _ += r\nRETURN id(_)' {'data': [{'name': 'MFA', 'asset_id': '19', 'metaconcept': 'Credentials'}, {'name': 'Cred Employee_1', 'asset_id': '18', 'metaconcept': 'Credentials'}, {'name': 'Cred Admin_1', 'asset_id': '17', 'metaconcept': 'Credentials'}]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 254 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 2}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'labels-added': 3, 'nodes-created': 3, 'properties-set': 9}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 59, 'line': 4}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nCREATE (_:ConnectionRule)\nSET _ += r\nRETURN id(_)' {'data': [{'name': 'CR Net_1<->App_2.0', 'asset_id': '10', 'metaconcept': 'ConnectionRule'}, {'name': 'CR Net_1->Router_FW_1', 'asset_id': '8', 'metaconcept': 'ConnectionRule'}, {'name': 'CR Net_2_DMZ<-Router_FW_1', 'asset_id': '12', 'metaconcept': 'ConnectionRule'}, {'name': 'CR Net_1<->App_1.0', 'asset_id': '9', 'metaconcept': 'ConnectionRule'}, {'name': 'CR Net_2_DMZ->App_1.1', 'asset_id': '13', 'metaconcept': 'ConnectionRule'}]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 434 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 3}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 5
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'labels-added': 5, 'nodes-created': 5, 'properties-set': 15}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 62, 'line': 4}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nCREATE (_:RoutingFirewall)\nSET _ += r\nRETURN id(_)' {'data': [{'name': 'Router FW_1', 'asset_id': '6', 'metaconcept': 'RoutingFirewall'}]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 156 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 4}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'labels-added': 1, 'nodes-created': 1, 'properties-set': 3}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 63, 'line': 4}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nCREATE (_:Network)\nSET _ += r\nRETURN id(_)' {'data': [{'name': 'Net 2_DMZ', 'asset_id': '11', 'metaconcept': 'Network'}, {'name': 'Net 1_LAN', 'asset_id': '7', 'metaconcept': 'Network'}]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 186 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 5}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'labels-added': 2, 'nodes-created': 2, 'properties-set': 6}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 55, 'line': 4}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nCREATE (_:Data)\nSET _ += r\nRETURN id(_)' {'data': [{'name': 'Data Secret', 'asset_id': '5', 'metaconcept': 'Data'}]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 134 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 6}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'labels-added': 1, 'nodes-created': 1, 'properties-set': 3}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 52, 'line': 4}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nCREATE (_:Hardware)\nSET _ += r\nRETURN id(_)' {'data': [{'name': 'Server S1', 'asset_id': '1', 'metaconcept': 'Hardware'}, {'name': 'Comp C1', 'asset_id': '0', 'metaconcept': 'Hardware'}]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 186 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 7}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'labels-added': 2, 'nodes-created': 2, 'properties-set': 6}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 56, 'line': 4}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:outNetworks]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[137, {}, 135], [138, {}, 132]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 180 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 8}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 2, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 128, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:applications]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[126, {}, 134], [127, {}, 131]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 177 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 9}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 129, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:credentials]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[129, {}, 122], [130, {}, 123], [130, {}, 128]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 184 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 10}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 3}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 128, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:appConnections]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[134, {}, 126], [131, {}, 127]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 179 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 11}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 131, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:executionPrivIAMs]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[122, {}, 125], [122, {}, 126]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 178 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 12}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 134, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:networks]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[138, {}, 134], [138, {}, 131]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 177 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 1, 'fields': ['id(_)'], 'qid': 13}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 125, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:routingFirewalls]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[136, {}, 132], [136, {}, 133]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 185 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 14}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 133, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:execPrivApps]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[126, {}, 122], [125, {}, 122]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 173 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 15}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 129, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:ingoingAppConnections]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[135, {}, 125]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 180 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 1, 'fields': ['id(_)'], 'qid': 16}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 1}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 138, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:hostHardware]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[141, {}, 126], [140, {}, 127]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 177 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 17}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 129, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:outgoingNetConnections]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[135, {}, 137], [132, {}, 138]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 191 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 1, 'fields': ['id(_)'], 'qid': 18}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 139, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:containedData]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[139, {}, 127]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 172 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 19}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 1}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 130, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:hostApp]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[126, {}, 125]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 164 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 1, 'fields': ['id(_)'], 'qid': 20}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 1}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 124, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:containingApp]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[127, {}, 139]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 172 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 21}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 1}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 130, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:highPrivAppIAMs]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[123, {}, 127], [123, {}, 126], [124, {}, 127]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 180 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 22}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 3}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 132, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:netConnections]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[131, {}, 138], [134, {}, 138]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 183 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 23}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 131, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:inApplications]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[125, {}, 135]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 173 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 24}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 1}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 131, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:sysExecutedApps]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[126, {}, 141], [127, {}, 140]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 180 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 25}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 132, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:inNetworks]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[137, {}, 133]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 171 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 26}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 1}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 127, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:appExecutedApps]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[125, {}, 126]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 172 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 27}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 1}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 132, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:highPrivApps]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[126, {}, 123], [127, {}, 123], [127, {}, 124]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 177 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 28}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 3}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 129, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:ingoingNetConnections]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[133, {}, 137]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 182 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 1, 'fields': ['id(_)'], 'qid': 29}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 1}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 138, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:identities]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[123, {}, 130], [122, {}, 129]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 175 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 0, 'fields': ['id(_)'], 'qid': 30}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 1, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 127, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:connectionRules]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[132, {}, 136], [133, {}, 136]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 184 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 1, 'fields': ['id(_)'], 'qid': 31}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 2
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 2}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 132, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: RUN 'UNWIND $data AS r\nMATCH (a) WHERE id(a) = r[0]\nMATCH (b) WHERE id(b) = r[2]\nMERGE (a)-[_:requiredFactors]->(b)\nSET _ += r[1]\nRETURN id(_)' {'data': [[128, {}, 130]]} {}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 176 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'t_first': 1, 'fields': ['id(_)'], 'qid': 32}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'stats': {'relationships-created': 1}, 'type': 'rw', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 63, 'line': 3}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 17, 'offset': 34, 'line': 2}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}, {'severity': 'WARNING', 'description': 'The query used a deprecated function: `id`.', 'code': 'Neo.ClientNotification.Statement.FeatureDeprecationWarning', 'position': {'column': 8, 'offset': 132, 'line': 6}, 'title': 'This feature is deprecated and will be removed in future versions.', 'category': 'DEPRECATION'}]}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: COMMIT
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] C: (Sent 6 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C7] S: SUCCESS {'bookmark': 'FB:kcwQSIyEovAPQ7KfNtCYVEHG38kDbJA='}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1934B4F50> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Adding connection pool for profile ConnectionProfile('bolt://localhost:7687')
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E1933CEA10>
+05-02 19:55 py2neo.client.bolt DEBUG    [#0000] C: (Dialing <localhost:7687>)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C8] S: (Accepted)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C8] C: <BOLT>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C8] C: <PROTOCOL> 4.3~4.0 | 4.0 | 3.0 | 2.0
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C8] S: <PROTOCOL> 4.3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C8] C: HELLO {'user_agent': 'py2neo/2021.2.4 Python/3.11.9-final-0 (win32)', 'scheme': 'basic', 'principal': 'neo4j', 'credentials': '*******'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C8] C: (Sent 117 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C8] S: SUCCESS {'server': 'Neo4j/5.12.0', 'connection_id': 'bolt-73', 'hints': {'connection.recv_timeout_seconds': 120}}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933CEA90> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933CEA90> does not belong to pool <py2neo.client.ConnectionPool object at 0x000001E1933CEA10>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933CEA90> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933CEA90> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 patternReport INFO     
+***
+----------Attack Patterns Report----------
+
+
+Time: 2024-05-02 19:55:11.639366
+
+05-02 19:55 py2neo.client DEBUG    Adding connection pool for profile ConnectionProfile('bolt://localhost:7687')
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E1933EE8D0>
+05-02 19:55 py2neo.client.bolt DEBUG    [#0000] C: (Dialing <localhost:7687>)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] S: (Accepted)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] C: <BOLT>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] C: <PROTOCOL> 4.3~4.0 | 4.0 | 3.0 | 2.0
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] S: <PROTOCOL> 4.3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] C: HELLO {'user_agent': 'py2neo/2021.2.4 Python/3.11.9-final-0 (win32)', 'scheme': 'basic', 'principal': 'neo4j', 'credentials': '*******'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] C: (Sent 117 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] S: SUCCESS {'server': 'Neo4j/5.12.0', 'connection_id': 'bolt-74', 'hints': {'connection.recv_timeout_seconds': 120}}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EEC50> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EEC50> does not belong to pool <py2neo.client.ConnectionPool object at 0x000001E1933EE8D0>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EEC50> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EEC50> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Attempting to acquire read-write connection to 'neo4j'
+05-02 19:55 py2neo.client DEBUG    Using connection pool <py2neo.client.ConnectionPool object at 0x000001E1933EE8D0>
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E1933EE8D0>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EEC50> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] C: RUN "MATCH (app:Application)-[*0..2]->(:Network) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*' WITH app MATCH (app)<-[*0..2]-(usr:Identity)<--(cred:Credentials) WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*|.*2FA.*|.*Multi-Factor.*|.*Two-Factor.*') RETURN DISTINCT cred.name;" {} {'db': 'neo4j'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] C: (Sent 401 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] S: SUCCESS {'t_first': 146, 'fields': ['cred.name']}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0C9] S: SUCCESS {'bookmark': 'FB:kcwQSIyEovAPQ7KfNtCYVEHG38kDbJA=', 'type': 'r', 't_last': 2, 'db': 'neo4j'}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EEC50> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 patternReport INFO     Id: 1
+Pattern: remoteAccessMFA
+Description: Missing Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials.
+Neo4j_Assets:['Cred Employee_1']
+
+----------ATT&CK----------
+Tactic:
+05-02 19:55 patternReport INFO     
+      Initial Access:
+05-02 19:55 patternReport INFO     
+                Technique: External Remote Services
+                ID: T1133
+                Description: Adversaries may leverage external-facing remote services to initially access and/or persist within a network. Remote services such as VPNs, Citrix, and other access mechanisms allow users to connect to internal enterprise network resources from external locations. There are often remote service gateways that manage connections and credential authentication for these services. Services such as [Windows Remote Management](https://attack.mitre.org/techniques/T1021/006) and [VNC](https://attack.mitre.org/techniques/T1021/005) can also be used externally.(Citation: MacOS VNC software for Remote Desktop)
+                URL: https://attack.mitre.org/techniques/T1133
+                CAPEC: {'CAPEC-555': 'Remote Services with Stolen Credentials'}
+05-02 19:55 patternReport INFO     
+                Technique: Valid Accounts
+                ID: T1078
+                Description: Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.
+                URL: https://attack.mitre.org/techniques/T1078
+                CAPEC: {'CAPEC-70': 'Try Common or Default Usernames and Passwords', 'CAPEC-560': 'Use of Known Domain Credentials'}
+05-02 19:55 patternReport INFO     
+      Credential Access:
+05-02 19:55 patternReport INFO     
+                Technique: Brute Force
+                ID: T1110
+                Description: Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained. Without knowledge of the password for an account or set of accounts, an adversary may systematically guess the password using a repetitive or iterative mechanism. Brute forcing passwords can take place via interaction with a service that will check the validity of those credentials or offline against previously acquired credential data, such as password hashes.
+                URL: https://attack.mitre.org/techniques/T1110
+                CAPEC: {'CAPEC-49': 'Password Brute Forcing', 'CAPEC-55': 'Rainbow Table Password Cracking', 'CAPEC-112': 'Brute Force', 'CAPEC-565': 'Password Spraying', 'CAPEC-600': 'Credential Stuffing'}
+05-02 19:55 patternReport INFO     
+Mitigations:
+05-02 19:55 patternReport INFO     
+                Mitigation: Account Use Policies
+                ID: M1036
+                Description: Configure features related to account use like login attempt lockouts, specific login times, etc.
+                URL: https://attack.mitre.org/mitigations/M1036
+05-02 19:55 patternReport INFO     
+                Mitigation: Multi-factor Authentication
+                ID: M1032
+                Description: Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator.
+                URL: https://attack.mitre.org/mitigations/M1032
+05-02 19:55 patternReport INFO     
+                Mitigation: Network Segmentation
+                ID: M1030
+                Description: Architect sections of the network to isolate critical systems, functions, or resources. Use physical and logical segmentation to prevent access to potentially sensitive systems and information. Use a DMZ to contain any internet-facing services that should not be exposed from the internal network. Configure separate virtual private cloud (VPC) instances to isolate critical cloud systems.
+                URL: https://attack.mitre.org/mitigations/M1030
+05-02 19:55 patternReport INFO     
+                Mitigation: User Training
+                ID: M1017
+                Description: Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.
+                URL: https://attack.mitre.org/mitigations/M1017
+05-02 19:55 patternReport INFO     
+
+
+
+05-02 19:55 py2neo.client DEBUG    Adding connection pool for profile ConnectionProfile('bolt://localhost:7687')
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E1933EF790>
+05-02 19:55 py2neo.client.bolt DEBUG    [#0000] C: (Dialing <localhost:7687>)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] S: (Accepted)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] C: <BOLT>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] C: <PROTOCOL> 4.3~4.0 | 4.0 | 3.0 | 2.0
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] S: <PROTOCOL> 4.3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] C: HELLO {'user_agent': 'py2neo/2021.2.4 Python/3.11.9-final-0 (win32)', 'scheme': 'basic', 'principal': 'neo4j', 'credentials': '*******'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] C: (Sent 117 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] S: SUCCESS {'server': 'Neo4j/5.12.0', 'connection_id': 'bolt-75', 'hints': {'connection.recv_timeout_seconds': 120}}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EF850> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EF850> does not belong to pool <py2neo.client.ConnectionPool object at 0x000001E1933EF790>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EF850> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EF850> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Attempting to acquire read-write connection to 'neo4j'
+05-02 19:55 py2neo.client DEBUG    Using connection pool <py2neo.client.ConnectionPool object at 0x000001E1933EF790>
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E1933EF790>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EF850> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] C: RUN "MATCH (data:Data)-[:containedData]->(:Application) WHERE data.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials) RETURN DISTINCT data.name;" {} {'db': 'neo4j'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] C: (Sent 294 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] S: SUCCESS {'t_first': 1, 'fields': ['data.name']}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CA] S: SUCCESS {'bookmark': 'FB:kcwQSIyEovAPQ7KfNtCYVEHG38kDbJA=', 'type': 'r', 't_last': 1, 'db': 'neo4j'}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E1933EF850> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 patternReport INFO     Id: 2
+Pattern: unencryptedData
+Description: Sensitive data stored without encryption
+Neo4j_Assets:['Data Secret']
+
+----------ATT&CK----------
+Tactic:
+05-02 19:55 patternReport INFO     
+      Credential Access:
+05-02 19:55 patternReport INFO     
+                Technique: Credentials from Password Stores
+                ID: T1555
+                Description: Adversaries may search for common password storage locations to obtain user credentials. Passwords are stored in several places on a system, depending on the operating system or application holding the credentials. There are also specific applications and services that store passwords to make them easier for users to manage and maintain, such as password managers and cloud secrets vaults. Once credentials are obtained, they can be used to perform lateral movement and access restricted information.
+                URL: https://attack.mitre.org/techniques/T1555
+                CAPEC: {'CAPEC-150': 'Collect Data from Common Resource Locations', 'CAPEC-545': 'Pull Data from System Resources'}
+05-02 19:55 patternReport INFO     
+                Technique: OS Credential Dumping
+                ID: T1003
+                Description: Adversaries may attempt to dump credentials to obtain account login and credential material, normally in the form of a hash or a clear text password, from the operating system and software. Credentials can then be used to perform [Lateral Movement](https://attack.mitre.org/tactics/TA0008) and access restricted information.
+                URL: https://attack.mitre.org/techniques/T1003
+                CAPEC: {'CAPEC-150': 'Collect Data from Common Resource Locations'}
+05-02 19:55 patternReport INFO     
+                Technique: Steal Application Access Token
+                ID: T1528
+                Description: Adversaries can steal application access tokens as a means of acquiring credentials to access remote systems and resources.
+                URL: https://attack.mitre.org/techniques/T1528
+                CAPEC: {'CAPEC-21': 'Exploitation of Trusted Identifiers'}
+05-02 19:55 patternReport INFO     
+                Technique: Steal or Forge Authentication Certificates
+                ID: T1649
+                Description: Adversaries may steal or forge certificates used for authentication to access remote systems or resources. Digital certificates are often used to sign and encrypt messages and/or files. Certificates are also used as authentication material. For example, Azure AD device certificates and Active Directory Certificate Services (AD CS) certificates bind to an identity and can be used as credentials for domain accounts.(Citation: O365 Blog Azure AD Device IDs)(Citation: Microsoft AD CS Overview)
+                URL: https://attack.mitre.org/techniques/T1649
+                CAPEC: {}
+05-02 19:55 patternReport INFO     
+                Technique: Steal or Forge Kerberos Tickets
+                ID: T1558
+                Description: Adversaries may attempt to subvert Kerberos authentication by stealing or forging Kerberos tickets to enable [Pass the Ticket](https://attack.mitre.org/techniques/T1550/003). Kerberos is an authentication protocol widely used in modern Windows domain environments. In Kerberos environments, referred to as “realms”, there are three basic participants: client, service, and Key Distribution Center (KDC).(Citation: ADSecurity Kerberos Ring Decoder) Clients request access to a service and through the exchange of Kerberos tickets, originating from KDC, they are granted access after having successfully authenticated. The KDC is responsible for both authentication and ticket granting.  Adversaries may attempt to abuse Kerberos by stealing tickets or forging tickets to enable unauthorized access.
+                URL: https://attack.mitre.org/techniques/T1558
+                CAPEC: {'CAPEC-509': 'Kerberoasting', 'CAPEC-652': 'Use of Known Kerberos Credentials'}
+05-02 19:55 patternReport INFO     
+                Technique: Steal Web Session Cookie
+                ID: T1539
+                Description: An adversary may steal web application or service session cookies and use them to gain access to web applications or Internet services as an authenticated user without needing credentials. Web applications and services often use session cookies as an authentication token after a user has authenticated to a website.
+                URL: https://attack.mitre.org/techniques/T1539
+                CAPEC: {'CAPEC-21': 'Exploitation of Trusted Identifiers', 'CAPEC-31': 'Accessing/Intercepting/Modifying HTTP Cookies'}
+05-02 19:55 patternReport INFO     
+                Technique: Unsecured Credentials
+                ID: T1552
+                Description: Adversaries may search compromised systems to find and obtain insecurely stored credentials. These credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. [Bash History](https://attack.mitre.org/techniques/T1552/003)), operating system or application-specific repositories (e.g. [Credentials in Registry](https://attack.mitre.org/techniques/T1552/002)), or other specialized files/artifacts (e.g. [Private Keys](https://attack.mitre.org/techniques/T1552/004)).
+                URL: https://attack.mitre.org/techniques/T1552
+                CAPEC: {'CAPEC-37': 'Retrieve Embedded Sensitive Data', 'CAPEC-191': 'Read Sensitive Constants Within an Executable', 'CAPEC-474': 'Signature Spoofing by Key Theft', 'CAPEC-485': 'Signature Spoofing by Key Recreation', 'CAPEC-639': 'Probe System Files', 'CAPEC-647': 'Collect Data from Registries'}
+05-02 19:55 patternReport INFO     
+Mitigations:
+05-02 19:55 patternReport INFO     
+                Mitigation: Audit
+                ID: M1047
+                Description: Perform audits or scans of systems, permissions, insecure software, insecure configurations, etc. to identify potential weaknesses.
+                URL: https://attack.mitre.org/mitigations/M1047
+05-02 19:55 patternReport INFO     
+                Mitigation: Encrypt Sensitive Information
+                ID: M1041
+                Description: Protect sensitive information with strong encryption.
+                URL: https://attack.mitre.org/mitigations/M1041
+05-02 19:55 patternReport INFO     
+                Mitigation: Password Policies
+                ID: M1027
+                Description: Set and enforce secure password policies for accounts.
+                URL: https://attack.mitre.org/mitigations/M1027
+05-02 19:55 patternReport INFO     
+                Mitigation: Privileged Account Management
+                ID: M1026
+                Description: Manage the creation, modification, use, and permissions associated to privileged accounts, including SYSTEM and root.
+                URL: https://attack.mitre.org/mitigations/M1026
+05-02 19:55 patternReport INFO     
+                Mitigation: Restrict File and Directory Permissions
+                ID: M1022
+                Description: Restrict access by setting directory and file permissions that are not specific to users or privileged accounts.
+                URL: https://attack.mitre.org/mitigations/M1022
+05-02 19:55 patternReport INFO     
+                Mitigation: User Training
+                ID: M1017
+                Description: Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.
+                URL: https://attack.mitre.org/mitigations/M1017
+05-02 19:55 patternReport INFO     
+                Mitigation: Multi-factor Authentication
+                ID: M1032
+                Description: Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator.
+                URL: https://attack.mitre.org/mitigations/M1032
+05-02 19:55 patternReport INFO     
+                Mitigation: Credential Access Protection
+                ID: M1043
+                Description: Use capabilities to prevent successful credential access by adversaries; including blocking forms of credential dumping.
+                URL: https://attack.mitre.org/mitigations/M1043
+05-02 19:55 patternReport INFO     
+                Mitigation: Behavior Prevention on Endpoint
+                ID: M1040
+                Description: Use capabilities to prevent suspicious behavior patterns from occurring on endpoint systems. This could include suspicious process, file, API call, etc. behavior.
+                URL: https://attack.mitre.org/mitigations/M1040
+05-02 19:55 patternReport INFO     
+
+
+
+05-02 19:55 py2neo.client DEBUG    Adding connection pool for profile ConnectionProfile('bolt://localhost:7687')
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E194F043D0>
+05-02 19:55 py2neo.client.bolt DEBUG    [#0000] C: (Dialing <localhost:7687>)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] S: (Accepted)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] C: <BOLT>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] C: <PROTOCOL> 4.3~4.0 | 4.0 | 3.0 | 2.0
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] S: <PROTOCOL> 4.3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] C: HELLO {'user_agent': 'py2neo/2021.2.4 Python/3.11.9-final-0 (win32)', 'scheme': 'basic', 'principal': 'neo4j', 'credentials': '*******'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] C: (Sent 117 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] S: SUCCESS {'server': 'Neo4j/5.12.0', 'connection_id': 'bolt-76', 'hints': {'connection.recv_timeout_seconds': 120}}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F04490> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F04490> does not belong to pool <py2neo.client.ConnectionPool object at 0x000001E194F043D0>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F04490> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F04490> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Attempting to acquire read-write connection to 'neo4j'
+05-02 19:55 py2neo.client DEBUG    Using connection pool <py2neo.client.ConnectionPool object at 0x000001E194F043D0>
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E194F043D0>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F04490> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] C: RUN "MATCH (info:Information)<-[:containerData]-(data:Data) WHERE info.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials) RETURN DISTINCT data.name;" {} {'db': 'neo4j'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] C: (Sent 298 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] S: SUCCESS {'t_first': 1, 'fields': ['data.name']}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CB] S: SUCCESS {'bookmark': 'FB:kcwQSIyEovAPQ7KfNtCYVEHG38kDbJA=', 'type': 'r', 't_last': 0, 'db': 'neo4j', 'notifications': [{'severity': 'WARNING', 'description': "One of the labels in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing label name is: Information)", 'code': 'Neo.ClientNotification.Statement.UnknownLabelWarning', 'position': {'column': 13, 'offset': 12, 'line': 1}, 'title': 'The provided label is not in the database.', 'category': 'UNRECOGNIZED'}, {'severity': 'WARNING', 'description': "One of the relationship types in your query is not available in the database, make sure you didn't misspell it or that the label is available when you run this statement in your application (the missing relationship type is: containerData)", 'code': 'Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning', 'position': {'column': 29, 'offset': 28, 'line': 1}, 'title': 'The provided relationship type is not in the database.', 'category': 'UNRECOGNIZED'}]}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F04490> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Adding connection pool for profile ConnectionProfile('bolt://localhost:7687')
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E194F05550>
+05-02 19:55 py2neo.client.bolt DEBUG    [#0000] C: (Dialing <localhost:7687>)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] S: (Accepted)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] C: <BOLT>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] C: <PROTOCOL> 4.3~4.0 | 4.0 | 3.0 | 2.0
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] S: <PROTOCOL> 4.3
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] C: HELLO {'user_agent': 'py2neo/2021.2.4 Python/3.11.9-final-0 (win32)', 'scheme': 'basic', 'principal': 'neo4j', 'credentials': '*******'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] C: (Sent 117 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] S: SUCCESS {'server': 'Neo4j/5.12.0', 'connection_id': 'bolt-77', 'hints': {'connection.recv_timeout_seconds': 120}}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F05610> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F05610> does not belong to pool <py2neo.client.ConnectionPool object at 0x000001E194F05550>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F05610> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F05610> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client DEBUG    Attempting to acquire read-write connection to 'neo4j'
+05-02 19:55 py2neo.client DEBUG    Using connection pool <py2neo.client.ConnectionPool object at 0x000001E194F05550>
+05-02 19:55 py2neo.client DEBUG    Trying to acquire connection from pool <py2neo.client.ConnectionPool object at 0x000001E194F05550>
+05-02 19:55 py2neo.client DEBUG    Connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F05610> acquired by thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] C: RUN "MATCH (acc:Identity)-[:highPrivAppIAMs]->(app:Application) WHERE acc.name =~ '(?i).*Service.*|.*Support.*|.*Test.*' RETURN DISTINCT acc.name, app.name;" {} {'db': 'neo4j'}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] C: PULL {'n': -1, 'qid': -1}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] C: (Sent 185 bytes)
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] S: SUCCESS {'t_first': 0, 'fields': ['acc.name', 'app.name']}
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] S: RECORD * 1
+05-02 19:55 py2neo.client.bolt DEBUG    [#D0CC] S: SUCCESS {'bookmark': 'FB:kcwQSIyEovAPQ7KfNtCYVEHG38kDbJA=', 'type': 'r', 't_last': 0, 'db': 'neo4j'}
+05-02 19:55 py2neo.client DEBUG    Releasing connection <py2neo.client.bolt.Bolt4x3 object at 0x000001E194F05610> from thread <_MainThread(MainThread, started 84480)>
+05-02 19:55 patternReport INFO     Id: 3
+Pattern: excessivePrivAccounts
+Description: Existence of service, support or any other temporarily accounts with excessive permissions
+Neo4j_Assets:['Id ServiceAccount_1', 'App 2.0_Server_Windows']
+
+----------ATT&CK----------
+Tactic:
+05-02 19:55 patternReport INFO     
+Mitigations:
+05-02 19:55 patternReport INFO     
+
+
+
+05-02 19:55 patternReport INFO     ----------Summary----------
+
+Total patterns detected: 3
+05-02 19:55 patternReport INFO     1. remoteAccessMFA
+05-02 19:55 patternReport INFO     2. unencryptedData
+05-02 19:55 patternReport INFO     3. excessivePrivAccounts
