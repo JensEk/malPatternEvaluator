@@ -1,0 +1,86 @@
+{
+    "remoteAccessMFA": {
+        "description": "Missing Multi-Factor Authentication (MFA) on credentials that are used for a remote access services",
+        "badPattern": [
+            "MATCH (app:Application)-[*0..4]->(:Network) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*'",
+            "WITH app",
+            "MATCH (app)<-[*0..2]-(usr:Identity)<--(cred:Credentials)",
+            "WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*')",
+            "RETURN DISTINCT cred.name;"
+        ],    
+        "mitigation": [
+            "MATCH (cred:Credentials) WHERE cred.name = '$?'",
+            "WITH cred",
+            "CREATE (cred2:Credentials {metaconcept: 'Credentials', name: 'MFA'}), (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Initial Access": ["T1133", "T1078"],
+                    "Credential Access": ["T1110"]
+                },
+                "Mitigations": ["M1036", "M1032", "M1030", "M1017"]
+            }
+    },
+    "unencryptedData": {
+        "description": "Sensitive data stored without encryption",
+        "badPattern": [
+            "MATCH (data:Data)-[:containedData]->(:Application)",
+            "WHERE data.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials)",
+            "RETURN DISTINCT data.name;"
+        ],    
+        "mitigation": [
+            "MATCH (data:Data) WHERE data.name = '$?'",
+            "WITH data",
+            "CREATE (cred:Credentials {metaconcept: 'Credentials', name: 'EncryptionKey'}), (cred)<-[:encryptedData]-(data), (cred)-[:encryptCreds]->(data)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Credential Access": ["T1555", "T1003", "T1528", "T1649", "T1558", "T1539", "T1552"]
+                },
+                "Mitigations": ["M1047", "M1041", "M1027", "M1026", "M1022", "M1017", "M1032", "M1043", "M1040"]
+            }
+    },
+    "unencryptedInfo": {
+        "description": "Sensitive information stored without encryption",
+        "badPattern": [
+            "MATCH (info:Information)<-[:containerData]-(data:Data)",
+            "WHERE info.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials)",
+            "RETURN DISTINCT data.name;"
+        ],    
+        "mitigation": [
+            "MATCH (data:Data) WHERE data.name = '$?'",
+            "WITH data",
+            "CREATE (cred:Credentials {metaconcept: 'Credentials', name: 'EncryptionKey'}), (cred)<-[:encryptedData]-(data), (cred)-[:encryptCreds]->(data)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Credential Access": ["T1555", "T1003", "T1528", "T1649", "T1558", "T1539", "T1552"]
+                },
+                "Mitigations": ["M1047", "M1041", "M1027", "M1026", "M1022", "M1017", "M1032", "M1043", "M1040"]
+            }
+    },
+    "excessivePrivAccounts": {
+        "description": "Existence of service, support or any other temporarily accounts with excessive permissions",
+        "badPattern": [
+            "MATCH (acc:Identity)-[:highPrivAppIAMs]->(app:Application)",
+            "WHERE acc.name =~ '(?i).*Service.*|.*Support.*|.*Test.*'",
+            "RETURN DISTINCT acc.name, app.name;"
+        ],    
+        "mitigation": [
+            "MATCH (acc:Identity)-[r1:highPrivAppIAMs]->(app:Application),(acc:Identity)<-[r2:highPrivApps]-(app:Application)",
+            "WHERE acc.name = '$?' AND app.name = '$?'",
+            "DELETE r1,r2",
+            "CREATE (acc)-[:lowPrivAppIAMs]->(app), (acc)<-[:lowPrivApps]-(app)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    
+                },
+                "Mitigations": []
+            }
+    }
+}
