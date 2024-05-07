@@ -198,9 +198,12 @@ def apply_mitigation(patterns, detPat,
 
     print("Applying mitigations for: " + detPat['name'])
     newQuery = patterns[detPat['name']]['mitigation']
+    argId = 1
     for asset in detPat['assets']:
-        newQuery = newQuery.replace('$?', asset, 1)
-    print("Following updates made:\n" + newQuery)
+        arg = '$' + str(argId)
+        newQuery = newQuery.replace(arg, asset)
+        argId += 1
+    print("Following query is applied:\n" + newQuery)
     apply_query(newQuery)
     
 

@@ -1,0 +1,306 @@
+{
+  "metadata": {
+    "name": "M2",
+    "langVersion": "1.0.0",
+    "langID": "org.mal-lang.coreLang",
+    "malVersion": "0.1.0-SNAPSHOT",
+    "info": "Created by the mal-toolbox model python module."
+  },
+  "assets": {
+    "0": {
+      "name": "Comp C1",
+      "metaconcept": "Hardware",
+      "eid": "0",
+      "defenses": {}
+    },
+    "1": {
+      "name": "Server S1",
+      "metaconcept": "Hardware",
+      "eid": "1",
+      "defenses": {}
+    },
+    "2": {
+      "name": "Server S2",
+      "metaconcept": "Hardware",
+      "eid": "2",
+      "defenses": {}
+    },
+    "3": {
+      "name": "App 1.0_OS_Windows",
+      "metaconcept": "Application",
+      "eid": "3",
+      "defenses": {}
+    },
+    "4": {
+      "name": "App 2.0_Server_Windows",
+      "metaconcept": "Application",
+      "eid": "4",
+      "defenses": {}
+    },
+    "5": {
+      "name": "App 3.0_Server_Windows",
+      "metaconcept": "Application",
+      "eid": "5",
+      "defenses": {}
+    },
+    "6": {
+      "name": "Data Secret",
+      "metaconcept": "Data",
+      "eid": "6",
+      "defenses": {}
+    },
+    "7": {
+      "name": "Router FW_1",
+      "metaconcept": "RoutingFirewall",
+      "eid": "7",
+      "defenses": {}
+    },
+    "8": {
+      "name": "Net LAN_1",
+      "metaconcept": "Network",
+      "eid": "8",
+      "defenses": {}
+    },
+    "9": {
+      "name": "CR Net_LAN_1->Router_FW_1",
+      "metaconcept": "ConnectionRule",
+      "eid": "9",
+      "defenses": {}
+    },
+    "10": {
+      "name": "CR Net_LAN_1<->App_1.0",
+      "metaconcept": "ConnectionRule",
+      "eid": "10",
+      "defenses": {}
+    },
+    "11": {
+      "name": "CR Net_LAN_1<->App_2.0",
+      "metaconcept": "ConnectionRule",
+      "eid": "11",
+      "defenses": {}
+    },
+    "12": {
+      "name": "CR Net_LAN_1<->App_3.0",
+      "metaconcept": "ConnectionRule",
+      "eid": "12",
+      "defenses": {}
+    },
+    "13": {
+      "name": "Id Admin_1",
+      "metaconcept": "Identity",
+      "eid": "13",
+      "defenses": {}
+    },
+    "14": {
+      "name": "Id Employee_1",
+      "metaconcept": "Identity",
+      "eid": "14",
+      "defenses": {}
+    },
+    "15": {
+      "name": "Id ServiceAccount_1",
+      "metaconcept": "Identity",
+      "eid": "15",
+      "defenses": {}
+    },
+    "16": {
+      "name": "Priv highPriv_1",
+      "metaconcept": "Privileges",
+      "eid": "16",
+      "defenses": {}
+    },
+    "17": {
+      "name": "User_1",
+      "metaconcept": "User",
+      "eid": "17",
+      "defenses": {}
+    },
+    "18": {
+      "name": "User_2",
+      "metaconcept": "User",
+      "eid": "18",
+      "defenses": {}
+    }
+  },
+  "associations": [
+    {
+      "metaconcept": "SysExecution",
+      "association": {
+        "hostHardware": [
+          "0"
+        ],
+        "sysExecutedApps": [
+          "3"
+        ]
+      }
+    },
+    {
+      "metaconcept": "SysExecution",
+      "association": {
+        "hostHardware": [
+          "1"
+        ],
+        "sysExecutedApps": [
+          "4"
+        ]
+      }
+    },
+    {
+      "metaconcept": "SysExecution",
+      "association": {
+        "hostHardware": [
+          "2"
+        ],
+        "sysExecutedApps": [
+          "5"
+        ]
+      }
+    },
+    {
+      "metaconcept": "AppContainment",
+      "association": {
+        "containedData": [
+          "6"
+        ],
+        "containingApp": [
+          "5"
+        ]
+      }
+    },
+    {
+      "metaconcept": "ApplicationConnection",
+      "association": {
+        "applications": [
+          "3"
+        ],
+        "appConnections": [
+          "10"
+        ]
+      }
+    },
+    {
+      "metaconcept": "ApplicationConnection",
+      "association": {
+        "applications": [
+          "4"
+        ],
+        "appConnections": [
+          "11"
+        ]
+      }
+    },
+    {
+      "metaconcept": "ApplicationConnection",
+      "association": {
+        "applications": [
+          "5"
+        ],
+        "appConnections": [
+          "12"
+        ]
+      }
+    },
+    {
+      "metaconcept": "OutNetworkConnection",
+      "association": {
+        "outNetworks": [
+          "8"
+        ],
+        "outgoingNetConnections": [
+          "9"
+        ]
+      }
+    },
+    {
+      "metaconcept": "NetworkConnection",
+      "association": {
+        "networks": [
+          "8"
+        ],
+        "netConnections": [
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    },
+    {
+      "metaconcept": "FirewallConnectionRule",
+      "association": {
+        "routingFirewalls": [
+          "7"
+        ],
+        "connectionRules": [
+          "9"
+        ]
+      }
+    },
+    {
+      "metaconcept": "ReadPrivileges",
+      "association": {
+        "readingIAMs": [
+          "16"
+        ],
+        "readPrivData": [
+          "6"
+        ]
+      }
+    },
+    {
+      "metaconcept": "HighPrivilegeApplicationAccess",
+      "association": {
+        "highPrivAppIAMs": [
+          "13"
+        ],
+        "highPrivApps": [
+          "3"
+        ]
+      }
+    },
+    {
+      "metaconcept": "LowPrivilegeApplicationAccess",
+      "association": {
+        "lowPrivAppIAMs": [
+          "14"
+        ],
+        "lowPrivApps": [
+          "3"
+        ]
+      }
+    },
+    {
+      "metaconcept": "HighPrivilegeApplicationAccess",
+      "association": {
+        "highPrivAppIAMs": [
+          "15"
+        ],
+        "highPrivApps": [
+          "4"
+        ]
+      }
+    },
+    {
+      "metaconcept": "UserAssignedIdentities",
+      "association": {
+        "users": [
+          "17"
+        ],
+        "userIds": [
+          "13"
+        ]
+      }
+    },
+    {
+      "metaconcept": "UserAssignedIdentities",
+      "association": {
+        "users": [
+          "18"
+        ],
+        "userIds": [
+          "14"
+        ]
+      }
+    }
+  ],
+  "attackers": {}
+}

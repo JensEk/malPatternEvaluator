@@ -9,7 +9,7 @@
             "RETURN DISTINCT cred.name;"
         ], 
         "mitigation": [
-            "MATCH (cred:Credentials) WHERE cred.name = '$?'",
+            "MATCH (cred:Credentials) WHERE cred.name = '$1'",
             "WITH cred",
             "CREATE (cred2:Credentials {metaconcept: 'Credentials', name: 'MFA'}), (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred)"
         ],
@@ -30,7 +30,7 @@
             "RETURN DISTINCT data.name;"
         ],    
         "mitigation": [
-            "MATCH (data:Data) WHERE data.name = '$?'",
+            "MATCH (data:Data) WHERE data.name = '$1'",
             "WITH data",
             "CREATE (cred:Credentials {metaconcept: 'Credentials', name: 'EncryptionKey'}), (cred)<-[:encryptedData]-(data), (cred)-[:encryptCreds]->(data)"
         ],
@@ -50,7 +50,7 @@
             "RETURN DISTINCT data.name;"
         ],    
         "mitigation": [
-            "MATCH (data:Data) WHERE data.name = '$?'",
+            "MATCH (data:Data) WHERE data.name = '$1'",
             "WITH data",
             "CREATE (cred:Credentials {metaconcept: 'Credentials', name: 'EncryptionKey'}), (cred)<-[:encryptedData]-(data), (cred)-[:encryptCreds]->(data)"
         ],
@@ -62,16 +62,16 @@
                 "Mitigations": ["M1047", "M1041", "M1027", "M1026", "M1022", "M1017", "M1032", "M1043", "M1040"]
             }
     },
-    "excessivePrivAccounts": {
-        "description": "Existence of service, guest or any other temporarily accounts with excessive permissions may facilitate initial access and lateral movement.",
+    "shadowAdmins": {
+        "description": "User accounts that have inadvertently been assigned admin privilige may enable attackers to control accounts with unrestricted access and movement.",
         "badPattern": [
             "MATCH (acc:Identity)-[:highPrivAppIAMs]->(app:Application)",
-            "WHERE acc.name =~ '(?i).*Service.*|.*Support.*|.*Test.*|.*Temporarily.*|.*Default.*|.*Guest.*'",
+            "WHERE NOT acc.name =~ '(?i).*Admin.*|.*Root.*|.*Superuser.*'",
             "RETURN DISTINCT acc.name, app.name;"
         ],    
         "mitigation": [
             "MATCH (acc:Identity)-[r1:highPrivAppIAMs]->(app:Application),(acc:Identity)<-[r2:highPrivApps]-(app:Application)",
-            "WHERE acc.name = '$?' AND app.name = '$?'",
+            "WHERE acc.name = '$1' AND app.name = '$2'",
             "DELETE r1,r2",
             "CREATE (acc)-[:lowPrivAppIAMs]->(app), (acc)<-[:lowPrivApps]-(app)"
         ],
@@ -79,10 +79,32 @@
             {
                 "Tactic": {
                     "Initial Access": ["T1199", "T1078"],
-                    "Privilege Escalation": ["1078"]
+                    "Privilege Escalation": ["T1078"]
                     
                 },
                 "Mitigations": ["M1032", "M1018", "M1026", "M1036"]
+            }
+    },
+    "highPrivServiceAccounts": {
+        "description": "Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilige escalation.",
+        "badPattern": [
+            "MATCH (acc:Identity)-[:highPrivAppIAMs]->(app:Application)-[*0..2]->(cr:ConnectionRule)-[r1]->(net:Network)-[r3]->(cr2:ConnectionRule)--(fw:RoutingFirewall), (cr)<-[r2]-(net)<-[r4]-(cr2) ",
+            "WHERE acc.name =~ '(?i).*Service.*|.*Support.*'",
+            "RETURN DISTINCT cr.name, net.name, fw.name, type(r1), type(r2), type(r3), type(r4);"
+        ],    
+        "mitigation": [
+            "MATCH (cr:ConnectionRule {name: '$1'})-[r1]->(net:Network {name: '$2'}), (cr)<-[r2]-(net), (fw:RoutingFirewall {name: '$3'})",
+            "DELETE r1,r2",
+            "CREATE (net2:Network {metaconcept: 'Network', name: 'Net segmentedNetwork'}), (cr)-[:$4]->(net2), (cr)<-[:$5]-(net2), (cr2:ConnectionRule {metaconcept: 'ConnectionRule', name: 'CR Net_segmentedNetwork->$3'}), (net2)-[:$6]->(cr2), (net2)<-[:$7]-(cr2), (cr2)-[:connectionRules]->(fw), (cr2)<-[:routingFirewalls]-(fw)"
+    
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    
+                    
+                },
+                "Mitigations": []
             }
     }
 }
