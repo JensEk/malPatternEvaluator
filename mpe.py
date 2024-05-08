@@ -110,8 +110,8 @@ def analyze_patterns(patterns,
     detPatterns = {}
     for name,attribs in patterns.items():
         results = apply_query(attribs['badPattern'])
-        
-        if len(results) > 0:
+      
+        if (results != None) and (len(results) > 0):
             tactics = attribs['attackData']['Tactic']
             mitigations = attribs['attackData']['Mitigations']
             assets = [v for res in results for v in res.values()]

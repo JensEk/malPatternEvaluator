@@ -127,3 +127,763 @@ Mitigations:
 Total patterns detected: 2
 1. unencryptedData
 2. highPrivServiceAccounts
+
+***
+----------Attack Patterns Report----------
+
+
+Time: 2024-05-08 23:43:21.628344
+
+
+***
+----------Attack Patterns Report----------
+
+
+Time: 2024-05-08 23:44:46.544733
+
+
+***
+----------Attack Patterns Report----------
+
+
+Time: 2024-05-08 23:46:07.902506
+
+
+***
+----------Attack Patterns Report----------
+
+
+Time: 2024-05-08 23:50:09.548750
+
+
+***
+----------Attack Patterns Report----------
+
+
+Time: 2024-05-08 23:53:48.578763
+
+
+***
+----------Attack Patterns Report----------
+
+
+Time: 2024-05-09 00:01:18.901146
+
+Id: 1
+Pattern: unencryptedData
+Description: Identifies [Data] linked to an [Application] without associated {encryptCreds}.
+Impact: Sensitive data (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.
+Neo4j_Assets:['Data Secret']
+
+----------ATT&CK----------
+Tactic:
+
+      Credential Access:
+
+                Technique: Credentials from Password Stores
+                ID: T1555
+                Description: Adversaries may search for common password storage locations to obtain user credentials. Passwords are stored in several places on a system, depending on the operating system or application holding the credentials. There are also specific applications and services that store passwords to make them easier for users to manage and maintain, such as password managers and cloud secrets vaults. Once credentials are obtained, they can be used to perform lateral movement and access restricted information.
+                URL: https://attack.mitre.org/techniques/T1555
+                CAPEC: {'CAPEC-150': 'Collect Data from Common Resource Locations', 'CAPEC-545': 'Pull Data from System Resources'}
+
+                Technique: OS Credential Dumping
+                ID: T1003
+                Description: Adversaries may attempt to dump credentials to obtain account login and credential material, normally in the form of a hash or a clear text password, from the operating system and software. Credentials can then be used to perform [Lateral Movement](https://attack.mitre.org/tactics/TA0008) and access restricted information.
+                URL: https://attack.mitre.org/techniques/T1003
+                CAPEC: {'CAPEC-150': 'Collect Data from Common Resource Locations'}
+
+                Technique: Steal Application Access Token
+                ID: T1528
+                Description: Adversaries can steal application access tokens as a means of acquiring credentials to access remote systems and resources.
+                URL: https://attack.mitre.org/techniques/T1528
+                CAPEC: {'CAPEC-21': 'Exploitation of Trusted Identifiers'}
+
+                Technique: Steal or Forge Authentication Certificates
+                ID: T1649
+                Description: Adversaries may steal or forge certificates used for authentication to access remote systems or resources. Digital certificates are often used to sign and encrypt messages and/or files. Certificates are also used as authentication material. For example, Azure AD device certificates and Active Directory Certificate Services (AD CS) certificates bind to an identity and can be used as credentials for domain accounts.(Citation: O365 Blog Azure AD Device IDs)(Citation: Microsoft AD CS Overview)
+                URL: https://attack.mitre.org/techniques/T1649
+                CAPEC: {}
+
+                Technique: Steal or Forge Kerberos Tickets
+                ID: T1558
+                Description: Adversaries may attempt to subvert Kerberos authentication by stealing or forging Kerberos tickets to enable [Pass the Ticket](https://attack.mitre.org/techniques/T1550/003). Kerberos is an authentication protocol widely used in modern Windows domain environments. In Kerberos environments, referred to as “realms”, there are three basic participants: client, service, and Key Distribution Center (KDC).(Citation: ADSecurity Kerberos Ring Decoder) Clients request access to a service and through the exchange of Kerberos tickets, originating from KDC, they are granted access after having successfully authenticated. The KDC is responsible for both authentication and ticket granting.  Adversaries may attempt to abuse Kerberos by stealing tickets or forging tickets to enable unauthorized access.
+                URL: https://attack.mitre.org/techniques/T1558
+                CAPEC: {'CAPEC-509': 'Kerberoasting', 'CAPEC-652': 'Use of Known Kerberos Credentials'}
+
+                Technique: Steal Web Session Cookie
+                ID: T1539
+                Description: An adversary may steal web application or service session cookies and use them to gain access to web applications or Internet services as an authenticated user without needing credentials. Web applications and services often use session cookies as an authentication token after a user has authenticated to a website.
+                URL: https://attack.mitre.org/techniques/T1539
+                CAPEC: {'CAPEC-21': 'Exploitation of Trusted Identifiers', 'CAPEC-31': 'Accessing/Intercepting/Modifying HTTP Cookies'}
+
+                Technique: Unsecured Credentials
+                ID: T1552
+                Description: Adversaries may search compromised systems to find and obtain insecurely stored credentials. These credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. [Bash History](https://attack.mitre.org/techniques/T1552/003)), operating system or application-specific repositories (e.g. [Credentials in Registry](https://attack.mitre.org/techniques/T1552/002)), or other specialized files/artifacts (e.g. [Private Keys](https://attack.mitre.org/techniques/T1552/004)).
+                URL: https://attack.mitre.org/techniques/T1552
+                CAPEC: {'CAPEC-37': 'Retrieve Embedded Sensitive Data', 'CAPEC-191': 'Read Sensitive Constants Within an Executable', 'CAPEC-474': 'Signature Spoofing by Key Theft', 'CAPEC-485': 'Signature Spoofing by Key Recreation', 'CAPEC-639': 'Probe System Files', 'CAPEC-647': 'Collect Data from Registries'}
+
+Mitigations:
+
+                Mitigation: Audit
+                ID: M1047
+                Description: Perform audits or scans of systems, permissions, insecure software, insecure configurations, etc. to identify potential weaknesses.
+                URL: https://attack.mitre.org/mitigations/M1047
+
+                Mitigation: Encrypt Sensitive Information
+                ID: M1041
+                Description: Protect sensitive information with strong encryption.
+                URL: https://attack.mitre.org/mitigations/M1041
+
+                Mitigation: Password Policies
+                ID: M1027
+                Description: Set and enforce secure password policies for accounts.
+                URL: https://attack.mitre.org/mitigations/M1027
+
+                Mitigation: Privileged Account Management
+                ID: M1026
+                Description: Manage the creation, modification, use, and permissions associated to privileged accounts, including SYSTEM and root.
+                URL: https://attack.mitre.org/mitigations/M1026
+
+                Mitigation: Restrict File and Directory Permissions
+                ID: M1022
+                Description: Restrict access by setting directory and file permissions that are not specific to users or privileged accounts.
+                URL: https://attack.mitre.org/mitigations/M1022
+
+                Mitigation: User Training
+                ID: M1017
+                Description: Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.
+                URL: https://attack.mitre.org/mitigations/M1017
+
+                Mitigation: Multi-factor Authentication
+                ID: M1032
+                Description: Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator.
+                URL: https://attack.mitre.org/mitigations/M1032
+
+                Mitigation: Credential Access Protection
+                ID: M1043
+                Description: Use capabilities to prevent successful credential access by adversaries; including blocking forms of credential dumping.
+                URL: https://attack.mitre.org/mitigations/M1043
+
+                Mitigation: Behavior Prevention on Endpoint
+                ID: M1040
+                Description: Use capabilities to prevent suspicious behavior patterns from occurring on endpoint systems. This could include suspicious process, file, API call, etc. behavior.
+                URL: https://attack.mitre.org/mitigations/M1040
+
+
+
+
+Id: 2
+Pattern: highPrivServiceAccounts
+Description: Identifies service account [Identity] with {highPrivAppIAMs} association.
+Impact: Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilige escalation.
+Neo4j_Assets:['CR Net_LAN_1<->App_2.0', 'Net LAN_1', 'Router FW_1', 'netConnections', 'networks', 'outNetworks', 'outgoingNetConnections']
+
+----------ATT&CK----------
+Tactic:
+
+      Privilege Escalation:
+
+                Technique: Valid Accounts
+                ID: T1078
+                Description: Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.
+                URL: https://attack.mitre.org/techniques/T1078
+                CAPEC: {'CAPEC-70': 'Try Common or Default Usernames and Passwords', 'CAPEC-560': 'Use of Known Domain Credentials'}
+
+      Discovery:
+
+                Technique: Account Discovery
+                ID: T1087
+                Description: Adversaries may attempt to get a listing of valid accounts, usernames, or email addresses on a system or within a compromised environment. This information can help adversaries determine which accounts exist, which can aid in follow-on behavior such as brute-forcing, spear-phishing attacks, or account takeovers (e.g., [Valid Accounts](https://attack.mitre.org/techniques/T1078)).
+                URL: https://attack.mitre.org/techniques/T1087
+                CAPEC: {'CAPEC-575': 'Account Footprinting'}
+
+      Lateral Movement:
+
+                Technique: Software Deployment Tools
+                ID: T1072
+                Description: Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network. Third-party applications and software deployment systems may be in use in the network environment for administration purposes (e.g., SCCM, HBSS, Altiris, etc.).  
+                URL: https://attack.mitre.org/techniques/T1072
+                CAPEC: {'CAPEC-187': 'Malicious Automated Software Update via Redirection', 'CAPEC-657': 'Malicious Automated Software Update via Spoofing'}
+
+                Technique: Remote Services
+                ID: T1021
+                Description: Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into a service that accepts remote connections, such as telnet, SSH, and VNC. The adversary may then perform actions as the logged-on user.
+                URL: https://attack.mitre.org/techniques/T1021
+                CAPEC: {'CAPEC-555': 'Remote Services with Stolen Credentials', 'CAPEC-561': 'Windows Admin Shares with Stolen Credentials'}
+
+Mitigations:
+
+                Mitigation: Password Policies
+                ID: M1027
+                Description: Set and enforce secure password policies for accounts.
+                URL: https://attack.mitre.org/mitigations/M1027
+
+                Mitigation: Account Use Policies
+                ID: M1036
+                Description: Configure features related to account use like login attempt lockouts, specific login times, etc.
+                URL: https://attack.mitre.org/mitigations/M1036
+
+                Mitigation: Limit Access to Resource Over Network
+                ID: M1035
+                Description: Prevent access to file shares, remote access to systems, unnecessary services. Mechanisms to limit access may include use of network concentrators, RDP gateways, etc.
+                URL: https://attack.mitre.org/mitigations/M1035
+
+                Mitigation: Network Segmentation
+                ID: M1030
+                Description: Architect sections of the network to isolate critical systems, functions, or resources. Use physical and logical segmentation to prevent access to potentially sensitive systems and information. Use a DMZ to contain any internet-facing services that should not be exposed from the internal network. Configure separate virtual private cloud (VPC) instances to isolate critical cloud systems.
+                URL: https://attack.mitre.org/mitigations/M1030
+
+                Mitigation: Limit Software Installation
+                ID: M1033
+                Description: Block users or groups from installing unapproved software.
+                URL: https://attack.mitre.org/mitigations/M1033
+
+
+
+
+Id: 3
+Pattern: userPhising
+Description: Identifies [RoutingFirewall] where a [User] exists but [IDPS] is missing.
+Impact: User accounts may be target for phising attempts where malicious attachments or links may be detected and blocked by an IDS/IPS.
+Neo4j_Assets:['Router FW_1', 'CR Net_LAN_1->Router_FW_1']
+
+----------ATT&CK----------
+Tactic:
+
+      Initial Access:
+
+                Technique: Phishing
+                ID: T1566
+                Description: Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.
+                URL: https://attack.mitre.org/techniques/T1566
+                CAPEC: {'CAPEC-98': 'Phishing', 'CAPEC-163': 'Spear Phishing'}
+
+      Lateral Movement:
+
+                Technique: Internal Spearphishing
+                ID: T1534
+                Description: Adversaries may use internal spearphishing to gain access to additional information or exploit other users within the same organization after they already have access to accounts or systems within the environment. Internal spearphishing is multi-staged campaign where an email account is owned either by controlling the user's device with previously installed malware or by compromising the account credentials of the user. Adversaries attempt to take advantage of a trusted internal account to increase the likelihood of tricking the target into falling for the phish attempt.(Citation: Trend Micro When Phishing Starts from the Inside 2017)
+                URL: https://attack.mitre.org/techniques/T1534
+                CAPEC: {'CAPEC-163': 'Spear Phishing'}
+
+      Credential Access:
+
+                Technique: Input Capture
+                ID: T1056
+                Description: Adversaries may use methods of capturing user input to obtain credentials or collect information. During normal system usage, users often provide credentials to various different locations, such as login pages/portals or system dialog boxes. Input capture mechanisms may be transparent to the user (e.g. [Credential API Hooking](https://attack.mitre.org/techniques/T1056/004)) or rely on deceiving the user into providing input into what they believe to be a genuine service (e.g. [Web Portal Capture](https://attack.mitre.org/techniques/T1056/003)).
+                URL: https://attack.mitre.org/techniques/T1056
+                CAPEC: {'CAPEC-383': 'Harvesting Information via API Event Monitoring', 'CAPEC-568': 'Capture Credentials via Keylogger', 'CAPEC-569': 'Collect Data as Provided by Users', 'CAPEC-654': 'Credential Prompt Impersonation'}
+
+Mitigations:
+
+                Mitigation: Antivirus/Antimalware
+                ID: M1049
+                Description: Use signatures or heuristics to detect malicious software.
+                URL: https://attack.mitre.org/mitigations/M1049
+
+                Mitigation: Network Intrusion Prevention
+                ID: M1031
+                Description: Use intrusion detection signatures to block traffic at network boundaries.
+                URL: https://attack.mitre.org/mitigations/M1031
+
+                Mitigation: User Training
+                ID: M1017
+                Description: Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.
+                URL: https://attack.mitre.org/mitigations/M1017
+
+
+
+
+----------Summary----------
+
+Total patterns detected: 3
+1. unencryptedData
+2. highPrivServiceAccounts
+3. userPhising
+
+***
+----------Attack Patterns Report----------
+
+
+Time: 2024-05-09 00:03:54.802501
+
+Id: 1
+Pattern: unencryptedData
+Description: Identifies [Data] linked to an [Application] without associated {encryptCreds}.
+Impact: Sensitive data (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.
+Neo4j_Assets:['Data Secret']
+
+----------ATT&CK----------
+Tactic:
+
+      Credential Access:
+
+                Technique: Credentials from Password Stores
+                ID: T1555
+                Description: Adversaries may search for common password storage locations to obtain user credentials. Passwords are stored in several places on a system, depending on the operating system or application holding the credentials. There are also specific applications and services that store passwords to make them easier for users to manage and maintain, such as password managers and cloud secrets vaults. Once credentials are obtained, they can be used to perform lateral movement and access restricted information.
+                URL: https://attack.mitre.org/techniques/T1555
+                CAPEC: {'CAPEC-150': 'Collect Data from Common Resource Locations', 'CAPEC-545': 'Pull Data from System Resources'}
+
+                Technique: OS Credential Dumping
+                ID: T1003
+                Description: Adversaries may attempt to dump credentials to obtain account login and credential material, normally in the form of a hash or a clear text password, from the operating system and software. Credentials can then be used to perform [Lateral Movement](https://attack.mitre.org/tactics/TA0008) and access restricted information.
+                URL: https://attack.mitre.org/techniques/T1003
+                CAPEC: {'CAPEC-150': 'Collect Data from Common Resource Locations'}
+
+                Technique: Steal Application Access Token
+                ID: T1528
+                Description: Adversaries can steal application access tokens as a means of acquiring credentials to access remote systems and resources.
+                URL: https://attack.mitre.org/techniques/T1528
+                CAPEC: {'CAPEC-21': 'Exploitation of Trusted Identifiers'}
+
+                Technique: Steal or Forge Authentication Certificates
+                ID: T1649
+                Description: Adversaries may steal or forge certificates used for authentication to access remote systems or resources. Digital certificates are often used to sign and encrypt messages and/or files. Certificates are also used as authentication material. For example, Azure AD device certificates and Active Directory Certificate Services (AD CS) certificates bind to an identity and can be used as credentials for domain accounts.(Citation: O365 Blog Azure AD Device IDs)(Citation: Microsoft AD CS Overview)
+                URL: https://attack.mitre.org/techniques/T1649
+                CAPEC: {}
+
+                Technique: Steal or Forge Kerberos Tickets
+                ID: T1558
+                Description: Adversaries may attempt to subvert Kerberos authentication by stealing or forging Kerberos tickets to enable [Pass the Ticket](https://attack.mitre.org/techniques/T1550/003). Kerberos is an authentication protocol widely used in modern Windows domain environments. In Kerberos environments, referred to as “realms”, there are three basic participants: client, service, and Key Distribution Center (KDC).(Citation: ADSecurity Kerberos Ring Decoder) Clients request access to a service and through the exchange of Kerberos tickets, originating from KDC, they are granted access after having successfully authenticated. The KDC is responsible for both authentication and ticket granting.  Adversaries may attempt to abuse Kerberos by stealing tickets or forging tickets to enable unauthorized access.
+                URL: https://attack.mitre.org/techniques/T1558
+                CAPEC: {'CAPEC-509': 'Kerberoasting', 'CAPEC-652': 'Use of Known Kerberos Credentials'}
+
+                Technique: Steal Web Session Cookie
+                ID: T1539
+                Description: An adversary may steal web application or service session cookies and use them to gain access to web applications or Internet services as an authenticated user without needing credentials. Web applications and services often use session cookies as an authentication token after a user has authenticated to a website.
+                URL: https://attack.mitre.org/techniques/T1539
+                CAPEC: {'CAPEC-21': 'Exploitation of Trusted Identifiers', 'CAPEC-31': 'Accessing/Intercepting/Modifying HTTP Cookies'}
+
+                Technique: Unsecured Credentials
+                ID: T1552
+                Description: Adversaries may search compromised systems to find and obtain insecurely stored credentials. These credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. [Bash History](https://attack.mitre.org/techniques/T1552/003)), operating system or application-specific repositories (e.g. [Credentials in Registry](https://attack.mitre.org/techniques/T1552/002)), or other specialized files/artifacts (e.g. [Private Keys](https://attack.mitre.org/techniques/T1552/004)).
+                URL: https://attack.mitre.org/techniques/T1552
+                CAPEC: {'CAPEC-37': 'Retrieve Embedded Sensitive Data', 'CAPEC-191': 'Read Sensitive Constants Within an Executable', 'CAPEC-474': 'Signature Spoofing by Key Theft', 'CAPEC-485': 'Signature Spoofing by Key Recreation', 'CAPEC-639': 'Probe System Files', 'CAPEC-647': 'Collect Data from Registries'}
+
+Mitigations:
+
+                Mitigation: Audit
+                ID: M1047
+                Description: Perform audits or scans of systems, permissions, insecure software, insecure configurations, etc. to identify potential weaknesses.
+                URL: https://attack.mitre.org/mitigations/M1047
+
+                Mitigation: Encrypt Sensitive Information
+                ID: M1041
+                Description: Protect sensitive information with strong encryption.
+                URL: https://attack.mitre.org/mitigations/M1041
+
+                Mitigation: Password Policies
+                ID: M1027
+                Description: Set and enforce secure password policies for accounts.
+                URL: https://attack.mitre.org/mitigations/M1027
+
+                Mitigation: Privileged Account Management
+                ID: M1026
+                Description: Manage the creation, modification, use, and permissions associated to privileged accounts, including SYSTEM and root.
+                URL: https://attack.mitre.org/mitigations/M1026
+
+                Mitigation: Restrict File and Directory Permissions
+                ID: M1022
+                Description: Restrict access by setting directory and file permissions that are not specific to users or privileged accounts.
+                URL: https://attack.mitre.org/mitigations/M1022
+
+                Mitigation: User Training
+                ID: M1017
+                Description: Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.
+                URL: https://attack.mitre.org/mitigations/M1017
+
+                Mitigation: Multi-factor Authentication
+                ID: M1032
+                Description: Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator.
+                URL: https://attack.mitre.org/mitigations/M1032
+
+                Mitigation: Credential Access Protection
+                ID: M1043
+                Description: Use capabilities to prevent successful credential access by adversaries; including blocking forms of credential dumping.
+                URL: https://attack.mitre.org/mitigations/M1043
+
+                Mitigation: Behavior Prevention on Endpoint
+                ID: M1040
+                Description: Use capabilities to prevent suspicious behavior patterns from occurring on endpoint systems. This could include suspicious process, file, API call, etc. behavior.
+                URL: https://attack.mitre.org/mitigations/M1040
+
+
+
+
+Id: 2
+Pattern: highPrivServiceAccounts
+Description: Identifies service account [Identity] with {highPrivAppIAMs} association.
+Impact: Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilige escalation.
+Neo4j_Assets:['CR Net_LAN_1<->App_2.0', 'Net LAN_1', 'Router FW_1', 'netConnections', 'networks', 'outNetworks', 'outgoingNetConnections']
+
+----------ATT&CK----------
+Tactic:
+
+      Privilege Escalation:
+
+                Technique: Valid Accounts
+                ID: T1078
+                Description: Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.
+                URL: https://attack.mitre.org/techniques/T1078
+                CAPEC: {'CAPEC-70': 'Try Common or Default Usernames and Passwords', 'CAPEC-560': 'Use of Known Domain Credentials'}
+
+      Discovery:
+
+                Technique: Account Discovery
+                ID: T1087
+                Description: Adversaries may attempt to get a listing of valid accounts, usernames, or email addresses on a system or within a compromised environment. This information can help adversaries determine which accounts exist, which can aid in follow-on behavior such as brute-forcing, spear-phishing attacks, or account takeovers (e.g., [Valid Accounts](https://attack.mitre.org/techniques/T1078)).
+                URL: https://attack.mitre.org/techniques/T1087
+                CAPEC: {'CAPEC-575': 'Account Footprinting'}
+
+      Lateral Movement:
+
+                Technique: Software Deployment Tools
+                ID: T1072
+                Description: Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network. Third-party applications and software deployment systems may be in use in the network environment for administration purposes (e.g., SCCM, HBSS, Altiris, etc.).  
+                URL: https://attack.mitre.org/techniques/T1072
+                CAPEC: {'CAPEC-187': 'Malicious Automated Software Update via Redirection', 'CAPEC-657': 'Malicious Automated Software Update via Spoofing'}
+
+                Technique: Remote Services
+                ID: T1021
+                Description: Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into a service that accepts remote connections, such as telnet, SSH, and VNC. The adversary may then perform actions as the logged-on user.
+                URL: https://attack.mitre.org/techniques/T1021
+                CAPEC: {'CAPEC-555': 'Remote Services with Stolen Credentials', 'CAPEC-561': 'Windows Admin Shares with Stolen Credentials'}
+
+Mitigations:
+
+                Mitigation: Password Policies
+                ID: M1027
+                Description: Set and enforce secure password policies for accounts.
+                URL: https://attack.mitre.org/mitigations/M1027
+
+                Mitigation: Account Use Policies
+                ID: M1036
+                Description: Configure features related to account use like login attempt lockouts, specific login times, etc.
+                URL: https://attack.mitre.org/mitigations/M1036
+
+                Mitigation: Limit Access to Resource Over Network
+                ID: M1035
+                Description: Prevent access to file shares, remote access to systems, unnecessary services. Mechanisms to limit access may include use of network concentrators, RDP gateways, etc.
+                URL: https://attack.mitre.org/mitigations/M1035
+
+                Mitigation: Network Segmentation
+                ID: M1030
+                Description: Architect sections of the network to isolate critical systems, functions, or resources. Use physical and logical segmentation to prevent access to potentially sensitive systems and information. Use a DMZ to contain any internet-facing services that should not be exposed from the internal network. Configure separate virtual private cloud (VPC) instances to isolate critical cloud systems.
+                URL: https://attack.mitre.org/mitigations/M1030
+
+                Mitigation: Limit Software Installation
+                ID: M1033
+                Description: Block users or groups from installing unapproved software.
+                URL: https://attack.mitre.org/mitigations/M1033
+
+
+
+
+Id: 3
+Pattern: userPhising
+Description: Identifies [RoutingFirewall] where a [User] exists but [IDPS] is missing.
+Impact: User accounts may be target for phising attempts where malicious attachments or links may be detected and blocked by an IDS/IPS.
+Neo4j_Assets:['Router FW_1', 'CR Net_LAN_1->Router_FW_1']
+
+----------ATT&CK----------
+Tactic:
+
+      Initial Access:
+
+                Technique: Phishing
+                ID: T1566
+                Description: Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.
+                URL: https://attack.mitre.org/techniques/T1566
+                CAPEC: {'CAPEC-98': 'Phishing', 'CAPEC-163': 'Spear Phishing'}
+
+      Lateral Movement:
+
+                Technique: Internal Spearphishing
+                ID: T1534
+                Description: Adversaries may use internal spearphishing to gain access to additional information or exploit other users within the same organization after they already have access to accounts or systems within the environment. Internal spearphishing is multi-staged campaign where an email account is owned either by controlling the user's device with previously installed malware or by compromising the account credentials of the user. Adversaries attempt to take advantage of a trusted internal account to increase the likelihood of tricking the target into falling for the phish attempt.(Citation: Trend Micro When Phishing Starts from the Inside 2017)
+                URL: https://attack.mitre.org/techniques/T1534
+                CAPEC: {'CAPEC-163': 'Spear Phishing'}
+
+      Credential Access:
+
+                Technique: Input Capture
+                ID: T1056
+                Description: Adversaries may use methods of capturing user input to obtain credentials or collect information. During normal system usage, users often provide credentials to various different locations, such as login pages/portals or system dialog boxes. Input capture mechanisms may be transparent to the user (e.g. [Credential API Hooking](https://attack.mitre.org/techniques/T1056/004)) or rely on deceiving the user into providing input into what they believe to be a genuine service (e.g. [Web Portal Capture](https://attack.mitre.org/techniques/T1056/003)).
+                URL: https://attack.mitre.org/techniques/T1056
+                CAPEC: {'CAPEC-383': 'Harvesting Information via API Event Monitoring', 'CAPEC-568': 'Capture Credentials via Keylogger', 'CAPEC-569': 'Collect Data as Provided by Users', 'CAPEC-654': 'Credential Prompt Impersonation'}
+
+Mitigations:
+
+                Mitigation: Antivirus/Antimalware
+                ID: M1049
+                Description: Use signatures or heuristics to detect malicious software.
+                URL: https://attack.mitre.org/mitigations/M1049
+
+                Mitigation: Network Intrusion Prevention
+                ID: M1031
+                Description: Use intrusion detection signatures to block traffic at network boundaries.
+                URL: https://attack.mitre.org/mitigations/M1031
+
+                Mitigation: User Training
+                ID: M1017
+                Description: Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.
+                URL: https://attack.mitre.org/mitigations/M1017
+
+
+
+
+----------Summary----------
+
+Total patterns detected: 3
+1. unencryptedData
+2. highPrivServiceAccounts
+3. userPhising
+
+***
+----------Attack Patterns Report----------
+
+
+Time: 2024-05-09 00:13:45.873531
+
+Id: 1
+Pattern: remoteAccessMFA
+Description: Identifies [Credentials] linked to a remote access [Application] without an associated {ConditionalAuthentication}.
+Impact: Missing Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials.
+Neo4j_Assets:['Cred Employee_1']
+
+----------ATT&CK----------
+Tactic:
+
+      Initial Access:
+
+                Technique: External Remote Services
+                ID: T1133
+                Description: Adversaries may leverage external-facing remote services to initially access and/or persist within a network. Remote services such as VPNs, Citrix, and other access mechanisms allow users to connect to internal enterprise network resources from external locations. There are often remote service gateways that manage connections and credential authentication for these services. Services such as [Windows Remote Management](https://attack.mitre.org/techniques/T1021/006) and [VNC](https://attack.mitre.org/techniques/T1021/005) can also be used externally.(Citation: MacOS VNC software for Remote Desktop)
+                URL: https://attack.mitre.org/techniques/T1133
+                CAPEC: {'CAPEC-555': 'Remote Services with Stolen Credentials'}
+
+                Technique: Valid Accounts
+                ID: T1078
+                Description: Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.
+                URL: https://attack.mitre.org/techniques/T1078
+                CAPEC: {'CAPEC-70': 'Try Common or Default Usernames and Passwords', 'CAPEC-560': 'Use of Known Domain Credentials'}
+
+      Persistence:
+
+                Technique: Valid Accounts
+                ID: T1078
+                Description: Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.
+                URL: https://attack.mitre.org/techniques/T1078
+                CAPEC: {'CAPEC-70': 'Try Common or Default Usernames and Passwords', 'CAPEC-560': 'Use of Known Domain Credentials'}
+
+      Credential Access:
+
+                Technique: Brute Force
+                ID: T1110
+                Description: Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained. Without knowledge of the password for an account or set of accounts, an adversary may systematically guess the password using a repetitive or iterative mechanism. Brute forcing passwords can take place via interaction with a service that will check the validity of those credentials or offline against previously acquired credential data, such as password hashes.
+                URL: https://attack.mitre.org/techniques/T1110
+                CAPEC: {'CAPEC-49': 'Password Brute Forcing', 'CAPEC-55': 'Rainbow Table Password Cracking', 'CAPEC-112': 'Brute Force', 'CAPEC-565': 'Password Spraying', 'CAPEC-600': 'Credential Stuffing'}
+
+Mitigations:
+
+                Mitigation: Account Use Policies
+                ID: M1036
+                Description: Configure features related to account use like login attempt lockouts, specific login times, etc.
+                URL: https://attack.mitre.org/mitigations/M1036
+
+                Mitigation: Multi-factor Authentication
+                ID: M1032
+                Description: Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator.
+                URL: https://attack.mitre.org/mitigations/M1032
+
+                Mitigation: Network Segmentation
+                ID: M1030
+                Description: Architect sections of the network to isolate critical systems, functions, or resources. Use physical and logical segmentation to prevent access to potentially sensitive systems and information. Use a DMZ to contain any internet-facing services that should not be exposed from the internal network. Configure separate virtual private cloud (VPC) instances to isolate critical cloud systems.
+                URL: https://attack.mitre.org/mitigations/M1030
+
+                Mitigation: User Training
+                ID: M1017
+                Description: Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.
+                URL: https://attack.mitre.org/mitigations/M1017
+
+
+
+
+Id: 2
+Pattern: unencryptedData
+Description: Identifies [Data] linked to an [Application] without associated {encryptCreds}.
+Impact: Sensitive data (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.
+Neo4j_Assets:['Data Secret']
+
+----------ATT&CK----------
+Tactic:
+
+      Credential Access:
+
+                Technique: Credentials from Password Stores
+                ID: T1555
+                Description: Adversaries may search for common password storage locations to obtain user credentials. Passwords are stored in several places on a system, depending on the operating system or application holding the credentials. There are also specific applications and services that store passwords to make them easier for users to manage and maintain, such as password managers and cloud secrets vaults. Once credentials are obtained, they can be used to perform lateral movement and access restricted information.
+                URL: https://attack.mitre.org/techniques/T1555
+                CAPEC: {'CAPEC-150': 'Collect Data from Common Resource Locations', 'CAPEC-545': 'Pull Data from System Resources'}
+
+                Technique: OS Credential Dumping
+                ID: T1003
+                Description: Adversaries may attempt to dump credentials to obtain account login and credential material, normally in the form of a hash or a clear text password, from the operating system and software. Credentials can then be used to perform [Lateral Movement](https://attack.mitre.org/tactics/TA0008) and access restricted information.
+                URL: https://attack.mitre.org/techniques/T1003
+                CAPEC: {'CAPEC-150': 'Collect Data from Common Resource Locations'}
+
+                Technique: Steal Application Access Token
+                ID: T1528
+                Description: Adversaries can steal application access tokens as a means of acquiring credentials to access remote systems and resources.
+                URL: https://attack.mitre.org/techniques/T1528
+                CAPEC: {'CAPEC-21': 'Exploitation of Trusted Identifiers'}
+
+                Technique: Steal or Forge Authentication Certificates
+                ID: T1649
+                Description: Adversaries may steal or forge certificates used for authentication to access remote systems or resources. Digital certificates are often used to sign and encrypt messages and/or files. Certificates are also used as authentication material. For example, Azure AD device certificates and Active Directory Certificate Services (AD CS) certificates bind to an identity and can be used as credentials for domain accounts.(Citation: O365 Blog Azure AD Device IDs)(Citation: Microsoft AD CS Overview)
+                URL: https://attack.mitre.org/techniques/T1649
+                CAPEC: {}
+
+                Technique: Steal or Forge Kerberos Tickets
+                ID: T1558
+                Description: Adversaries may attempt to subvert Kerberos authentication by stealing or forging Kerberos tickets to enable [Pass the Ticket](https://attack.mitre.org/techniques/T1550/003). Kerberos is an authentication protocol widely used in modern Windows domain environments. In Kerberos environments, referred to as “realms”, there are three basic participants: client, service, and Key Distribution Center (KDC).(Citation: ADSecurity Kerberos Ring Decoder) Clients request access to a service and through the exchange of Kerberos tickets, originating from KDC, they are granted access after having successfully authenticated. The KDC is responsible for both authentication and ticket granting.  Adversaries may attempt to abuse Kerberos by stealing tickets or forging tickets to enable unauthorized access.
+                URL: https://attack.mitre.org/techniques/T1558
+                CAPEC: {'CAPEC-509': 'Kerberoasting', 'CAPEC-652': 'Use of Known Kerberos Credentials'}
+
+                Technique: Steal Web Session Cookie
+                ID: T1539
+                Description: An adversary may steal web application or service session cookies and use them to gain access to web applications or Internet services as an authenticated user without needing credentials. Web applications and services often use session cookies as an authentication token after a user has authenticated to a website.
+                URL: https://attack.mitre.org/techniques/T1539
+                CAPEC: {'CAPEC-21': 'Exploitation of Trusted Identifiers', 'CAPEC-31': 'Accessing/Intercepting/Modifying HTTP Cookies'}
+
+                Technique: Unsecured Credentials
+                ID: T1552
+                Description: Adversaries may search compromised systems to find and obtain insecurely stored credentials. These credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. [Bash History](https://attack.mitre.org/techniques/T1552/003)), operating system or application-specific repositories (e.g. [Credentials in Registry](https://attack.mitre.org/techniques/T1552/002)), or other specialized files/artifacts (e.g. [Private Keys](https://attack.mitre.org/techniques/T1552/004)).
+                URL: https://attack.mitre.org/techniques/T1552
+                CAPEC: {'CAPEC-37': 'Retrieve Embedded Sensitive Data', 'CAPEC-191': 'Read Sensitive Constants Within an Executable', 'CAPEC-474': 'Signature Spoofing by Key Theft', 'CAPEC-485': 'Signature Spoofing by Key Recreation', 'CAPEC-639': 'Probe System Files', 'CAPEC-647': 'Collect Data from Registries'}
+
+Mitigations:
+
+                Mitigation: Audit
+                ID: M1047
+                Description: Perform audits or scans of systems, permissions, insecure software, insecure configurations, etc. to identify potential weaknesses.
+                URL: https://attack.mitre.org/mitigations/M1047
+
+                Mitigation: Encrypt Sensitive Information
+                ID: M1041
+                Description: Protect sensitive information with strong encryption.
+                URL: https://attack.mitre.org/mitigations/M1041
+
+                Mitigation: Password Policies
+                ID: M1027
+                Description: Set and enforce secure password policies for accounts.
+                URL: https://attack.mitre.org/mitigations/M1027
+
+                Mitigation: Privileged Account Management
+                ID: M1026
+                Description: Manage the creation, modification, use, and permissions associated to privileged accounts, including SYSTEM and root.
+                URL: https://attack.mitre.org/mitigations/M1026
+
+                Mitigation: Restrict File and Directory Permissions
+                ID: M1022
+                Description: Restrict access by setting directory and file permissions that are not specific to users or privileged accounts.
+                URL: https://attack.mitre.org/mitigations/M1022
+
+                Mitigation: User Training
+                ID: M1017
+                Description: Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.
+                URL: https://attack.mitre.org/mitigations/M1017
+
+                Mitigation: Multi-factor Authentication
+                ID: M1032
+                Description: Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator.
+                URL: https://attack.mitre.org/mitigations/M1032
+
+                Mitigation: Credential Access Protection
+                ID: M1043
+                Description: Use capabilities to prevent successful credential access by adversaries; including blocking forms of credential dumping.
+                URL: https://attack.mitre.org/mitigations/M1043
+
+                Mitigation: Behavior Prevention on Endpoint
+                ID: M1040
+                Description: Use capabilities to prevent suspicious behavior patterns from occurring on endpoint systems. This could include suspicious process, file, API call, etc. behavior.
+                URL: https://attack.mitre.org/mitigations/M1040
+
+
+
+
+Id: 3
+Pattern: highPrivServiceAccounts
+Description: Identifies service account [Identity] with {highPrivAppIAMs} association.
+Impact: Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilige escalation.
+Neo4j_Assets:['CR Net_1<->App_2.0', 'Net 1_LAN', 'Router FW_1', 'netConnections', 'networks', 'outNetworks', 'outgoingNetConnections']
+
+----------ATT&CK----------
+Tactic:
+
+      Privilege Escalation:
+
+                Technique: Valid Accounts
+                ID: T1078
+                Description: Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credentials may also grant an adversary increased privilege to specific systems or access to restricted areas of the network. Adversaries may choose not to use malware or tools in conjunction with the legitimate access those credentials provide to make it harder to detect their presence.
+                URL: https://attack.mitre.org/techniques/T1078
+                CAPEC: {'CAPEC-70': 'Try Common or Default Usernames and Passwords', 'CAPEC-560': 'Use of Known Domain Credentials'}
+
+      Discovery:
+
+                Technique: Account Discovery
+                ID: T1087
+                Description: Adversaries may attempt to get a listing of valid accounts, usernames, or email addresses on a system or within a compromised environment. This information can help adversaries determine which accounts exist, which can aid in follow-on behavior such as brute-forcing, spear-phishing attacks, or account takeovers (e.g., [Valid Accounts](https://attack.mitre.org/techniques/T1078)).
+                URL: https://attack.mitre.org/techniques/T1087
+                CAPEC: {'CAPEC-575': 'Account Footprinting'}
+
+      Lateral Movement:
+
+                Technique: Software Deployment Tools
+                ID: T1072
+                Description: Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network. Third-party applications and software deployment systems may be in use in the network environment for administration purposes (e.g., SCCM, HBSS, Altiris, etc.).  
+                URL: https://attack.mitre.org/techniques/T1072
+                CAPEC: {'CAPEC-187': 'Malicious Automated Software Update via Redirection', 'CAPEC-657': 'Malicious Automated Software Update via Spoofing'}
+
+                Technique: Remote Services
+                ID: T1021
+                Description: Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into a service that accepts remote connections, such as telnet, SSH, and VNC. The adversary may then perform actions as the logged-on user.
+                URL: https://attack.mitre.org/techniques/T1021
+                CAPEC: {'CAPEC-555': 'Remote Services with Stolen Credentials', 'CAPEC-561': 'Windows Admin Shares with Stolen Credentials'}
+
+Mitigations:
+
+                Mitigation: Password Policies
+                ID: M1027
+                Description: Set and enforce secure password policies for accounts.
+                URL: https://attack.mitre.org/mitigations/M1027
+
+                Mitigation: Account Use Policies
+                ID: M1036
+                Description: Configure features related to account use like login attempt lockouts, specific login times, etc.
+                URL: https://attack.mitre.org/mitigations/M1036
+
+                Mitigation: Limit Access to Resource Over Network
+                ID: M1035
+                Description: Prevent access to file shares, remote access to systems, unnecessary services. Mechanisms to limit access may include use of network concentrators, RDP gateways, etc.
+                URL: https://attack.mitre.org/mitigations/M1035
+
+                Mitigation: Network Segmentation
+                ID: M1030
+                Description: Architect sections of the network to isolate critical systems, functions, or resources. Use physical and logical segmentation to prevent access to potentially sensitive systems and information. Use a DMZ to contain any internet-facing services that should not be exposed from the internal network. Configure separate virtual private cloud (VPC) instances to isolate critical cloud systems.
+                URL: https://attack.mitre.org/mitigations/M1030
+
+                Mitigation: Limit Software Installation
+                ID: M1033
+                Description: Block users or groups from installing unapproved software.
+                URL: https://attack.mitre.org/mitigations/M1033
+
+
+
+
+----------Summary----------
+
+Total patterns detected: 3
+1. remoteAccessMFA
+2. unencryptedData
+3. highPrivServiceAccounts

@@ -18,9 +18,33 @@
             {
                 "Tactic": {
                     "Initial Access": ["T1133", "T1078"],
+                    "Persistence": ["T1078"],
                     "Credential Access": ["T1110"]
                 },
                 "Mitigations": ["M1036", "M1032", "M1030", "M1017"]
+            }
+    },
+    "highPrivMFA": {
+        "description": "Identifies [Credentials] linked to a [User] associated [Identity] with extended priviliges and without an associated {ConditionalAuthentication}.",
+        "impact": "Missing Multi-Factor Authentication (MFA) on accounts with high privileges may enable lateral movements and unauthorized access to resources.",
+        "badPattern": [
+            "MATCH (:User)--(id:Identity)-[:highPrivAppIAMs|executionPrivIAMs|writingIAMs|deletingIAMs]->(),(id)--(cred:Credentials)",
+            "WHERE NOT (cred)<-[:requiredFactors]-()",
+            "RETURN DISTINCT cred.name;"
+        ], 
+        "mitigation": [
+            "MATCH (cred:Credentials) WHERE cred.name = '$1'",
+            "WITH cred",
+            "CREATE (cred2:Credentials {metaconcept: 'Credentials', name: 'MFA'}), (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Privilege Escalation": ["T1078"],
+                    "Defense Evasion": ["T1078"],
+                    "Credential Access": ["T1110"]
+                },
+                "Mitigations": ["M1032","M1027","M1026"]
             }
     },
     "unencryptedData": {
@@ -66,7 +90,7 @@
             }
     },
     "shadowAdmins": {
-        "description": "Identifies a user [Identity] linked to non-admin/root with {highPrivAppIAMs} association.",
+        "description": "Identifies a [User] associated [Identity] linked to non-admin/root with {highPrivAppIAMs} association.",
         "impact": "User accounts that have inadvertently been assigned admin privilige may enable attackers to control accounts with unrestricted access and movement.",
         "badPattern": [
             "MATCH (:User)--(acc:Identity)-[:highPrivAppIAMs]->(app:Application)",
@@ -82,7 +106,7 @@
         "attackData": 
             {
                 "Tactic": {
-                    "Initial Access": ["T1199", "T1078"],
+                    "Initial Access": ["T1078"],
                     "Privilege Escalation": ["T1078"]
                     
                 },
@@ -93,7 +117,7 @@
         "description": "Identifies service account [Identity] with {highPrivAppIAMs} association.",
         "impact": "Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilige escalation.",
         "badPattern": [
-            "MATCH (acc:Identity)-[:highPrivAppIAMs]->(app:Application)-[*0..2]->(cr:ConnectionRule)-[r1]->(net:Network)-[r3]->(cr2:ConnectionRule)--(fw:RoutingFirewall), (cr)<-[r2]-(net)<-[r4]-(cr2) ",
+            "MATCH (acc:Identity)-[:highPrivAppIAMs]->(app:Application)-[*0..2]->(cr:ConnectionRule)-[r1]->(net:Network)-[r3]->(cr2:ConnectionRule)--(fw:RoutingFirewall), (cr)<-[r2]-(net)<-[r4]-(cr2)",
             "WHERE acc.name =~ '(?i).*Service.*|.*Support.*'",
             "RETURN DISTINCT cr.name, net.name, fw.name, type(r1), type(r2), type(r3), type(r4);"
         ],    
@@ -101,15 +125,38 @@
             "MATCH (cr:ConnectionRule {name: '$1'})-[r1]->(net:Network {name: '$2'}), (cr)<-[r2]-(net), (fw:RoutingFirewall {name: '$3'})",
             "DELETE r1,r2",
             "CREATE (net2:Network {metaconcept: 'Network', name: 'Net segmentedNetwork'}), (cr)-[:$4]->(net2), (cr)<-[:$5]-(net2), (cr2:ConnectionRule {metaconcept: 'ConnectionRule', name: 'CR Net_segmentedNetwork->$3'}), (net2)-[:$6]->(cr2), (net2)<-[:$7]-(cr2), (cr2)-[:connectionRules]->(fw), (cr2)<-[:routingFirewalls]-(fw)"
-    
         ],
         "attackData": 
             {
                 "Tactic": {
-                    
-                    
+                    "Privilege Escalation": ["T1078"],
+                    "Discovery": ["T1087"],
+                    "Lateral Movement": ["T1072", "T1021"]
                 },
-                "Mitigations": []
+                "Mitigations": ["M1027","M1036","M1035","M1030","M1033"]
+            }
+    },
+    "userPhising": {
+        "description": "Identifies [RoutingFirewall] where a [User] exists but [IDPS] is missing.",
+        "impact": "User accounts may be target for phising attempts where malicious attachments or links may be detected and blocked by an IDS/IPS.",
+        "badPattern": [
+            "MATCH (fw:RoutingFirewall)--(cr:ConnectionRule)",
+            "WHERE NOT (fw)-[*0..]-(:IDPS) AND (fw)-[*0..]-(:User)",
+            "RETURN DISTINCT fw.name, cr.name;"
+        ],    
+        "mitigation": [
+            "MATCH (fw:RoutingFirewall {name: '$1'})-[r1]->(cr:ConnectionRule {name: '$2'}), (fw)<-[r2]-(cr)",
+            "DELETE r1,r2",
+            "CREATE (idps:IDPS {metaconcept: 'IDPS', name: 'IDPS'}), (cr2:ConectionRule {metaconcept: 'ConnectionRule', name: 'CR IDPS->$1'}), (fw)-[:routingFirewall]->(cr2), (fw)<-[:connectionRules]-(cr2), (cr2)<-[:routingFirewall]-(fw), (cr2)<-[:application]-(idps), (cr2)-[:appConnections]->(idps), (idps)-[:application]->(cr), (idps)<-[:appConnections]-(cr)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Initial Access": ["T1566"],
+                    "Lateral Movement": ["T1534"],
+                    "Credential Access":["T1056"]
+                },
+                "Mitigations": ["M1049", "M1031", "M1017"]
             }
     }
 }
