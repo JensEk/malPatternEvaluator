@@ -1,6 +1,7 @@
 {
     "remoteAccessMFA": {
-        "description": "Lacking Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials.",
+        "description": "Identifies [Credentials] linked to a remote access [Application] without an associated {ConditionalAuthentication}.",
+        "impact": "Missing Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials.",
         "badPattern": [
             "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*'",
             "WITH app",
@@ -23,7 +24,8 @@
             }
     },
     "unencryptedData": {
-        "description": "Sensitive data (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.",
+        "description": "Identifies [Data] linked to an [Application] without associated {encryptCreds}.",
+        "impact": "Sensitive data (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.",
         "badPattern": [
             "MATCH (data:Data)-[:containedData]->(:Application)",
             "WHERE data.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials)",
@@ -43,7 +45,8 @@
             }
     },
     "unencryptedInfo": {
-        "description": "Sensitive information (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.",
+        "description": "Identifies [Information] linked to [Data] lacking associated {encryptCreds}.",
+        "impact": "Sensitive information (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.",
         "badPattern": [
             "MATCH (info:Information)<-[:containerData]-(data:Data)",
             "WHERE info.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials)",
@@ -63,9 +66,10 @@
             }
     },
     "shadowAdmins": {
-        "description": "User accounts that have inadvertently been assigned admin privilige may enable attackers to control accounts with unrestricted access and movement.",
+        "description": "Identifies a user [Identity] linked to non-admin/root with {highPrivAppIAMs} association.",
+        "impact": "User accounts that have inadvertently been assigned admin privilige may enable attackers to control accounts with unrestricted access and movement.",
         "badPattern": [
-            "MATCH (acc:Identity)-[:highPrivAppIAMs]->(app:Application)",
+            "MATCH (:User)--(acc:Identity)-[:highPrivAppIAMs]->(app:Application)",
             "WHERE NOT acc.name =~ '(?i).*Admin.*|.*Root.*|.*Superuser.*'",
             "RETURN DISTINCT acc.name, app.name;"
         ],    
@@ -86,7 +90,8 @@
             }
     },
     "highPrivServiceAccounts": {
-        "description": "Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilige escalation.",
+        "description": "Identifies service account [Identity] with {highPrivAppIAMs} association.",
+        "impact": "Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilige escalation.",
         "badPattern": [
             "MATCH (acc:Identity)-[:highPrivAppIAMs]->(app:Application)-[*0..2]->(cr:ConnectionRule)-[r1]->(net:Network)-[r3]->(cr2:ConnectionRule)--(fw:RoutingFirewall), (cr)<-[r2]-(net)<-[r4]-(cr2) ",
             "WHERE acc.name =~ '(?i).*Service.*|.*Support.*'",

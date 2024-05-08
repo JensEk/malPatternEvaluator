@@ -63,6 +63,7 @@ def load_patterns(filename: str) -> dict:
         for pattern,attribs in raw_patterns.items():
             patterns[pattern] = {}
             patterns[pattern]['description'] = attribs['description']
+            patterns[pattern]['impact'] = attribs['impact']
             patterns[pattern]['badPattern'] = ' '.join(attribs['badPattern'])
             patterns[pattern]['mitigation'] = ' '.join(attribs['mitigation'])
             patterns[pattern]['attackData'] = attribs['attackData']
@@ -117,7 +118,7 @@ def analyze_patterns(patterns,
             detPatterns[log_id] = {"name":name, "assets":assets}
             
             # Log the detected pattern with ATT&CK data
-            logger.info(f"""Id: {log_id}\nPattern: {name}\nDescription: {attribs['description']}\nNeo4j_Assets:{assets}\n\n----------ATT&CK----------\nTactic:""")
+            logger.info(f"""Id: {log_id}\nPattern: {name}\nDescription: {attribs['description']}\nImpact: {attribs['impact']}\nNeo4j_Assets:{assets}\n\n----------ATT&CK----------\nTactic:""")
             for tactic in tactics:
                 logger.info(f"\n      {tactic}:")
                 for technique in tactics[tactic]:
