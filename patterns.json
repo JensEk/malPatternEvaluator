@@ -215,5 +215,25 @@
                 },
                 "Mitigations": ["M1051", "M1048"]
             }
+    },
+    "activeNetworkScan": {
+        "description": "Identifies [Network] with {ingoingNetConnections} association to a [RoutingFirewall].",
+        "impact": "A network that allows ingoing traffic may enable active reconnaissance scans that probes infrastructure via network traffic to gather information.",
+        "badPattern": [
+            "MATCH (net:Network)<-[:ingoingNetConnections]-(cr:ConnectionRule)-->(fw:RoutingFirewall)",
+            "RETURN DISTINCT net.name, cr.name, fw.name;"
+        ],    
+        "mitigation": [
+            "MATCH (net:Network {name: '$1'})<-[r1]-(cr:ConnectionRule {name: '$2'})-->(fw:RoutingFirewall {name: '$3'}), (net)-[r2]->(cr)",
+            "DELETE r1,r2",
+            "CREATE (net)<-[:outgoingNetConnections]-(cr), (net)-[:outNetworks]->(cr)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Reconnaissance": ["T1595", "T1590"]
+                },
+                "Mitigations": ["M1056"]
+            }
     }
 }

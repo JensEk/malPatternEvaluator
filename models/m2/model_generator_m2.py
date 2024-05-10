@@ -125,9 +125,9 @@ assoc_cr_net_1_app_3_0 =\
 model.add_association(assoc_cr_net_1_app_3_0)
 
 assoc_netcon_crs_net_1_Out =\
-    lang_classes_factory.ns.OutNetworkConnection(
-    outNetworks = [net_1],
-    outgoingNetConnections = [cr_net_1_fw_1]
+    lang_classes_factory.ns.InNetworkConnection(
+    inNetworks = [net_1],
+    ingoingNetConnections = [cr_net_1_fw_1]
     )
 model.add_association(assoc_netcon_crs_net_1_Out)
 

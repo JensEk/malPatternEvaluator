@@ -207,12 +207,12 @@
       }
     },
     {
-      "metaconcept": "OutNetworkConnection",
+      "metaconcept": "InNetworkConnection",
       "association": {
-        "outNetworks": [
+        "inNetworks": [
           "8"
         ],
-        "outgoingNetConnections": [
+        "ingoingNetConnections": [
           "9"
         ]
       }
