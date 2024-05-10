@@ -26,13 +26,13 @@
       "defenses": {}
     },
     "3": {
-      "name": "App 1.1_VPN",
+      "name": "App 2.0_Server_Windows",
       "metaconcept": "Application",
       "eid": "3",
       "defenses": {}
     },
     "4": {
-      "name": "App 2.0_Server_Windows",
+      "name": "App 2.1_VPN",
       "metaconcept": "Application",
       "eid": "4",
       "defenses": {}
@@ -44,87 +44,81 @@
       "defenses": {}
     },
     "6": {
-      "name": "Router FW_1",
-      "metaconcept": "RoutingFirewall",
+      "name": "Info Secret",
+      "metaconcept": "Information",
       "eid": "6",
       "defenses": {}
     },
     "7": {
-      "name": "Net 1_LAN",
-      "metaconcept": "Network",
+      "name": "Router FW_1",
+      "metaconcept": "RoutingFirewall",
       "eid": "7",
       "defenses": {}
     },
     "8": {
-      "name": "CR Net_1->Router_FW_1",
-      "metaconcept": "ConnectionRule",
+      "name": "Net LAN_1",
+      "metaconcept": "Network",
       "eid": "8",
       "defenses": {}
     },
     "9": {
-      "name": "CR Net_1<->App_1.0",
+      "name": "CR Net_LAN_1->Router_FW_1",
       "metaconcept": "ConnectionRule",
       "eid": "9",
       "defenses": {}
     },
     "10": {
-      "name": "CR Net_1<->App_2.0",
+      "name": "CR Net_LAN_1<->App_1.0",
       "metaconcept": "ConnectionRule",
       "eid": "10",
       "defenses": {}
     },
     "11": {
-      "name": "Net 2_DMZ",
-      "metaconcept": "Network",
+      "name": "CR Net_LAN_1<->App_2.0",
+      "metaconcept": "ConnectionRule",
       "eid": "11",
       "defenses": {}
     },
     "12": {
-      "name": "CR Net_2_DMZ<-Router_FW_1",
-      "metaconcept": "ConnectionRule",
+      "name": "Id Admin_1",
+      "metaconcept": "Identity",
       "eid": "12",
       "defenses": {}
     },
     "13": {
-      "name": "CR Net_2_DMZ->App_1.1",
-      "metaconcept": "ConnectionRule",
+      "name": "Id Employee_1",
+      "metaconcept": "Identity",
       "eid": "13",
       "defenses": {}
     },
     "14": {
-      "name": "Id Admin_1",
-      "metaconcept": "Identity",
+      "name": "Cred Admin_1",
+      "metaconcept": "Credentials",
       "eid": "14",
       "defenses": {}
     },
     "15": {
-      "name": "Id Employee_1",
-      "metaconcept": "Identity",
+      "name": "Cred Employee_1",
+      "metaconcept": "Credentials",
       "eid": "15",
       "defenses": {}
     },
     "16": {
-      "name": "Id ServiceAccount_1",
-      "metaconcept": "Identity",
+      "name": "MFA",
+      "metaconcept": "Credentials",
       "eid": "16",
       "defenses": {}
     },
     "17": {
-      "name": "Cred Admin_1",
-      "metaconcept": "Credentials",
+      "name": "User_1",
+      "metaconcept": "User",
       "eid": "17",
       "defenses": {}
     },
     "18": {
-      "name": "Cred Employee_1",
-      "metaconcept": "Credentials",
+      "name": "User_2",
+      "metaconcept": "User",
       "eid": "18",
-      "defenses": {}
-    },
-    "19": {
-      "name": "MFA",
-      "metaconcept": "Credentials",
-      "eid": "19",
       "defenses": {}
     }
   },
@@ -147,7 +141,7 @@
           "1"
         ],
         "sysExecutedApps": [
-          "4"
+          "3"
         ]
       }
     },
@@ -155,10 +149,10 @@
       "metaconcept": "AppExecution",
       "association": {
         "hostApp": [
-          "2"
+          "3"
         ],
         "appExecutedApps": [
-          "3"
+          "4"
         ]
       }
     },
@@ -169,7 +163,18 @@
           "5"
         ],
         "containingApp": [
-          "4"
+          "3"
+        ]
+      }
+    },
+    {
+      "metaconcept": "InfoContainment",
+      "association": {
+        "containerData": [
+          "5"
+        ],
+        "information": [
+          "6"
         ]
       }
     },
@@ -180,7 +185,7 @@
           "2"
         ],
         "appConnections": [
-          "9"
+          "10"
         ]
       }
     },
@@ -188,10 +193,10 @@
       "metaconcept": "ApplicationConnection",
       "association": {
         "applications": [
-          "4"
+          "3"
         ],
         "appConnections": [
-          "10"
+          "11"
         ]
       }
     },
@@ -199,10 +204,10 @@
       "metaconcept": "OutNetworkConnection",
       "association": {
         "outNetworks": [
-          "7"
+          "8"
         ],
         "outgoingNetConnections": [
-          "8"
+          "9"
         ]
       }
     },
@@ -210,44 +215,11 @@
       "metaconcept": "NetworkConnection",
       "association": {
         "networks": [
-          "7"
+          "8"
         ],
         "netConnections": [
-          "9",
-          "10"
-        ]
-      }
-    },
-    {
-      "metaconcept": "InApplicationConnection",
-      "association": {
-        "inApplications": [
-          "3"
-        ],
-        "ingoingAppConnections": [
-          "13"
-        ]
-      }
-    },
-    {
-      "metaconcept": "InNetworkConnection",
-      "association": {
-        "inNetworks": [
+          "10",
           "11"
-        ],
-        "ingoingNetConnections": [
-          "12"
-        ]
-      }
-    },
-    {
-      "metaconcept": "OutNetworkConnection",
-      "association": {
-        "outNetworks": [
-          "11"
-        ],
-        "outgoingNetConnections": [
-          "13"
         ]
       }
     },
@@ -255,11 +227,10 @@
       "metaconcept": "FirewallConnectionRule",
       "association": {
         "routingFirewalls": [
-          "6"
+          "7"
         ],
         "connectionRules": [
-          "12",
-          "8"
+          "9"
         ]
       }
     },
@@ -267,10 +238,10 @@
       "metaconcept": "IdentityCredentials",
       "association": {
         "identities": [
+          "12"
+        ],
+        "credentials": [
           "14"
-        ],
-        "credentials": [
-          "17"
         ]
       }
     },
@@ -278,10 +249,10 @@
       "metaconcept": "IdentityCredentials",
       "association": {
         "identities": [
-          "15"
+          "13"
         ],
         "credentials": [
-          "18"
+          "15"
         ]
       }
     },
@@ -289,10 +260,10 @@
       "metaconcept": "ConditionalAuthentication",
       "association": {
         "credentials": [
-          "17"
+          "15"
         ],
         "requiredFactors": [
-          "19"
+          "16"
         ]
       }
     },
@@ -300,21 +271,9 @@
       "metaconcept": "HighPrivilegeApplicationAccess",
       "association": {
         "highPrivAppIAMs": [
-          "14"
+          "12"
         ],
         "highPrivApps": [
-          "2",
-          "4"
-        ]
-      }
-    },
-    {
-      "metaconcept": "ExecutionPrivilegeAccess",
-      "association": {
-        "executionPrivIAMs": [
-          "15"
-        ],
-        "execPrivApps": [
           "2",
           "3"
         ]
@@ -324,10 +283,43 @@
       "metaconcept": "HighPrivilegeApplicationAccess",
       "association": {
         "highPrivAppIAMs": [
-          "16"
+          "13"
         ],
         "highPrivApps": [
+          "2"
+        ]
+      }
+    },
+    {
+      "metaconcept": "ExecutionPrivilegeAccess",
+      "association": {
+        "executionPrivIAMs": [
+          "13"
+        ],
+        "execPrivApps": [
           "4"
+        ]
+      }
+    },
+    {
+      "metaconcept": "UserAssignedIdentities",
+      "association": {
+        "users": [
+          "17"
+        ],
+        "userIds": [
+          "12"
+        ]
+      }
+    },
+    {
+      "metaconcept": "UserAssignedIdentities",
+      "association": {
+        "users": [
+          "18"
+        ],
+        "userIds": [
+          "13"
         ]
       }
     }

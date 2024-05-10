@@ -233,11 +233,21 @@ assoc_user_id_u2 =\
 model.add_association(assoc_user_id_u2)
 
 
-# Attack Vectors Section
-
+# Vulnerability Section
 ## Software Vulnerabilities
 
+sw_vuln_1 = lang_classes_factory.ns.SoftwareVulnerability(name = "Vuln SW_1")
+model.add_asset(sw_vuln_1)
 
+assoc_sw_vuln_1_app_1_0 =\
+    lang_classes_factory.ns.ApplicationVulnerability(
+    vulnerabilities = [sw_vuln_1],
+    application = [app_1_0]
+    )
+model.add_association(assoc_sw_vuln_1_app_1_0)
+
+
+# Attack Vectors Section
 # Attacker section
 #attacker1 = malmodel.Attacker()
 #attacker1.entry_points = [(net_2, ["fullAccess"])]

@@ -20,7 +20,7 @@ from py2neo import Graph, Node, Relationship, Subgraph
 def init(modelFile: str, patternFile: str) -> dict:
     ingest_model(modelFile)
     for _ in tqdm (range (100), desc="Connecting to Neo4j..."):
-        time.sleep(0.005)
+        time.sleep(0.004)
     print("Successfully connected\n")
     patterns = load_patterns(patternFile)
     return patterns
@@ -110,12 +110,15 @@ def analyze_patterns(patterns,
     detPatterns = {}
     for name,attribs in patterns.items():
         results = apply_query(attribs['badPattern'])
-      
+        
         if (results != None) and (len(results) > 0):
             tactics = attribs['attackData']['Tactic']
             mitigations = attribs['attackData']['Mitigations']
-            assets = [v for res in results for v in res.values()]
-            detPatterns[log_id] = {"name":name, "assets":assets}
+            detPatterns[log_id] = {"name":name, "assets":[]}
+            for r in results:
+                assets = [v for v in r.values()]
+                detPatterns[log_id]['assets'].append(assets)
+            
             
             # Log the detected pattern with ATT&CK data
             logger.info(f"""Id: {log_id}\nPattern: {name}\nDescription: {attribs['description']}\nImpact: {attribs['impact']}\nNeo4j_Assets:{assets}\n\n----------ATT&CK----------\nTactic:""")
@@ -145,7 +148,7 @@ def analyze_patterns(patterns,
         logger.info(f"""{id}. {val['name']}""")
     logger.removeHandler(handler)
     for i in tqdm (range (100), desc="Analyzing patterns on model..."):
-        time.sleep(0.004)
+        time.sleep(0.003)
     print("Analysis completed")
     return detPatterns
         
@@ -186,8 +189,6 @@ def apply_mitigation(patterns, detPat,
         dbname="neo4j",
 ) -> None:
     """
-    Apply all mitigation queries 
-
     Arguments:
     patterns             - the patterns file
     detPat               - the detected pattern to mitigate
@@ -197,15 +198,18 @@ def apply_mitigation(patterns, detPat,
     dbname               - the selected database
     """
 
-    print("Applying mitigations for: " + detPat['name'])
-    newQuery = patterns[detPat['name']]['mitigation']
-    argId = 1
-    for asset in detPat['assets']:
-        arg = '$' + str(argId)
-        newQuery = newQuery.replace(arg, asset)
-        argId += 1
-    print("Following query is applied:\n" + newQuery)
-    apply_query(newQuery)
+    print("Applying mitigations for: " + detPat['name'] + "\n")
+    for assets in detPat['assets']:
+        newQuery = patterns[detPat['name']]['mitigation']
+        argId = 1
+        for asset in assets:
+            if asset == None:
+                continue
+            arg = '$' + str(argId)
+            newQuery = newQuery.replace(arg, asset)
+            argId += 1
+        print("Following query is applied:\n" + newQuery)
+        apply_query(newQuery)
     
 
 
@@ -257,7 +261,10 @@ def main():
                 review_pattern_report()
             elif choice == '3':
                 inp = input("Enter pattern ID to mitigate:\n")
-                apply_mitigation(patterns, detectedPatterns[int(inp)])    
+                if int(inp) in detectedPatterns.keys():
+                    apply_mitigation(patterns, detectedPatterns[int(inp)])    
+                else:  
+                    print("Invalid pattern ID")
             elif choice == '4':
                 ingest_model(modelFile)
                 print("Model restored")

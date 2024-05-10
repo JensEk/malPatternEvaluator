@@ -3,12 +3,18 @@
         "description": "Identifies [Credentials] linked to a remote access [Application] without an associated {ConditionalAuthentication}.",
         "impact": "Missing Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials.",
         "badPattern": [
-            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*'",
+            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*SSH.*'",
             "WITH app",
             "MATCH (app)--(usr:Identity)--(cred:Credentials)",
             "WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*|.*2FA.*|.*Multi-Factor.*|.*Two-Factor.*')",
+            "RETURN DISTINCT cred.name",
+            "UNION",
+            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*SSH.*'",
+            "WITH app",
+            "MATCH (app)-[:hostApp]-(:Application)--(usr:Identity)--(cred:Credentials)",
+            "WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*|.*2FA.*|.*Multi-Factor.*|.*Two-Factor.*')",
             "RETURN DISTINCT cred.name;"
-        ], 
+        ],
         "mitigation": [
             "MATCH (cred:Credentials) WHERE cred.name = '$1'",
             "WITH cred",
@@ -24,7 +30,7 @@
                 "Mitigations": ["M1036", "M1032", "M1030", "M1017"]
             }
     },
-    "highPrivMFA": {
+    "highPrivAccountsMFA": {
         "description": "Identifies [Credentials] linked to a [User] associated [Identity] with extended priviliges and without an associated {ConditionalAuthentication}.",
         "impact": "Missing Multi-Factor Authentication (MFA) on accounts with high privileges may enable lateral movements and unauthorized access to resources.",
         "badPattern": [
@@ -48,7 +54,7 @@
             }
     },
     "unencryptedData": {
-        "description": "Identifies [Data] linked to an [Application] without associated {encryptCreds}.",
+        "description": "Identifies [Data] linked to an [Application] where associated {encryptCreds} are missing.",
         "impact": "Sensitive data (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.",
         "badPattern": [
             "MATCH (data:Data)-[:containedData]->(:Application)",
@@ -69,7 +75,7 @@
             }
     },
     "unencryptedInfo": {
-        "description": "Identifies [Information] linked to [Data] lacking associated {encryptCreds}.",
+        "description": "Identifies [Information] contained in [Data] where associated {encryptCreds} are missing.",
         "impact": "Sensitive information (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.",
         "badPattern": [
             "MATCH (info:Information)<-[:containerData]-(data:Data)",
@@ -147,16 +153,67 @@
         "mitigation": [
             "MATCH (fw:RoutingFirewall {name: '$1'})-[r1]->(cr:ConnectionRule {name: '$2'}), (fw)<-[r2]-(cr)",
             "DELETE r1,r2",
-            "CREATE (idps:IDPS {metaconcept: 'IDPS', name: 'IDPS'}), (cr2:ConectionRule {metaconcept: 'ConnectionRule', name: 'CR IDPS->$1'}), (fw)-[:routingFirewall]->(cr2), (fw)<-[:connectionRules]-(cr2), (cr2)<-[:routingFirewall]-(fw), (cr2)<-[:application]-(idps), (cr2)-[:appConnections]->(idps), (idps)-[:application]->(cr), (idps)<-[:appConnections]-(cr)"
+            "CREATE (idps:IDPS {metaconcept: 'IDPS', name: 'IDPS'}), (cr2:ConectionRule {metaconcept: 'ConnectionRule', name: 'CR IDPS<->$1'}), (fw)-[:routingFirewall]->(cr2), (fw)<-[:connectionRules]-(cr2), (cr2)<-[:application]-(idps), (cr2)-[:appConnections]->(idps), (idps)-[:application]->(cr), (idps)<-[:appConnections]-(cr)"
         ],
         "attackData": 
             {
                 "Tactic": {
                     "Initial Access": ["T1566"],
                     "Lateral Movement": ["T1534"],
-                    "Credential Access":["T1056"]
+                    "Credential Access": ["T1056"]
                 },
                 "Mitigations": ["M1049", "M1031", "M1017"]
+            }
+    },    
+    "exploitVulnerablePublicApp": {
+        "description": "Identifies [Application] linked to a [SoftwareVulnerability] with association {ingoingAppConnections} to a [Network] outside DMZ.",
+        "impact": "Application with known vulnerabilities accessible from the internet may be exploited by attackers to gain unauthorized access to the network and resources.",
+        "badPattern": [
+            "MATCH (net:Network)--(:ConnectionRule)-[:ingoingAppConnections]->(app:Application)<-[:vulnerabilities]-(sw:SoftwareVulnerability)",
+            "WHERE NOT net.name =~ '(?i).*DMZ.*|.*Demilitarized Zone.*'",
+            "RETURN DISTINCT app.name, net.name",
+            "UNION",
+            "MATCH (net:Network)--(:ConnectionRule)-[:ingoingAppConnections]->(app:Application)-[:hostApp]->(:Application)<-[:vulnerabilities]-(sw:SoftwareVulnerability)",
+            "WHERE NOT net.name =~ '(?i).*DMZ.*|.*Demilitarized Zone.*'",
+            "RETURN DISTINCT app.name, net.name;"
+        ],    
+        "mitigation": [
+            "MATCH (app:Application {name: '$1'})--(cr:ConnectionRule)-[r1]->(net:Network {name: '$2'}), (cr)<-[r2]-(net)",
+            "DELETE r1,r2"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Initial Access": ["T1190"]
+                },
+                "Mitigations": ["M1030", "M1051", "M1016"]
+            }
+    },
+    "exploitVulnerableApp": {
+        "description": "Identifies [SoftwareVulnerability] linked to an [Application] or [SoftwareProduct] with associated [Identity].",
+        "impact": "Applications with known vulnerabilities may be exploited by attackers to elevate privileges or to bypass security features.",
+        "badPattern": [
+            "MATCH (:Identity)-[r]->(app:Application)<-[:vulnerabilities]-(sw:SoftwareVulnerability)",
+            "WHERE TYPE(r) IN ['highPrivAppIAMs', 'executionPrivIAMs', 'writingIAMs', 'deletingIAMs']",
+            "RETURN DISTINCT app.name",
+            "UNION",
+            "MATCH (:Identity)-[r]->(app:Application)--(:SoftwareProduct)<-[:softProductVulnerability]-(sw:SoftwareVulnerability)",
+            "WHERE TYPE(r) IN ['highPrivAppIAMs', 'executionPrivIAMs', 'writingIAMs', 'deletingIAMs']",
+            "RETURN DISTINCT app.name"
+        ],    
+        "mitigation": [
+            "MATCH (app:Application {name: '$1'})-[r]-()",
+            "WHERE NOT TYPE(r) IN ['vulnerabilities', 'application', 'appSoftProduct', 'softApplications]",
+            "DELETE r"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Execution": ["T1203"],
+                    "Defense Evasion": ["T1211"],
+                    "Privilege Escalation": ["T1068"]
+                },
+                "Mitigations": ["M1051", "M1048"]
             }
     }
 }

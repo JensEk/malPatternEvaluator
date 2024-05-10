@@ -120,6 +120,12 @@
       "metaconcept": "User",
       "eid": "18",
       "defenses": {}
+    },
+    "19": {
+      "name": "Vuln SW_1",
+      "metaconcept": "SoftwareVulnerability",
+      "eid": "19",
+      "defenses": {}
     }
   },
   "associations": [
@@ -298,6 +304,17 @@
         ],
         "userIds": [
           "14"
+        ]
+      }
+    },
+    {
+      "metaconcept": "ApplicationVulnerability_SoftwareVulnerability_Application",
+      "association": {
+        "vulnerabilities": [
+          "19"
+        ],
+        "application": [
+          "3"
         ]
       }
     }
