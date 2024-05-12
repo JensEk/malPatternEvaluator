@@ -142,14 +142,17 @@
                 "Mitigations": ["M1027","M1036","M1035","M1030","M1033"]
             }
     },
-    "userPhising": {
-        "description": "Identifies [RoutingFirewall] where a [User] exists but [IDPS] is missing.",
-        "impact": "User accounts may be target for phising attempts where malicious attachments or links may be detected and blocked by an IDS/IPS.",
+    "userExposedNetworks": {
+        "description": "Identifies [Network] where a [User] exists but [IDPS] or other security identified [Application] is missing.",
+        "impact": "Networks without any security tool may faciliate user targeted attack such as phising to deliver malicious attachments or links which are not detected and blocked.",
         "badPattern": [
-            "MATCH (fw:RoutingFirewall)--(cr:ConnectionRule)",
-            "WHERE NOT (fw)-[*0..]-(:IDPS) AND (fw)-[*0..]-(:User)",
+            "MATCH (fw:RoutingFirewall)--(cr:ConnectionRule)--(net:Network)",
+            "WHERE NOT (net)<-[*0..2]-(:IDPS) AND (net)<-[*0..]-(:User)",
+            "WITH fw, cr, net",
+            "MATCH (net)<-[*0..]-(app:Application)",
+            "WHERE NOT app.name  =~ '(?i).*Antivirus.*|.*IPS.*|.*IDS.*|.*EDR.*'",
             "RETURN DISTINCT fw.name, cr.name;"
-        ],    
+        ],
         "mitigation": [
             "MATCH (fw:RoutingFirewall {name: '$1'})-[r1]->(cr:ConnectionRule {name: '$2'}), (fw)<-[r2]-(cr)",
             "DELETE r1,r2",
@@ -210,10 +213,11 @@
             {
                 "Tactic": {
                     "Execution": ["T1203"],
+                    "Privilege Escalation": ["T1068"],
                     "Defense Evasion": ["T1211"],
-                    "Privilege Escalation": ["T1068"]
+                    "Credential Access": ["T1212"]
                 },
-                "Mitigations": ["M1051", "M1048"]
+                "Mitigations": ["M1051", "M1048", "M1019"]
             }
     },
     "activeNetworkScan": {
@@ -234,6 +238,26 @@
                     "Reconnaissance": ["T1595", "T1590"]
                 },
                 "Mitigations": ["M1056"]
+            }
+    },
+    "userExposedHardware": {
+        "description": "Identifies [Hardware] associated with a [User] and with {hostHardware} association to a [Network] linked [Application].",
+        "impact": "Adversaries may deliver malware through removable media such as USB and use the Autorun features when inserted into hardware to gain access to the network and resources. Alternatively, adversaries may introduce hardware devices into a system or network to gain access.",
+        "badPattern": [
+            "MATCH (:User)<-[:hardwareSystems]-(hw:Hardware)-[:hostHardware]->(app:Application)-[*0..3]-(:Network)",
+            "RETURN DISTINCT hw.name, app.name;"
+        ],    
+        "mitigation": [
+            "MATCH (hw:Hardware {name: '$1'})-[r1:hardwareSystems]->(usr:User), (hw)<-[r2:users]-(usr)",
+            "DELETE r1,r2"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Initial Access": ["T1200", "T1091"],
+                    "Lateral Movement": ["T1091"]
+                },
+                "Mitigations": ["M1034", "M1040"]
             }
     }
 }

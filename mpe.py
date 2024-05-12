@@ -106,6 +106,9 @@ def analyze_patterns(patterns,
     logger.addHandler(handler)
     logger.info(f"\n***\n----------Attack Patterns Report----------\n\n\nTime: {datetime.datetime.now()}\n")
 
+    for i in tqdm (range (100), desc="Analyzing patterns on model..."):
+        time.sleep(0.002)
+
     log_id = 1
     detPatterns = {}
     for name,attribs in patterns.items():
@@ -147,9 +150,7 @@ def analyze_patterns(patterns,
     for id, val in detPatterns.items():
         logger.info(f"""{id}. {val['name']}""")
     logger.removeHandler(handler)
-    for i in tqdm (range (100), desc="Analyzing patterns on model..."):
-        time.sleep(0.003)
-    print("Analysis completed")
+    print("**Analysis completed**")
     return detPatterns
         
  
@@ -179,7 +180,7 @@ def apply_query(query,
         g = Graph(uri=uri, user=username, password=password, name=dbname)  
         return g.run(query).data()
     except:
-        print("Error applying query to Neo4j instance")
+        print("Error applying query to Neo4j instance!")
 
 
 def apply_mitigation(patterns, detPat,

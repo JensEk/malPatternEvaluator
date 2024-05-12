@@ -233,6 +233,13 @@ assoc_user_id_u2 =\
 model.add_association(assoc_user_id_u2)
 
 
+assoc_user_1_hw =\
+    lang_classes_factory.ns.HardwareAccess(
+    users = [user_2],
+    hardwareSystems = [hw_1]
+    )
+model.add_association(assoc_user_1_hw)
+
 # Vulnerability Section
 ## Software Vulnerabilities
 

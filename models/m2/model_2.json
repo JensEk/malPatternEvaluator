@@ -308,6 +308,17 @@
       }
     },
     {
+      "metaconcept": "HardwareAccess",
+      "association": {
+        "users": [
+          "18"
+        ],
+        "hardwareSystems": [
+          "0"
+        ]
+      }
+    },
+    {
       "metaconcept": "ApplicationVulnerability_SoftwareVulnerability_Application",
       "association": {
         "vulnerabilities": [
