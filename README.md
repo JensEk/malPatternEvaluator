@@ -8,4 +8,4 @@
      username="neo4j",
      password="dynp12345!",
      dbname="neo4j",
-5. python3 mpe.py -m models/model_1.json -p patterns.json
+5. python3 mpe.py -m models/mX/model_X.json -p patterns.json
