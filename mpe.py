@@ -106,7 +106,7 @@ def analyze_patterns(patterns,
     logger.addHandler(handler)
     logger.info(f"\n***\n----------Attack Patterns Report----------\n\n\nTime: {datetime.datetime.now()}\n")
 
-    for i in tqdm (range (100), desc="Analyzing patterns on model..."):
+    for i in tqdm (range (100), desc="Analyzing patterns on model, please wait..."):
         time.sleep(0.002)
 
     log_id = 1

@@ -22,9 +22,9 @@ model = malmodel.Model('M2', lang_spec, lang_classes_factory)
 # ComputeResources Section
 
 ## Hardware
-hw_1 = lang_classes_factory.ns.Hardware(name = "Comp C1")
-hw_2 = lang_classes_factory.ns.Hardware(name = "Server S1")
-hw_3 = lang_classes_factory.ns.Hardware(name = "Server S2")
+hw_1 = lang_classes_factory.ns.Hardware(name = "Hw Computer_1_Employee_1")
+hw_2 = lang_classes_factory.ns.Hardware(name = "Hw Server_1")
+hw_3 = lang_classes_factory.ns.Hardware(name = "Hw Server_2")
 
 model.add_asset(hw_1)
 model.add_asset(hw_2)
@@ -211,8 +211,9 @@ model.add_association(assoc_exec_privs_u3)
 
 # User Section
 ## User
-user_1 = lang_classes_factory.ns.User(name = "User_1")
-user_2 = lang_classes_factory.ns.User(name = "User_2")
+user_1 = lang_classes_factory.ns.User(name = "User Admin_1")
+user_2 = lang_classes_factory.ns.User(name = "User Employee_1")
+
 
 model.add_asset(user_1)
 model.add_asset(user_2)

@@ -69,9 +69,9 @@
         "attackData": 
             {
                 "Tactic": {
-                    "Credential Access": ["T1555", "T1003", "T1528", "T1649", "T1558", "T1539", "T1552"]
+                    "Credential Access": ["T1552", "T1539", "T1555"]
                 },
-                "Mitigations": ["M1047", "M1041", "M1027", "M1026", "M1022", "M1017", "M1032", "M1043", "M1040"]
+                "Mitigations": ["M1041", "M1047", "M1027"]
             }
     },
     "unencryptedInfo": {
@@ -90,9 +90,9 @@
         "attackData": 
             {
                 "Tactic": {
-                    "Credential Access": ["T1555", "T1003", "T1528", "T1649", "T1558", "T1539", "T1552"]
+                    "Credential Access": ["T1552", "T1539", "T1555"]
                 },
-                "Mitigations": ["M1047", "M1041", "M1027", "M1026", "M1022", "M1017", "M1032", "M1043", "M1040"]
+                "Mitigations": ["M1041", "M1047", "M1027"]
             }
     },
     "shadowAdmins": {
@@ -120,7 +120,7 @@
             }
     },
     "highPrivServiceAccounts": {
-        "description": "Identifies service account [Identity] with {highPrivAppIAMs} association.",
+        "description": "Identifies [Identity] matching service account with {highPrivAppIAMs} association.",
         "impact": "Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilige escalation.",
         "badPattern": [
             "MATCH (acc:Identity)-[:highPrivAppIAMs]->(app:Application)-[*0..2]->(cr:ConnectionRule)-[r1]->(net:Network)-[r3]->(cr2:ConnectionRule)--(fw:RoutingFirewall), (cr)<-[r2]-(net)<-[r4]-(cr2)",
@@ -163,6 +163,7 @@
                 "Tactic": {
                     "Initial Access": ["T1566"],
                     "Lateral Movement": ["T1534"],
+                    "Execution": ["T1204"],
                     "Credential Access": ["T1056"]
                 },
                 "Mitigations": ["M1049", "M1031", "M1017"]
@@ -241,14 +242,37 @@
             }
     },
     "userExposedHardware": {
-        "description": "Identifies [Hardware] associated with a [User] and with {hostHardware} association to a [Network] linked [Application].",
+        "description": "Identifies [Hardware] with {hostHardware} association to a [Network] linked [Application] where a [User] is not matching the name of [Hardware].",
         "impact": "Adversaries may deliver malware through removable media such as USB and use the Autorun features when inserted into hardware to gain access to the network and resources. Alternatively, adversaries may introduce hardware devices into a system or network to gain access.",
         "badPattern": [
-            "MATCH (:User)<-[:hardwareSystems]-(hw:Hardware)-[:hostHardware]->(app:Application)-[*0..3]-(:Network)",
-            "RETURN DISTINCT hw.name, app.name;"
+            "MATCH (usr:User)<-[:hardwareSystems]-(hw:Hardware)-[:hostHardware]->(:Application)-[*0..3]->(:Network)",
+            "WHERE NOT hw.name =~ ('(?i).*' + usr.name + '.*')",
+            "RETURN DISTINCT hw.name, usr.name;"
         ],    
         "mitigation": [
-            "MATCH (hw:Hardware {name: '$1'})-[r1:hardwareSystems]->(usr:User), (hw)<-[r2:users]-(usr)",
+            "MATCH (hw:Hardware {name: '$1'})-[r1:hardwareSystems]->(usr:User {name: '$2'}), (hw)<-[r2:users]-(usr)",
+            "DELETE r1,r2",
+            "CREATE (pz:PhysicalZone {metaconcept: 'PhysicalZone', name: 'RestrictedZone'}), (pz)-[:physicalZones]->(hw), (pz)<-[:hardwareSystems]-(hw)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Initial Access": ["T1200", "T1091"],
+                    "Lateral Movement": ["T1091"]
+                },
+                "Mitigations": ["M1034", "M1040"]
+            }
+    },
+    "zoneExposedHardware": {
+        "description": "Identifies [Hardware] where a [User] is not associated with the [PhysicalZone] linked to the [Hardware].",
+        "impact": "Adversaries may deliver malware through removable media such as USB and use the Autorun features when inserted into hardware to gain access to the network and resources. Alternatively, adversaries may introduce hardware devices into a system or network to gain access.",
+        "badPattern": [
+            "MATCH (usr:User)<-[:hardwareSystems]-(hw:Hardware)<-[:physicalZones]-(pz:PhysicalZone)",
+            "WHERE NOT (usr)<-[:physicalZones]-(pz)",
+            "RETURN DISTINCT hw.name, usr.name;"
+        ],    
+        "mitigation": [
+            "MATCH (hw:Hardware {name: '$1'})-[r1:hardwareSystems]->(usr:User {name: '$2'}), (hw)<-[r2:users]-(usr)",
             "DELETE r1,r2"
         ],
         "attackData": 
@@ -258,6 +282,70 @@
                     "Lateral Movement": ["T1091"]
                 },
                 "Mitigations": ["M1034", "M1040"]
+            }
+    },
+    "groupIdentityAppMismatch": {
+        "description": "Identifies [Identity] with {memberOf} association to a [Group] where the [Identity] has different privileges than the [Group] on an [Application].",
+        "impact": "Misconfigured privileges may enable unauthorized access and permissions to applications in a network.",
+        "badPattern": [
+            "MATCH (id:Identity)<-[:memberOf]-(:Group)-[r1]->(app:Application), (id)-[r2]->(app)",
+            "WHERE NOT TYPE(r1) = TYPE(r2)",
+            "RETURN DISTINCT id.name, app.name",
+            "UNION",
+            "MATCH (id:Identity)<-[:memberOf]-(:Group)-[:IAMOwners]->(priv:Privileges), (priv)-[r1]->(app:Application), (id)-[r2]->(app)",
+            "WHERE NOT TYPE(r1) = TYPE(r2)",
+            "RETURN DISTINCT id.name, app.name",
+            "UNION",
+            "MATCH (id:Identity)<-[:memberOf]-(:Group)<-[:parentGroup]-(:Group)-[r1]->(app:Application), (id)-[r2]->(app)",
+            "WHERE NOT TYPE(r1) = TYPE(r2)",
+            "RETURN DISTINCT id.name, app.name",
+            "UNION",
+            "MATCH (id:Identity)<-[:memberOf]-(:Group)<-[:parentGroup]-(:Group)-[:IAMOwners]->(priv:Privileges), (priv)-[r1]->(app:Application), (id)-[r2]->(app)",
+            "WHERE NOT TYPE(r1) = TYPE(r2)",
+            "RETURN DISTINCT id.name, app.name;"
+        ],    
+        "mitigation": [
+            "MATCH (id:Identity {name: '$1'})-[r1]->(app:Application {name: '$2'}), (id)<-[r2]-(app)",
+            "DELTE r1,r2"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Privilege Escalation": ["T1078"]
+                },
+                "Mitigations": ["M1026"]
+            }
+    },
+    "groupIdentityDataMismatch": {
+        "description": "Identifies [Identity] with {memberOf} association to a [Group] where the [Identity] has different privileges than the [Group] on a [Data].",
+        "impact": "Misconfigured privileges may enable unauthorized access and permissions to resources.",
+        "badPattern": [
+            "MATCH (id:Identity)<-[:memberOf]-(:Group)-[r1]->(dat:Data), (id)-[r2]->(dat)",
+            "WHERE NOT TYPE(r1) = TYPE(r2)",
+            "RETURN DISTINCT id.name, dat.name",
+            "UNION",
+            "MATCH (id:Identity)<-[:memberOf]-(:Group)-[:IAMOwners]->(priv:Privileges), (priv)-[r1]->(dat:Data), (id)-[r2]->(dat)",
+            "WHERE NOT TYPE(r1) = TYPE(r2)",
+            "RETURN DISTINCT id.name, dat.name",
+            "UNION",
+            "MATCH (id:Identity)<-[:memberOf]-(:Group)<-[:parentGroup]-(:Group)-[r1]->(dat:Data), (id)-[r2]->(dat)",
+            "WHERE NOT TYPE(r1) = TYPE(r2)",
+            "RETURN DISTINCT id.name, dat.name",
+            "UNION",
+            "MATCH (id:Identity)<-[:memberOf]-(:Group)<-[:parentGroup]-(:Group)-[:IAMOwners]->(priv:Privileges), (priv)-[r1]->(dat:Data), (id)-[r2]->(dat)",
+            "WHERE NOT TYPE(r1) = TYPE(r2)",
+            "RETURN DISTINCT id.name, dat.name;"
+        ],    
+        "mitigation": [
+            "MATCH (id:Identity {name: '$1'})-[r1]->(dat:Data {name: '$2'}), (id)<-[r2]-(dat)",
+            "DELTE r1,r2"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Privilege Escalation": ["T1078"]
+                },
+                "Mitigations": ["M1026"]
             }
     }
 }
