@@ -33,9 +33,11 @@ model.add_asset(hw_2)
 ## Applications
 app_1_0 = lang_classes_factory.ns.Application(name = "App 1.0_OS_Windows")
 app_2_0 = lang_classes_factory.ns.Application(name = "App 2.0_Server_Windows")
+app_2_1 = lang_classes_factory.ns.Application(name = "App 2.1_Server_HTTP")
 
 model.add_asset(app_1_0)
 model.add_asset(app_2_0)
+model.add_asset(app_2_1)
 
 
 assoc_hw_1_app_1_0 =\
@@ -51,6 +53,14 @@ assoc_hw_2_app_2_0 =\
     sysExecutedApps = [app_2_0]
     )
 model.add_association(assoc_hw_2_app_2_0)
+
+assoc_app_2_0_app_2_1 =\
+    lang_classes_factory.ns.AppExecution(
+    hostApp = [app_2_0],
+    appExecutedApps = [app_2_1]
+    )
+model.add_association(assoc_app_2_0_app_2_1)
+
 
 ## PhysicalZone
 pz_1 = lang_classes_factory.ns.PhysicalZone(name = "Zone 1")

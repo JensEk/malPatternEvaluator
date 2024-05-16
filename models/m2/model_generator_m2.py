@@ -24,20 +24,16 @@ model = malmodel.Model('M2', lang_spec, lang_classes_factory)
 ## Hardware
 hw_1 = lang_classes_factory.ns.Hardware(name = "Hw Computer_1_Employee_1")
 hw_2 = lang_classes_factory.ns.Hardware(name = "Hw Server_1")
-hw_3 = lang_classes_factory.ns.Hardware(name = "Hw Server_2")
 
 model.add_asset(hw_1)
 model.add_asset(hw_2)
-model.add_asset(hw_3)
 
 ## Applications
 app_1_0 = lang_classes_factory.ns.Application(name = "App 1.0_OS_Windows")
 app_2_0 = lang_classes_factory.ns.Application(name = "App 2.0_Server_Windows")
-app_3_0 = lang_classes_factory.ns.Application(name = "App 3.0_Server_Windows")
 
 model.add_asset(app_1_0)
 model.add_asset(app_2_0)
-model.add_asset(app_3_0)
 
 
 assoc_hw_1_app_1_0 =\
@@ -54,16 +50,16 @@ assoc_hw_2_app_2_0 =\
     )
 model.add_association(assoc_hw_2_app_2_0)
 
-assoc_hw_3_app_3_0 =\
-    lang_classes_factory.ns.SysExecution(
-    hostHardware = [hw_3],
-    sysExecutedApps = [app_3_0]
+## SoftwareProduct
+swProd_1 = lang_classes_factory.ns.SoftwareProduct(name = "SWProd 1.0_OS_Windows")
+model.add_asset(swProd_1)
+
+assoc_swProd_1_app_1_0 =\
+    lang_classes_factory.ns.AppSoftwareProduct(
+    appSoftProduct = [swProd_1],
+    softApplications = [app_1_0]
     )
-model.add_association(assoc_hw_3_app_3_0)
-
-
-
-
+model.add_association(assoc_swProd_1_app_1_0)
 
 
 
@@ -73,13 +69,23 @@ model.add_association(assoc_hw_3_app_3_0)
 data_s1_1 = lang_classes_factory.ns.Data(name = "Data Secret")
 model.add_asset(data_s1_1)
 
-assoc_app_3_0_data_s1_1 =\
+assoc_app_2_0_data_s1_1 =\
     lang_classes_factory.ns.AppContainment(
     containedData = [data_s1_1],
-    containingApp = [app_3_0]
+    containingApp = [app_2_0]
     )
-model.add_association(assoc_app_3_0_data_s1_1)
+model.add_association(assoc_app_2_0_data_s1_1)
 
+## Information
+info_s1_1 = lang_classes_factory.ns.Information(name = "Info Secret")
+model.add_asset(info_s1_1)
+
+assoc_data_s1_1_info_s1_1 =\
+    lang_classes_factory.ns.InfoContainment(
+    containerData = [data_s1_1],
+    information = [info_s1_1]
+    )
+model.add_association(assoc_data_s1_1_info_s1_1)
 
 # Networking Section
 
@@ -95,12 +101,10 @@ model.add_asset(net_1)
 cr_net_1_fw_1 = lang_classes_factory.ns.ConnectionRule(name = "CR Net_LAN_1->Router_FW_1")
 cr_net_1_app_1_0 = lang_classes_factory.ns.ConnectionRule(name = "CR Net_LAN_1<->App_1.0")
 cr_net_1_app_2_0 = lang_classes_factory.ns.ConnectionRule(name = "CR Net_LAN_1<->App_2.0")
-cr_net_1_app_3_0 = lang_classes_factory.ns.ConnectionRule(name = "CR Net_LAN_1<->App_3.0")
 
 model.add_asset(cr_net_1_fw_1)
 model.add_asset(cr_net_1_app_1_0)
 model.add_asset(cr_net_1_app_2_0)
-model.add_asset(cr_net_1_app_3_0)
 
 ### Associations
 assoc_cr_net_1_app_1_0 =\
@@ -117,13 +121,6 @@ assoc_cr_net_1_app_2_0 =\
     )
 model.add_association(assoc_cr_net_1_app_2_0)
 
-assoc_cr_net_1_app_3_0 =\
-    lang_classes_factory.ns.ApplicationConnection(
-    applications = [app_3_0],
-    appConnections = [cr_net_1_app_3_0]
-    )
-model.add_association(assoc_cr_net_1_app_3_0)
-
 assoc_netcon_crs_net_1_Out =\
     lang_classes_factory.ns.InNetworkConnection(
     inNetworks = [net_1],
@@ -134,7 +131,7 @@ model.add_association(assoc_netcon_crs_net_1_Out)
 assoc_netcon_crs_net_1 =\
     lang_classes_factory.ns.NetworkConnection(
     networks = [net_1],
-    netConnections = [cr_net_1_app_1_0, cr_net_1_app_2_0, cr_net_1_app_3_0]
+    netConnections = [cr_net_1_app_1_0, cr_net_1_app_2_0]
     )
 model.add_association(assoc_netcon_crs_net_1)
 
@@ -158,32 +155,13 @@ model.add_association(assoc_netcon_fwcrs)
 
 id_u1 = lang_classes_factory.ns.Identity(name = "Id Admin_1")
 id_u2 = lang_classes_factory.ns.Identity(name = "Id Employee_1")
-id_u3 = lang_classes_factory.ns.Identity(name = "Id ServiceAccount_1")
 
 model.add_asset(id_u1)
 model.add_asset(id_u2)
-model.add_asset(id_u3)
 
 
-## Privileges
-priv_h1 = lang_classes_factory.ns.Privileges(name = "Priv highPriv_1")
-
-model.add_asset(priv_h1)
 
 ### Associations
-assoc_id_priv_high =\
-    lang_classes_factory.ns.HasPrivileges(
-    IAMOwners = [id_u1],
-    subprivileges = [priv_h1]
-    )
-#model.add_association(assoc_id_priv_high) 
-
-assoc_priv_data_s1_1 =\
-    lang_classes_factory.ns.ReadPrivileges(
-    readingIAMs = [priv_h1],
-    readPrivData = [data_s1_1]
-    )
-model.add_association(assoc_priv_data_s1_1)
 
 assoc_exec_privs_u1 =\
     lang_classes_factory.ns.HighPrivilegeApplicationAccess(
@@ -199,12 +177,7 @@ assoc_exec_privs_u2 =\
     )
 model.add_association(assoc_exec_privs_u2)
 
-assoc_exec_privs_u3 =\
-    lang_classes_factory.ns.HighPrivilegeApplicationAccess(
-    highPrivAppIAMs = [id_u3],
-    highPrivApps = [app_2_0]
-    )
-model.add_association(assoc_exec_privs_u3)
+
 
 
 

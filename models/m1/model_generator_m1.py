@@ -68,23 +68,12 @@ model.add_association(assoc_app_2_0_app_2_1)
 data_s1_1 = lang_classes_factory.ns.Data(name = "Data Secret")
 model.add_asset(data_s1_1)
 
-assoc_app_2_0_data_s1_1 =\
+assoc_app_1_0_data_s1_1 =\
     lang_classes_factory.ns.AppContainment(
     containedData = [data_s1_1],
-    containingApp = [app_2_0]
+    containingApp = [app_1_0]
     )
-model.add_association(assoc_app_2_0_data_s1_1)
-
-## Information
-info_s1_1 = lang_classes_factory.ns.Information(name = "Info Secret")
-model.add_asset(info_s1_1)
-
-assoc_data_s1_1_info_s1_1 =\
-    lang_classes_factory.ns.InfoContainment(
-    containerData = [data_s1_1],
-    information = [info_s1_1]
-    )
-model.add_association(assoc_data_s1_1_info_s1_1)
+model.add_association(assoc_app_1_0_data_s1_1)
 
 
 
@@ -153,18 +142,20 @@ model.add_association(assoc_netcon_fwcrs)
 ## Identities
 id_u1 = lang_classes_factory.ns.Identity(name = "Id Admin_1")
 id_u2 = lang_classes_factory.ns.Identity(name = "Id Employee_1")
+id_u3 = lang_classes_factory.ns.Identity(name = "Id ServiceAccount_1")
 
 grp_1 = lang_classes_factory.ns.Group(name = "Group Employees")
 
 cred_u1 = lang_classes_factory.ns.Credentials(name = "Cred Admin_1")
 cred_u2 = lang_classes_factory.ns.Credentials(name = "Cred Employee_1")
-cred_mfa = lang_classes_factory.ns.Credentials(name = "MFA")
+
 model.add_asset(id_u1)
 model.add_asset(id_u2)
+model.add_asset(id_u3)
 model.add_asset(grp_1)
 model.add_asset(cred_u1)
 model.add_asset(cred_u2)
-model.add_asset(cred_mfa)
+
 
 ### Associations
 assoc_id_u1_cred_u1 =\
@@ -180,13 +171,6 @@ assoc_id_u2_cred_u2 =\
     credentials = [cred_u2]
     )
 model.add_association(assoc_id_u2_cred_u2)
-
-assoc_cred_u2_cred_mfa =\
-    lang_classes_factory.ns.ConditionalAuthentication(
-    credentials = [cred_u2],
-    requiredFactors = [cred_mfa]
-    )
-model.add_association(assoc_cred_u2_cred_mfa)
 
 assoc_exec_privs_low_grp1 =\
     lang_classes_factory.ns.LowPrivilegeApplicationAccess(
@@ -224,9 +208,30 @@ assoc_group_1 =\
     )
 model.add_association(assoc_group_1)
 
+assoc_exec_privs_u3 =\
+    lang_classes_factory.ns.HighPrivilegeApplicationAccess(
+    highPrivAppIAMs = [id_u3],
+    highPrivApps = [app_2_0]
+    )
+model.add_association(assoc_exec_privs_u3)
+
+assoc_group_1_privRead =\
+    lang_classes_factory.ns.ReadPrivileges(
+    readingIAMs = [grp_1],
+    readPrivData = [data_s1_1]
+    )
+model.add_association(assoc_group_1_privRead)
+
+assoc_privWrite_u2 =\
+    lang_classes_factory.ns.WritePrivileges(
+    writingIAMs = [id_u2],
+    writePrivData = [data_s1_1]
+    )
+model.add_association(assoc_privWrite_u2)
+
 ## Privileges
-priv_1 = lang_classes_factory.ns.Privileges(name = "Priv group_1")
-model.add_asset(priv_1)
+#priv_1 = lang_classes_factory.ns.Privileges(name = "Priv group_1")
+#model.add_asset(priv_1)
 
 
 

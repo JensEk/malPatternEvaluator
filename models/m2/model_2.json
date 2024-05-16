@@ -8,44 +8,44 @@
   },
   "assets": {
     "0": {
-      "name": "Comp C1",
+      "name": "Hw Computer_1_Employee_1",
       "metaconcept": "Hardware",
       "eid": "0",
       "defenses": {}
     },
     "1": {
-      "name": "Server S1",
+      "name": "Hw Server_1",
       "metaconcept": "Hardware",
       "eid": "1",
       "defenses": {}
     },
     "2": {
-      "name": "Server S2",
-      "metaconcept": "Hardware",
+      "name": "App 1.0_OS_Windows",
+      "metaconcept": "Application",
       "eid": "2",
       "defenses": {}
     },
     "3": {
-      "name": "App 1.0_OS_Windows",
+      "name": "App 2.0_Server_Windows",
       "metaconcept": "Application",
       "eid": "3",
       "defenses": {}
     },
     "4": {
-      "name": "App 2.0_Server_Windows",
-      "metaconcept": "Application",
+      "name": "SWProd 1.0_OS_Windows",
+      "metaconcept": "SoftwareProduct",
       "eid": "4",
       "defenses": {}
     },
     "5": {
-      "name": "App 3.0_Server_Windows",
-      "metaconcept": "Application",
+      "name": "Data Secret",
+      "metaconcept": "Data",
       "eid": "5",
       "defenses": {}
     },
     "6": {
-      "name": "Data Secret",
-      "metaconcept": "Data",
+      "name": "Info Secret",
+      "metaconcept": "Information",
       "eid": "6",
       "defenses": {}
     },
@@ -80,51 +80,33 @@
       "defenses": {}
     },
     "12": {
-      "name": "CR Net_LAN_1<->App_3.0",
-      "metaconcept": "ConnectionRule",
+      "name": "Id Admin_1",
+      "metaconcept": "Identity",
       "eid": "12",
       "defenses": {}
     },
     "13": {
-      "name": "Id Admin_1",
+      "name": "Id Employee_1",
       "metaconcept": "Identity",
       "eid": "13",
       "defenses": {}
     },
     "14": {
-      "name": "Id Employee_1",
-      "metaconcept": "Identity",
+      "name": "User Admin_1",
+      "metaconcept": "User",
       "eid": "14",
       "defenses": {}
     },
     "15": {
-      "name": "Id ServiceAccount_1",
-      "metaconcept": "Identity",
+      "name": "User Employee_1",
+      "metaconcept": "User",
       "eid": "15",
       "defenses": {}
     },
     "16": {
-      "name": "Priv highPriv_1",
-      "metaconcept": "Privileges",
-      "eid": "16",
-      "defenses": {}
-    },
-    "17": {
-      "name": "User_1",
-      "metaconcept": "User",
-      "eid": "17",
-      "defenses": {}
-    },
-    "18": {
-      "name": "User_2",
-      "metaconcept": "User",
-      "eid": "18",
-      "defenses": {}
-    },
-    "19": {
       "name": "Vuln SW_1",
       "metaconcept": "SoftwareVulnerability",
-      "eid": "19",
+      "eid": "16",
       "defenses": {}
     }
   },
@@ -136,7 +118,7 @@
           "0"
         ],
         "sysExecutedApps": [
-          "3"
+          "2"
         ]
       }
     },
@@ -147,18 +129,18 @@
           "1"
         ],
         "sysExecutedApps": [
-          "4"
+          "3"
         ]
       }
     },
     {
-      "metaconcept": "SysExecution",
+      "metaconcept": "AppSoftwareProduct",
       "association": {
-        "hostHardware": [
-          "2"
+        "appSoftProduct": [
+          "4"
         ],
-        "sysExecutedApps": [
-          "5"
+        "softApplications": [
+          "2"
         ]
       }
     },
@@ -166,10 +148,21 @@
       "metaconcept": "AppContainment",
       "association": {
         "containedData": [
-          "6"
+          "5"
         ],
         "containingApp": [
+          "3"
+        ]
+      }
+    },
+    {
+      "metaconcept": "InfoContainment",
+      "association": {
+        "containerData": [
           "5"
+        ],
+        "information": [
+          "6"
         ]
       }
     },
@@ -177,7 +170,7 @@
       "metaconcept": "ApplicationConnection",
       "association": {
         "applications": [
-          "3"
+          "2"
         ],
         "appConnections": [
           "10"
@@ -188,21 +181,10 @@
       "metaconcept": "ApplicationConnection",
       "association": {
         "applications": [
-          "4"
+          "3"
         ],
         "appConnections": [
           "11"
-        ]
-      }
-    },
-    {
-      "metaconcept": "ApplicationConnection",
-      "association": {
-        "applications": [
-          "5"
-        ],
-        "appConnections": [
-          "12"
         ]
       }
     },
@@ -225,8 +207,7 @@
         ],
         "netConnections": [
           "10",
-          "11",
-          "12"
+          "11"
         ]
       }
     },
@@ -242,24 +223,13 @@
       }
     },
     {
-      "metaconcept": "ReadPrivileges",
-      "association": {
-        "readingIAMs": [
-          "16"
-        ],
-        "readPrivData": [
-          "6"
-        ]
-      }
-    },
-    {
       "metaconcept": "HighPrivilegeApplicationAccess",
       "association": {
         "highPrivAppIAMs": [
-          "13"
+          "12"
         ],
         "highPrivApps": [
-          "3"
+          "2"
         ]
       }
     },
@@ -267,21 +237,10 @@
       "metaconcept": "LowPrivilegeApplicationAccess",
       "association": {
         "lowPrivAppIAMs": [
-          "14"
+          "13"
         ],
         "lowPrivApps": [
-          "3"
-        ]
-      }
-    },
-    {
-      "metaconcept": "HighPrivilegeApplicationAccess",
-      "association": {
-        "highPrivAppIAMs": [
-          "15"
-        ],
-        "highPrivApps": [
-          "4"
+          "2"
         ]
       }
     },
@@ -289,7 +248,18 @@
       "metaconcept": "UserAssignedIdentities",
       "association": {
         "users": [
-          "17"
+          "14"
+        ],
+        "userIds": [
+          "12"
+        ]
+      }
+    },
+    {
+      "metaconcept": "UserAssignedIdentities",
+      "association": {
+        "users": [
+          "15"
         ],
         "userIds": [
           "13"
@@ -297,21 +267,10 @@
       }
     },
     {
-      "metaconcept": "UserAssignedIdentities",
-      "association": {
-        "users": [
-          "18"
-        ],
-        "userIds": [
-          "14"
-        ]
-      }
-    },
-    {
       "metaconcept": "HardwareAccess",
       "association": {
         "users": [
-          "18"
+          "15"
         ],
         "hardwareSystems": [
           "0"
@@ -322,10 +281,10 @@
       "metaconcept": "ApplicationVulnerability_SoftwareVulnerability_Application",
       "association": {
         "vulnerabilities": [
-          "19"
+          "16"
         ],
         "application": [
-          "3"
+          "2"
         ]
       }
     }

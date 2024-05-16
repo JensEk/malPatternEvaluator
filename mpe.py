@@ -21,7 +21,7 @@ def init(modelFile: str, patternFile: str) -> dict:
     ingest_model(modelFile)
     for _ in tqdm (range (100), desc="Connecting to Neo4j..."):
         time.sleep(0.004)
-    print("Successfully connected\n")
+    print("Successfully connected!\n")
     patterns = load_patterns(patternFile)
     return patterns
 
@@ -106,46 +106,49 @@ def analyze_patterns(patterns,
     logger.addHandler(handler)
     logger.info(f"\n***\n----------Attack Patterns Report----------\n\n\nTime: {datetime.datetime.now()}\n")
 
-    for i in tqdm (range (100), desc="Analyzing patterns on model, please wait..."):
-        time.sleep(0.002)
-
     log_id = 1
     detPatterns = {}
     for name,attribs in patterns.items():
-        results = apply_query(attribs['badPattern'])
-        
-        if (results != None) and (len(results) > 0):
-            tactics = attribs['attackData']['Tactic']
-            mitigations = attribs['attackData']['Mitigations']
-            detPatterns[log_id] = {"name":name, "assets":[]}
-            for r in results:
-                assets = [v for v in r.values()]
-                detPatterns[log_id]['assets'].append(assets)
+        for i in tqdm (range (100), desc=f"Analyzing pattern [{name}] on model..."):
+            time.sleep(0.002)
+        queries = attribs['badPattern'].split(';')
+        for query in queries:
+            query = query.strip()
+            if query == '': continue
+            results = apply_query(query)
             
-            
-            # Log the detected pattern with ATT&CK data
-            logger.info(f"""Id: {log_id}\nPattern: {name}\nDescription: {attribs['description']}\nImpact: {attribs['impact']}\nNeo4j_Assets:{assets}\n\n----------ATT&CK----------\nTactic:""")
-            for tactic in tactics:
-                logger.info(f"\n      {tactic}:")
-                for technique in tactics[tactic]:
+            if (results != None) and (len(results) > 0):
+                tactics = attribs['attackData']['Tactic']
+                mitigations = attribs['attackData']['Mitigations']
+                detPatterns[log_id] = {"name":name, "assets":[]}
+                for r in results:
+                    assets = [v for v in r.values()]
+                    detPatterns[log_id]['assets'].append(assets)
+                
+                
+                # Log the detected pattern with ATT&CK data
+                logger.info(f"""Id: {log_id}\nPattern: {name}\nDescription: {attribs['description']}\nImpact: {attribs['impact']}\nNeo4j_Assets:{assets}\n\n----------ATT&CK----------\nTactic:""")
+                for tactic in tactics:
+                    logger.info(f"\n      {tactic}:")
+                    for technique in tactics[tactic]:
+                        logger.info(f"""
+                    Technique: {dataMapping['ATT&CK']['Tactic'][tactic][technique]['name']}
+                    ID: {dataMapping['ATT&CK']['Tactic'][tactic][technique]['id']}
+                    Description: {dataMapping['ATT&CK']['Tactic'][tactic][technique]['description']}
+                    URL: {dataMapping['ATT&CK']['Tactic'][tactic][technique]['url']}
+                    CAPEC: {dataMapping['ATT&CK']['Tactic'][tactic][technique]['CAPEC_id']}""")
+                
+                logger.info(f"""\nMitigations:""")
+                for mitigation in mitigations:
                     logger.info(f"""
-                Technique: {dataMapping['ATT&CK']['Tactic'][tactic][technique]['name']}
-                ID: {dataMapping['ATT&CK']['Tactic'][tactic][technique]['id']}
-                Description: {dataMapping['ATT&CK']['Tactic'][tactic][technique]['description']}
-                URL: {dataMapping['ATT&CK']['Tactic'][tactic][technique]['url']}
-                CAPEC: {dataMapping['ATT&CK']['Tactic'][tactic][technique]['CAPEC_id']}""")
-            
-            logger.info(f"""\nMitigations:""")
-            for mitigation in mitigations:
-                logger.info(f"""
-                Mitigation: {dataMapping['ATT&CK']['Mitigation'][mitigation]['name']}
-                ID: {dataMapping['ATT&CK']['Mitigation'][mitigation]['id']}
-                Description: {dataMapping['ATT&CK']['Mitigation'][mitigation]['description']}
-                URL: {dataMapping['ATT&CK']['Mitigation'][mitigation]['url']}""")
+                    Mitigation: {dataMapping['ATT&CK']['Mitigation'][mitigation]['name']}
+                    ID: {dataMapping['ATT&CK']['Mitigation'][mitigation]['id']}
+                    Description: {dataMapping['ATT&CK']['Mitigation'][mitigation]['description']}
+                    URL: {dataMapping['ATT&CK']['Mitigation'][mitigation]['url']}""")
 
-            logger.info("\n\n\n")    
-            log_id += 1
-    
+                logger.info("\n\n\n")    
+                log_id += 1
+        
     logger.info(f"""----------Summary----------\n\nTotal patterns detected: {len(detPatterns.keys())}""")
     for id, val in detPatterns.items():
         logger.info(f"""{id}. {val['name']}""")
@@ -201,6 +204,9 @@ def apply_mitigation(patterns, detPat,
 
     print("Applying mitigations for: " + detPat['name'] + "\n")
     for assets in detPat['assets']:
+        inp = input(f"Apply to assets: {assets} (y/n)\n")
+        if inp != 'y':
+            continue
         newQuery = patterns[detPat['name']]['mitigation']
         argId = 1
         for asset in assets:
@@ -268,7 +274,7 @@ def main():
                     print("Invalid pattern ID")
             elif choice == '4':
                 ingest_model(modelFile)
-                print("Model restored")
+                print("**Model restored**")
             elif choice == '5':
                 print("Exiting program.")
                 break

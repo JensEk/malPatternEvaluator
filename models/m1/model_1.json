@@ -44,49 +44,49 @@
       "defenses": {}
     },
     "6": {
-      "name": "Info Secret",
-      "metaconcept": "Information",
+      "name": "Router FW_1",
+      "metaconcept": "RoutingFirewall",
       "eid": "6",
       "defenses": {}
     },
     "7": {
-      "name": "Router FW_1",
-      "metaconcept": "RoutingFirewall",
+      "name": "Net LAN_1",
+      "metaconcept": "Network",
       "eid": "7",
       "defenses": {}
     },
     "8": {
-      "name": "Net LAN_1",
-      "metaconcept": "Network",
+      "name": "CR Net_LAN_1->Router_FW_1",
+      "metaconcept": "ConnectionRule",
       "eid": "8",
       "defenses": {}
     },
     "9": {
-      "name": "CR Net_LAN_1->Router_FW_1",
+      "name": "CR Net_LAN_1<->App_1.0",
       "metaconcept": "ConnectionRule",
       "eid": "9",
       "defenses": {}
     },
     "10": {
-      "name": "CR Net_LAN_1<->App_1.0",
+      "name": "CR Net_LAN_1<->App_2.0",
       "metaconcept": "ConnectionRule",
       "eid": "10",
       "defenses": {}
     },
     "11": {
-      "name": "CR Net_LAN_1<->App_2.0",
-      "metaconcept": "ConnectionRule",
+      "name": "Id Admin_1",
+      "metaconcept": "Identity",
       "eid": "11",
       "defenses": {}
     },
     "12": {
-      "name": "Id Admin_1",
+      "name": "Id Employee_1",
       "metaconcept": "Identity",
       "eid": "12",
       "defenses": {}
     },
     "13": {
-      "name": "Id Employee_1",
+      "name": "Id ServiceAccount_1",
       "metaconcept": "Identity",
       "eid": "13",
       "defenses": {}
@@ -110,27 +110,15 @@
       "defenses": {}
     },
     "17": {
-      "name": "MFA",
-      "metaconcept": "Credentials",
+      "name": "User Admin_1",
+      "metaconcept": "User",
       "eid": "17",
       "defenses": {}
     },
     "18": {
-      "name": "Priv group_1",
-      "metaconcept": "Privileges",
-      "eid": "18",
-      "defenses": {}
-    },
-    "19": {
-      "name": "User Admin_1",
-      "metaconcept": "User",
-      "eid": "19",
-      "defenses": {}
-    },
-    "20": {
       "name": "User Employee_1",
       "metaconcept": "User",
-      "eid": "20",
+      "eid": "18",
       "defenses": {}
     }
   },
@@ -175,18 +163,7 @@
           "5"
         ],
         "containingApp": [
-          "3"
-        ]
-      }
-    },
-    {
-      "metaconcept": "InfoContainment",
-      "association": {
-        "containerData": [
-          "5"
-        ],
-        "information": [
-          "6"
+          "2"
         ]
       }
     },
@@ -197,7 +174,7 @@
           "2"
         ],
         "appConnections": [
-          "10"
+          "9"
         ]
       }
     },
@@ -208,7 +185,7 @@
           "3"
         ],
         "appConnections": [
-          "11"
+          "10"
         ]
       }
     },
@@ -216,10 +193,10 @@
       "metaconcept": "OutNetworkConnection",
       "association": {
         "outNetworks": [
-          "8"
+          "7"
         ],
         "outgoingNetConnections": [
-          "9"
+          "8"
         ]
       }
     },
@@ -227,11 +204,11 @@
       "metaconcept": "NetworkConnection",
       "association": {
         "networks": [
-          "8"
+          "7"
         ],
         "netConnections": [
-          "10",
-          "11"
+          "9",
+          "10"
         ]
       }
     },
@@ -239,10 +216,10 @@
       "metaconcept": "FirewallConnectionRule",
       "association": {
         "routingFirewalls": [
-          "7"
+          "6"
         ],
         "connectionRules": [
-          "9"
+          "8"
         ]
       }
     },
@@ -250,7 +227,7 @@
       "metaconcept": "IdentityCredentials",
       "association": {
         "identities": [
-          "12"
+          "11"
         ],
         "credentials": [
           "15"
@@ -261,21 +238,10 @@
       "metaconcept": "IdentityCredentials",
       "association": {
         "identities": [
-          "13"
+          "12"
         ],
         "credentials": [
           "16"
-        ]
-      }
-    },
-    {
-      "metaconcept": "ConditionalAuthentication",
-      "association": {
-        "credentials": [
-          "16"
-        ],
-        "requiredFactors": [
-          "17"
         ]
       }
     },
@@ -294,7 +260,7 @@
       "metaconcept": "HighPrivilegeApplicationAccess",
       "association": {
         "highPrivAppIAMs": [
-          "12"
+          "11"
         ],
         "highPrivApps": [
           "2",
@@ -306,7 +272,7 @@
       "metaconcept": "HighPrivilegeApplicationAccess",
       "association": {
         "highPrivAppIAMs": [
-          "13"
+          "12"
         ],
         "highPrivApps": [
           "2"
@@ -317,7 +283,7 @@
       "metaconcept": "ExecutionPrivilegeAccess",
       "association": {
         "executionPrivIAMs": [
-          "13"
+          "12"
         ],
         "execPrivApps": [
           "4"
@@ -331,29 +297,62 @@
           "14"
         ],
         "groupIds": [
-          "13"
-        ]
-      }
-    },
-    {
-      "metaconcept": "UserAssignedIdentities",
-      "association": {
-        "users": [
-          "19"
-        ],
-        "userIds": [
           "12"
         ]
       }
     },
     {
+      "metaconcept": "HighPrivilegeApplicationAccess",
+      "association": {
+        "highPrivAppIAMs": [
+          "13"
+        ],
+        "highPrivApps": [
+          "3"
+        ]
+      }
+    },
+    {
+      "metaconcept": "ReadPrivileges",
+      "association": {
+        "readingIAMs": [
+          "14"
+        ],
+        "readPrivData": [
+          "5"
+        ]
+      }
+    },
+    {
+      "metaconcept": "WritePrivileges",
+      "association": {
+        "writingIAMs": [
+          "12"
+        ],
+        "writePrivData": [
+          "5"
+        ]
+      }
+    },
+    {
       "metaconcept": "UserAssignedIdentities",
       "association": {
         "users": [
-          "20"
+          "17"
         ],
         "userIds": [
-          "13"
+          "11"
+        ]
+      }
+    },
+    {
+      "metaconcept": "UserAssignedIdentities",
+      "association": {
+        "users": [
+          "18"
+        ],
+        "userIds": [
+          "12"
         ]
       }
     }
