@@ -390,5 +390,50 @@
                 },
                 "Mitigations": ["M1016", "M1051", "M1033"]
             }
+    },
+    "dataAiTM": {
+        "description": "Identifies [Data] with association {transitData} to a [Network] where [User] have physical access to it.",
+        "impact": "An adversary may attempt to position themselves to intercept data in transit between two network devices to intercept and collect data.",
+        "badPattern": [
+            "MATCH (net:Network)<-[:transitData]-(dat:Data), (net)<-[:physicalZones]-(:PhysicalZone)<-[:users]-(:User)",
+            "RETURN DISTINCT dat.name;"
+        ],    
+        "mitigation": [
+            "MATCH (dat:Data {name: '$1'})<-[r1:transitNetwork]-(net:Network), (dat)-[r2:transitData]->(net)",
+            "DELETE r1,r2"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Credential Access": ["T1557"],
+                    "Collection": ["T1557"]
+                },
+                "Mitigations": ["M1041", "M1037", "M1035"]
+            }
+    },
+    "containerCompromise": {
+        "description": "Identifies [Application] with name matching of containerized services where [Identity] with extended privileges exists.",
+        "impact": "Adversaries may deploy malicious containers to facilitate execution or evade defenses. Alternatively, they may try to break out of a container to gain access to the underlying host.",
+        "badPattern": [
+            "MATCH (:Application)-[:hostApp]->(app:Application), (:Identity)-[:highPrivAppIAMs|executionPrivIAMs]->(app)",
+            "WHERE app.name =~ '(?i).*Container.*|.*Docker.*|.*Kubernetes.*|.*Containerized.*|.*VM.*|.*Virtual.*'",
+            "RETURN DISTINCT app.name;",
+            "MATCH (app2:Application)-[:hostApp]->(app:Application), (:Identity)-[:highPrivAppIAMs|executionPrivIAMs]->(app2)",
+            "WHERE app.name =~ '(?i).*Container.*|.*Docker.*|.*Kubernetes.*|.*Containerized.*|.*VM.*|.*Virtual.*'",
+            "RETURN DISTINCT app.name;"
+        ],    
+        "mitigation": [
+            "MATCH (app:Application {name: '$1'})",
+            "MERGE (idps:IDPS {metaconcept: 'IDPS', name: 'IDPS'})", 
+            "CREATE (app)-[:protectedApps]->(idps), (app)<-[:protectorIDPSs]-(idps)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Execution": ["T1610"],
+                    "Privilege Escalation": ["T1611"]
+                },
+                "Mitigations": ["M1047", "M1048", "M1038"]
+            }
     }
 }
