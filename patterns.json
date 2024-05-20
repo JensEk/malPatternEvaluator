@@ -3,12 +3,12 @@
         "description": "Identifies [Credentials] linked to a remote access [Application] without an associated {ConditionalAuthentication}.",
         "impact": "Missing Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials.",
         "badPattern": [
-            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*SSH.*'",
+            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*Remote.*|.*SSH.*'",
             "WITH app",
             "MATCH (app)--(usr:Identity)--(cred:Credentials)",
             "WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*|.*2FA.*|.*Multi-Factor.*|.*Two-Factor.*')",
             "RETURN DISTINCT cred.name;",
-            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*SSH.*'",
+            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*Remote.*|.*SSH.*'",
             "WITH app",
             "MATCH (app)<-[:hostApp]-(:Application)--(usr:Identity)--(cred:Credentials)",
             "WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*|.*2FA.*|.*Multi-Factor.*|.*Two-Factor.*')",
@@ -434,6 +434,74 @@
                     "Privilege Escalation": ["T1611"]
                 },
                 "Mitigations": ["M1047", "M1048", "M1038"]
+            }
+    },
+    "accountManagerMFA": {
+        "description": "Identifies [Identity] with {managers} association to another [Group], [Identity], or [Privileges] where association {ConditionalAuthentication} is missing.",
+        "impact": "Adversaries may modify permissions or credentials to compromised accounts to maintain or elevate access to a network and its systems.",
+        "badPattern": [
+            "MATCH (id:Identity)-[:managers]->(:Group), (id)<-[:credentials]-(cred:Credentials)",
+            "WHERE NOT (cred)<-[:requiredFactors]-(:Credentials)",
+            "RETURN DISTINCT id.name, cred.name;",
+            "MATCH (id:Identity)-[:managers]->(:Identity), (id)<-[:credentials]-(cred:Credentials)",
+            "WHERE NOT (cred)<-[:requiredFactors]-(:Credentials)",
+            "RETURN DISTINCT id.name, cred.name;",
+            "MATCH (id:Identity)-[:managers]->(:Privileges), (id)<-[:credentials]-(cred:Credentials)",
+            "WHERE NOT (cred)<-[:requiredFactors]-(:Credentials)",
+            "RETURN DISTINCT id.name, cred.name;"
+        ],    
+        "mitigation": [
+            "MATCH (id:Identity {name: '$1'})<-[:credentials]-(cred:Credentials {name: '$2'})",
+            "CREATE (cred2:Credentials {metaconcept: 'Credentials', name: 'MFA'}), (cred)-[:credentials]->(cred2), (cred)<-[:requiredFactors]->(cred2)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Persistence": ["T1098", "T1136"]
+                },
+                "Mitigations": ["M1032", "M1026"]
+            }
+    },
+    "userImpersonation": {
+        "description": "Identifies [User] with an associated [Identity] that is linked to another [User].",
+        "impact": "Adversaries may try to impersonate a trusted person in order to persuade and trick other users conduct actions on their behalf.",
+        "badPattern": [
+            "MATCH (usr1:User)-[:users]->(:Identity), (usr1)-[*1..]->(:User)",
+            "RETURN DISTINCT usr1.name;"
+        ],    
+        "mitigation": [
+            "MATCH (usr:User {name: '$1'})-->(:Identity)-->(cred:Credential)",
+            "MERGE (cred2:Credential {metaconcept: 'Credential', name: 'MFA'})", 
+            "CREATE (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Defense Evasion": ["T1656"]
+                },
+                "Mitigations": ["M1019", "M1017"]
+            }
+    },
+    "networkPerimeterCompromise": {
+        "description": "Identifies [RoutingFirewall] with associated [Application] or [Hardware] where an [Identity] is linked with it.",
+        "impact": "By compromising perimeter network devices adversaries may try to bridge network boundaries to bypass restrictions on traffic routing.",
+        "badPattern": [
+            "MATCH (:RoutingFirewall)<-[:managerApp]-(app:Application), (app)<--(id:Identity)",
+            "RETURN DISTINCT id.name;",
+            "MATCH (:RoutingFirewall)<-[:hostHardware]-(hw:Hardware), (hw)<--(usr:User), (usr)-->(id:Identity)",
+            "RETURN DISTINCT id.name;"
+        ],    
+        "mitigation": [
+            "MATCH (id:Identity {name: '$1'})-->(cred:Credential)",
+            "MERGE (cred2:Credential {metaconcept: 'Credential', name: 'MFA'})", 
+            "CREATE (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Defense Evasion": ["T1599"]
+                },
+                "Mitigations": ["M1043", "M1032", "M1027"]
             }
     }
 }
