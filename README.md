@@ -13,7 +13,7 @@ A tool to evaluate structural patterns from Mitre ATT&CK on MAL coreLang models 
 
 
 ## Pattern collection
-| Group of patterns | Pattern name | Pattern description | Pattern impact/abuse case | Target assets | ATT&CK Techniques | ATT&CK Mitigation | Model | Adversery Prerequisite |
+| Group of patterns | Pattern name | Pattern description | Pattern impact/abuse case | Target assets | ATT&CK Techniques | ATT&CK Mitigation | Model | Adversary Prerequisite |
 | ----------------- | ------------ | ------------------- | ------------------------- | ------------- | ----------------- | ----------------- | ----- | ---------------------- |
 | Identity & Access | remoteAccessMFA | Identifies [Credentials] linked to [Application] with name matching of remote access where association {ConditionalAuthentication} is missing. | Missing Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials. | Identity, Credentials | T1110, T1133, T1078 | M1036, M1032, M1030, M1017 | M1 | - |
 | Identity & Access | highPrivAccountsMFA | Identifies [Credentials] linked to a [User] associated [Identity] with extended privileges where association {ConditionalAuthentication} is missing. | Missing Multi-Factor Authentication (MFA) on accounts with high privileges may enable lateral movements and unauthorized access to resources. | Identity, Credentials | T1078, T1110 | M1032, M1027, M1026 | M1 | Compromised network/system |
