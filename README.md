@@ -1,6 +1,7 @@
 # malPatternEvaluator
+A tool to evaluate structural patterns from Mitre ATT&CK techniques on MAL coreLang models. In total 25 different patterns mapping 32 unique ATT&CK techniques to 17 different coreLang assets.
 
-
+## Installment and usage
 1. git clone https://github.com/JensEk/malPatternEvaluator.git
 2. pip install -r requirements.txt
 3. Connect to Neo4j desktop instance:
@@ -11,8 +12,7 @@
 5. python3 mpe.py -m models/mX/model_X.json -p patterns.json
 
 
-
-## Pattern collections
+## Pattern collection
 | Group of patterns | Pattern name | Pattern description | Pattern impact/abuse case | Target assets | ATT&CK Techniques | ATT&CK Mitigation | Model | Adversery Prerequisite |
 | ----------------- | ------------ | ------------------- | ------------------------- | ------------- | ----------------- | ----------------- | ----- | ---------------------- |
 | Identity & Access | remoteAccessMFA | Identifies [Credentials] linked to [Application] with name matching of remote access where association {ConditionalAuthentication} is missing. | Missing Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials. | Identity, Credentials | T1110, T1133, T1078 | M1036, M1032, M1030, M1017 | M1 | - |
