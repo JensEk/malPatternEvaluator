@@ -38,69 +38,81 @@
       "defenses": {}
     },
     "5": {
-      "name": "Zone 1",
-      "metaconcept": "PhysicalZone",
+      "name": "App 2.2_Docker",
+      "metaconcept": "Application",
       "eid": "5",
       "defenses": {}
     },
     "6": {
-      "name": "Zone 2",
-      "metaconcept": "PhysicalZone",
+      "name": "App 2.3_FirewallConfig",
+      "metaconcept": "Application",
       "eid": "6",
       "defenses": {}
     },
     "7": {
-      "name": "Router FW_1",
-      "metaconcept": "RoutingFirewall",
+      "name": "Zone 1",
+      "metaconcept": "PhysicalZone",
       "eid": "7",
       "defenses": {}
     },
     "8": {
-      "name": "Net LAN_1",
-      "metaconcept": "Network",
+      "name": "Zone 2",
+      "metaconcept": "PhysicalZone",
       "eid": "8",
       "defenses": {}
     },
     "9": {
-      "name": "CR Net_LAN_1->Router_FW_1",
-      "metaconcept": "ConnectionRule",
+      "name": "Router FW_1",
+      "metaconcept": "RoutingFirewall",
       "eid": "9",
       "defenses": {}
     },
     "10": {
-      "name": "CR Net_LAN_1<->App_1.0",
-      "metaconcept": "ConnectionRule",
+      "name": "Net LAN_1",
+      "metaconcept": "Network",
       "eid": "10",
       "defenses": {}
     },
     "11": {
-      "name": "CR Net_LAN_1<->App_2.0",
+      "name": "CR Net_LAN_1->Router_FW_1",
       "metaconcept": "ConnectionRule",
       "eid": "11",
       "defenses": {}
     },
     "12": {
-      "name": "Id Admin_1",
-      "metaconcept": "Identity",
+      "name": "CR Net_LAN_1<->App_1.0",
+      "metaconcept": "ConnectionRule",
       "eid": "12",
       "defenses": {}
     },
     "13": {
-      "name": "Id Employee_1",
-      "metaconcept": "Identity",
+      "name": "CR Net_LAN_1<->App_2.0",
+      "metaconcept": "ConnectionRule",
       "eid": "13",
       "defenses": {}
     },
     "14": {
-      "name": "User Admin_1",
-      "metaconcept": "User",
+      "name": "Id Admin_1",
+      "metaconcept": "Identity",
       "eid": "14",
       "defenses": {}
     },
     "15": {
+      "name": "Id Employee_1",
+      "metaconcept": "Identity",
+      "eid": "15",
+      "defenses": {}
+    },
+    "16": {
+      "name": "User Admin_1",
+      "metaconcept": "User",
+      "eid": "16",
+      "defenses": {}
+    },
+    "17": {
       "name": "User Employee_1",
       "metaconcept": "User",
-      "eid": "15",
+      "eid": "17",
       "defenses": {}
     }
   },
@@ -134,7 +146,9 @@
           "3"
         ],
         "appExecutedApps": [
-          "4"
+          "4",
+          "5",
+          "6"
         ]
       }
     },
@@ -142,7 +156,7 @@
       "metaconcept": "ZoneInclusion_PhysicalZone_Hardware",
       "association": {
         "physicalZones": [
-          "5"
+          "7"
         ],
         "hardwareSystems": [
           "0"
@@ -153,7 +167,7 @@
       "metaconcept": "ZoneInclusion_PhysicalZone_Hardware",
       "association": {
         "physicalZones": [
-          "6"
+          "8"
         ],
         "hardwareSystems": [
           "1"
@@ -167,7 +181,7 @@
           "2"
         ],
         "appConnections": [
-          "10"
+          "12"
         ]
       }
     },
@@ -178,7 +192,7 @@
           "3"
         ],
         "appConnections": [
-          "11"
+          "13"
         ]
       }
     },
@@ -186,10 +200,10 @@
       "metaconcept": "InNetworkConnection",
       "association": {
         "inNetworks": [
-          "8"
+          "10"
         ],
         "ingoingNetConnections": [
-          "9"
+          "11"
         ]
       }
     },
@@ -197,11 +211,11 @@
       "metaconcept": "NetworkConnection",
       "association": {
         "networks": [
-          "8"
+          "10"
         ],
         "netConnections": [
-          "10",
-          "11"
+          "12",
+          "13"
         ]
       }
     },
@@ -209,10 +223,21 @@
       "metaconcept": "FirewallConnectionRule",
       "association": {
         "routingFirewalls": [
-          "7"
+          "9"
         ],
         "connectionRules": [
+          "11"
+        ]
+      }
+    },
+    {
+      "metaconcept": "ManagedBy",
+      "association": {
+        "managedRoutingFw": [
           "9"
+        ],
+        "managerApp": [
+          "6"
         ]
       }
     },
@@ -220,7 +245,7 @@
       "metaconcept": "HighPrivilegeApplicationAccess",
       "association": {
         "highPrivAppIAMs": [
-          "12"
+          "14"
         ],
         "highPrivApps": [
           "2",
@@ -232,7 +257,7 @@
       "metaconcept": "LowPrivilegeApplicationAccess",
       "association": {
         "lowPrivAppIAMs": [
-          "13"
+          "15"
         ],
         "lowPrivApps": [
           "2"
@@ -243,10 +268,10 @@
       "metaconcept": "UserAssignedIdentities",
       "association": {
         "users": [
-          "14"
+          "16"
         ],
         "userIds": [
-          "12"
+          "14"
         ]
       }
     },
@@ -254,10 +279,10 @@
       "metaconcept": "UserAssignedIdentities",
       "association": {
         "users": [
-          "15"
+          "17"
         ],
         "userIds": [
-          "13"
+          "15"
         ]
       }
     },
@@ -265,7 +290,7 @@
       "metaconcept": "HardwareAccess",
       "association": {
         "users": [
-          "14"
+          "16"
         ],
         "hardwareSystems": [
           "0",
@@ -277,7 +302,7 @@
       "metaconcept": "HardwareAccess",
       "association": {
         "users": [
-          "15"
+          "17"
         ],
         "hardwareSystems": [
           "0"

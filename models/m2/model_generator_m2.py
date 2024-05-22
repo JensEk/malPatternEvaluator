@@ -63,6 +63,7 @@ model.add_association(assoc_swProd_1_app_1_0)
 
 
 
+
 # DataResource Section
 
 ## Data
@@ -135,6 +136,12 @@ assoc_netcon_crs_net_1 =\
     )
 model.add_association(assoc_netcon_crs_net_1)
 
+assoc_net_1_dataTransit =\
+    lang_classes_factory.ns.DataInTransit(
+    transitData = [data_s1_1],
+    transitNetwork = [net_1]
+    )
+model.add_association(assoc_net_1_dataTransit)
 
 
 ## Routing Firewall and networks associations
@@ -177,6 +184,13 @@ assoc_exec_privs_u2 =\
     )
 model.add_association(assoc_exec_privs_u2)
 
+assoc_writePrivs_data_s1_1 =\
+    lang_classes_factory.ns.WritePrivileges(
+    writingIAMs = [id_u1,id_u2],
+    writePrivData = [data_s1_1]
+    )
+model.add_association(assoc_writePrivs_data_s1_1)
+
 
 
 
@@ -213,6 +227,7 @@ assoc_user_1_hw =\
     hardwareSystems = [hw_1]
     )
 model.add_association(assoc_user_1_hw)
+
 
 # Vulnerability Section
 ## Software Vulnerabilities

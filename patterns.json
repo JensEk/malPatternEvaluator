@@ -1,14 +1,14 @@
 {
     "remoteAccessMFA": {
-        "description": "Identifies [Credentials] linked to a remote access [Application] without an associated {ConditionalAuthentication}.",
+        "description": "Identifies [Credentials] linked to [Application] with name matching of remote access where association {ConditionalAuthentication} is missing.",
         "impact": "Missing Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials.",
         "badPattern": [
-            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*Remote.*|.*SSH.*'",
+            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*Remote.*|.*RMM.*|.*SSH.*'",
             "WITH app",
             "MATCH (app)--(usr:Identity)--(cred:Credentials)",
             "WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*|.*2FA.*|.*Multi-Factor.*|.*Two-Factor.*')",
             "RETURN DISTINCT cred.name;",
-            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*Remote.*|.*SSH.*'",
+            "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*Remote.*|.*RMM.*|.*SSH.*'",
             "WITH app",
             "MATCH (app)<-[:hostApp]-(:Application)--(usr:Identity)--(cred:Credentials)",
             "WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*|.*2FA.*|.*Multi-Factor.*|.*Two-Factor.*')",
@@ -30,7 +30,7 @@
             }
     },
     "highPrivAccountsMFA": {
-        "description": "Identifies [Credentials] linked to a [User] associated [Identity] with extended priviliges and without an associated {ConditionalAuthentication}.",
+        "description": "Identifies [Credentials] linked to a [User] associated [Identity] with extended privileges where association {ConditionalAuthentication} is missing.",
         "impact": "Missing Multi-Factor Authentication (MFA) on accounts with high privileges may enable lateral movements and unauthorized access to resources.",
         "badPattern": [
             "MATCH (:User)--(id:Identity)-[:highPrivAppIAMs|executionPrivIAMs|writingIAMs|deletingIAMs]->(),(id)--(cred:Credentials)",
@@ -68,9 +68,11 @@
         "attackData": 
             {
                 "Tactic": {
-                    "Credential Access": ["T1552", "T1539", "T1555"]
+                    "Credential Access": ["T1552", "T1539", "T1555"],
+                    "Collection": ["T1005"],
+                    "Impact": ["T1565"]
                 },
-                "Mitigations": ["M1041", "M1047", "M1027"]
+                "Mitigations": ["M1041", "M1047", "M1027", "M1057"]
             }
     },
     "unencryptedInfo": {
@@ -89,14 +91,16 @@
         "attackData": 
             {
                 "Tactic": {
-                    "Credential Access": ["T1552", "T1539", "T1555"]
+                    "Credential Access": ["T1552", "T1539", "T1555"],
+                    "Collection": ["T1005"],
+                    "Impact": ["T1565"]
                 },
-                "Mitigations": ["M1041", "M1047", "M1027"]
+                "Mitigations": ["M1041", "M1047", "M1027", "M1057"]
             }
     },
     "shadowAdmins": {
-        "description": "Identifies a [User] with associated [Identity] matching name to non-admin/root with {highPrivAppIAMs} association.",
-        "impact": "User accounts that have inadvertently been assigned admin privilige may enable attackers to control accounts with unrestricted access and movement.",
+        "description": "Identifies [User] associated [Identity] with {highPrivAppIAMs} association to [Application] where name is not matching admin/root.",
+        "impact": "User accounts that have inadvertently been assigned admin privilege may enable attackers to control accounts with unrestricted access and movement.",
         "badPattern": [
             "MATCH (:User)--(acc:Identity)-[:highPrivAppIAMs]->(app:Application)",
             "WHERE NOT acc.name =~ '(?i).*Admin.*|.*Root.*|.*Superuser.*'",
@@ -120,7 +124,7 @@
     },
     "highPrivServiceAccounts": {
         "description": "Identifies [Identity] with name matching of service account  with {highPrivAppIAMs} association.",
-        "impact": "Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilige escalation.",
+        "impact": "Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilege escalation.",
         "badPattern": [
             "MATCH (acc:Identity)-[:highPrivAppIAMs]->(:Application)-->(cr:ConnectionRule)-[r1]->(net:Network)-[r3]->(cr2:ConnectionRule)--(fw:RoutingFirewall), (cr)<-[r2]-(net)<-[r4]-(cr2)",
             "WHERE acc.name =~ '(?i).*Service.*|.*Support.*'",
@@ -145,7 +149,7 @@
             }
     },
     "userExposedNetworks": {
-        "description": "Identifies [Network] where [User] exists but [IDPS] or other [Application] identified as a security tool is missing.",
+        "description": "Identifies [Network] where [User] exists but [IDPS] or other [Application] matching a security tool is missing.",
         "impact": "Networks without any security tool may faciliate user targeted attack such as phising to deliver malicious attachments or links which are not detected and blocked.",
         "badPattern": [
             "MATCH (:RoutingFirewall)-->(cr:ConnectionRule)-[r1]->(net:Network)-->(:ConnectionRule)-->(app:Application), (cr)<-[r2]-(net)",
@@ -233,7 +237,8 @@
         "attackData": 
             {
                 "Tactic": {
-                    "Reconnaissance": ["T1595", "T1590"]
+                    "Reconnaissance": ["T1595", "T1590"],
+                    "Discovery": ["T1046"]
                 },
                 "Mitigations": ["M1056"]
             }
@@ -305,7 +310,8 @@
         "attackData": 
             {
                 "Tactic": {
-                    "Privilege Escalation": ["T1078"]
+                    "Privilege Escalation": ["T1078"],
+                    "Discovery": ["T1613", "T1046"]
                 },
                 "Mitigations": ["M1026"]
             }
@@ -334,7 +340,8 @@
         "attackData": 
             {
                 "Tactic": {
-                    "Privilege Escalation": ["T1078"]
+                    "Privilege Escalation": ["T1078"],
+                    "Discovery": ["T1613", "T1046"]
                 },
                 "Mitigations": ["M1026"]
             }
@@ -392,10 +399,11 @@
             }
     },
     "dataAiTM": {
-        "description": "Identifies [Data] with association {transitData} to a [Network] where [User] have physical access to it.",
+        "description": "Identifies [Data] with association {transitData} to a [Network] where [User] have access to it.",
         "impact": "An adversary may attempt to position themselves to intercept data in transit between two network devices to intercept and collect data.",
         "badPattern": [
-            "MATCH (net:Network)<-[:transitData]-(dat:Data), (net)<-[:physicalZones]-(:PhysicalZone)<-[:users]-(:User)",
+            "MATCH (net:Network)<-[:transitData]-(dat:Data)", 
+            "WHERE (net)<-[*1..]-(:User)",
             "RETURN DISTINCT dat.name;"
         ],    
         "mitigation": [
@@ -405,7 +413,7 @@
         "attackData": 
             {
                 "Tactic": {
-                    "Credential Access": ["T1557"],
+                    "Credential Access": ["T1557", "T1040"],
                     "Collection": ["T1557"]
                 },
                 "Mitigations": ["M1041", "M1037", "M1035"]
@@ -431,7 +439,8 @@
             {
                 "Tactic": {
                     "Execution": ["T1610"],
-                    "Privilege Escalation": ["T1611"]
+                    "Privilege Escalation": ["T1611"],
+                    "Discovery": ["T1613"]
                 },
                 "Mitigations": ["M1047", "M1048", "M1038"]
             }
@@ -457,7 +466,8 @@
         "attackData": 
             {
                 "Tactic": {
-                    "Persistence": ["T1098", "T1136"]
+                    "Persistence": ["T1098", "T1136"],
+                    "Impact": ["T1531"]
                 },
                 "Mitigations": ["M1032", "M1026"]
             }
@@ -466,7 +476,8 @@
         "description": "Identifies [User] with an associated [Identity] that is linked to another [User].",
         "impact": "Adversaries may try to impersonate a trusted person in order to persuade and trick other users conduct actions on their behalf.",
         "badPattern": [
-            "MATCH (usr1:User)-[:users]->(:Identity), (usr1)-[*1..]->(:User)",
+            "MATCH (usr1:User)-->(:Identity), (usr2:User)-->(:Identity)",
+            "WHERE (usr1)-[*1..]->(usr2) AND usr1 <> usr2",
             "RETURN DISTINCT usr1.name;"
         ],    
         "mitigation": [
@@ -483,10 +494,12 @@
             }
     },
     "networkPerimeterCompromise": {
-        "description": "Identifies [RoutingFirewall] with associated [Application] or [Hardware] where an [Identity] is linked with it.",
+        "description": "Identifies [RoutingFirewall] with associated [Application] or [Hardware] with an [Identity] linked to it.",
         "impact": "By compromising perimeter network devices adversaries may try to bridge network boundaries to bypass restrictions on traffic routing.",
         "badPattern": [
             "MATCH (:RoutingFirewall)<-[:managerApp]-(app:Application), (app)<--(id:Identity)",
+            "RETURN DISTINCT id.name;",
+            "MATCH (:RoutingFirewall)<-[:managerApp]-(:Application)<-[:hostApp]-(app:Application), (app)<--(id:Identity)",
             "RETURN DISTINCT id.name;",
             "MATCH (:RoutingFirewall)<-[:hostHardware]-(hw:Hardware), (hw)<--(usr:User), (usr)-->(id:Identity)",
             "RETURN DISTINCT id.name;"
@@ -502,6 +515,94 @@
                     "Defense Evasion": ["T1599"]
                 },
                 "Mitigations": ["M1043", "M1032", "M1027"]
+            }
+    },
+    "identityDiscovery": {
+        "description": "Identifies [Application] with multiple associated [Identity] with different types of privileges on the [Application].",
+        "impact": "Adversaries may attempt to enumerate valid accounts on compromised networks or systems to facilitate lateral movement and privilege escalation.",
+        "badPattern": [
+            "MATCH (id1:Identity)-[r1:highPrivAppIAMs]->(app:Application),(id2:Identity)-[r2]->(app)",
+            "WHERE NOT type(r1) = type(r2)",
+            "RETURN DISTINCT id1.name, app.name;"
+        ],    
+        "mitigation": [
+            "MATCH (id:Identity {name: '$1'})-[r1]->(app:Application {name: '$2'})",
+            "DELETE r1",
+            "CREATE (id2:Identity {metaconcept: 'Identity', name: 'HiddenIdentity'}, (id2)-[:parentId]->(id), (id2)<-[:childId]-(id), (id2)-[:highPrivAppIAMs]->(app), (id2)<-[:highPrivApps]-(app)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Discovery": ["T1087"]        
+                },
+                "Mitigations": ["M1028"]
+            }
+    },
+    "taintSharedStorage": {
+        "description": "Identifies [Data] that is hosted on [Hardware] or contained in [Application] where multiple [Identity] have write privileges indicating shared storage.",
+        "impact": "Shared storage locations may be abused by adversaries to deliver payloads or move laterally within a network.",
+        "badPattern": [
+            "MATCH (id1:Identity)-[:writingIAMs]->(dat:Data)-[:hostedData]->(:Hardware), (id2:Identity)-[:writingIAMs]->(dat)",
+            "WHERE id1 <> id2",
+            "RETURN DISTINCT id1.name, id2.name;",
+            "MATCH (id1:Identity)-[:writingIAMs]->(dat:Data)-[:containedData]->(:Application), (id2:Identity)-[:writingIAMs]->(dat)",
+            "WHERE id1 <> id2",
+            "RETURN DISTINCT id1.name, id2.name, dat.name;"
+        ],    
+        "mitigation": [
+            "MATCH (id1:Identity {name: '$1'})-[r1:writingIAMs]->(dat:Data {name: '$3'}), (id2:Identity {name: '$2'})-[r2:writingIAMs]->(dat:Data {name: '$3'})",
+            "DELETE r1,r2"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Lateral Movement": ["T1080"]        
+                },
+                "Mitigations": ["M1022", "M1049"]
+            }
+    },
+    "remoteAccessC2": {
+        "description": "Identifies [Application] with name matching of remote access tools where no {protectedApps} association to an [IDPS] exists.",
+        "impact": "Legitimate remote access tools may be exploited by adversaries to establish command and control channels to control compromised systems and exfiltrate data.",
+        "badPattern": [
+            "MATCH (app:Application)",
+            "WHERE app.name =~ '(?i).*Remote.*|.*RMM.*|.*VNC.*|.*Team Viewer.*|.*AnyDesk.*|.*ScreenConnect.*|.*LogMein.*|.*AmmyyAdmin.*' AND NOT (app)-[:protectedApps]->(:IDPS)",
+            "RETURN DISTINCT app.name;"
+        ],    
+        "mitigation": [
+            "MATCH (app:Application {name: '$1'})",
+            "MERGE (idps:IDPS {metaconcept: 'IDPS', name: 'IDPS'})",
+            "CREATE (app)-[:protectedApps]->(idps), (app)<-[:protectorIDPSs]-(idps)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Command and Control": ["T1219"],
+                    "Exfiltration": ["T1041"]
+                },
+                "Mitigations": ["M1031", "M1037"]
+            }
+    },
+    "dataDestruction": {
+        "description": "Identifies [Data] where [Identity] is associated with {writingIAMs} or {deletingIAMs}.",
+        "impact": "Adversaries may attempt to destroy data to disrupt operations by deleting or corrupting data.",
+        "badPattern": [
+            "MATCH (dat:Data)<-[:writingIAMs|deletingIAMs]-(:Identity)",
+            "RETURN DISTINCT dat.name;",
+            "MATCH (dat:Data)<-[:writingIAMs|deletingIAMs]-(:Group)",
+            "RETURN DISTINCT dat.name;",
+            "MATCH (dat:Data)<-[:writingIAMs|deletingIAMs]-(:Privileges)",
+            "RETURN DISTINCT dat.name;"
+        ],    
+        "mitigation": [
+            "CREATE (dat2:Data {metaconcept: 'Data', name: 'COPY_$1'}), (hw:Hardware {metaconcept: 'Hardware', name: 'Backup_Offline'}), (dat2)-[:hostedData]->(hw), (dat2)<-[:hardware]-(hw)"
+        ],
+        "attackData": 
+            {
+                "Tactic": {
+                    "Impact": ["T1485", "T1486", "T1561"]
+                },
+                "Mitigations": ["M1053"]
             }
     }
 }

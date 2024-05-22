@@ -31,7 +31,7 @@ model.add_asset(hw_2)
 ## Applications
 app_1_0 = lang_classes_factory.ns.Application(name = "App 1.0_OS_Windows")
 app_2_0 = lang_classes_factory.ns.Application(name = "App 2.0_Server_Windows")
-app_2_1 = lang_classes_factory.ns.Application(name = "App 2.1_VPN")
+app_2_1 = lang_classes_factory.ns.Application(name = "App 2.1_RemoteAccess_TeamViewer")
 
 model.add_asset(app_1_0)
 model.add_asset(app_2_0)
@@ -186,18 +186,11 @@ assoc_exec_privs_high_u1 =\
     )
 model.add_association(assoc_exec_privs_high_u1)
 
-assoc_exec_privs_high_u2 =\
-    lang_classes_factory.ns.HighPrivilegeApplicationAccess(
-    highPrivAppIAMs = [id_u2],
-    highPrivApps = [app_1_0]
-    )
-model.add_association(assoc_exec_privs_high_u2)
-
 
 assoc_exec_privs_exec_u2 =\
     lang_classes_factory.ns.ExecutionPrivilegeAccess(
     executionPrivIAMs = [id_u2],
-    execPrivApps = [app_2_1]
+    execPrivApps = [app_2_1, app_1_0]
     )
 model.add_association(assoc_exec_privs_exec_u2)
 
@@ -228,6 +221,14 @@ assoc_privWrite_u2 =\
     writePrivData = [data_s1_1]
     )
 model.add_association(assoc_privWrite_u2)
+
+assoc_managerIAM_u1 =\
+    lang_classes_factory.ns.AccountManagement(
+    managers = [id_u1],
+    managedIAMs = [id_u3]
+    )
+model.add_association(assoc_managerIAM_u1)
+
 
 ## Privileges
 #priv_1 = lang_classes_factory.ns.Privileges(name = "Priv group_1")

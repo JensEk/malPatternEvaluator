@@ -212,6 +212,17 @@
       }
     },
     {
+      "metaconcept": "DataInTransit",
+      "association": {
+        "transitData": [
+          "5"
+        ],
+        "transitNetwork": [
+          "8"
+        ]
+      }
+    },
+    {
       "metaconcept": "FirewallConnectionRule",
       "association": {
         "routingFirewalls": [
@@ -241,6 +252,18 @@
         ],
         "lowPrivApps": [
           "2"
+        ]
+      }
+    },
+    {
+      "metaconcept": "WritePrivileges",
+      "association": {
+        "writingIAMs": [
+          "12",
+          "13"
+        ],
+        "writePrivData": [
+          "5"
         ]
       }
     },

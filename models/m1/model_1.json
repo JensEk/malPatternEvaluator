@@ -32,7 +32,7 @@
       "defenses": {}
     },
     "4": {
-      "name": "App 2.1_VPN",
+      "name": "App 2.1_RemoteAccess_TeamViewer",
       "metaconcept": "Application",
       "eid": "4",
       "defenses": {}
@@ -269,24 +269,14 @@
       }
     },
     {
-      "metaconcept": "HighPrivilegeApplicationAccess",
-      "association": {
-        "highPrivAppIAMs": [
-          "12"
-        ],
-        "highPrivApps": [
-          "2"
-        ]
-      }
-    },
-    {
       "metaconcept": "ExecutionPrivilegeAccess",
       "association": {
         "executionPrivIAMs": [
           "12"
         ],
         "execPrivApps": [
-          "4"
+          "4",
+          "2"
         ]
       }
     },
@@ -331,6 +321,17 @@
         ],
         "writePrivData": [
           "5"
+        ]
+      }
+    },
+    {
+      "metaconcept": "AccountManagement",
+      "association": {
+        "managers": [
+          "11"
+        ],
+        "managedIAMs": [
+          "13"
         ]
       }
     },
