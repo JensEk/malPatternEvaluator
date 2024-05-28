@@ -65,8 +65,8 @@ def load_patterns(filename: str) -> dict:
             patterns[pattern]['description'] = attribs['description']
             patterns[pattern]['impact'] = attribs['impact']
             patterns[pattern]['badPattern'] = ' '.join(attribs['badPattern'])
-            patterns[pattern]['mitigation'] = ' '.join(attribs['mitigation'])
-            patterns[pattern]['attackData'] = attribs['attackData']
+            patterns[pattern]['mitigationPattern'] = ' '.join(attribs['mitigationPattern'])
+            patterns[pattern]['attackIDs'] = attribs['attackIDs']
     except:
         print("Error loading patterns file")
         sys.exit(1)
@@ -118,8 +118,8 @@ def analyze_patterns(patterns,
             results = apply_query(query)
             
             if (results != None) and (len(results) > 0):
-                tactics = attribs['attackData']['Tactic']
-                mitigations = attribs['attackData']['Mitigations']
+                tactics = attribs['attackIDs']['Tactic']
+                mitigations = attribs['attackIDs']['Mitigations']
                 detPatterns[log_id] = {"name":name, "assets":[]}
                 for r in results:
                     assets = [v for v in r.values()]
@@ -207,7 +207,7 @@ def apply_mitigation(patterns, detPat,
         inp = input(f"Apply to assets: {assets} (y/n)\n")
         if inp != 'y':
             continue
-        newQuery = patterns[detPat['name']]['mitigation']
+        newQuery = patterns[detPat['name']]['mitigationPattern']
         argId = 1
         for asset in assets:
             if asset == None:

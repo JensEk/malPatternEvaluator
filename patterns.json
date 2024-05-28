@@ -14,12 +14,12 @@
             "WHERE NOT ANY(factor IN [(cred)<-[:requiredFactors]-(mfa:Credentials) | mfa.name] WHERE factor =~ '(?i).*MFA.*|.*2FA.*|.*Multi-Factor.*|.*Two-Factor.*')",
             "RETURN DISTINCT cred.name;"
         ],
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (cred:Credentials) WHERE cred.name = '$1'",
             "WITH cred",
             "CREATE (cred2:Credentials {metaconcept: 'Credentials', name: 'MFA'}), (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Initial Access": ["T1133", "T1078"],
@@ -37,12 +37,12 @@
             "WHERE NOT (cred)<-[:requiredFactors]-()",
             "RETURN DISTINCT cred.name;"
         ], 
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (cred:Credentials) WHERE cred.name = '$1'",
             "WITH cred",
             "CREATE (cred2:Credentials {metaconcept: 'Credentials', name: 'MFA'}), (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Privilege Escalation": ["T1078"],
@@ -60,12 +60,12 @@
             "WHERE data.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials)",
             "RETURN DISTINCT data.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (data:Data) WHERE data.name = '$1'",
             "WITH data",
             "CREATE (cred:Credentials {metaconcept: 'Credentials', name: 'EncryptionKey'}), (cred)<-[:encryptedData]-(data), (cred)-[:encryptCreds]->(data)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Credential Access": ["T1552", "T1539", "T1555"],
@@ -83,12 +83,12 @@
             "WHERE info.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials)",
             "RETURN DISTINCT data.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (data:Data) WHERE data.name = '$1'",
             "WITH data",
             "CREATE (cred:Credentials {metaconcept: 'Credentials', name: 'EncryptionKey'}), (cred)<-[:encryptedData]-(data), (cred)-[:encryptCreds]->(data)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Credential Access": ["T1552", "T1539", "T1555"],
@@ -106,13 +106,13 @@
             "WHERE NOT acc.name =~ '(?i).*Admin.*|.*Root.*|.*Superuser.*'",
             "RETURN DISTINCT acc.name, app.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (acc:Identity)-[r1:highPrivAppIAMs]->(app:Application),(acc:Identity)<-[r2:highPrivApps]-(app:Application)",
             "WHERE acc.name = '$1' AND app.name = '$2'",
             "DELETE r1,r2",
             "CREATE (acc)-[:lowPrivAppIAMs]->(app), (acc)<-[:lowPrivApps]-(app)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Initial Access": ["T1078"],
@@ -133,12 +133,12 @@
             "WHERE acc.name =~ '(?i).*Service.*|.*Support.*'",
             "RETURN DISTINCT cr.name, net.name, fw.name, type(r1), type(r2), type(r3), type(r4);"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (cr:ConnectionRule {name: '$1'})-[r1]->(net:Network {name: '$2'}), (cr)<-[r2]-(net), (fw:RoutingFirewall {name: '$3'})",
             "DELETE r1,r2",
             "CREATE (net2:Network {metaconcept: 'Network', name: 'Net segmentedNetwork'}), (cr)-[:$4]->(net2), (cr)<-[:$5]-(net2), (cr2:ConnectionRule {metaconcept: 'ConnectionRule', name: 'CR Net_segmentedNetwork->$3'}), (net2)-[:$6]->(cr2), (net2)<-[:$7]-(cr2), (cr2)-[:connectionRules]->(fw), (cr2)<-[:routingFirewalls]-(fw)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Privilege Escalation": ["T1078"],
@@ -156,12 +156,12 @@
             "WHERE NOT app.name =~ '(?i).*Antivirus.*|.*IPS.*|.*IDS.*|.*EDR.*' AND NOT (net)-[*1..]->(:IDPS) AND (net)-[*1..]->(:User)",
             "RETURN DISTINCT cr.name, net.name, type(r1), type(r2);"
         ],
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (cr:ConnectionRule {name: '$1'})-[r1]->(net:Network {name: '$2'}), (cr)<-[r2]-(net)",
             "DELETE r1,r2",
             "CREATE (idps:IDPS {metaconcept: 'IDPS', name: 'IDPS'}), (cr2:ConnectionRule {metaconcept: 'ConnectionRule', name: 'CR IDPS<->$2'}), (cr2)-[:$3]->(net), (cr2)<-[:$4]-(net), (cr2)-[:appConnections]->(idps), (cr2)<-[:applications]-(idps),(cr)-[:appConnections]->(idps), (cr)<-[:applications]-(idps) ;"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Initial Access": ["T1566"],
@@ -182,11 +182,11 @@
             "WHERE NOT net.name =~ '(?i).*DMZ.*|.*Demilitarized Zone.*'",
             "RETURN DISTINCT app.name, net.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (app:Application {name: '$1'})--(cr:ConnectionRule)-[r1]->(net:Network {name: '$2'}), (cr)<-[r2]-(net)",
             "DELETE r1,r2"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Initial Access": ["T1190"]
@@ -205,12 +205,12 @@
             "WHERE TYPE(r) IN ['highPrivAppIAMs', 'executionPrivIAMs', 'writingIAMs', 'deletingIAMs']",
             "RETURN DISTINCT app.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (app:Application {name: '$1'})-[r]-()",
             "WHERE NOT TYPE(r) IN ['vulnerabilities', 'application', 'appSoftProduct', 'softApplications]",
             "DELETE r"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Execution": ["T1203"],
@@ -229,12 +229,12 @@
             "WHERE NOT net.name =~ '(?i).*DMZ.*|.*Demilitarized Zone.*' AND (net)<-[*1..]-(:Application)",
             "RETURN DISTINCT net.name, cr.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (net:Network {name: '$1'})<-[r1]-(cr:ConnectionRule {name: '$2'}), (net)-[r2]->(cr)",
             "DELETE r1,r2",
             "CREATE (net)<-[:outgoingNetConnections]-(cr), (net)-[:outNetworks]->(cr)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Reconnaissance": ["T1595", "T1590"],
@@ -251,12 +251,12 @@
             "WHERE NOT hw.name =~ ('(?i).*' + usr.name + '.*')",
             "RETURN DISTINCT hw.name, usr.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (hw:Hardware {name: '$1'})-[r1:hardwareSystems]->(usr:User {name: '$2'}), (hw)<-[r2:users]-(usr)",
             "DELETE r1,r2",
             "CREATE (pz:PhysicalZone {metaconcept: 'PhysicalZone', name: 'RestrictedZone'}), (pz)-[:physicalZones]->(hw), (pz)<-[:hardwareSystems]-(hw)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Initial Access": ["T1200", "T1091"],
@@ -273,11 +273,11 @@
             "WHERE NOT (usr)<-[:physicalZones]-(pz)",
             "RETURN DISTINCT hw.name, usr.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (hw:Hardware {name: '$1'})-[r1:hardwareSystems]->(usr:User {name: '$2'}), (hw)<-[r2:users]-(usr)",
             "DELETE r1,r2"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Initial Access": ["T1200", "T1091"],
@@ -303,11 +303,11 @@
             "WHERE NOT TYPE(r1) = TYPE(r2)",
             "RETURN DISTINCT id.name, app.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (id:Identity {name: '$1'})-[r1]->(app:Application {name: '$2'}), (id)<-[r2]-(app)",
             "DELTE r1,r2"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Privilege Escalation": ["T1078"],
@@ -333,11 +333,11 @@
             "WHERE NOT TYPE(r1) = TYPE(r2)",
             "RETURN DISTINCT id.name, dat.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (id:Identity {name: '$1'})-[r1]->(dat:Data {name: '$2'}), (id)<-[r2]-(dat)",
             "DELTE r1,r2"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Privilege Escalation": ["T1078"],
@@ -363,12 +363,12 @@
             "WHERE hw.name =~ '(?i).*Public.*|.*Public Facing.*|.*PublicFacing.*|.*Web Server.*|.*WebServer.*|.*Web.*|.*HTTP.*|.*Internet.*|.*External.*' AND NOT net.name =~ '(?i).*DMZ.*|.*Demilitarized Zone.*'", 
             "RETURN DISTINCT cr.name, net.name, fw.name, type(r1), type(r2), type(r3), type(r4);"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (cr:ConnectionRule {name: '$1'})-[r1]->(net:Network {name: '$2'}), (cr)<-[r2]-(net), (fw:RoutingFirewall {name: '$3'})",
             "DELETE r1,r2",
             "CREATE (net2:Network {metaconcept: 'Network', name: 'Net segmentedNetwork'}), (cr)-[:$4]->(net2), (cr)<-[:$5]-(net2), (cr2:ConnectionRule {metaconcept: 'ConnectionRule', name: 'CR Net_segmentedNetwork->$3'}), (net2)-[:$6]->(cr2), (net2)<-[:$7]-(cr2), (cr2)-[:connectionRules]->(fw), (cr2)<-[:routingFirewalls]-(fw)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Initial Access": ["T1190", "T1133"],
@@ -385,12 +385,12 @@
             "WHERE NOT (app)-[:protectedApps]->(:IDPS)",
             "RETURN DISTINCT app.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (app:Application {name: '$1'})",
             "MERGE (idps:IDPS {metaconcept: 'IDPS', name: 'IDPS'})", 
             "CREATE (app)-[:protectedApps]->(idps), (app)<-[:protectorIDPSs]-(idps)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Initial Access": ["T1195"]
@@ -406,11 +406,11 @@
             "WHERE (net)<-[*1..]-(:User)",
             "RETURN DISTINCT dat.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (dat:Data {name: '$1'})<-[r1:transitNetwork]-(net:Network), (dat)-[r2:transitData]->(net)",
             "DELETE r1,r2"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Credential Access": ["T1557", "T1040"],
@@ -430,12 +430,12 @@
             "WHERE app.name =~ '(?i).*Container.*|.*Docker.*|.*Kubernetes.*|.*Containerized.*|.*VM.*|.*Virtual.*'",
             "RETURN DISTINCT app.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (app:Application {name: '$1'})",
             "MERGE (idps:IDPS {metaconcept: 'IDPS', name: 'IDPS'})", 
             "CREATE (app)-[:protectedApps]->(idps), (app)<-[:protectorIDPSs]-(idps)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Execution": ["T1610"],
@@ -459,11 +459,11 @@
             "WHERE NOT (cred)<-[:requiredFactors]-(:Credentials)",
             "RETURN DISTINCT id.name, cred.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (id:Identity {name: '$1'})<-[:credentials]-(cred:Credentials {name: '$2'})",
             "CREATE (cred2:Credentials {metaconcept: 'Credentials', name: 'MFA'}), (cred)-[:credentials]->(cred2), (cred)<-[:requiredFactors]->(cred2)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Persistence": ["T1098", "T1136"],
@@ -480,12 +480,12 @@
             "WHERE (usr1)-[*1..]->(usr2) AND usr1 <> usr2",
             "RETURN DISTINCT usr1.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (usr:User {name: '$1'})-->(:Identity)-->(cred:Credential)",
             "MERGE (cred2:Credential {metaconcept: 'Credential', name: 'MFA'})", 
             "CREATE (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Defense Evasion": ["T1656"]
@@ -504,12 +504,12 @@
             "MATCH (:RoutingFirewall)<-[:hostHardware]-(hw:Hardware), (hw)<--(usr:User), (usr)-->(id:Identity)",
             "RETURN DISTINCT id.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (id:Identity {name: '$1'})-->(cred:Credential)",
             "MERGE (cred2:Credential {metaconcept: 'Credential', name: 'MFA'})", 
             "CREATE (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Defense Evasion": ["T1599"]
@@ -525,12 +525,12 @@
             "WHERE NOT type(r1) = type(r2)",
             "RETURN DISTINCT id1.name, app.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (id:Identity {name: '$1'})-[r1]->(app:Application {name: '$2'})",
             "DELETE r1",
             "CREATE (id2:Identity {metaconcept: 'Identity', name: 'HiddenIdentity'}, (id2)-[:parentId]->(id), (id2)<-[:childId]-(id), (id2)-[:highPrivAppIAMs]->(app), (id2)<-[:highPrivApps]-(app)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Discovery": ["T1087"]        
@@ -549,11 +549,11 @@
             "WHERE id1 <> id2",
             "RETURN DISTINCT id1.name, id2.name, dat.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (id1:Identity {name: '$1'})-[r1:writingIAMs]->(dat:Data {name: '$3'}), (id2:Identity {name: '$2'})-[r2:writingIAMs]->(dat:Data {name: '$3'})",
             "DELETE r1,r2"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Lateral Movement": ["T1080"]        
@@ -569,12 +569,12 @@
             "WHERE app.name =~ '(?i).*Remote.*|.*RMM.*|.*VNC.*|.*Team Viewer.*|.*AnyDesk.*|.*ScreenConnect.*|.*LogMein.*|.*AmmyyAdmin.*' AND NOT (app)-[:protectedApps]->(:IDPS)",
             "RETURN DISTINCT app.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "MATCH (app:Application {name: '$1'})",
             "MERGE (idps:IDPS {metaconcept: 'IDPS', name: 'IDPS'})",
             "CREATE (app)-[:protectedApps]->(idps), (app)<-[:protectorIDPSs]-(idps)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Command and Control": ["T1219"],
@@ -594,10 +594,10 @@
             "MATCH (dat:Data)<-[:writingIAMs|deletingIAMs]-(:Privileges)",
             "RETURN DISTINCT dat.name;"
         ],    
-        "mitigation": [
+        "mitigationPattern": [
             "CREATE (dat2:Data {metaconcept: 'Data', name: 'COPY_$1'}), (hw:Hardware {metaconcept: 'Hardware', name: 'Backup_Offline'}), (dat2)-[:hostedData]->(hw), (dat2)<-[:hardware]-(hw)"
         ],
-        "attackData": 
+        "attackIDs": 
             {
                 "Tactic": {
                     "Impact": ["T1485", "T1486", "T1561"]

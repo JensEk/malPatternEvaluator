@@ -1,4 +1,4 @@
-# Purpose: This script is used to generate a model with coreLang assets and save it to a JSON file.
+# Purpose: This script is used to statically create and generate a model with coreLang assets and save it to a JSON file.
 
 import logging
 
@@ -14,9 +14,6 @@ lang_spec = specification.load_language_specification_from_mar(lang_file)
 specification.save_language_specification_to_json(lang_spec, 'lang_spec.json')
 lang_classes_factory = classes_factory.LanguageClassesFactory(lang_spec)
 lang_classes_factory.create_classes()
-
-
-
 model = malmodel.Model('M1', lang_spec, lang_classes_factory)
 
 # ComputeResources Section
