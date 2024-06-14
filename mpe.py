@@ -74,24 +74,7 @@ def load_patterns(filename: str) -> dict:
 
 
 # Analyze all patterns on a model and log the corresponding ATT&CK techniques of detected patterns
-def analyze_patterns(patterns,
-        uri="bolt://localhost:7687",
-        username="neo4j",
-        password="dynp12345!",
-        dbname="neo4j",
-) -> dict:
-    """
-    Analyze bad patterns on a model then apply and log the corresponding ATT&CK techniques of detected patterns
-
-    Arguments:
-    patterns             - a patterns dictionary as loaded from the load_patterns function
-    uri                  - the URI to a running neo4j instance
-    username             - the username to login on Neo4J
-    password             - the password to login on Neo4J
-    dbname               - the selected database
-    """
-
-    g = Graph(uri=uri, user=username, password=password, name=dbname)
+def analyze_patterns(patterns) -> dict:
 
     # Load the attack data
     dataMapping = {}
@@ -108,6 +91,8 @@ def analyze_patterns(patterns,
 
     log_id = 1
     detPatterns = {}
+
+    # Extract and apply each available pattern query
     for name,attribs in patterns.items():
         for i in tqdm (range (100), desc=f"Analyzing pattern [{name}] on model..."):
             time.sleep(0.002)

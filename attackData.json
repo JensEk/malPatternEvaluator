@@ -95,7 +95,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-169":"Footprinting"},
-                    "coreLangTarget": {"DataResources":["Information"], "Networking":["Network"]}
+                    "coreLangTarget": {"DataResources":["Information"], "Networking":["Network", "ConnectionRule"]}
                 },
                 "T1591": {
                     "name": "Gather Victim Org Information",
@@ -115,7 +115,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Information"], "ComputeResources":["PhysicalZone"], "IAM":["Group"]}
+                    "coreLangTarget": {"DataResources":["Information"], "ComputeResources":["PhysicalZone"], "IAM":["Group", "Identity"]}
                 },
                 "T1590": {
                     "name": "Gather Victim Network Information",
@@ -137,7 +137,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-309":"Network Topology Mapping"},
-                    "coreLangTarget": {"DataResources":["Information"], "Networking":["Network", "RoutingFirewall"], "ComputeResources":["IDPS"]}
+                    "coreLangTarget": {"DataResources":["Information"], "Networking":["Network", "ConnectionRule", "RoutingFirewall"], "ComputeResources":["IDPS"]}
                 },
                 "T1593": {
                     "name": "Search Open Websites/Domains",
@@ -2791,7 +2791,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {}
+                    "coreLangTarget": {"ComputeResources":["Application"]}
                 },
                 "T1601": {
                     "name": "Modify System Image",
@@ -4239,7 +4239,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-300":"Port Scanning"},
-                    "coreLangTarget": {"Networking":["Network"], "ComputeResources":["Application"]}
+                    "coreLangTarget": {"Networking":["Network", "ConnectionRule"], "ComputeResources":["Application"]}
                 },
                 "T1518": {
                     "name": "Software Discovery",
@@ -4518,7 +4518,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"], "Vulnerability":["SoftwareVulnerability"]}
+                    "coreLangTarget": {"ComputeResources":["Application"], "Vulnerability":["SoftwareVulnerability"]}
                 },
                 "T1534": {
                     "name": "Internal Spearphishing",
