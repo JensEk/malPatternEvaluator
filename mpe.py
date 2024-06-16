@@ -18,6 +18,14 @@ from py2neo import Graph, Node, Relationship, Subgraph
 
 # Initialize the program by loading the model and patterns file
 def init(modelFile: str, patternFile: str) -> dict:
+    """
+    Initialize the program by loading the model and patterns file
+    
+    Arguments:
+    modelFile        - the model file to load
+    patternFile      - the pattern file to load
+    """
+
     ingest_model(modelFile)
     for _ in tqdm (range (100), desc="Connecting to Neo4j..."):
         time.sleep(0.004)
@@ -75,6 +83,12 @@ def load_patterns(filename: str) -> dict:
 
 # Analyze all patterns on a model and log the corresponding ATT&CK techniques of detected patterns
 def analyze_patterns(patterns) -> dict:
+    """
+    Analyze patterns on a model and log the corresponding ATT&CK techniques of detected patterns
+    
+    Arguments:
+    patterns        - JSON file containing the patterns to analyze 
+    """
 
     # Load the attack data
     dataMapping = {}
@@ -141,7 +155,7 @@ def analyze_patterns(patterns) -> dict:
     print("**Analysis completed**")
     return detPatterns
         
- 
+# Apply a query on the Neo4J graph database
 def apply_query(query, 
         uri="bolt://localhost:7687",
         username="neo4j",
@@ -171,21 +185,14 @@ def apply_query(query,
         print("Error applying query to Neo4j instance!")
 
 
-def apply_mitigation(patterns, detPat,
-        uri="bolt://localhost:7687",
-        username="neo4j",
-        password="dynp12345!",
-        dbname="neo4j",
-) -> None:
+# Revise a query with the given arguments in detPat
+def apply_mitigation(patterns, detPat,) -> None:
     """
+    Apply mitigations for a detected pattern, by revising the mitigation query with the given arguments in detPat
+    
     Arguments:
-    patterns             - the patterns file
-    detPat               - the detected pattern to mitigate
-    uri                  - the URI to a running neo4j instance
-    username             - the username to login on Neo4J
-    password             - the password to login on Neo4J
-    dbname               - the selected database
-    """
+    patterns        - the original pattern file that is analyzed
+    detPat          - the detected pattern with assets to mitigate"""
 
     print("Applying mitigations for: " + detPat['name'] + "\n")
     for assets in detPat['assets']:
