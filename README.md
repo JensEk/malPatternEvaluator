@@ -1,5 +1,5 @@
 # malPatternEvaluator
-A tool to evaluate structural patterns from Mitre ATT&CK on MAL coreLang models in Neo4j. In total 25 different patterns mapping 42 unique ATT&CK techniques to 17 different coreLang assets.
+A tool to evaluate structural patterns from Mitre ATT&CK on MAL coreLang models in Neo4j. In total 25 different patterns mapping 42 unique ATT&CK techniques to 16 different coreLang assets.
 
 ## Installment and usage
 1. git clone https://github.com/JensEk/malPatternEvaluator.git
