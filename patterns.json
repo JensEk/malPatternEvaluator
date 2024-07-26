@@ -68,8 +68,8 @@
         "attackIDs": 
             {
                 "Tactic": {
-                    "Credential Access": ["T1552", "T1539", "T1555"],
-                    "Collection": ["T1005"],
+                    "Credential Access": ["T1552", "T1555"],
+                    "Collection": ["T1005", "T1039"],
                     "Impact": ["T1565"]
                 },
                 "Mitigations": ["M1041", "M1047", "M1027", "M1057"]
@@ -91,8 +91,8 @@
         "attackIDs": 
             {
                 "Tactic": {
-                    "Credential Access": ["T1552", "T1539", "T1555"],
-                    "Collection": ["T1005"],
+                    "Credential Access": ["T1552", "T1555"],
+                    "Collection": ["T1005", "T1039"],
                     "Impact": ["T1565"]
                 },
                 "Mitigations": ["M1041", "M1047", "M1027", "M1057"]
@@ -222,7 +222,7 @@
             }
     },
     "activeNetworkScan": {
-        "description": "Identifies [Network] with linked [Application] which is not identified as DMZ but with {ingoingNetConnections} association to a [RoutingFirewall].",
+        "description": "Identifies [Network] with connected [Application] where [Network] is not identified as DMZ but with {ingoingNetConnections} association to [RoutingFirewall].",
         "impact": "A network that allows ingoing traffic may enable active reconnaissance scans that probes infrastructure via network traffic to gather information.",
         "badPattern": [
             "MATCH (net:Network)<-[:ingoingNetConnections]-(cr:ConnectionRule)",
@@ -494,7 +494,7 @@
             }
     },
     "networkPerimeterCompromise": {
-        "description": "Identifies [RoutingFirewall] with associated [Application] or [Hardware] with an [Identity] linked to it.",
+        "description": "Identifies [RoutingFirewall] with associated [Application] or [Hardware] where [Identity] is linked to it.",
         "impact": "By compromising perimeter network devices adversaries may try to bridge network boundaries to bypass restrictions on traffic routing.",
         "badPattern": [
             "MATCH (:RoutingFirewall)<-[:managerApp]-(app:Application), (app)<--(id:Identity)",
@@ -542,15 +542,12 @@
         "description": "Identifies [Data] that is hosted on [Hardware] or contained in [Application] where multiple [Identity] have write privileges indicating shared storage.",
         "impact": "Shared storage locations may be abused by adversaries to deliver payloads or move laterally within a network.",
         "badPattern": [
-            "MATCH (id1:Identity)-[:writingIAMs]->(dat:Data)-[:hostedData]->(:Hardware), (id2:Identity)-[:writingIAMs]->(dat)",
-            "WHERE id1 <> id2",
-            "RETURN DISTINCT id1.name, id2.name;",
-            "MATCH (id1:Identity)-[:writingIAMs]->(dat:Data)-[:containedData]->(:Application), (id2:Identity)-[:writingIAMs]->(dat)",
-            "WHERE id1 <> id2",
-            "RETURN DISTINCT id1.name, id2.name, dat.name;"
+            "MATCH (id1:Identity)-[:writingIAMs]->(dat:Data), (id2:Identity)-[:writingIAMs]->(dat)",
+            "WHERE (dat)-[:hostedData]->(:Hardware) OR (dat)-[:containedData]->(:Application) AND id1 <> id2",
+            "RETURN DISTINCT id1.name, dat.name;"
         ],    
         "mitigationPattern": [
-            "MATCH (id1:Identity {name: '$1'})-[r1:writingIAMs]->(dat:Data {name: '$3'}), (id2:Identity {name: '$2'})-[r2:writingIAMs]->(dat:Data {name: '$3'})",
+            "MATCH (id1:Identity {name: '$1'})-[r1:writingIAMs]->(dat:Data {name: '$2'}), (id1)<-[r2]-(dat)",
             "DELETE r1,r2"
         ],
         "attackIDs": 
@@ -587,11 +584,8 @@
         "description": "Identifies [Data] where [Identity] is associated with {writingIAMs} or {deletingIAMs}.",
         "impact": "Adversaries may attempt to destroy data to disrupt operations by deleting or corrupting data.",
         "badPattern": [
-            "MATCH (dat:Data)<-[:writingIAMs|deletingIAMs]-(:Identity)",
-            "RETURN DISTINCT dat.name;",
-            "MATCH (dat:Data)<-[:writingIAMs|deletingIAMs]-(:Group)",
-            "RETURN DISTINCT dat.name;",
-            "MATCH (dat:Data)<-[:writingIAMs|deletingIAMs]-(:Privileges)",
+            "MATCH (dat:Data)",
+            "WHERE (dat)<-[:writingIAMs|deletingIAMs]-(:Identity) OR (dat)<-[:writingIAMs|deletingIAMs]-(:Group) OR (dat)<-[:writingIAMs|deletingIAMs]-(:Privileges)",
             "RETURN DISTINCT dat.name;"
         ],    
         "mitigationPattern": [

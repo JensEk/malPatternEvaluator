@@ -13,6 +13,7 @@ unique_keys = set()
 # Initialize a set to store unique 'coreLangTarget' values
 unique_coreLangTarget_values = set()
 
+cnt = 0
 # Iterate over the keys under 'Tactic'
 for tactic in tactic_dict:
     print(f"\nTactic: {tactic}")
@@ -26,10 +27,17 @@ for tactic in tactic_dict:
             # Get the 'coreLangTarget' dictionary
             coreLangTarget_dict = tactic_dict[tactic][key]['coreLangTarget']
             
+            
+
             # Iterate over the keys in 'coreLangTarget' and add the values to the set
             for target in coreLangTarget_dict:
                 unique_coreLangTarget_values.update(coreLangTarget_dict[target])
-                
+
+            if len(coreLangTarget_dict) == 1:
+                for target in coreLangTarget_dict:
+                    if len(coreLangTarget_dict[target]) == 1:
+                        cnt += 1
+
     # Print the unique 'coreLangTarget' values for each tactic
     print(f"Unique 'coreLangTarget' values for {tactic}: {unique_coreLangTarget_values}")
     
@@ -38,6 +46,9 @@ for tactic in tactic_dict:
 
 # Print the total unique 'T****' keys
 print(f"\nTotal unique 'T****' keys: {len(unique_keys)}")
+
+# Print the total unique mapping to coreLang assets
+print(f"\nTotal unique mapping to coreLang assets: {cnt}")
 
 
 # Initialize a dictionary to store the count of unique 'T****' keys for each 'coreLangTarget'
