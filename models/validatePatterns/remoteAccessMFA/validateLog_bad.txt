@@ -1,0 +1,21 @@
+Reached attack steps:
+Cred Employee_1:attemptCredentialTheft
+
+Attack Surface:
+{'id': 186, 'type': 'and', 'name': 'credentialTheft', 'ttc': None, 'children': {181: 'Cred Employee_1:attemptUse'}, 'parents': {177: 'Cred Employee_1:notPhishable', 185: 'Cred Employee_1:attemptCredentialTheft'}, 'compromised_by': [], 'asset': 'Cred Employee_1', 'is_viable': 'True', 'is_necessary': 'True', 'tags': "['hidden']"}
+
+Defense Surface:
+App 2.0_Server_Windows:notPresent
+App 2.0_Server_Windows:supplyChainAuditing
+App 2.1_RemoteAccess_TeamViewer:notPresent
+App 2.1_RemoteAccess_TeamViewer:supplyChainAuditing
+Id Employee_1:notPresent
+Cred Employee_1:notPhishable
+
+Enabled Defenses:
+Cred Employee_1:notDisclosed
+Cred Employee_1:notGuessable
+Cred Employee_1:unique
+
+Target node can be reached:
+App 2.1_RemoteAccess_TeamViewer:fullAccess is traversable by attacker

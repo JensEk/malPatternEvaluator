@@ -1,0 +1,2884 @@
+attack_steps:
+  App 2.0_Server_Windows:accessNetworkAndConnections:
+    asset: App 2.0_Server_Windows
+    children: {}
+    compromised_by: []
+    id: 12
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: accessNetworkAndConnections
+    parents:
+      17: App 2.0_Server_Windows:specificAccess
+      23: App 2.0_Server_Windows:fullAccess
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:applicationRespondConnectThroughData:
+    asset: App 2.0_Server_Windows
+    children: {}
+    compromised_by: []
+    id: 53
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: applicationRespondConnectThroughData
+    parents:
+      52: App 2.0_Server_Windows:successfulApplicationRespondConnectThroughData
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attackerUnsafeUserActivityCapability:
+    asset: App 2.0_Server_Windows
+    children:
+      26: App 2.0_Server_Windows:successfulUnsafeUserActivity
+    compromised_by: []
+    id: 28
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attackerUnsafeUserActivityCapability
+    parents:
+      29: App 2.0_Server_Windows:attackerUnsafeUserActivityCapabilityWithReverseReach
+      30: App 2.0_Server_Windows:attackerUnsafeUserActivityCapabilityWithoutReverseReach
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attackerUnsafeUserActivityCapabilityWithReverseReach:
+    asset: App 2.0_Server_Windows
+    children:
+      28: App 2.0_Server_Windows:attackerUnsafeUserActivityCapability
+    compromised_by: []
+    id: 29
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attackerUnsafeUserActivityCapabilityWithReverseReach
+    parents:
+      6: App 2.0_Server_Windows:reverseReach
+      25: App 2.0_Server_Windows:attemptUnsafeUserActivity
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:attackerUnsafeUserActivityCapabilityWithoutReverseReach:
+    asset: App 2.0_Server_Windows
+    children:
+      28: App 2.0_Server_Windows:attackerUnsafeUserActivityCapability
+    compromised_by: []
+    id: 30
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attackerUnsafeUserActivityCapabilityWithoutReverseReach
+    parents:
+      25: App 2.0_Server_Windows:attemptUnsafeUserActivity
+    tags: '[''hidden'']'
+    ttc:
+      arguments: []
+      name: VeryHardAndUncertain
+      type: function
+    type: or
+  App 2.0_Server_Windows:attemptApplicationRespondConnectThroughData:
+    asset: App 2.0_Server_Windows
+    children:
+      52: App 2.0_Server_Windows:successfulApplicationRespondConnectThroughData
+    compromised_by: []
+    id: 51
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptApplicationRespondConnectThroughData
+    parents:
+      23: App 2.0_Server_Windows:fullAccess
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptAuthorizedApplicationRespondConnectThroughData:
+    asset: App 2.0_Server_Windows
+    children:
+      55: App 2.0_Server_Windows:successfulAuthorizedApplicationRespondConnectThroughData
+    compromised_by: []
+    id: 54
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptAuthorizedApplicationRespondConnectThroughData
+    parents:
+      17: App 2.0_Server_Windows:specificAccess
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptDeny:
+    asset: App 2.0_Server_Windows
+    children:
+      66: App 2.0_Server_Windows:successfulDeny
+    compromised_by: []
+    id: 65
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptDeny
+    parents:
+      23: App 2.0_Server_Windows:fullAccess
+      50: App 2.0_Server_Windows:denyFromSoftProdVulnerability
+      69: App 2.0_Server_Windows:denyFromNetworkingAsset
+      70: App 2.0_Server_Windows:denyFromLockout
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptDenyFromSoftProdVulnerability:
+    asset: App 2.0_Server_Windows
+    children:
+      50: App 2.0_Server_Windows:denyFromSoftProdVulnerability
+    compromised_by: []
+    id: 38
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptDenyFromSoftProdVulnerability
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptFullAccessFromSupplyChainCompromise:
+    asset: App 2.0_Server_Windows
+    children:
+      32: App 2.0_Server_Windows:bypassSupplyChainAuditing
+      35: App 2.0_Server_Windows:fullAccessFromSupplyChainCompromise
+    compromised_by: []
+    id: 34
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptFullAccessFromSupplyChainCompromise
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptModify:
+    asset: App 2.0_Server_Windows
+    children:
+      62: App 2.0_Server_Windows:successfulModify
+    compromised_by: []
+    id: 61
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptModify
+    parents:
+      23: App 2.0_Server_Windows:fullAccess
+      49: App 2.0_Server_Windows:modifyFromSoftProdVulnerability
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptModifyFromSoftProdVulnerability:
+    asset: App 2.0_Server_Windows
+    children:
+      49: App 2.0_Server_Windows:modifyFromSoftProdVulnerability
+    compromised_by: []
+    id: 37
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptModifyFromSoftProdVulnerability
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptNetworkConnectFromResponse:
+    asset: App 2.0_Server_Windows
+    children:
+      14: App 2.0_Server_Windows:networkConnectFromResponse
+    compromised_by: []
+    id: 13
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptNetworkConnectFromResponse
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptRead:
+    asset: App 2.0_Server_Windows
+    children:
+      58: App 2.0_Server_Windows:successfulRead
+    compromised_by: []
+    id: 57
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptRead
+    parents:
+      23: App 2.0_Server_Windows:fullAccess
+      48: App 2.0_Server_Windows:readFromSoftProdVulnerability
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptReadFromSoftProdVulnerability:
+    asset: App 2.0_Server_Windows
+    children:
+      48: App 2.0_Server_Windows:readFromSoftProdVulnerability
+    compromised_by: []
+    id: 36
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptReadFromSoftProdVulnerability
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptReverseReach:
+    asset: App 2.0_Server_Windows
+    children:
+      5: App 2.0_Server_Windows:successfulReverseReach
+    compromised_by: []
+    id: 4
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptReverseReach
+    parents: {}
+    tags: '[''entrypoint'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptSoftwareProductAbuse:
+    asset: App 2.0_Server_Windows
+    children:
+      47: App 2.0_Server_Windows:softwareProductAbuse
+    compromised_by: []
+    id: 46
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptSoftwareProductAbuse
+    parents:
+      3: App 2.0_Server_Windows:useVulnerability
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptUnsafeUserActivity:
+    asset: App 2.0_Server_Windows
+    children:
+      26: App 2.0_Server_Windows:successfulUnsafeUserActivity
+      29: App 2.0_Server_Windows:attackerUnsafeUserActivityCapabilityWithReverseReach
+      30: App 2.0_Server_Windows:attackerUnsafeUserActivityCapabilityWithoutReverseReach
+    compromised_by: []
+    id: 25
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptUnsafeUserActivity
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:attemptUseVulnerability:
+    asset: App 2.0_Server_Windows
+    children:
+      2: App 2.0_Server_Windows:successfulUseVulnerability
+    compromised_by: []
+    id: 1
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptUseVulnerability
+    parents:
+      7: App 2.0_Server_Windows:localConnect
+      8: App 2.0_Server_Windows:networkConnectUninspected
+      17: App 2.0_Server_Windows:specificAccess
+      89: App 2.1_RemoteAccess_TeamViewer:bypassContainerization
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:authenticate:
+    asset: App 2.0_Server_Windows
+    children:
+      21: App 2.0_Server_Windows:localAccess
+      22: App 2.0_Server_Windows:networkAccess
+      44: App 2.0_Server_Windows:softwareProductVulnerabilityHighPrivilegesAchieved
+    compromised_by: []
+    id: 19
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authenticate
+    parents: {}
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:authorizedApplicationRespondConnectThroughData:
+    asset: App 2.0_Server_Windows
+    children: {}
+    compromised_by: []
+    id: 56
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedApplicationRespondConnectThroughData
+    parents:
+      55: App 2.0_Server_Windows:successfulAuthorizedApplicationRespondConnectThroughData
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:bypassContainerization:
+    asset: App 2.0_Server_Windows
+    children: {}
+    compromised_by: []
+    id: 18
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: bypassContainerization
+    parents:
+      17: App 2.0_Server_Windows:specificAccess
+    ttc:
+      arguments: []
+      name: HardAndUncertain
+      type: function
+    type: or
+  App 2.0_Server_Windows:bypassSupplyChainAuditing:
+    asset: App 2.0_Server_Windows
+    children:
+      33: App 2.0_Server_Windows:supplyChainAuditingBypassed
+    compromised_by: []
+    id: 32
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: bypassSupplyChainAuditing
+    parents:
+      34: App 2.0_Server_Windows:attemptFullAccessFromSupplyChainCompromise
+    ttc:
+      arguments: []
+      name: VeryHardAndUncertain
+      type: function
+    type: or
+  App 2.0_Server_Windows:deny:
+    asset: App 2.0_Server_Windows
+    children:
+      136: App 2.1_RemoteAccess_TeamViewer:attemptDeny
+    compromised_by: []
+    id: 67
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: deny
+    parents:
+      66: App 2.0_Server_Windows:successfulDeny
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:denyFromLockout:
+    asset: App 2.0_Server_Windows
+    children:
+      65: App 2.0_Server_Windows:attemptDeny
+    compromised_by: []
+    id: 70
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: denyFromLockout
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:denyFromNetworkingAsset:
+    asset: App 2.0_Server_Windows
+    children:
+      65: App 2.0_Server_Windows:attemptDeny
+    compromised_by: []
+    id: 69
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: denyFromNetworkingAsset
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:denyFromSoftProdVulnerability:
+    asset: App 2.0_Server_Windows
+    children:
+      65: App 2.0_Server_Windows:attemptDeny
+    compromised_by: []
+    id: 50
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: denyFromSoftProdVulnerability
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      3: App 2.0_Server_Windows:useVulnerability
+      38: App 2.0_Server_Windows:attemptDenyFromSoftProdVulnerability
+      39: App 2.0_Server_Windows:softwareCheck
+      47: App 2.0_Server_Windows:softwareProductAbuse
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:fullAccess:
+    asset: App 2.0_Server_Windows
+    children:
+      12: App 2.0_Server_Windows:accessNetworkAndConnections
+      17: App 2.0_Server_Windows:specificAccess
+      51: App 2.0_Server_Windows:attemptApplicationRespondConnectThroughData
+      57: App 2.0_Server_Windows:attemptRead
+      61: App 2.0_Server_Windows:attemptModify
+      65: App 2.0_Server_Windows:attemptDeny
+    compromised_by: []
+    id: 23
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: fullAccess
+    parents:
+      21: App 2.0_Server_Windows:localAccess
+      22: App 2.0_Server_Windows:networkAccess
+      35: App 2.0_Server_Windows:fullAccessFromSupplyChainCompromise
+      63: App 2.0_Server_Windows:modify
+    tags: '[''entrypoint'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:fullAccessFromSupplyChainCompromise:
+    asset: App 2.0_Server_Windows
+    children:
+      23: App 2.0_Server_Windows:fullAccess
+    compromised_by: []
+    id: 35
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: fullAccessFromSupplyChainCompromise
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      33: App 2.0_Server_Windows:supplyChainAuditingBypassed
+      34: App 2.0_Server_Windows:attemptFullAccessFromSupplyChainCompromise
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:localAccess:
+    asset: App 2.0_Server_Windows
+    children:
+      23: App 2.0_Server_Windows:fullAccess
+    compromised_by: []
+    id: 21
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: localAccess
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      7: App 2.0_Server_Windows:localConnect
+      19: App 2.0_Server_Windows:authenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:localConnect:
+    asset: App 2.0_Server_Windows
+    children:
+      1: App 2.0_Server_Windows:attemptUseVulnerability
+      15: App 2.0_Server_Windows:specificAccessFromLocalConnection
+      21: App 2.0_Server_Windows:localAccess
+      40: App 2.0_Server_Windows:softwareProductVulnerabilityLocalAccessAchieved
+    compromised_by: []
+    id: 7
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: localConnect
+    parents:
+      27: App 2.0_Server_Windows:unsafeUserActivity
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:modify:
+    asset: App 2.0_Server_Windows
+    children:
+      23: App 2.0_Server_Windows:fullAccess
+      132: App 2.1_RemoteAccess_TeamViewer:attemptModify
+    compromised_by: []
+    id: 63
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: modify
+    parents:
+      62: App 2.0_Server_Windows:successfulModify
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:modifyFromSoftProdVulnerability:
+    asset: App 2.0_Server_Windows
+    children:
+      61: App 2.0_Server_Windows:attemptModify
+    compromised_by: []
+    id: 49
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: modifyFromSoftProdVulnerability
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      3: App 2.0_Server_Windows:useVulnerability
+      37: App 2.0_Server_Windows:attemptModifyFromSoftProdVulnerability
+      39: App 2.0_Server_Windows:softwareCheck
+      47: App 2.0_Server_Windows:softwareProductAbuse
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:networkAccess:
+    asset: App 2.0_Server_Windows
+    children:
+      23: App 2.0_Server_Windows:fullAccess
+    compromised_by: []
+    id: 22
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: networkAccess
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      10: App 2.0_Server_Windows:networkConnect
+      19: App 2.0_Server_Windows:authenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:networkConnect:
+    asset: App 2.0_Server_Windows
+    children:
+      22: App 2.0_Server_Windows:networkAccess
+    compromised_by: []
+    id: 10
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: networkConnect
+    parents:
+      8: App 2.0_Server_Windows:networkConnectUninspected
+      9: App 2.0_Server_Windows:networkConnectInspected
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:networkConnectFromResponse:
+    asset: App 2.0_Server_Windows
+    children:
+      8: App 2.0_Server_Windows:networkConnectUninspected
+    compromised_by: []
+    id: 14
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: networkConnectFromResponse
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      6: App 2.0_Server_Windows:reverseReach
+      13: App 2.0_Server_Windows:attemptNetworkConnectFromResponse
+    tags: '[''hidden'']'
+    ttc:
+      arguments: []
+      name: VeryHardAndUncertain
+      type: function
+    type: and
+  App 2.0_Server_Windows:networkConnectInspected:
+    asset: App 2.0_Server_Windows
+    children:
+      10: App 2.0_Server_Windows:networkConnect
+      11: App 2.0_Server_Windows:specificAccessNetworkConnect
+    compromised_by: []
+    id: 9
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: networkConnectInspected
+    parents: {}
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:networkConnectUninspected:
+    asset: App 2.0_Server_Windows
+    children:
+      1: App 2.0_Server_Windows:attemptUseVulnerability
+      10: App 2.0_Server_Windows:networkConnect
+      11: App 2.0_Server_Windows:specificAccessNetworkConnect
+      41: App 2.0_Server_Windows:softwareProductVulnerabilityNetworkAccessAchieved
+    compromised_by: []
+    id: 8
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: networkConnectUninspected
+    parents:
+      14: App 2.0_Server_Windows:networkConnectFromResponse
+      27: App 2.0_Server_Windows:unsafeUserActivity
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:notPresent:
+    asset: App 2.0_Server_Windows
+    children:
+      2: App 2.0_Server_Windows:successfulUseVulnerability
+      5: App 2.0_Server_Windows:successfulReverseReach
+      14: App 2.0_Server_Windows:networkConnectFromResponse
+      15: App 2.0_Server_Windows:specificAccessFromLocalConnection
+      16: App 2.0_Server_Windows:specificAccessFromNetworkConnection
+      21: App 2.0_Server_Windows:localAccess
+      22: App 2.0_Server_Windows:networkAccess
+      26: App 2.0_Server_Windows:successfulUnsafeUserActivity
+      35: App 2.0_Server_Windows:fullAccessFromSupplyChainCompromise
+      48: App 2.0_Server_Windows:readFromSoftProdVulnerability
+      49: App 2.0_Server_Windows:modifyFromSoftProdVulnerability
+      50: App 2.0_Server_Windows:denyFromSoftProdVulnerability
+      52: App 2.0_Server_Windows:successfulApplicationRespondConnectThroughData
+      55: App 2.0_Server_Windows:successfulAuthorizedApplicationRespondConnectThroughData
+      58: App 2.0_Server_Windows:successfulRead
+      62: App 2.0_Server_Windows:successfulModify
+      66: App 2.0_Server_Windows:successfulDeny
+    compromised_by: []
+    defense_status: '0.0'
+    id: 0
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: notPresent
+    parents: {}
+    ttc:
+      arguments: []
+      name: Disabled
+      type: function
+    type: defense
+  App 2.0_Server_Windows:physicalAccessAchieved:
+    asset: App 2.0_Server_Windows
+    children:
+      42: App 2.0_Server_Windows:softwareProductVulnerabilityPhysicalAccessAchieved
+      95: App 2.1_RemoteAccess_TeamViewer:physicalAccessAchieved
+    compromised_by: []
+    id: 24
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: physicalAccessAchieved
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:read:
+    asset: App 2.0_Server_Windows
+    children:
+      128: App 2.1_RemoteAccess_TeamViewer:attemptRead
+    compromised_by: []
+    id: 59
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: read
+    parents:
+      58: App 2.0_Server_Windows:successfulRead
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:readFromSoftProdVulnerability:
+    asset: App 2.0_Server_Windows
+    children:
+      57: App 2.0_Server_Windows:attemptRead
+    compromised_by: []
+    id: 48
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: readFromSoftProdVulnerability
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      3: App 2.0_Server_Windows:useVulnerability
+      36: App 2.0_Server_Windows:attemptReadFromSoftProdVulnerability
+      39: App 2.0_Server_Windows:softwareCheck
+      47: App 2.0_Server_Windows:softwareProductAbuse
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:reverseReach:
+    asset: App 2.0_Server_Windows
+    children:
+      14: App 2.0_Server_Windows:networkConnectFromResponse
+      29: App 2.0_Server_Windows:attackerUnsafeUserActivityCapabilityWithReverseReach
+      75: App 2.1_RemoteAccess_TeamViewer:attemptReverseReach
+    compromised_by: []
+    id: 6
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: reverseReach
+    parents:
+      5: App 2.0_Server_Windows:successfulReverseReach
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:softwareCheck:
+    asset: App 2.0_Server_Windows
+    children:
+      48: App 2.0_Server_Windows:readFromSoftProdVulnerability
+      49: App 2.0_Server_Windows:modifyFromSoftProdVulnerability
+      50: App 2.0_Server_Windows:denyFromSoftProdVulnerability
+    compromised_by: []
+    existence_status: 'False'
+    id: 39
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: softwareCheck
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: exist
+  App 2.0_Server_Windows:softwareProductAbuse:
+    asset: App 2.0_Server_Windows
+    children:
+      48: App 2.0_Server_Windows:readFromSoftProdVulnerability
+      49: App 2.0_Server_Windows:modifyFromSoftProdVulnerability
+      50: App 2.0_Server_Windows:denyFromSoftProdVulnerability
+    compromised_by: []
+    id: 47
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductAbuse
+    parents:
+      40: App 2.0_Server_Windows:softwareProductVulnerabilityLocalAccessAchieved
+      41: App 2.0_Server_Windows:softwareProductVulnerabilityNetworkAccessAchieved
+      42: App 2.0_Server_Windows:softwareProductVulnerabilityPhysicalAccessAchieved
+      43: App 2.0_Server_Windows:softwareProductVulnerabilityLowPrivilegesAchieved
+      44: App 2.0_Server_Windows:softwareProductVulnerabilityHighPrivilegesAchieved
+      45: App 2.0_Server_Windows:softwareProductVulnerabilityUserInteractionAchieved
+      46: App 2.0_Server_Windows:attemptSoftwareProductAbuse
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:softwareProductVulnerabilityHighPrivilegesAchieved:
+    asset: App 2.0_Server_Windows
+    children:
+      47: App 2.0_Server_Windows:softwareProductAbuse
+    compromised_by: []
+    id: 44
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityHighPrivilegesAchieved
+    parents:
+      19: App 2.0_Server_Windows:authenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:softwareProductVulnerabilityLocalAccessAchieved:
+    asset: App 2.0_Server_Windows
+    children:
+      47: App 2.0_Server_Windows:softwareProductAbuse
+    compromised_by: []
+    id: 40
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityLocalAccessAchieved
+    parents:
+      7: App 2.0_Server_Windows:localConnect
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:softwareProductVulnerabilityLowPrivilegesAchieved:
+    asset: App 2.0_Server_Windows
+    children:
+      47: App 2.0_Server_Windows:softwareProductAbuse
+    compromised_by: []
+    id: 43
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityLowPrivilegesAchieved
+    parents:
+      20: App 2.0_Server_Windows:specificAccessAuthenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:softwareProductVulnerabilityNetworkAccessAchieved:
+    asset: App 2.0_Server_Windows
+    children:
+      47: App 2.0_Server_Windows:softwareProductAbuse
+    compromised_by: []
+    id: 41
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityNetworkAccessAchieved
+    parents:
+      8: App 2.0_Server_Windows:networkConnectUninspected
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:softwareProductVulnerabilityPhysicalAccessAchieved:
+    asset: App 2.0_Server_Windows
+    children:
+      47: App 2.0_Server_Windows:softwareProductAbuse
+    compromised_by: []
+    id: 42
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityPhysicalAccessAchieved
+    parents:
+      24: App 2.0_Server_Windows:physicalAccessAchieved
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:softwareProductVulnerabilityUserInteractionAchieved:
+    asset: App 2.0_Server_Windows
+    children:
+      47: App 2.0_Server_Windows:softwareProductAbuse
+    compromised_by: []
+    id: 45
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityUserInteractionAchieved
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:specificAccess:
+    asset: App 2.0_Server_Windows
+    children:
+      1: App 2.0_Server_Windows:attemptUseVulnerability
+      12: App 2.0_Server_Windows:accessNetworkAndConnections
+      18: App 2.0_Server_Windows:bypassContainerization
+      54: App 2.0_Server_Windows:attemptAuthorizedApplicationRespondConnectThroughData
+      60: App 2.0_Server_Windows:specificAccessRead
+      64: App 2.0_Server_Windows:specificAccessModify
+      68: App 2.0_Server_Windows:specificAccessDelete
+      78: App 2.1_RemoteAccess_TeamViewer:localConnect
+    compromised_by: []
+    id: 17
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccess
+    parents:
+      15: App 2.0_Server_Windows:specificAccessFromLocalConnection
+      16: App 2.0_Server_Windows:specificAccessFromNetworkConnection
+      23: App 2.0_Server_Windows:fullAccess
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:specificAccessAuthenticate:
+    asset: App 2.0_Server_Windows
+    children:
+      15: App 2.0_Server_Windows:specificAccessFromLocalConnection
+      16: App 2.0_Server_Windows:specificAccessFromNetworkConnection
+      43: App 2.0_Server_Windows:softwareProductVulnerabilityLowPrivilegesAchieved
+    compromised_by: []
+    id: 20
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessAuthenticate
+    parents: {}
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:specificAccessDelete:
+    asset: App 2.0_Server_Windows
+    children: {}
+    compromised_by: []
+    id: 68
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessDelete
+    parents:
+      17: App 2.0_Server_Windows:specificAccess
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:specificAccessFromLocalConnection:
+    asset: App 2.0_Server_Windows
+    children:
+      17: App 2.0_Server_Windows:specificAccess
+    compromised_by: []
+    id: 15
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessFromLocalConnection
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      7: App 2.0_Server_Windows:localConnect
+      20: App 2.0_Server_Windows:specificAccessAuthenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:specificAccessFromNetworkConnection:
+    asset: App 2.0_Server_Windows
+    children:
+      17: App 2.0_Server_Windows:specificAccess
+    compromised_by: []
+    id: 16
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessFromNetworkConnection
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      11: App 2.0_Server_Windows:specificAccessNetworkConnect
+      20: App 2.0_Server_Windows:specificAccessAuthenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:specificAccessModify:
+    asset: App 2.0_Server_Windows
+    children: {}
+    compromised_by: []
+    id: 64
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessModify
+    parents:
+      17: App 2.0_Server_Windows:specificAccess
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:specificAccessNetworkConnect:
+    asset: App 2.0_Server_Windows
+    children:
+      16: App 2.0_Server_Windows:specificAccessFromNetworkConnection
+    compromised_by: []
+    id: 11
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessNetworkConnect
+    parents:
+      8: App 2.0_Server_Windows:networkConnectUninspected
+      9: App 2.0_Server_Windows:networkConnectInspected
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:specificAccessRead:
+    asset: App 2.0_Server_Windows
+    children: {}
+    compromised_by: []
+    id: 60
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessRead
+    parents:
+      17: App 2.0_Server_Windows:specificAccess
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:successfulApplicationRespondConnectThroughData:
+    asset: App 2.0_Server_Windows
+    children:
+      53: App 2.0_Server_Windows:applicationRespondConnectThroughData
+    compromised_by: []
+    id: 52
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulApplicationRespondConnectThroughData
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      51: App 2.0_Server_Windows:attemptApplicationRespondConnectThroughData
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:successfulAuthorizedApplicationRespondConnectThroughData:
+    asset: App 2.0_Server_Windows
+    children:
+      56: App 2.0_Server_Windows:authorizedApplicationRespondConnectThroughData
+    compromised_by: []
+    id: 55
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulAuthorizedApplicationRespondConnectThroughData
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      54: App 2.0_Server_Windows:attemptAuthorizedApplicationRespondConnectThroughData
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:successfulDeny:
+    asset: App 2.0_Server_Windows
+    children:
+      67: App 2.0_Server_Windows:deny
+    compromised_by: []
+    id: 66
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulDeny
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      65: App 2.0_Server_Windows:attemptDeny
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:successfulModify:
+    asset: App 2.0_Server_Windows
+    children:
+      63: App 2.0_Server_Windows:modify
+    compromised_by: []
+    id: 62
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulModify
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      61: App 2.0_Server_Windows:attemptModify
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:successfulRead:
+    asset: App 2.0_Server_Windows
+    children:
+      59: App 2.0_Server_Windows:read
+    compromised_by: []
+    id: 58
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulRead
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      57: App 2.0_Server_Windows:attemptRead
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:successfulReverseReach:
+    asset: App 2.0_Server_Windows
+    children:
+      6: App 2.0_Server_Windows:reverseReach
+    compromised_by: []
+    id: 5
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulReverseReach
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      4: App 2.0_Server_Windows:attemptReverseReach
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:successfulUnsafeUserActivity:
+    asset: App 2.0_Server_Windows
+    children:
+      27: App 2.0_Server_Windows:unsafeUserActivity
+    compromised_by: []
+    id: 26
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulUnsafeUserActivity
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      25: App 2.0_Server_Windows:attemptUnsafeUserActivity
+      28: App 2.0_Server_Windows:attackerUnsafeUserActivityCapability
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:successfulUseVulnerability:
+    asset: App 2.0_Server_Windows
+    children:
+      3: App 2.0_Server_Windows:useVulnerability
+    compromised_by: []
+    id: 2
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulUseVulnerability
+    parents:
+      0: App 2.0_Server_Windows:notPresent
+      1: App 2.0_Server_Windows:attemptUseVulnerability
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.0_Server_Windows:supplyChainAuditing:
+    asset: App 2.0_Server_Windows
+    children:
+      33: App 2.0_Server_Windows:supplyChainAuditingBypassed
+    compromised_by: []
+    defense_status: '0.0'
+    id: 31
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: supplyChainAuditing
+    parents: {}
+    ttc: null
+    type: defense
+  App 2.0_Server_Windows:supplyChainAuditingBypassed:
+    asset: App 2.0_Server_Windows
+    children:
+      35: App 2.0_Server_Windows:fullAccessFromSupplyChainCompromise
+    compromised_by: []
+    id: 33
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: supplyChainAuditingBypassed
+    parents:
+      31: App 2.0_Server_Windows:supplyChainAuditing
+      32: App 2.0_Server_Windows:bypassSupplyChainAuditing
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:unsafeUserActivity:
+    asset: App 2.0_Server_Windows
+    children:
+      7: App 2.0_Server_Windows:localConnect
+      8: App 2.0_Server_Windows:networkConnectUninspected
+    compromised_by: []
+    id: 27
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: unsafeUserActivity
+    parents:
+      26: App 2.0_Server_Windows:successfulUnsafeUserActivity
+    ttc: null
+    type: or
+  App 2.0_Server_Windows:useVulnerability:
+    asset: App 2.0_Server_Windows
+    children:
+      46: App 2.0_Server_Windows:attemptSoftwareProductAbuse
+      48: App 2.0_Server_Windows:readFromSoftProdVulnerability
+      49: App 2.0_Server_Windows:modifyFromSoftProdVulnerability
+      50: App 2.0_Server_Windows:denyFromSoftProdVulnerability
+    compromised_by: []
+    id: 3
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: useVulnerability
+    parents:
+      2: App 2.0_Server_Windows:successfulUseVulnerability
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:accessNetworkAndConnections:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children: {}
+    compromised_by: []
+    id: 83
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: accessNetworkAndConnections
+    parents:
+      88: App 2.1_RemoteAccess_TeamViewer:specificAccess
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:applicationRespondConnectThroughData:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children: {}
+    compromised_by: []
+    id: 124
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: applicationRespondConnectThroughData
+    parents:
+      123: App 2.1_RemoteAccess_TeamViewer:successfulApplicationRespondConnectThroughData
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapability:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      97: App 2.1_RemoteAccess_TeamViewer:successfulUnsafeUserActivity
+    compromised_by: []
+    id: 99
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attackerUnsafeUserActivityCapability
+    parents:
+      100: App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapabilityWithReverseReach
+      101: App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapabilityWithoutReverseReach
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapabilityWithReverseReach:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      99: App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapability
+    compromised_by: []
+    id: 100
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attackerUnsafeUserActivityCapabilityWithReverseReach
+    parents:
+      77: App 2.1_RemoteAccess_TeamViewer:reverseReach
+      96: App 2.1_RemoteAccess_TeamViewer:attemptUnsafeUserActivity
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapabilityWithoutReverseReach:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      99: App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapability
+    compromised_by: []
+    id: 101
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attackerUnsafeUserActivityCapabilityWithoutReverseReach
+    parents:
+      96: App 2.1_RemoteAccess_TeamViewer:attemptUnsafeUserActivity
+    tags: '[''hidden'']'
+    ttc:
+      arguments: []
+      name: VeryHardAndUncertain
+      type: function
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptApplicationRespondConnectThroughData:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      123: App 2.1_RemoteAccess_TeamViewer:successfulApplicationRespondConnectThroughData
+    compromised_by: []
+    id: 122
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptApplicationRespondConnectThroughData
+    parents:
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptAuthorizedApplicationRespondConnectThroughData:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      126: App 2.1_RemoteAccess_TeamViewer:successfulAuthorizedApplicationRespondConnectThroughData
+    compromised_by: []
+    id: 125
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptAuthorizedApplicationRespondConnectThroughData
+    parents:
+      88: App 2.1_RemoteAccess_TeamViewer:specificAccess
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptDeny:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      137: App 2.1_RemoteAccess_TeamViewer:successfulDeny
+    compromised_by: []
+    id: 136
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptDeny
+    parents:
+      67: App 2.0_Server_Windows:deny
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+      121: App 2.1_RemoteAccess_TeamViewer:denyFromSoftProdVulnerability
+      140: App 2.1_RemoteAccess_TeamViewer:denyFromNetworkingAsset
+      141: App 2.1_RemoteAccess_TeamViewer:denyFromLockout
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptDenyFromSoftProdVulnerability:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      121: App 2.1_RemoteAccess_TeamViewer:denyFromSoftProdVulnerability
+    compromised_by: []
+    id: 109
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptDenyFromSoftProdVulnerability
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptFullAccessFromSupplyChainCompromise:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      103: App 2.1_RemoteAccess_TeamViewer:bypassSupplyChainAuditing
+      106: App 2.1_RemoteAccess_TeamViewer:fullAccessFromSupplyChainCompromise
+    compromised_by: []
+    id: 105
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptFullAccessFromSupplyChainCompromise
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptModify:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      133: App 2.1_RemoteAccess_TeamViewer:successfulModify
+    compromised_by: []
+    id: 132
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptModify
+    parents:
+      63: App 2.0_Server_Windows:modify
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+      120: App 2.1_RemoteAccess_TeamViewer:modifyFromSoftProdVulnerability
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptModifyFromSoftProdVulnerability:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      120: App 2.1_RemoteAccess_TeamViewer:modifyFromSoftProdVulnerability
+    compromised_by: []
+    id: 108
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptModifyFromSoftProdVulnerability
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptNetworkConnectFromResponse:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      85: App 2.1_RemoteAccess_TeamViewer:networkConnectFromResponse
+    compromised_by: []
+    id: 84
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptNetworkConnectFromResponse
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptRead:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      129: App 2.1_RemoteAccess_TeamViewer:successfulRead
+    compromised_by: []
+    id: 128
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptRead
+    parents:
+      59: App 2.0_Server_Windows:read
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+      119: App 2.1_RemoteAccess_TeamViewer:readFromSoftProdVulnerability
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptReadFromSoftProdVulnerability:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      119: App 2.1_RemoteAccess_TeamViewer:readFromSoftProdVulnerability
+    compromised_by: []
+    id: 107
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptReadFromSoftProdVulnerability
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptReverseReach:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      76: App 2.1_RemoteAccess_TeamViewer:successfulReverseReach
+    compromised_by: []
+    id: 75
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptReverseReach
+    parents:
+      6: App 2.0_Server_Windows:reverseReach
+    tags: '[''entrypoint'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptSoftwareProductAbuse:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      118: App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse
+    compromised_by: []
+    id: 117
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptSoftwareProductAbuse
+    parents:
+      74: App 2.1_RemoteAccess_TeamViewer:useVulnerability
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptUnsafeUserActivity:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      97: App 2.1_RemoteAccess_TeamViewer:successfulUnsafeUserActivity
+      100: App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapabilityWithReverseReach
+      101: App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapabilityWithoutReverseReach
+    compromised_by: []
+    id: 96
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptUnsafeUserActivity
+    parents:
+      163: Id Employee_1:unsafeUserActivity
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:attemptUseVulnerability:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      73: App 2.1_RemoteAccess_TeamViewer:successfulUseVulnerability
+    compromised_by: []
+    id: 72
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptUseVulnerability
+    parents:
+      78: App 2.1_RemoteAccess_TeamViewer:localConnect
+      79: App 2.1_RemoteAccess_TeamViewer:networkConnectUninspected
+      88: App 2.1_RemoteAccess_TeamViewer:specificAccess
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:authenticate:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      92: App 2.1_RemoteAccess_TeamViewer:localAccess
+      93: App 2.1_RemoteAccess_TeamViewer:networkAccess
+      115: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityHighPrivilegesAchieved
+    compromised_by: []
+    id: 90
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authenticate
+    parents:
+      155: Id Employee_1:assume
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:authorizedApplicationRespondConnectThroughData:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children: {}
+    compromised_by: []
+    id: 127
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedApplicationRespondConnectThroughData
+    parents:
+      126: App 2.1_RemoteAccess_TeamViewer:successfulAuthorizedApplicationRespondConnectThroughData
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:bypassContainerization:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      1: App 2.0_Server_Windows:attemptUseVulnerability
+    compromised_by: []
+    id: 89
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: bypassContainerization
+    parents:
+      88: App 2.1_RemoteAccess_TeamViewer:specificAccess
+    ttc:
+      arguments: []
+      name: HardAndUncertain
+      type: function
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:bypassSupplyChainAuditing:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      104: App 2.1_RemoteAccess_TeamViewer:supplyChainAuditingBypassed
+    compromised_by: []
+    id: 103
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: bypassSupplyChainAuditing
+    parents:
+      105: App 2.1_RemoteAccess_TeamViewer:attemptFullAccessFromSupplyChainCompromise
+    ttc:
+      arguments: []
+      name: VeryHardAndUncertain
+      type: function
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:deny:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children: {}
+    compromised_by: []
+    id: 138
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: deny
+    parents:
+      137: App 2.1_RemoteAccess_TeamViewer:successfulDeny
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:denyFromLockout:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      136: App 2.1_RemoteAccess_TeamViewer:attemptDeny
+    compromised_by: []
+    id: 141
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: denyFromLockout
+    parents:
+      158: Id Employee_1:lockout
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:denyFromNetworkingAsset:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      136: App 2.1_RemoteAccess_TeamViewer:attemptDeny
+    compromised_by: []
+    id: 140
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: denyFromNetworkingAsset
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:denyFromSoftProdVulnerability:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      136: App 2.1_RemoteAccess_TeamViewer:attemptDeny
+    compromised_by: []
+    id: 121
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: denyFromSoftProdVulnerability
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      74: App 2.1_RemoteAccess_TeamViewer:useVulnerability
+      109: App 2.1_RemoteAccess_TeamViewer:attemptDenyFromSoftProdVulnerability
+      110: App 2.1_RemoteAccess_TeamViewer:softwareCheck
+      118: App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:fullAccess:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      7: App 2.0_Server_Windows:localConnect
+      83: App 2.1_RemoteAccess_TeamViewer:accessNetworkAndConnections
+      88: App 2.1_RemoteAccess_TeamViewer:specificAccess
+      122: App 2.1_RemoteAccess_TeamViewer:attemptApplicationRespondConnectThroughData
+      128: App 2.1_RemoteAccess_TeamViewer:attemptRead
+      132: App 2.1_RemoteAccess_TeamViewer:attemptModify
+      136: App 2.1_RemoteAccess_TeamViewer:attemptDeny
+      153: Id Employee_1:attemptAssume
+    compromised_by: []
+    id: 94
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: fullAccess
+    parents:
+      92: App 2.1_RemoteAccess_TeamViewer:localAccess
+      93: App 2.1_RemoteAccess_TeamViewer:networkAccess
+      106: App 2.1_RemoteAccess_TeamViewer:fullAccessFromSupplyChainCompromise
+      134: App 2.1_RemoteAccess_TeamViewer:modify
+    tags: '[''entrypoint'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:fullAccessFromSupplyChainCompromise:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+    compromised_by: []
+    id: 106
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: fullAccessFromSupplyChainCompromise
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      104: App 2.1_RemoteAccess_TeamViewer:supplyChainAuditingBypassed
+      105: App 2.1_RemoteAccess_TeamViewer:attemptFullAccessFromSupplyChainCompromise
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:localAccess:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+    compromised_by: []
+    id: 92
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: localAccess
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      78: App 2.1_RemoteAccess_TeamViewer:localConnect
+      90: App 2.1_RemoteAccess_TeamViewer:authenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:localConnect:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      72: App 2.1_RemoteAccess_TeamViewer:attemptUseVulnerability
+      86: App 2.1_RemoteAccess_TeamViewer:specificAccessFromLocalConnection
+      92: App 2.1_RemoteAccess_TeamViewer:localAccess
+      111: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityLocalAccessAchieved
+    compromised_by: []
+    id: 78
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: localConnect
+    parents:
+      17: App 2.0_Server_Windows:specificAccess
+      98: App 2.1_RemoteAccess_TeamViewer:unsafeUserActivity
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:modify:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+    compromised_by: []
+    id: 134
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: modify
+    parents:
+      133: App 2.1_RemoteAccess_TeamViewer:successfulModify
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:modifyFromSoftProdVulnerability:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      132: App 2.1_RemoteAccess_TeamViewer:attemptModify
+    compromised_by: []
+    id: 120
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: modifyFromSoftProdVulnerability
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      74: App 2.1_RemoteAccess_TeamViewer:useVulnerability
+      108: App 2.1_RemoteAccess_TeamViewer:attemptModifyFromSoftProdVulnerability
+      110: App 2.1_RemoteAccess_TeamViewer:softwareCheck
+      118: App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:networkAccess:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+    compromised_by: []
+    id: 93
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: networkAccess
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      81: App 2.1_RemoteAccess_TeamViewer:networkConnect
+      90: App 2.1_RemoteAccess_TeamViewer:authenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:networkConnect:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      93: App 2.1_RemoteAccess_TeamViewer:networkAccess
+    compromised_by: []
+    id: 81
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: networkConnect
+    parents:
+      79: App 2.1_RemoteAccess_TeamViewer:networkConnectUninspected
+      80: App 2.1_RemoteAccess_TeamViewer:networkConnectInspected
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:networkConnectFromResponse:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      79: App 2.1_RemoteAccess_TeamViewer:networkConnectUninspected
+    compromised_by: []
+    id: 85
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: networkConnectFromResponse
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      77: App 2.1_RemoteAccess_TeamViewer:reverseReach
+      84: App 2.1_RemoteAccess_TeamViewer:attemptNetworkConnectFromResponse
+    tags: '[''hidden'']'
+    ttc:
+      arguments: []
+      name: VeryHardAndUncertain
+      type: function
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:networkConnectInspected:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      81: App 2.1_RemoteAccess_TeamViewer:networkConnect
+      82: App 2.1_RemoteAccess_TeamViewer:specificAccessNetworkConnect
+    compromised_by: []
+    id: 80
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: networkConnectInspected
+    parents: {}
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:networkConnectUninspected:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      72: App 2.1_RemoteAccess_TeamViewer:attemptUseVulnerability
+      81: App 2.1_RemoteAccess_TeamViewer:networkConnect
+      82: App 2.1_RemoteAccess_TeamViewer:specificAccessNetworkConnect
+      112: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityNetworkAccessAchieved
+    compromised_by: []
+    id: 79
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: networkConnectUninspected
+    parents:
+      85: App 2.1_RemoteAccess_TeamViewer:networkConnectFromResponse
+      98: App 2.1_RemoteAccess_TeamViewer:unsafeUserActivity
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:notPresent:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      73: App 2.1_RemoteAccess_TeamViewer:successfulUseVulnerability
+      76: App 2.1_RemoteAccess_TeamViewer:successfulReverseReach
+      85: App 2.1_RemoteAccess_TeamViewer:networkConnectFromResponse
+      86: App 2.1_RemoteAccess_TeamViewer:specificAccessFromLocalConnection
+      87: App 2.1_RemoteAccess_TeamViewer:specificAccessFromNetworkConnection
+      92: App 2.1_RemoteAccess_TeamViewer:localAccess
+      93: App 2.1_RemoteAccess_TeamViewer:networkAccess
+      97: App 2.1_RemoteAccess_TeamViewer:successfulUnsafeUserActivity
+      106: App 2.1_RemoteAccess_TeamViewer:fullAccessFromSupplyChainCompromise
+      119: App 2.1_RemoteAccess_TeamViewer:readFromSoftProdVulnerability
+      120: App 2.1_RemoteAccess_TeamViewer:modifyFromSoftProdVulnerability
+      121: App 2.1_RemoteAccess_TeamViewer:denyFromSoftProdVulnerability
+      123: App 2.1_RemoteAccess_TeamViewer:successfulApplicationRespondConnectThroughData
+      126: App 2.1_RemoteAccess_TeamViewer:successfulAuthorizedApplicationRespondConnectThroughData
+      129: App 2.1_RemoteAccess_TeamViewer:successfulRead
+      133: App 2.1_RemoteAccess_TeamViewer:successfulModify
+      137: App 2.1_RemoteAccess_TeamViewer:successfulDeny
+    compromised_by: []
+    defense_status: '0.0'
+    id: 71
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: notPresent
+    parents: {}
+    ttc:
+      arguments: []
+      name: Disabled
+      type: function
+    type: defense
+  App 2.1_RemoteAccess_TeamViewer:physicalAccessAchieved:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      113: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityPhysicalAccessAchieved
+    compromised_by: []
+    id: 95
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: physicalAccessAchieved
+    parents:
+      24: App 2.0_Server_Windows:physicalAccessAchieved
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:read:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children: {}
+    compromised_by: []
+    id: 130
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: read
+    parents:
+      129: App 2.1_RemoteAccess_TeamViewer:successfulRead
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:readFromSoftProdVulnerability:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      128: App 2.1_RemoteAccess_TeamViewer:attemptRead
+    compromised_by: []
+    id: 119
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: readFromSoftProdVulnerability
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      74: App 2.1_RemoteAccess_TeamViewer:useVulnerability
+      107: App 2.1_RemoteAccess_TeamViewer:attemptReadFromSoftProdVulnerability
+      110: App 2.1_RemoteAccess_TeamViewer:softwareCheck
+      118: App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:reverseReach:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      85: App 2.1_RemoteAccess_TeamViewer:networkConnectFromResponse
+      100: App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapabilityWithReverseReach
+    compromised_by: []
+    id: 77
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: reverseReach
+    parents:
+      76: App 2.1_RemoteAccess_TeamViewer:successfulReverseReach
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:softwareCheck:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      119: App 2.1_RemoteAccess_TeamViewer:readFromSoftProdVulnerability
+      120: App 2.1_RemoteAccess_TeamViewer:modifyFromSoftProdVulnerability
+      121: App 2.1_RemoteAccess_TeamViewer:denyFromSoftProdVulnerability
+    compromised_by: []
+    existence_status: 'False'
+    id: 110
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: softwareCheck
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: exist
+  App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      119: App 2.1_RemoteAccess_TeamViewer:readFromSoftProdVulnerability
+      120: App 2.1_RemoteAccess_TeamViewer:modifyFromSoftProdVulnerability
+      121: App 2.1_RemoteAccess_TeamViewer:denyFromSoftProdVulnerability
+    compromised_by: []
+    id: 118
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductAbuse
+    parents:
+      111: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityLocalAccessAchieved
+      112: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityNetworkAccessAchieved
+      113: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityPhysicalAccessAchieved
+      114: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityLowPrivilegesAchieved
+      115: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityHighPrivilegesAchieved
+      116: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityUserInteractionAchieved
+      117: App 2.1_RemoteAccess_TeamViewer:attemptSoftwareProductAbuse
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityHighPrivilegesAchieved:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      118: App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse
+    compromised_by: []
+    id: 115
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityHighPrivilegesAchieved
+    parents:
+      90: App 2.1_RemoteAccess_TeamViewer:authenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityLocalAccessAchieved:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      118: App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse
+    compromised_by: []
+    id: 111
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityLocalAccessAchieved
+    parents:
+      78: App 2.1_RemoteAccess_TeamViewer:localConnect
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityLowPrivilegesAchieved:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      118: App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse
+    compromised_by: []
+    id: 114
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityLowPrivilegesAchieved
+    parents:
+      91: App 2.1_RemoteAccess_TeamViewer:specificAccessAuthenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityNetworkAccessAchieved:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      118: App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse
+    compromised_by: []
+    id: 112
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityNetworkAccessAchieved
+    parents:
+      79: App 2.1_RemoteAccess_TeamViewer:networkConnectUninspected
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityPhysicalAccessAchieved:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      118: App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse
+    compromised_by: []
+    id: 113
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityPhysicalAccessAchieved
+    parents:
+      95: App 2.1_RemoteAccess_TeamViewer:physicalAccessAchieved
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityUserInteractionAchieved:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      118: App 2.1_RemoteAccess_TeamViewer:softwareProductAbuse
+    compromised_by: []
+    id: 116
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: softwareProductVulnerabilityUserInteractionAchieved
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:specificAccess:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      72: App 2.1_RemoteAccess_TeamViewer:attemptUseVulnerability
+      83: App 2.1_RemoteAccess_TeamViewer:accessNetworkAndConnections
+      89: App 2.1_RemoteAccess_TeamViewer:bypassContainerization
+      125: App 2.1_RemoteAccess_TeamViewer:attemptAuthorizedApplicationRespondConnectThroughData
+      131: App 2.1_RemoteAccess_TeamViewer:specificAccessRead
+      135: App 2.1_RemoteAccess_TeamViewer:specificAccessModify
+      139: App 2.1_RemoteAccess_TeamViewer:specificAccessDelete
+    compromised_by: []
+    id: 88
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccess
+    parents:
+      86: App 2.1_RemoteAccess_TeamViewer:specificAccessFromLocalConnection
+      87: App 2.1_RemoteAccess_TeamViewer:specificAccessFromNetworkConnection
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:specificAccessAuthenticate:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      86: App 2.1_RemoteAccess_TeamViewer:specificAccessFromLocalConnection
+      87: App 2.1_RemoteAccess_TeamViewer:specificAccessFromNetworkConnection
+      114: App 2.1_RemoteAccess_TeamViewer:softwareProductVulnerabilityLowPrivilegesAchieved
+    compromised_by: []
+    id: 91
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessAuthenticate
+    parents: {}
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:specificAccessDelete:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children: {}
+    compromised_by: []
+    id: 139
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessDelete
+    parents:
+      88: App 2.1_RemoteAccess_TeamViewer:specificAccess
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:specificAccessFromLocalConnection:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      88: App 2.1_RemoteAccess_TeamViewer:specificAccess
+    compromised_by: []
+    id: 86
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessFromLocalConnection
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      78: App 2.1_RemoteAccess_TeamViewer:localConnect
+      91: App 2.1_RemoteAccess_TeamViewer:specificAccessAuthenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:specificAccessFromNetworkConnection:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      88: App 2.1_RemoteAccess_TeamViewer:specificAccess
+    compromised_by: []
+    id: 87
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessFromNetworkConnection
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      82: App 2.1_RemoteAccess_TeamViewer:specificAccessNetworkConnect
+      91: App 2.1_RemoteAccess_TeamViewer:specificAccessAuthenticate
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:specificAccessModify:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children: {}
+    compromised_by: []
+    id: 135
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessModify
+    parents:
+      88: App 2.1_RemoteAccess_TeamViewer:specificAccess
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:specificAccessNetworkConnect:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      87: App 2.1_RemoteAccess_TeamViewer:specificAccessFromNetworkConnection
+    compromised_by: []
+    id: 82
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessNetworkConnect
+    parents:
+      79: App 2.1_RemoteAccess_TeamViewer:networkConnectUninspected
+      80: App 2.1_RemoteAccess_TeamViewer:networkConnectInspected
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:specificAccessRead:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children: {}
+    compromised_by: []
+    id: 131
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: specificAccessRead
+    parents:
+      88: App 2.1_RemoteAccess_TeamViewer:specificAccess
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:successfulApplicationRespondConnectThroughData:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      124: App 2.1_RemoteAccess_TeamViewer:applicationRespondConnectThroughData
+    compromised_by: []
+    id: 123
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulApplicationRespondConnectThroughData
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      122: App 2.1_RemoteAccess_TeamViewer:attemptApplicationRespondConnectThroughData
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:successfulAuthorizedApplicationRespondConnectThroughData:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      127: App 2.1_RemoteAccess_TeamViewer:authorizedApplicationRespondConnectThroughData
+    compromised_by: []
+    id: 126
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulAuthorizedApplicationRespondConnectThroughData
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      125: App 2.1_RemoteAccess_TeamViewer:attemptAuthorizedApplicationRespondConnectThroughData
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:successfulDeny:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      138: App 2.1_RemoteAccess_TeamViewer:deny
+    compromised_by: []
+    id: 137
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulDeny
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      136: App 2.1_RemoteAccess_TeamViewer:attemptDeny
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:successfulModify:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      134: App 2.1_RemoteAccess_TeamViewer:modify
+    compromised_by: []
+    id: 133
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulModify
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      132: App 2.1_RemoteAccess_TeamViewer:attemptModify
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:successfulRead:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      130: App 2.1_RemoteAccess_TeamViewer:read
+    compromised_by: []
+    id: 129
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulRead
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      128: App 2.1_RemoteAccess_TeamViewer:attemptRead
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:successfulReverseReach:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      77: App 2.1_RemoteAccess_TeamViewer:reverseReach
+    compromised_by: []
+    id: 76
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulReverseReach
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      75: App 2.1_RemoteAccess_TeamViewer:attemptReverseReach
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:successfulUnsafeUserActivity:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      98: App 2.1_RemoteAccess_TeamViewer:unsafeUserActivity
+    compromised_by: []
+    id: 97
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulUnsafeUserActivity
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      96: App 2.1_RemoteAccess_TeamViewer:attemptUnsafeUserActivity
+      99: App 2.1_RemoteAccess_TeamViewer:attackerUnsafeUserActivityCapability
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:successfulUseVulnerability:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      74: App 2.1_RemoteAccess_TeamViewer:useVulnerability
+    compromised_by: []
+    id: 73
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulUseVulnerability
+    parents:
+      71: App 2.1_RemoteAccess_TeamViewer:notPresent
+      72: App 2.1_RemoteAccess_TeamViewer:attemptUseVulnerability
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  App 2.1_RemoteAccess_TeamViewer:supplyChainAuditing:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      104: App 2.1_RemoteAccess_TeamViewer:supplyChainAuditingBypassed
+    compromised_by: []
+    defense_status: '0.0'
+    id: 102
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: supplyChainAuditing
+    parents: {}
+    ttc: null
+    type: defense
+  App 2.1_RemoteAccess_TeamViewer:supplyChainAuditingBypassed:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      106: App 2.1_RemoteAccess_TeamViewer:fullAccessFromSupplyChainCompromise
+    compromised_by: []
+    id: 104
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: supplyChainAuditingBypassed
+    parents:
+      102: App 2.1_RemoteAccess_TeamViewer:supplyChainAuditing
+      103: App 2.1_RemoteAccess_TeamViewer:bypassSupplyChainAuditing
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:unsafeUserActivity:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      78: App 2.1_RemoteAccess_TeamViewer:localConnect
+      79: App 2.1_RemoteAccess_TeamViewer:networkConnectUninspected
+    compromised_by: []
+    id: 98
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: unsafeUserActivity
+    parents:
+      97: App 2.1_RemoteAccess_TeamViewer:successfulUnsafeUserActivity
+    ttc: null
+    type: or
+  App 2.1_RemoteAccess_TeamViewer:useVulnerability:
+    asset: App 2.1_RemoteAccess_TeamViewer
+    children:
+      117: App 2.1_RemoteAccess_TeamViewer:attemptSoftwareProductAbuse
+      119: App 2.1_RemoteAccess_TeamViewer:readFromSoftProdVulnerability
+      120: App 2.1_RemoteAccess_TeamViewer:modifyFromSoftProdVulnerability
+      121: App 2.1_RemoteAccess_TeamViewer:denyFromSoftProdVulnerability
+    compromised_by: []
+    id: 74
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: useVulnerability
+    parents:
+      73: App 2.1_RemoteAccess_TeamViewer:successfulUseVulnerability
+    ttc: null
+    type: or
+  Cred Employee_1:attemptCredentialTheft:
+    asset: Cred Employee_1
+    children:
+      186: Cred Employee_1:credentialTheft
+    compromised_by: []
+    id: 185
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptCredentialTheft
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Cred Employee_1:attemptCredentialsReuse:
+    asset: Cred Employee_1
+    children:
+      180: Cred Employee_1:credentialsReuse
+    compromised_by: []
+    id: 179
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptCredentialsReuse
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Cred Employee_1:attemptDeleteFromReplica:
+    asset: Cred Employee_1
+    children:
+      166: Cred Employee_1:delete
+    compromised_by: []
+    id: 171
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptDeleteFromReplica
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Cred Employee_1:attemptDenyFromReplica:
+    asset: Cred Employee_1
+    children:
+      167: Cred Employee_1:deny
+    compromised_by: []
+    id: 172
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptDenyFromReplica
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Cred Employee_1:attemptExtractFromReplica:
+    asset: Cred Employee_1
+    children:
+      168: Cred Employee_1:extract
+    compromised_by: []
+    id: 173
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptExtractFromReplica
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Cred Employee_1:attemptPropagateOneCredentialCompromised:
+    asset: Cred Employee_1
+    children:
+      184: Cred Employee_1:propagateOneCredentialCompromised
+    compromised_by: []
+    id: 183
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptPropagateOneCredentialCompromised
+    parents:
+      182: Cred Employee_1:use
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Cred Employee_1:attemptReadFromReplica:
+    asset: Cred Employee_1
+    children:
+      164: Cred Employee_1:read
+    compromised_by: []
+    id: 169
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptReadFromReplica
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Cred Employee_1:attemptUse:
+    asset: Cred Employee_1
+    children:
+      182: Cred Employee_1:use
+    compromised_by: []
+    id: 181
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptUse
+    parents:
+      164: Cred Employee_1:read
+      165: Cred Employee_1:write
+      178: Cred Employee_1:useLeakedCredentials
+      180: Cred Employee_1:credentialsReuse
+      186: Cred Employee_1:credentialTheft
+      191: Cred Employee_1:guessCredentials
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Cred Employee_1:attemptWriteFromReplica:
+    asset: Cred Employee_1
+    children:
+      165: Cred Employee_1:write
+    compromised_by: []
+    id: 170
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptWriteFromReplica
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Cred Employee_1:credentialTheft:
+    asset: Cred Employee_1
+    children:
+      181: Cred Employee_1:attemptUse
+    compromised_by: []
+    id: 186
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: credentialTheft
+    parents:
+      177: Cred Employee_1:notPhishable
+      185: Cred Employee_1:attemptCredentialTheft
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Cred Employee_1:credentialsReuse:
+    asset: Cred Employee_1
+    children:
+      181: Cred Employee_1:attemptUse
+    compromised_by: []
+    id: 180
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: credentialsReuse
+    parents:
+      176: Cred Employee_1:unique
+      179: Cred Employee_1:attemptCredentialsReuse
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Cred Employee_1:credsHashed:
+    asset: Cred Employee_1
+    children:
+      190: Cred Employee_1:guessCredentialsFromHash
+    compromised_by: []
+    existence_status: 'False'
+    id: 189
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: credsHashed
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: notExist
+  Cred Employee_1:delete:
+    asset: Cred Employee_1
+    children:
+      167: Cred Employee_1:deny
+    compromised_by: []
+    id: 166
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: delete
+    parents:
+      165: Cred Employee_1:write
+      171: Cred Employee_1:attemptDeleteFromReplica
+    ttc: null
+    type: or
+  Cred Employee_1:deny:
+    asset: Cred Employee_1
+    children: {}
+    compromised_by: []
+    id: 167
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: deny
+    parents:
+      166: Cred Employee_1:delete
+      172: Cred Employee_1:attemptDenyFromReplica
+    ttc: null
+    type: or
+  Cred Employee_1:extract:
+    asset: Cred Employee_1
+    children: {}
+    compromised_by: []
+    id: 168
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: extract
+    parents:
+      173: Cred Employee_1:attemptExtractFromReplica
+    ttc: null
+    type: or
+  Cred Employee_1:guessCredentials:
+    asset: Cred Employee_1
+    children:
+      181: Cred Employee_1:attemptUse
+    compromised_by: []
+    id: 191
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: guessCredentials
+    parents:
+      175: Cred Employee_1:notGuessable
+      188: Cred Employee_1:weakCredentials
+      190: Cred Employee_1:guessCredentialsFromHash
+    tags: '[''hidden'']'
+    ttc:
+      arguments: []
+      name: HardAndUncertain
+      type: function
+    type: and
+  Cred Employee_1:guessCredentialsFromHash:
+    asset: Cred Employee_1
+    children:
+      191: Cred Employee_1:guessCredentials
+    compromised_by: []
+    id: 190
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: guessCredentialsFromHash
+    parents:
+      189: Cred Employee_1:credsHashed
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Cred Employee_1:missingIdentity:
+    asset: Cred Employee_1
+    children:
+      188: Cred Employee_1:weakCredentials
+    compromised_by: []
+    existence_status: 'False'
+    id: 187
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: missingIdentity
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: notExist
+  Cred Employee_1:notDisclosed:
+    asset: Cred Employee_1
+    children:
+      178: Cred Employee_1:useLeakedCredentials
+    compromised_by: []
+    defense_status: '1.0'
+    id: 174
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: notDisclosed
+    parents: {}
+    ttc:
+      arguments: []
+      name: Enabled
+      type: function
+    type: defense
+  Cred Employee_1:notGuessable:
+    asset: Cred Employee_1
+    children:
+      191: Cred Employee_1:guessCredentials
+    compromised_by: []
+    defense_status: '1.0'
+    id: 175
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: notGuessable
+    parents: {}
+    ttc:
+      arguments: []
+      name: Enabled
+      type: function
+    type: defense
+  Cred Employee_1:notPhishable:
+    asset: Cred Employee_1
+    children:
+      186: Cred Employee_1:credentialTheft
+    compromised_by: []
+    defense_status: '0.0'
+    id: 177
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: notPhishable
+    parents: {}
+    ttc:
+      arguments: []
+      name: Disabled
+      type: function
+    type: defense
+  Cred Employee_1:propagateOneCredentialCompromised:
+    asset: Cred Employee_1
+    children: {}
+    compromised_by: []
+    id: 184
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: propagateOneCredentialCompromised
+    parents:
+      176: Cred Employee_1:unique
+      183: Cred Employee_1:attemptPropagateOneCredentialCompromised
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Cred Employee_1:read:
+    asset: Cred Employee_1
+    children:
+      181: Cred Employee_1:attemptUse
+    compromised_by: []
+    id: 164
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: read
+    parents:
+      169: Cred Employee_1:attemptReadFromReplica
+    ttc: null
+    type: or
+  Cred Employee_1:unique:
+    asset: Cred Employee_1
+    children:
+      180: Cred Employee_1:credentialsReuse
+      184: Cred Employee_1:propagateOneCredentialCompromised
+    compromised_by: []
+    defense_status: '1.0'
+    id: 176
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: unique
+    parents: {}
+    ttc:
+      arguments: []
+      name: Enabled
+      type: function
+    type: defense
+  Cred Employee_1:use:
+    asset: Cred Employee_1
+    children:
+      183: Cred Employee_1:attemptPropagateOneCredentialCompromised
+    compromised_by: []
+    id: 182
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: use
+    parents:
+      181: Cred Employee_1:attemptUse
+    ttc: null
+    type: and
+  Cred Employee_1:useLeakedCredentials:
+    asset: Cred Employee_1
+    children:
+      181: Cred Employee_1:attemptUse
+    compromised_by: []
+    id: 178
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: useLeakedCredentials
+    parents:
+      174: Cred Employee_1:notDisclosed
+    ttc:
+      arguments: []
+      name: EasyAndCertain
+      type: function
+    type: or
+  Cred Employee_1:weakCredentials:
+    asset: Cred Employee_1
+    children:
+      191: Cred Employee_1:guessCredentials
+    compromised_by: []
+    id: 188
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: weakCredentials
+    parents:
+      187: Cred Employee_1:missingIdentity
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Cred Employee_1:write:
+    asset: Cred Employee_1
+    children:
+      166: Cred Employee_1:delete
+      181: Cred Employee_1:attemptUse
+    compromised_by: []
+    id: 165
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: write
+    parents:
+      170: Cred Employee_1:attemptWriteFromReplica
+    ttc: null
+    type: or
+  Id Employee_1:assume:
+    asset: Id Employee_1
+    children:
+      90: App 2.1_RemoteAccess_TeamViewer:authenticate
+    compromised_by: []
+    id: 155
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: assume
+    parents:
+      154: Id Employee_1:successfulAssume
+    ttc: null
+    type: or
+  Id Employee_1:attemptAssume:
+    asset: Id Employee_1
+    children:
+      154: Id Employee_1:successfulAssume
+    compromised_by: []
+    id: 153
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptAssume
+    parents:
+      94: App 2.1_RemoteAccess_TeamViewer:fullAccess
+      143: Id Employee_1:write
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Id Employee_1:attemptDeleteFromReplica:
+    asset: Id Employee_1
+    children:
+      144: Id Employee_1:delete
+    compromised_by: []
+    id: 149
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptDeleteFromReplica
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Id Employee_1:attemptDenyFromReplica:
+    asset: Id Employee_1
+    children:
+      145: Id Employee_1:deny
+    compromised_by: []
+    id: 150
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptDenyFromReplica
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Id Employee_1:attemptExtractFromReplica:
+    asset: Id Employee_1
+    children:
+      146: Id Employee_1:extract
+    compromised_by: []
+    id: 151
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptExtractFromReplica
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Id Employee_1:attemptLockout:
+    asset: Id Employee_1
+    children:
+      157: Id Employee_1:successfulLockout
+    compromised_by: []
+    id: 156
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptLockout
+    parents:
+      145: Id Employee_1:deny
+      159: Id Employee_1:lockoutFromCredentials
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Id Employee_1:attemptReadFromReplica:
+    asset: Id Employee_1
+    children:
+      142: Id Employee_1:read
+    compromised_by: []
+    id: 147
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptReadFromReplica
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Id Employee_1:attemptUnsafeUserActivity:
+    asset: Id Employee_1
+    children:
+      162: Id Employee_1:successfulUnsafeUserActivity
+    compromised_by: []
+    id: 161
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptUnsafeUserActivity
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Id Employee_1:attemptWriteFromReplica:
+    asset: Id Employee_1
+    children:
+      143: Id Employee_1:write
+    compromised_by: []
+    id: 148
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptWriteFromReplica
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Id Employee_1:delete:
+    asset: Id Employee_1
+    children:
+      145: Id Employee_1:deny
+    compromised_by: []
+    id: 144
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: delete
+    parents:
+      143: Id Employee_1:write
+      149: Id Employee_1:attemptDeleteFromReplica
+    ttc: null
+    type: or
+  Id Employee_1:deny:
+    asset: Id Employee_1
+    children:
+      156: Id Employee_1:attemptLockout
+    compromised_by: []
+    id: 145
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: deny
+    parents:
+      144: Id Employee_1:delete
+      150: Id Employee_1:attemptDenyFromReplica
+    ttc: null
+    type: or
+  Id Employee_1:extract:
+    asset: Id Employee_1
+    children: {}
+    compromised_by: []
+    id: 146
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: extract
+    parents:
+      151: Id Employee_1:attemptExtractFromReplica
+    ttc: null
+    type: or
+  Id Employee_1:lockout:
+    asset: Id Employee_1
+    children:
+      141: App 2.1_RemoteAccess_TeamViewer:denyFromLockout
+    compromised_by: []
+    id: 158
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: lockout
+    parents:
+      157: Id Employee_1:successfulLockout
+    ttc: null
+    type: or
+  Id Employee_1:lockoutFromCredentials:
+    asset: Id Employee_1
+    children:
+      156: Id Employee_1:attemptLockout
+    compromised_by: []
+    id: 159
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: lockoutFromCredentials
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Id Employee_1:missingUser:
+    asset: Id Employee_1
+    children: {}
+    compromised_by: []
+    existence_status: 'False'
+    id: 160
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: missingUser
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: notExist
+  Id Employee_1:notPresent:
+    asset: Id Employee_1
+    children:
+      154: Id Employee_1:successfulAssume
+      157: Id Employee_1:successfulLockout
+      162: Id Employee_1:successfulUnsafeUserActivity
+    compromised_by: []
+    defense_status: '0.0'
+    id: 152
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: notPresent
+    parents: {}
+    ttc:
+      arguments: []
+      name: Disabled
+      type: function
+    type: defense
+  Id Employee_1:read:
+    asset: Id Employee_1
+    children: {}
+    compromised_by: []
+    id: 142
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: read
+    parents:
+      147: Id Employee_1:attemptReadFromReplica
+    ttc: null
+    type: or
+  Id Employee_1:successfulAssume:
+    asset: Id Employee_1
+    children:
+      155: Id Employee_1:assume
+    compromised_by: []
+    id: 154
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulAssume
+    parents:
+      152: Id Employee_1:notPresent
+      153: Id Employee_1:attemptAssume
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Id Employee_1:successfulLockout:
+    asset: Id Employee_1
+    children:
+      158: Id Employee_1:lockout
+    compromised_by: []
+    id: 157
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulLockout
+    parents:
+      152: Id Employee_1:notPresent
+      156: Id Employee_1:attemptLockout
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Id Employee_1:successfulUnsafeUserActivity:
+    asset: Id Employee_1
+    children:
+      163: Id Employee_1:unsafeUserActivity
+    compromised_by: []
+    id: 162
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulUnsafeUserActivity
+    parents:
+      152: Id Employee_1:notPresent
+      161: Id Employee_1:attemptUnsafeUserActivity
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Id Employee_1:unsafeUserActivity:
+    asset: Id Employee_1
+    children:
+      96: App 2.1_RemoteAccess_TeamViewer:attemptUnsafeUserActivity
+    compromised_by: []
+    id: 163
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: unsafeUserActivity
+    parents:
+      162: Id Employee_1:successfulUnsafeUserActivity
+    ttc: null
+    type: or
+  Id Employee_1:write:
+    asset: Id Employee_1
+    children:
+      144: Id Employee_1:delete
+      153: Id Employee_1:attemptAssume
+    compromised_by: []
+    id: 143
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: write
+    parents:
+      148: Id Employee_1:attemptWriteFromReplica
+    ttc: null
+    type: or
+attackers:
+  Attacker:4:
+    entry_points: {}
+    id: 0
+    name: Attacker:4
+    reached_attack_steps: {}

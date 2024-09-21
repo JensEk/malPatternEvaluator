@@ -1,0 +1,27 @@
+Reached attack steps:
+User Admin_1:attemptSocialEngineering
+
+Attack Surface:
+{'id': 80, 'type': 'and', 'name': 'successfulSocialEngineering', 'ttc': None, 'children': {81: 'User Admin_1:socialEngineering'}, 'parents': {75: 'User Admin_1:securityAwarenessBypassed', 79: 'User Admin_1:attemptSocialEngineering'}, 'compromised_by': [], 'asset': 'User Admin_1', 'is_viable': 'True', 'is_necessary': 'True', 'tags': "['hidden']"}
+{'id': 74, 'type': 'or', 'name': 'bypassSecurityAwareness', 'ttc': {'type': 'function', 'name': 'VeryHardAndUncertain', 'arguments': []}, 'children': {75: 'User Admin_1:securityAwarenessBypassed'}, 'parents': {79: 'User Admin_1:attemptSocialEngineering', 82: 'User Admin_1:attemptDeliverMaliciousRemovableMedia'}, 'compromised_by': [], 'asset': 'User Admin_1', 'is_viable': 'True', 'is_necessary': 'True'}
+
+Defense Surface:
+App 1.0_OS_Windows:notPresent
+App 1.0_OS_Windows:supplyChainAuditing
+User Admin_1:securityAwareness
+Id Admin_1:notPresent
+Cred Admin_1:notPhishable
+MFA:notPhishable
+
+Enabled Defenses:
+User Admin_1:noPasswordReuse
+User Admin_1:noRemovableMediaUsage
+Cred Admin_1:notDisclosed
+Cred Admin_1:notGuessable
+Cred Admin_1:unique
+MFA:notDisclosed
+MFA:notGuessable
+MFA:unique
+
+Target node can be reached:
+App 1.0_OS_Windows:localConnect is traversable by attacker

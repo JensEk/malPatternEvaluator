@@ -1,0 +1,56 @@
+{
+    "metadata": {
+        "name": "M1",
+        "langVersion": "1.0.0",
+        "langID": "org.mal-lang.coreLang",
+        "malVersion": "0.1.0-SNAPSHOT",
+        "MAL-Toolbox Version": "0.1.4",
+        "info": "Created by the mal-toolbox model python module."
+    },
+    "assets": {
+        "0": {
+            "name": "App 2.0_Server_Windows",
+            "type": "Application"
+        },
+        "1": {
+            "name": "App 2.1_RemoteAccess_TeamViewer",
+            "type": "Application"
+        },
+        "2": {
+            "name": "Id Employee_1",
+            "type": "Identity"
+        },
+        "3": {
+            "name": "Cred Employee_1",
+            "type": "Credentials"
+        }
+    },
+    "associations": [
+        {
+            "AppExecution": {
+                "hostApp": [
+                    0
+                ],
+                "appExecutedApps": [
+                    1
+                ]
+            }
+        },
+        {
+            "ExecutionPrivilegeAccess": {
+                "executionPrivIAMs": [
+                    2
+                ],
+                "execPrivApps": [
+                    1
+                ]
+            }
+        }
+    ],
+    "attackers": {
+        "4": {
+            "name": "Attacker:4",
+            "entry_points": {}
+        }
+    }
+}

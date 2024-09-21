@@ -21,7 +21,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-169":"Footprinting", "CAPEC-541":"Application Fingerprinting"},
-                    "coreLangTarget": {"DataResources":["Information"], "ComputeResources":["Application", "SoftwareProduct","Hardware"]}
+                    "coreLangAsset": {"DataResources":["Information"], "ComputeResources":["Application", "SoftwareProduct","Hardware"]}
                 },
                 "T1594": {
                     "name": "Search Victim-Owned Websites",
@@ -36,7 +36,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Information"]}
+                    "coreLangAsset": {"DataResources":["Information"]}
                 },
                 "T1589": {
                     "name": "Gather Victim Identity Information",
@@ -55,7 +55,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-407":"Pretexting"},
-                    "coreLangTarget": {"DataResources":["Information"], "User":["User"], "IAM":["Identity", "Credentials"]}
+                    "coreLangAsset": {"DataResources":["Information"], "User":["User"], "IAM":["Identity", "Credentials"]}
                 },
                 "T1596": {
                     "name": "Search Open Technical Databases",
@@ -76,7 +76,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Information"]}
+                    "coreLangAsset": {"DataResources":["Information"]}
                 },
                 "T1595": {
                     "name": "Active Scanning",
@@ -95,7 +95,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-169":"Footprinting"},
-                    "coreLangTarget": {"DataResources":["Information"], "Networking":["Network", "ConnectionRule"]}
+                    "coreLangAsset": {"DataResources":["Information"], "Networking":["Network", "ConnectionRule"]}
                 },
                 "T1591": {
                     "name": "Gather Victim Org Information",
@@ -115,7 +115,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Information"], "ComputeResources":["PhysicalZone"], "IAM":["Group", "Identity"]}
+                    "coreLangAsset": {"DataResources":["Information"], "ComputeResources":["PhysicalZone"], "IAM":["Group", "Identity"]}
                 },
                 "T1590": {
                     "name": "Gather Victim Network Information",
@@ -137,7 +137,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-309":"Network Topology Mapping"},
-                    "coreLangTarget": {"DataResources":["Information"], "Networking":["Network", "ConnectionRule", "RoutingFirewall"], "ComputeResources":["IDPS"]}
+                    "coreLangAsset": {"DataResources":["Information"], "Networking":["Network", "ConnectionRule", "RoutingFirewall"], "ComputeResources":["IDPS"]}
                 },
                 "T1593": {
                     "name": "Search Open Websites/Domains",
@@ -160,7 +160,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Information"], "User":["User"]}
+                    "coreLangAsset": {"DataResources":["Information"], "User":["User"]}
                 },
                 "T1597": {
                     "name": "Search Closed Sources",
@@ -178,7 +178,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Information"]}
+                    "coreLangAsset": {"DataResources":["Information"]}
                 },
                 "T1598": {
                     "name": "Phishing for Information",
@@ -202,7 +202,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-98":"Phishing", "CAPEC-163":"Spear Phishing"},
-                    "coreLangTarget": {"DataResources":["Information"], "User":["User"], "IAM":["Identity","Credentials"]}
+                    "coreLangAsset": {"DataResources":["Information"], "User":["User"], "IAM":["Identity","Credentials"]}
                 }
             },
             "Resource Development": {
@@ -228,7 +228,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {}
+                    "coreLangAsset": {}
                 },
                 "T1584": {
                     "name": "Compromise Infrastructure",
@@ -251,7 +251,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {}
+                    "coreLangAsset": {}
                 },
                 "T1586": {
                     "name": "Compromise Accounts",
@@ -270,7 +270,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"User":["User"], "IAM":["Identity", "Credentials"]}
+                    "coreLangAsset": {"User":["User"], "IAM":["Identity", "Credentials"]}
                 },
                 "T1608": {
                     "name": "Stage Capabilities",
@@ -292,7 +292,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {}
+                    "coreLangAsset": {}
                 },
                 "T1585": {
                     "name": "Establish Accounts",
@@ -311,7 +311,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {}
+                    "coreLangAsset": {}
                 },
                 "T1588": {
                     "name": "Obtain Capabilities",
@@ -333,7 +333,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {}
+                    "coreLangAsset": {}
                 },
                 "T1650": {
                     "name": "Acquire Access",
@@ -348,7 +348,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {}
+                    "coreLangAsset": {}
                 },
                 "T1587": {
                     "name": "Develop Capabilities",
@@ -368,7 +368,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {}
+                    "coreLangAsset": {}
                 }
             },
             "Initial Access": {
@@ -397,7 +397,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-555":"Remote Services with Stolen Credentials"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"]}
                 },
                 "T1091": {
                     "name": "Replication Through Removable Media",
@@ -420,7 +420,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-457":"USB Memory Attacks"},
-                    "coreLangTarget": {"ComputeResources":["Hardware"]}
+                    "coreLangAsset": {"ComputeResources":["Hardware"]}
                 },
                 "T1195": {
                     "name": "Supply Chain Compromise",
@@ -443,7 +443,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-186":"Malicious Software Update", "CAPEC-438":"Modification During Manufacture", "CAPEC-439":"Manipulation During Distribution", "CAPEC-440":"Hardware Integrity Attack", "CAPEC-442":"Infected Software", "CAPEC-443":"Malicious Logic Inserted Into Product by Authorized Developer", "CAPEC-445":"Malicious Logic Insertion into Product Software via Configuration Management Manipulation", "CAPEC-446":"Malicious Logic Insertion into Product via Inclusion of Third-Party Component", "CAPEC-511":"Infiltration of Software Development Environment", "CAPEC-516":"Hardware Component Substitution During Baselining", "CAPEC-520":"Counterfeit Hardware Component Inserted During Product Assembly", "CAPEC-522":"Malicious Hardware Component Replacement", "CAPEC-523":"Malicious Software Implanted", "CAPEC-531":"Hardware Component Substitution", "CAPEC-537":"Infiltration of Hardware Development Environment", "CAPEC-538":"Open-Source Library Manipulation", "CAPEC-539":"ASIC With Malicious Functionality", "CAPEC-669":"Alteration of a Software Update", "CAPEC-670":"Software Development Tools Maliciously Altered", "CAPEC-671":"Requirements for ASIC Functionality Maliciously Altered", "CAPEC-672":"Malicious Code Implanted During Chip Programming", "CAPEC-673":"Developer Signing Maliciously Altered Software", "CAPEC-674":"Design for FPGA Maliciously Altered", "CAPEC-677":"Server Motherboard Compromise", "CAPEC-678":"System Build Data Maliciously Altered", "CAPEC-691":"Spoof Open-Source Software Metadata", "CAPEC-695":"Repo Jacking"},
-                    "coreLangTarget": {"ComputeResources":["SoftwareProduct", "Application", "Hardware"]}
+                    "coreLangAsset": {"ComputeResources":["SoftwareProduct", "Application", "Hardware"]}
                 },
                 "T1190": {
                     "name": "Exploit Public-Facing Application",
@@ -478,7 +478,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"], "Vulnerability":["SoftwareVulnerability"]}
                 },
                 "T1659": {
                     "name": "Content Injection",
@@ -497,7 +497,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1199": {
                     "name": "Trusted Relationship",
@@ -520,7 +520,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"User":["User"], "IAM":["Identity"]}
+                    "coreLangAsset": {"User":["User"], "IAM":["Identity"]}
                 },
                 "T1566": {
                     "name": "Phishing",
@@ -556,7 +556,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-98":"Phishing", "CAPEC-163":"Spear Phishing"},
-                    "coreLangTarget": {"User":["User"], "IAM":["Identity", "Credentials"]}
+                    "coreLangAsset": {"User":["User"], "IAM":["Identity", "Credentials"]}
                 },
                 "T1078": {
                     "name": "Valid Accounts",
@@ -600,7 +600,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-70":"Try Common or Default Usernames and Passwords", "CAPEC-560":"Use of Known Domain Credentials"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity", "Credentials"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity", "Credentials"]}
                 },
                 "T1200": {
                     "name": "Hardware Additions",
@@ -619,7 +619,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-440":"Hardware Integrity Attack"},
-                    "coreLangTarget": {"ComputeResources":["Hardware"]}
+                    "coreLangAsset": {"ComputeResources":["Hardware"]}
                 },
                 "T1189": {
                     "name": "Drive-by Compromise",
@@ -646,7 +646,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"User":["User"], "IAM":["Identity", "Credentials"]}
+                    "coreLangAsset": {"User":["User"], "IAM":["Identity", "Credentials"]}
                 }
             },
             "Execution": {
@@ -675,7 +675,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1129": {
                     "name": "Shared Modules",
@@ -690,7 +690,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1053": {
                     "name": "Scheduled Task/Job",
@@ -723,7 +723,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1106": {
                     "name": "Native API",
@@ -742,7 +742,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1610": {
                     "name": "Deploy Container",
@@ -769,7 +769,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1059": {
                     "name": "Command and Scripting Interpreter",
@@ -818,7 +818,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1609": {
                     "name": "Container Administration Command",
@@ -849,7 +849,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1204": {
                     "name": "User Execution",
@@ -884,7 +884,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"User":["User"]}
+                    "coreLangAsset": {"User":["User"]}
                 },
                 "T1072": {
                     "name": "Software Deployment Tools",
@@ -935,7 +935,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-187":"Malicious Automated Software Update via Redirection", "CAPEC-657":"Malicious Automated Software Update via Spoofing"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1559": {
                     "name": "Inter-Process Communication",
@@ -974,7 +974,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1203": {
                     "name": "Exploitation for Client Execution",
@@ -993,7 +993,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"], "Vulnerability":["SoftwareVulnerability"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"], "Vulnerability":["SoftwareVulnerability"]}
                 },
                 "T1569": {
                     "name": "System Services",
@@ -1023,7 +1023,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1651": {
                     "name": "Cloud Administration Command",
@@ -1038,7 +1038,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1648": {
                     "name": "Serverless Execution",
@@ -1053,7 +1053,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 }
             },
             "Persistence": {
@@ -1080,7 +1080,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-564":"Run Software at Logon"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1543": {
                     "name": "Create or Modify System Process",
@@ -1124,7 +1124,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-478":"Modification of Windows Service Configuration", "CAPEC-550":"Install New Service", "CAPEC-551":"Modify Existing Service", "CAPEC-564":"Run Software at Logon"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1133": {
                     "name": "External Remote Services",
@@ -1151,7 +1151,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-555":"Remote Services with Stolen Credentials"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"]}
                 },
                 "T1547": {
                     "name": "Boot or Logon Autostart Execution",
@@ -1176,7 +1176,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-132":"Symlink Attack", "CAPEC-270":"Modification of Registry Run Keys", "CAPEC-552":"Install Rootkit", "CAPEC-564":"Run Software at Logon", "CAPEC-579":"Replace Winlogon Helper DLL"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1137": {
                     "name": "Office Application Startup",
@@ -1210,7 +1210,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1053": {
                     "name": "Scheduled Task/Job",
@@ -1243,7 +1243,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1176": {
                     "name": "Browser Extensions",
@@ -1274,7 +1274,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-698":"Install Malicious Extension"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"], "User":["User"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"], "User":["User"]}
                 },
                 "T1205": {
                     "name": "Traffic Signaling",
@@ -1296,7 +1296,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"]}
                 },
                 "T1525": {
                     "name": "Implant Internal Image",
@@ -1319,7 +1319,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1542": {
                     "name": "Pre-OS Boot",
@@ -1348,7 +1348,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-532":"Altered Installed BIOS", "CAPEC-552":"Install Rootkit", "CAPEC-638":"Altered Component Firmware", "CAPEC-665":"Exploitation of Thunderbolt Protection Flaws"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1554": {
                     "name": "Compromise Client Software Binary",
@@ -1363,7 +1363,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-642":"Replace Binaries"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1098": {
                     "name": "Account Manipulation",
@@ -1401,7 +1401,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"User":["User"], "IAM":["Identity", "Credentials"]}
+                    "coreLangAsset": {"User":["User"], "IAM":["Identity", "Credentials"]}
                 },
                 "T1574": {
                     "name": "Hijack Execution Flow",
@@ -1465,7 +1465,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-1":"Accessing Functionality Not Properly Constrained by ACLs", "CAPEC-13":"Subverting Environment Variable Values", "CAPEC-17":"Using Malicious Files", "CAPEC-38":"Leveraging/Manipulating Configuration File Search Paths", "CAPEC-159":"Redirect Access to Libraries", "CAPEC-180":"Exploiting Incorrectly Configured Access Control Security Levels", "CAPEC-471":"Search Order Hijacking", "CAPEC-478":"Modification of Windows Service Configuration", "CAPEC-640":"Inclusion of Code in Existing Process", "CAPEC-641":"DLL Side-Loading", "CAPEC-642":"Replace Binaries"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1078": {
                     "name": "Valid Accounts",
@@ -1509,7 +1509,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-70":"Try Common or Default Usernames and Passwords", "CAPEC-560":"Use of Known Domain Credentials"},
-                    "coreLangTarget": {"User":["User"], "IAM":["Identity", "Credentials"]}
+                    "coreLangAsset": {"User":["User"], "IAM":["Identity", "Credentials"]}
                 },
                 "T1546": {
                     "name": "Event Triggered Execution",
@@ -1536,7 +1536,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-19":"Embedding Scripts within Scripts", "CAPEC-556":"Replace File Extension Handlers", "CAPEC-558":"Replace Trusted Executable"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1197": {
                     "name": "BITS Jobs",
@@ -1559,7 +1559,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1505": {
                     "name": "Server Software Component",
@@ -1600,7 +1600,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-558":"Replace Trusted Executable", "CAPEC-640":"Inclusion of Code in Existing Process", "CAPEC-642":"Replace Binaries", "CAPEC-650":"Upload a Web Shell to a Web Server", "CAPEC-698":"Install Malicious Extension"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1136": {
                     "name": "Create Account",
@@ -1631,7 +1631,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"User":["User"], "IAM":["Identity", "Group"]}
+                    "coreLangAsset": {"User":["User"], "IAM":["Identity", "Group"]}
                 },
                 "T1653": {
                     "name": "Power Settings",
@@ -1646,7 +1646,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "Hardware"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "Hardware"]}
                 },
                 "T1556": {
                     "name": "Modify Authentication Process",
@@ -1702,7 +1702,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-578":"Disable Security Software", "CAPEC-665":"Exploitation of Thunderbolt Protection Flaws"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"User":["User"], "IAM":["Identity", "Credentials"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"User":["User"], "IAM":["Identity", "Credentials"]}
                 }
             },
             "Privilege Escalation": {
@@ -1729,7 +1729,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-564":"Run Software at Logon"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
                 },
                 "T1543": {
                     "name": "Create or Modify System Process",
@@ -1773,7 +1773,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-478":"Modification of Windows Service Configuration", "CAPEC-550":"Install New Service", "CAPEC-551":"Modify Existing Service", "CAPEC-564":"Run Software at Logon"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
                 },
                 "T1547": {
                     "name": "Boot or Logon Autostart Execution",
@@ -1798,7 +1798,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-132":"Symlink Attack", "CAPEC-270":"Modification of Registry Run Keys", "CAPEC-552":"Install Rootkit", "CAPEC-564":"Run Software at Logon", "CAPEC-579":"Replace Winlogon Helper DLL"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
                 },
                 "T1053": {
                     "name": "Scheduled Task/Job",
@@ -1831,7 +1831,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
                 },
                 "T1055": {
                     "name": "Process Injection",
@@ -1863,7 +1863,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-30":"Hijacking a Privileged Thread of Execution", "CAPEC-251":"Local Code Inclusion", "CAPEC-660":"Root/Jailbreak Detection Evasion via Hooking"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
                 },
                 "T1611": {
                     "name": "Escape to Host",
@@ -1890,7 +1890,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-480":"Escaping Virtualization"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
                 },
                 "T1548": {
                     "name": "Abuse Elevation Control Mechanism",
@@ -1935,7 +1935,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-114":"Authentication Abuse", "CAPEC-115":"Authentication Bypass", "CAPEC-122":"Privilege Abuse", "CAPEC-233":"Privilege Escalation", "CAPEC-654":"Credential Prompt Impersonation"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
                 },
                 "T1098": {
                     "name": "Account Manipulation",
@@ -1973,7 +1973,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Credentials","Privileges"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Credentials","Privileges"]}
                 },
                 "T1574": {
                     "name": "Hijack Execution Flow",
@@ -2037,7 +2037,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-1":"Accessing Functionality Not Properly Constrained by ACLs", "CAPEC-13":"Subverting Environment Variable Values", "CAPEC-17":"Using Malicious Files", "CAPEC-38":"Leveraging/Manipulating Configuration File Search Paths", "CAPEC-159":"Redirect Access to Libraries", "CAPEC-180":"Exploiting Incorrectly Configured Access Control Security Levels", "CAPEC-471":"Search Order Hijacking", "CAPEC-478":"Modification of Windows Service Configuration", "CAPEC-640":"Inclusion of Code in Existing Process", "CAPEC-641":"DLL Side-Loading", "CAPEC-642":"Replace Binaries"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Privileges"], "ComputeResources":["Application"]}
                 },
                 "T1078": {
                     "name": "Valid Accounts",
@@ -2081,7 +2081,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-70":"Try Common or Default Usernames and Passwords", "CAPEC-560":"Use of Known Domain Credentials"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Privileges"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Privileges"]}
                 },
                 "T1068": {
                     "name": "Exploitation for Privilege Escalation",
@@ -2112,7 +2112,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"], "User":["User"], "IAM":["Identity", "Privileges"], "Vulnerability":["SoftwareVulnerability"]} 
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"], "User":["User"], "IAM":["Identity", "Privileges"], "Vulnerability":["SoftwareVulnerability"]} 
                 },
                 "T1546": {
                     "name": "Event Triggered Execution",
@@ -2139,7 +2139,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-19":"Embedding Scripts within Scripts", "CAPEC-556":"Replace File Extension Handlers", "CAPEC-558":"Replace Trusted Executable"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "User":["User"], "IAM":["Identity", "Privileges"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "User":["User"], "IAM":["Identity", "Privileges"]}
                 },
                 "T1134": {
                     "name": "Access Token Manipulation",
@@ -2164,7 +2164,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-60":"Reusing Session IDs (aka Session Replay)", "CAPEC-196":"Session Credential Falsification through Forging", "CAPEC-633":"Token Impersonation"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"], "User":["User"], "IAM":["Identity", "Privileges"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"], "User":["User"], "IAM":["Identity", "Privileges"]}
                 },
                 "T1484": {
                     "name": "Domain Policy Modification",
@@ -2190,7 +2190,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "IAM":["Group", "Privileges"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "IAM":["Group", "Privileges"], "DataResources":["Data", "Information"]}
                 }
             },
             "Defense Evasion": {
@@ -2211,7 +2211,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1014": {
                     "name": "Rootkit",
@@ -2221,7 +2221,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-552":"Install Rootkit"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1578": {
                     "name": "Modify Cloud Compute Infrastructure",
@@ -2246,7 +2246,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"], "DataResources":["Data", "Information"]}
                 },
                 "T1600": {
                     "name": "Weaken Encryption",
@@ -2259,7 +2259,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-620":"Drop Encryption Level"},
-                    "coreLangTarget": {"ComputeResources":["Application", "Hardware"], "DataResources":["Data", "Information"], "IAM":["Credentials"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "Hardware"], "DataResources":["Data", "Information"], "IAM":["Credentials"]}
                 },
                 "T1564": {
                     "name": "Hide Artifacts",
@@ -2281,7 +2281,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
                 },
                 "T1202": {
                     "name": "Indirect Command Execution",
@@ -2291,7 +2291,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1140": {
                     "name": "Deobfuscate/Decode Files or Information",
@@ -2301,7 +2301,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-636":"Hiding Malicious Data or Code within Files"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
                 },
                 "T1562": {
                     "name": "Impair Defenses",
@@ -2348,7 +2348,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-13":"Subverting Environment Variable Values", "CAPEC-268":"Audit Log Manipulation", "CAPEC-571":"Block Logging to Central Repository", "CAPEC-578":"Disable Security Software"},
-                    "coreLangTarget": {"ComputeResources":["Application", "IDPS"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "IDPS"]}
                 },
                 "T1036": {
                     "name": "Masquerading",
@@ -2393,7 +2393,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-11":"Cause Web Server Misclassification", "CAPEC-165":"File Manipulation", "CAPEC-177":"Create files with the same name as files protected with a higher classification", "CAPEC-473":"Signature Spoof", "CAPEC-504":"Task Impersonation", "CAPEC-543":"Counterfeit Websites", "CAPEC-616":"Establish Rogue Location", "CAPEC-635":"Alternative Execution Due to Deceptive Filenames", "CAPEC-649":"Adding a Space to a File Extension"},
-                    "coreLangTarget": {"ComputeResources":["Application","SoftwareProduct"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application","SoftwareProduct"], "DataResources":["Data", "Information"]}
                 },
                 "T1055": {
                     "name": "Process Injection",
@@ -2425,7 +2425,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-30":"Hijacking a Privileged Thread of Execution", "CAPEC-251":"Local Code Inclusion", "CAPEC-660":"Root/Jailbreak Detection Evasion via Hooking"},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1205": {
                     "name": "Traffic Signaling",
@@ -2447,7 +2447,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"]}
                 },
                 "T1218": {
                     "name": "System Binary Proxy Execution",
@@ -2488,7 +2488,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-636":"Hiding Malicious Data or Code within Files"},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1620": {
                     "name": "Reflective Code Loading",
@@ -2498,7 +2498,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-640":"Inclusion of Code in Existing Process"},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1550": {
                     "name": "Use Alternate Authentication Material",
@@ -2522,7 +2522,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-60":"Reusing Session IDs (aka Session Replay)", "CAPEC-593":"Session Hijacking", "CAPEC-644":"Use of Captured Hashes (Pass The Hash)", "CAPEC-645":"Use of Captured Tickets (Pass The Ticket)"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1207": {
                     "name": "Rogue Domain Controller",
@@ -2532,7 +2532,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "IDPS"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "IDPS"]}
                 },
                 "T1610": {
                     "name": "Deploy Container",
@@ -2559,7 +2559,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1112": {
                     "name": "Modify Registry",
@@ -2574,7 +2574,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-203":"Manipulate Registry Information"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
                 },
                 "T1535": {
                     "name": "Unused/Unsupported Cloud Regions",
@@ -2589,7 +2589,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {}
+                    "coreLangAsset": {}
                 },
                 "T1222": {
                     "name": "File and Directory Permissions Modification",
@@ -2611,7 +2611,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"] ,"IAM":["Privileges"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"] ,"IAM":["Privileges"]}
                 },
                 "T1548": {
                     "name": "Abuse Elevation Control Mechanism",
@@ -2656,7 +2656,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-114":"Authentication Abuse", "CAPEC-115":"Authentication Bypass", "CAPEC-122":"Privilege Abuse", "CAPEC-233":"Privilege Escalation", "CAPEC-654":"Credential Prompt Impersonation"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "IAM":["Identity","Privileges"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "IAM":["Identity","Privileges"]}
                 },
                 "T1070": {
                     "name": "Indicator Removal",
@@ -2689,7 +2689,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-268":"Audit Log Manipulation"},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1647": {
                     "name": "Plist File Modification",
@@ -2704,7 +2704,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-203":"Manipulate Registry Information"},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1542": {
                     "name": "Pre-OS Boot",
@@ -2733,7 +2733,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-532":"Altered Installed BIOS", "CAPEC-552":"Install Rootkit", "CAPEC-638":"Altered Component Firmware", "CAPEC-665":"Exploitation of Thunderbolt Protection Flaws"},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1612": {
                     "name": "Build Image on Host",
@@ -2760,7 +2760,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1497": {
                     "name": "Virtualization/Sandbox Evasion",
@@ -2774,7 +2774,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
                 },
                 "T1480": {
                     "name": "Execution Guardrails",
@@ -2791,7 +2791,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1601": {
                     "name": "Modify System Image",
@@ -2829,7 +2829,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"], "Networking":["Network"], "IAM":["Identity","Credentials"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"], "Networking":["Network"], "IAM":["Identity","Credentials"]}
                 },
                 "T1574": {
                     "name": "Hijack Execution Flow",
@@ -2893,7 +2893,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-1":"Accessing Functionality Not Properly Constrained by ACLs", "CAPEC-13":"Subverting Environment Variable Values", "CAPEC-17":"Using Malicious Files", "CAPEC-38":"Leveraging/Manipulating Configuration File Search Paths", "CAPEC-159":"Redirect Access to Libraries", "CAPEC-180":"Exploiting Incorrectly Configured Access Control Security Levels", "CAPEC-471":"Search Order Hijacking", "CAPEC-478":"Modification of Windows Service Configuration", "CAPEC-640":"Inclusion of Code in Existing Process", "CAPEC-641":"DLL Side-Loading", "CAPEC-642":"Replace Binaries"},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1078": {
                     "name": "Valid Accounts",
@@ -2937,7 +2937,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-70":"Try Common or Default Usernames and Passwords", "CAPEC-560":"Use of Known Domain Credentials"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity","Credentials"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity","Credentials"]}
                 },
                 "T1027": {
                     "name": "Obfuscated Files or Information",
@@ -2977,7 +2977,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-19":"Embedding Scripts within Scripts", "CAPEC-35":"Leverage Executable Code in Non-Executable Files", "CAPEC-267":"Leverage Alternate Encoding", "CAPEC-448":"Embed Virus into DLL", "CAPEC-542":"Targeted Malware", "CAPEC-572":"Artificially Inflate File Sizes", "CAPEC-655":"Avoid Security Tool Identification by Adding Data"},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1599": {
                     "name": "Network Boundary Bridging",
@@ -3010,7 +3010,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-700":"Network Boundary Bridging"},
-                    "coreLangTarget": {"Networking":["Network", "RoutingFirewall"]}
+                    "coreLangAsset": {"Networking":["Network", "RoutingFirewall"]}
                 },
                 "T1553": {
                     "name": "Subvert Trust Controls",
@@ -3044,7 +3044,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-68":"Subverting Code-signing Facilitiess", "CAPEC-206":"Signing Malicious Code", "CAPEC-473":"Signature Spoof", "CAPEC-479":"Malicious Root Certificate"},
-                    "coreLangTarget": {"ComputeResources":["Application", "IDPS"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "IDPS"]}
                 },
                 "T1197": {
                     "name": "BITS Jobs",
@@ -3067,7 +3067,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1656": {
                     "name": "Impersonation",
@@ -3086,7 +3086,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"User":["User"], "IAM":["Identity"]}
+                    "coreLangAsset": {"User":["User"], "IAM":["Identity"]}
                 },
                 "T1221": {
                     "name": "Template Injection",
@@ -3113,7 +3113,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-636":"Hiding Malicious Data or Code within Files"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
                 },
                 "T1134": {
                     "name": "Access Token Manipulation",
@@ -3138,7 +3138,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-60":"Reusing Session IDs (aka Session Replay)", "CAPEC-196":"Session Credential Falsification through Forging", "CAPEC-633":"Token Impersonation"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"], "User":["User"], "IAM":["Identity", "Privileges"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"], "User":["User"], "IAM":["Identity", "Privileges"]}
                 },
                 "T1622": {
                     "name": "Debugger Evasion",
@@ -3148,7 +3148,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1484": {
                     "name": "Domain Policy Modification",
@@ -3174,7 +3174,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Data", "Information"], "IAM":["Identity","Group","Privileges"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"], "IAM":["Identity","Group","Privileges"]}
                 },
                 "T1220": {
                     "name": "XSL Script Processing",
@@ -3189,7 +3189,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1556": {
                     "name": "Modify Authentication Process",
@@ -3245,7 +3245,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-578":"Disable Security Software", "CAPEC-665":"Exploitation of Thunderbolt Protection Flaws"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"User":["User"], "IAM":["Identity", "Credentials"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"User":["User"], "IAM":["Identity", "Credentials"]}
                 },
                 "T1216": {
                     "name": "System Script Proxy Execution",
@@ -3262,7 +3262,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1211": {
                     "name": "Exploitation for Defense Evasion",
@@ -3289,7 +3289,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-665":"Exploitation of Thunderbolt Protection Flaws"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"], "Vulnerability":["SoftwareVulnerability"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"], "Vulnerability":["SoftwareVulnerability"]}
                 },
                 "T1127": {
                     "name": "Trusted Developer Utilities Proxy Execution",
@@ -3310,7 +3310,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-670":"Software Development Tools Maliciously Altered"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 }
             },
             "Credential Access": {
@@ -3355,7 +3355,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-94":"Adversary in the Middle (AiTM)", "CAPEC-141":"Cache Poisoning", "CAPEC-697":"DHCP Spoofing"},
-                    "coreLangTarget": {"Networking":["Network"], "IAM":["Identity","Credentials"]}
+                    "coreLangAsset": {"Networking":["Network"], "IAM":["Identity","Credentials"]}
                 },
                 "T1003": {
                     "name": "OS Credential Dumping",
@@ -3411,7 +3411,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-150":"Collect Data from Common Resource Locations"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "IAM":["Identity","Credentials"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "IAM":["Identity","Credentials"]}
                 },
                 "T1539": {
                     "name": "Steal Web Session Cookie",
@@ -3434,7 +3434,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-21":"Exploitation of Trusted Identifiers", "CAPEC-31":"Accessing/Intercepting/Modifying HTTP Cookies"},
-                    "coreLangTarget": {"DataResources":["Data", "Information"], "IAM":["Identity","Credentials"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"], "IAM":["Identity","Credentials"]}
                 },
                 "T1040": {
                     "name": "Network Sniffing",
@@ -3461,7 +3461,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-57":"Utilizing REST's Trust in the System Resource to Obtain Sensitive Data", "CAPEC-65":"Sniff Application Code", "CAPEC-158":"Sniffing Network Traffic"},
-                    "coreLangTarget": {"Networking":["Network"],"DataResources":["Data", "Information"] ,"IAM":["Identity","Credentials"]}
+                    "coreLangAsset": {"Networking":["Network"],"DataResources":["Data", "Information"] ,"IAM":["Identity","Credentials"]}
                 },
                 "T1558": {
                     "name": "Steal or Forge Kerberos Tickets",
@@ -3493,7 +3493,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-509":"Kerberoasting", "CAPEC-652":"Use of Known Kerberos Credentials"},
-                    "coreLangTarget": {"DataResources":["Data", "Information"], "IAM":["Identity","Credentials"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"], "IAM":["Identity","Credentials"]}
                 },
                 "T1555": {
                     "name": "Credentials from Password Stores",
@@ -3519,7 +3519,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-150":"Collect Data from Common Resource Locations", "CAPEC-545":"Pull Data from System Resources"},
-                    "coreLangTarget": {"IAM":["Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"IAM":["Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1552": {
                     "name": "Unsecured Credentials",
@@ -3583,7 +3583,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-37":"Retrieve Embedded Sensitive Data", "CAPEC-191":"Read Sensitive Constants Within an Executable", "CAPEC-474":"Signature Spoofing by Key Theft", "CAPEC-485":"Signature Spoofing by Key Recreation", "CAPEC-639":"Probe System Files", "CAPEC-647":"Collect Data from Registries"},
-                    "coreLangTarget": {"IAM":["Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"IAM":["Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1649": {
                     "name": "Steal or Forge Authentication Certificates",
@@ -3610,7 +3610,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"IAM":["Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"IAM":["Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1528": {
                     "name": "Steal Application Access Token",
@@ -3637,7 +3637,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-21":"Exploitation of Trusted Identifiers"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1606": {
                     "name": "Forge Web Credentials",
@@ -3667,7 +3667,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-196":"Session Credential Falsification through Forging", "CAPEC-464":"Evercookie"},
-                    "coreLangTarget": {"IAM":["Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"IAM":["Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1621": {
                     "name": "Multi-Factor Authentication Request Generation",
@@ -3690,7 +3690,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"User":["User"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"User":["User"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1212": {
                     "name": "Exploitation for Credential Access",
@@ -3721,7 +3721,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"],"Vulnerability":["SoftwareVulnerability"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}                },
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"],"Vulnerability":["SoftwareVulnerability"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}                },
                 "T1110": {
                     "name": "Brute Force",
                     "id": "T1110",
@@ -3752,7 +3752,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-49":"Password Brute Forcing", "CAPEC-55":"Rainbow Table Password Cracking", "CAPEC-112":"Brute Force", "CAPEC-565":"Password Spraying", "CAPEC-600":"Credential Stuffing"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1187": {
                     "name": "Forced Authentication",
@@ -3771,7 +3771,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"IAM":["Credentials"], "DataResources":["Data", "Information"], "Networking":["Network"]}
+                    "coreLangAsset": {"IAM":["Credentials"], "DataResources":["Data", "Information"], "Networking":["Network"]}
                 },
                 "T1056": {
                     "name": "Input Capture",
@@ -3786,7 +3786,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-383":"Harvesting Information via API Event Monitoring", "CAPEC-568":"Capture Credentials via Keylogger", "CAPEC-569":"Collect Data as Provided by Users", "CAPEC-654":"Credential Prompt Impersonation"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1111": {
                     "name": "Multi-Factor Authentication Interception",
@@ -3801,7 +3801,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-158":"Sniffing Network Traffic", "CAPEC-609":"Cellular Traffic Intercept", "CAPEC-651":"Eavesdropping"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1556": {
                     "name": "Modify Authentication Process",
@@ -3857,7 +3857,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-578":"Disable Security Software", "CAPEC-665":"Exploitation of Thunderbolt Protection Flaws"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"IAM":["Credentials"], "DataResources":["Data", "Information"]}
                 }
             },
             "Discovery": {
@@ -3869,7 +3869,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-577":"Owner Footprinting"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity"]}
                 },
                 "T1613": {
                     "name": "Container and Resource Discovery",
@@ -3892,7 +3892,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1069": {
                     "name": "Permission Groups Discovery",
@@ -3906,7 +3906,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-576":"Group Permission Footprinting"},
-                    "coreLangTarget": {"IAM":["Identity", "Group", "Privileges"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"IAM":["Identity", "Group", "Privileges"], "DataResources":["Data", "Information"]}
                 },
                 "T1615": {
                     "name": "Group Policy Discovery",
@@ -3916,7 +3916,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-576":"Group Permission Footprinting"},
-                    "coreLangTarget": {"IAM":["Identity", "Group", "Privileges"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"IAM":["Identity", "Group", "Privileges"], "DataResources":["Data", "Information"]}
                 },
                 "T1652": {
                     "name": "Device Driver Discovery",
@@ -3926,7 +3926,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1007": {
                     "name": "System Service Discovery",
@@ -3936,7 +3936,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-574":"Services Footprinting"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1040": {
                     "name": "Network Sniffing",
@@ -3963,7 +3963,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-57":"Utilizing REST's Trust in the System Resource to Obtain Sensitive Data", "CAPEC-65":"Sniff Application Code", "CAPEC-158":"Sniffing Network Traffic"},
-                    "coreLangTarget": {"Networking":["Network"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"Networking":["Network"],"DataResources":["Data", "Information"]}
                 },
                 "T1135": {
                     "name": "Network Share Discovery",
@@ -3978,7 +3978,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-643":"Identify Shared Files/Directories on System"},
-                    "coreLangTarget": {"Networking":["Network"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"Networking":["Network"],"DataResources":["Data", "Information"]}
                 },
                 "T1120": {
                     "name": "Peripheral Device Discovery",
@@ -3988,7 +3988,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-646":"Peripheral Footprinting"},
-                    "coreLangTarget": {"ComputeResources":["Hardware"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Hardware"],"DataResources":["Data", "Information"]}
                 },
                 "T1082": {
                     "name": "System Information Discovery",
@@ -3998,7 +3998,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-312":"Active OS Fingerprinting", "CAPEC-313":"Passive OS Fingerprinting", "CAPEC-580":"System Footprinting"},
-                    "coreLangTarget": {"ComputeResources":["Application","SoftwareProduct","Hardware"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application","SoftwareProduct","Hardware"],"DataResources":["Data", "Information"]}
                 },
                 "T1010": {
                     "name": "Application Window Discovery",
@@ -4008,7 +4008,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
                 },
                 "T1580": {
                     "name": "Cloud Infrastructure Discovery",
@@ -4023,7 +4023,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
                 },
                 "T1217": {
                     "name": "Browser Information Discovery",
@@ -4033,7 +4033,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-169":"Footprinting"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
                 },
                 "T1016": {
                     "name": "System Network Configuration Discovery",
@@ -4046,7 +4046,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-309":"Network Topology Mapping"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"], "DataResources":["Data", "Information"]}
                 },
                 "T1087": {
                     "name": "Account Discovery",
@@ -4066,7 +4066,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-575":"Account Footprinting"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity"], "DataResources":["Data", "Information"]}
                 },
                 "T1482": {
                     "name": "Domain Trust Discovery",
@@ -4085,7 +4085,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1083": {
                     "name": "File and Directory Discovery",
@@ -4095,7 +4095,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-127":"Directory Indexing", "CAPEC-497":"File Discovery"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1049": {
                     "name": "System Network Connections Discovery",
@@ -4105,7 +4105,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-309":"Network Topology Mapping"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"], "DataResources":["Data", "Information"]}
                 },
                 "T1497": {
                     "name": "Virtualization/Sandbox Evasion",
@@ -4119,7 +4119,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1619": {
                     "name": "Cloud Storage Object Discovery",
@@ -4134,7 +4134,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1654": {
                     "name": "Log Enumeration",
@@ -4149,7 +4149,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1057": {
                     "name": "Process Discovery",
@@ -4159,7 +4159,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-573":"Process Footprinting"},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1201": {
                     "name": "Password Policy Discovery",
@@ -4174,7 +4174,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1012": {
                     "name": "Query Registry",
@@ -4184,7 +4184,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-647":"Collect Data from Registries"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1614": {
                     "name": "System Location Discovery",
@@ -4196,7 +4196,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-694":"System Location Discovery"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1526": {
                     "name": "Cloud Service Discovery",
@@ -4206,7 +4206,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1018": {
                     "name": "Remote System Discovery",
@@ -4216,7 +4216,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-292":"Host Discovery"},
-                    "coreLangTarget": {"Networking":["Network"],"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"Networking":["Network"],"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1046": {
                     "name": "Network Service Discovery",
@@ -4239,7 +4239,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-300":"Port Scanning"},
-                    "coreLangTarget": {"Networking":["Network", "ConnectionRule"], "ComputeResources":["Application"]}
+                    "coreLangAsset": {"Networking":["Network", "ConnectionRule"], "ComputeResources":["Application"]}
                 },
                 "T1518": {
                     "name": "Software Discovery",
@@ -4251,7 +4251,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-581":"Security Software Footprinting"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1538": {
                     "name": "Cloud Service Dashboard",
@@ -4266,7 +4266,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1622": {
                     "name": "Debugger Evasion",
@@ -4276,7 +4276,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1124": {
                     "name": "System Time Discovery",
@@ -4286,7 +4286,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-21":"Exploitation of Trusted Identifiers", "CAPEC-295":"Timestamp Request"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 }
             },
             "Lateral Movement": {
@@ -4315,7 +4315,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-562":"Modify Shared File"},
-                    "coreLangTarget": {"Networking":["Network"],"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"Networking":["Network"],"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1091": {
                     "name": "Replication Through Removable Media",
@@ -4338,7 +4338,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-457":"USB Memory Attacks"},
-                    "coreLangTarget": {"ComputeResources":["Hardware"]}
+                    "coreLangAsset": {"ComputeResources":["Hardware"]}
                 },
                 "T1550": {
                     "name": "Use Alternate Authentication Material",
@@ -4362,7 +4362,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-60":"Reusing Session IDs (aka Session Replay)", "CAPEC-593":"Session Hijacking", "CAPEC-644":"Use of Captured Hashes (Pass The Hash)", "CAPEC-645":"Use of Captured Tickets (Pass The Ticket)"},
-                    "coreLangTarget": {"IAM":["Identity", "Credentials"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"IAM":["Identity", "Credentials"],"DataResources":["Data", "Information"]}
                 },
                 "T1021": {
                     "name": "Remote Services",
@@ -4394,7 +4394,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-555":"Remote Services with Stolen Credentials", "CAPEC-561":"Windows Admin Shares with Stolen Credentials"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"]}
                 },
                 "T1563": {
                     "name": "Remote Service Session Hijacking",
@@ -4424,7 +4424,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-593":"Session Hijacking"},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"], "User":["User"], "IAM":["Identity"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"], "User":["User"], "IAM":["Identity"]}
                 },
                 "T1072": {
                     "name": "Software Deployment Tools",
@@ -4475,7 +4475,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-187":"Malicious Automated Software Update via Redirection", "CAPEC-657":"Malicious Automated Software Update via Spoofing"},
-                    "coreLangTarget": {"ComputeResources":["Application","SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application","SoftwareProduct"]}
                 },
                 "T1210": {
                     "name": "Exploitation of Remote Services",
@@ -4518,7 +4518,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Vulnerability":["SoftwareVulnerability"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Vulnerability":["SoftwareVulnerability"]}
                 },
                 "T1534": {
                     "name": "Internal Spearphishing",
@@ -4528,7 +4528,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-163":"Spear Phishing"},
-                    "coreLangTarget": {"User":["User"],"IAM":["Identity", "Credentials"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"User":["User"],"IAM":["Identity", "Credentials"], "DataResources":["Data", "Information"]}
                 },
                 "T1570": {
                     "name": "Lateral Tool Transfer",
@@ -4547,7 +4547,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"Networking":["Network"]}
+                    "coreLangAsset": {"Networking":["Network"]}
                 }
             },
             "Collection": {
@@ -4559,7 +4559,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-648":"Collect Data from Screen Capture"},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1557": {
                     "name": "Adversary-in-the-Middle",
@@ -4602,7 +4602,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-94":"Adversary in the Middle (AiTM)", "CAPEC-141":"Cache Poisoning", "CAPEC-697":"DHCP Spoofing"},
-                    "coreLangTarget": {"Networking":["Network"], "ComputeResources":["Application"]}
+                    "coreLangAsset": {"Networking":["Network"], "ComputeResources":["Application"]}
                 },
                 "T1602": {
                     "name": "Data from Configuration Repository",
@@ -4640,7 +4640,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-150":"Collect Data from Common Resource Locations"},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1123": {
                     "name": "Audio Capture",
@@ -4650,7 +4650,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-634":"Probe Audio and Video Peripherals"},
-                    "coreLangTarget": {"ComputeResources":["Application", "Hardware"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "Hardware"], "DataResources":["Data", "Information"]}
                 },
                 "T1114": {
                     "name": "Email Collection",
@@ -4677,7 +4677,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-555":"Remote Services with Stolen Credentials"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1025": {
                     "name": "Data from Removable Media",
@@ -4692,7 +4692,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Hardware"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Hardware"],"DataResources":["Data", "Information"]}
                 },
                 "T1119": {
                     "name": "Automated Collection",
@@ -4711,7 +4711,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-150":"Collect Data from Common Resource Locations"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1115": {
                     "name": "Clipboard Data",
@@ -4721,7 +4721,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-637":"Collect Data from Clipboard"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1530": {
                     "name": "Data from Cloud Storage",
@@ -4756,7 +4756,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-150":"Collect Data from Common Resource Locations"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1005": {
                     "name": "Data from Local System",
@@ -4771,7 +4771,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-37":"Retrieve Embedded Sensitive Data", "CAPEC-204":"Lifting Sensitive Data Embedded in Cache", "CAPEC-545":"Pull Data from System Resources", "CAPEC-647":"Collect Data from Registries"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1560": {
                     "name": "Archive Collected Data",
@@ -4790,7 +4790,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1185": {
                     "name": "Browser Session Hijacking",
@@ -4809,7 +4809,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-593":"Session Hijacking", "CAPEC-662":"Adversary in the Browser (AiTB)"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"], "Vulnerability":["SoftwareVulnerability"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"], "Vulnerability":["SoftwareVulnerability"]}
                 },
                 "T1125": {
                     "name": "Video Capture",
@@ -4819,7 +4819,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-634":"Probe Audio and Video Peripherals"},
-                    "coreLangTarget": {"ComputeResources":["Application", "Hardware"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "Hardware"], "DataResources":["Data", "Information"]}
                 },
                 "T1074": {
                     "name": "Data Staged",
@@ -4832,7 +4832,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1039": {
                     "name": "Data from Network Shared Drive",
@@ -4842,7 +4842,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-639":"Probe System Files"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1056": {
                     "name": "Input Capture",
@@ -4857,7 +4857,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-383":"Harvesting Information via API Event Monitoring", "CAPEC-568":"Capture Credentials via Keylogger", "CAPEC-569":"Collect Data as Provided by Users", "CAPEC-654":"Credential Prompt Impersonation"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1213": {
                     "name": "Data from Information Repositories",
@@ -4884,7 +4884,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-150":"Collect Data from Common Resource Locations"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 }
             },
             "Command and Control": {
@@ -4906,7 +4906,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1219": {
                     "name": "Remote Access Software",
@@ -4929,7 +4929,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1659": {
                     "name": "Content Injection",
@@ -4948,7 +4948,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1205": {
                     "name": "Traffic Signaling",
@@ -4970,7 +4970,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"]}
                 },
                 "T1572": {
                     "name": "Protocol Tunneling",
@@ -4989,7 +4989,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"]}
                 },
                 "T1092": {
                     "name": "Communication Through Removable Media",
@@ -5008,7 +5008,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-457":"USB Memory Attacks"},
-                    "coreLangTarget": {"ComputeResources":["Application", "Hardware"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "Hardware"],"Networking":["Network"]}
                 },
                 "T1090": {
                     "name": "Proxy",
@@ -5036,7 +5036,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-465":"Transparent Proxy Abuse", "CAPEC-481":"Contradictory Destinations in Traffic Routing Schemes"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1568": {
                     "name": "Dynamic Resolution",
@@ -5059,7 +5059,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1102": {
                     "name": "Web Service",
@@ -5082,7 +5082,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1104": {
                     "name": "Multi-Stage Channels",
@@ -5097,7 +5097,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1001": {
                     "name": "Data Obfuscation",
@@ -5116,7 +5116,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-636":"Hiding Malicious Data or Code within Files"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1571": {
                     "name": "Non-Standard Port",
@@ -5135,7 +5135,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1573": {
                     "name": "Encrypted Channel",
@@ -5157,7 +5157,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1095": {
                     "name": "Non-Application Layer Protocol",
@@ -5180,7 +5180,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"]}
                 },
                 "T1132": {
                     "name": "Data Encoding",
@@ -5198,7 +5198,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "Networking":["Network"]}
                 },
                 "T1105": {
                     "name": "Ingress Tool Transfer",
@@ -5213,7 +5213,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1008": {
                     "name": "Fallback Channels",
@@ -5228,7 +5228,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 }
             },
             "Exfiltration": {
@@ -5254,7 +5254,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1029": {
                     "name": "Scheduled Transfer",
@@ -5269,7 +5269,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1011": {
                     "name": "Exfiltration Over Other Network Medium",
@@ -5290,7 +5290,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"], "DataResources":["Data", "Information"]}
                 },
                 "T1020": {
                     "name": "Automated Exfiltration",
@@ -5302,7 +5302,7 @@
                     ],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1041": {
                     "name": "Exfiltration Over C2 Channel",
@@ -5321,7 +5321,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1048": {
                     "name": "Exfiltration Over Alternative Protocol",
@@ -5360,7 +5360,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"],"DataResources":["Data", "Information"]}
                 },
                 "T1030": {
                     "name": "Data Transfer Size Limits",
@@ -5375,7 +5375,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1537": {
                     "name": "Transfer Data to Cloud Account",
@@ -5398,7 +5398,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"],"User":["User"], "IAM":["Identity"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"User":["User"], "IAM":["Identity"], "DataResources":["Data", "Information"]}
                 },
                 "T1052": {
                     "name": "Exfiltration Over Physical Medium",
@@ -5423,7 +5423,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-675":"Retrieve Data from Decommissioned Devices"},
-                    "coreLangTarget": {"ComputeResources":["Application","Hardware"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application","Hardware"], "DataResources":["Data", "Information"]}
                 }
             },
             "Impact": {
@@ -5443,7 +5443,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "Hardware"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "Hardware"], "DataResources":["Data", "Information"]}
                 },
                 "T1489": {
                     "name": "Service Stop",
@@ -5470,7 +5470,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 },
                 "T1491": {
                     "name": "Defacement",
@@ -5488,7 +5488,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-148":"Content Spoofing"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"DataResources":["Data", "Information"]}
                 },
                 "T1657": {
                     "name": "Financial Theft",
@@ -5507,7 +5507,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {}
+                    "coreLangAsset": {}
                 },
                 "T1565": {
                     "name": "Data Manipulation",
@@ -5538,7 +5538,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-668":"Key Negotiation of Bluetooth Attack (KNOB)"},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1531": {
                     "name": "Account Access Removal",
@@ -5548,7 +5548,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {"CAPEC-2":"Inducing Account Lockout"},
-                    "coreLangTarget": {"User":["User"], "IAM":["Identity", "Credentials", "Group"]}
+                    "coreLangAsset": {"User":["User"], "IAM":["Identity", "Credentials", "Group"]}
                 },
                 "T1486": {
                     "name": "Data Encrypted for Impact",
@@ -5567,7 +5567,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1499": {
                     "name": "Endpoint Denial of Service",
@@ -5587,7 +5587,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-25":"Forced Deadlock", "CAPEC-125":"Flooding", "CAPEC-130":"Excessive Allocation", "CAPEC-131":"Resource Leak Exposure", "CAPEC-227":"Sustained Client Engagement", "CAPEC-469":"HTTP DoS", "CAPEC-482":"TCP Flood", "CAPEC-488":"HTTP Flood", "CAPEC-489":"SSL Flood", "CAPEC-528":"XML Flood", "CAPEC-666":"BlueSmacking"},
-                    "coreLangTarget": {"ComputeResources":["Application"],"Networking":["Network"]}
+                    "coreLangAsset": {"ComputeResources":["Application"],"Networking":["Network"]}
                 },
                 "T1496": {
                     "name": "Resource Hijacking",
@@ -5597,7 +5597,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application", "Hardware"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "Hardware"]}
                 },
                 "T1485": {
                     "name": "Data Destruction",
@@ -5612,7 +5612,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"DataResources":["Data", "Information"]}
                 },
                 "T1498": {
                     "name": "Network Denial of Service",
@@ -5630,7 +5630,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-125":"Flooding", "CAPEC-482":"TCP Flood", "CAPEC-490":"Amplification", "CAPEC-528":"XML Flood", "CAPEC-666":"BlueSmacking"},
-                    "coreLangTarget": {"Networking":["Network", "RoutingFirewall"]}
+                    "coreLangAsset": {"Networking":["Network", "RoutingFirewall"]}
                 },
                 "T1495": {
                     "name": "Firmware Corruption",
@@ -5653,7 +5653,7 @@
                         }
                     ],
                     "CAPEC_id": {"CAPEC-532":"Altered Installed BIOS"},
-                    "coreLangTarget": {"ComputeResources":["Application", "SoftwareProduct"]}
+                    "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
                 },
                 "T1490": {
                     "name": "Inhibit System Recovery",
@@ -5676,7 +5676,7 @@
                         }
                     ],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
+                    "coreLangAsset": {"ComputeResources":["Application"], "DataResources":["Data", "Information"]}
                 },
                 "T1529": {
                     "name": "System Shutdown/Reboot",
@@ -5686,7 +5686,7 @@
                     "subTechniques": [],
                     "mitigations": [],
                     "CAPEC_id": {},
-                    "coreLangTarget": {"ComputeResources":["Application"]}
+                    "coreLangAsset": {"ComputeResources":["Application"]}
                 }
             }
         },
@@ -5695,261 +5695,303 @@
                 "name": "Network Intrusion Prevention",
                 "id": "M1031",
                 "url": "https://attack.mitre.org/mitigations/M1031",
-                "description": "Use intrusion detection signatures to block traffic at network boundaries."
+                "description": "Use intrusion detection signatures to block traffic at network boundaries.",
+                "coreLangAsset": {"ComputeResources":["IDPS"], "Networking":["RoutingFirewall"]}
             },
             "M1016": {
                 "name": "Vulnerability Scanning",
                 "id": "M1016",
                 "url": "https://attack.mitre.org/mitigations/M1016",
-                "description": "Vulnerability scanning is used to find potentially exploitable software vulnerabilities to remediate them."
+                "description": "Vulnerability scanning is used to find potentially exploitable software vulnerabilities to remediate them.",
+                "coreLangAsset": {"ComputeResources":["IDPS"]}
             },
             "M1035": {
                 "name": "Limit Access to Resource Over Network",
                 "id": "M1035",
                 "url": "https://attack.mitre.org/mitigations/M1035",
-                "description": "Prevent access to file shares, remote access to systems, unnecessary services. Mechanisms to limit access may include use of network concentrators, RDP gateways, etc."
+                "description": "Prevent access to file shares, remote access to systems, unnecessary services. Mechanisms to limit access may include use of network concentrators, RDP gateways, etc.",
+                "coreLangAsset": {"IAM":["Privileges"]}
             },
             "M1029": {
                 "name": "Remote Data Storage",
                 "id": "M1029",
                 "url": "https://attack.mitre.org/mitigations/M1029",
-                "description": "Use remote security log and sensitive file storage where access can be controlled better to prevent exposure of intrusion detection log data or sensitive information."
+                "description": "Use remote security log and sensitive file storage where access can be controlled better to prevent exposure of intrusion detection log data or sensitive information.",
+                "coreLangAsset": {"ComputeResources":["Application", "Hardware", "PhysicalZone"]}
             },
             "M1037": {
                 "name": "Filter Network Traffic",
                 "id": "M1037",
                 "url": "https://attack.mitre.org/mitigations/M1037",
-                "description": "Use network appliances to filter ingress or egress traffic and perform protocol-based filtering. Configure software on endpoints to filter network traffic."
+                "description": "Use network appliances to filter ingress or egress traffic and perform protocol-based filtering. Configure software on endpoints to filter network traffic.",
+                "coreLangAsset": {"ComputeResources":["IDPS"], "Networking":["RoutingFirewall"]}
             },
             "M1021": {
                 "name": "Restrict Web-Based Content",
                 "id": "M1021",
                 "url": "https://attack.mitre.org/mitigations/M1021",
-                "description": "Restrict use of certain websites, block downloads/attachments, block Javascript, restrict browser extensions, etc."
+                "description": "Restrict use of certain websites, block downloads/attachments, block Javascript, restrict browser extensions, etc.",
+                "coreLangAsset": {}
             },
             "M1033": {
                 "name": "Limit Software Installation",
                 "id": "M1033",
                 "url": "https://attack.mitre.org/mitigations/M1033",
-                "description": "Block users or groups from installing unapproved software."
+                "description": "Block users or groups from installing unapproved software.",
+                "coreLangAsset": {"IAM":["Privileges", "Identity", "Group"]}
             },
             "M1013": {
                 "name": "Application Developer Guidance",
                 "id": "M1013",
                 "url": "https://attack.mitre.org/mitigations/M1013",
-                "description": "This mitigation describes any guidance or training given to developers of applications to avoid introducing security weaknesses that an adversary may be able to take advantage of."
+                "description": "This mitigation describes any guidance or training given to developers of applications to avoid introducing security weaknesses that an adversary may be able to take advantage of.",
+                "coreLangAsset": {}
             },
             "M1034": {
                 "name": "Limit Hardware Installation",
                 "id": "M1034",
                 "url": "https://attack.mitre.org/mitigations/M1034",
-                "description": "Block users or groups from installing or using unapproved hardware on systems, including USB devices."
+                "description": "Block users or groups from installing or using unapproved hardware on systems, including USB devices.",
+                "coreLangAsset": {"IAM":["Privileges", "Identity", "Group"]}
             },
             "M1017": {
                 "name": "User Training",
                 "id": "M1017",
                 "url": "https://attack.mitre.org/mitigations/M1017",
-                "description": "Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction."
+                "description": "Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.",
+                "coreLangAsset": {}
             },
             "M1052": {
                 "name": "User Account Control",
                 "id": "M1052",
                 "url": "https://attack.mitre.org/mitigations/M1052",
-                "description": "Configure Windows User Account Control to mitigate risk of adversaries obtaining elevated process access."
+                "description": "Configure Windows User Account Control to mitigate risk of adversaries obtaining elevated process access.",
+                "coreLangAsset": {"IAM":["Privileges", "Identity", "Group"]}
             },
             "M1028": {
                 "name": "Operating System Configuration",
                 "id": "M1028",
                 "url": "https://attack.mitre.org/mitigations/M1028",
-                "description": "Make configuration changes related to the operating system or a common feature of the operating system that result in system hardening against techniques."
+                "description": "Make configuration changes related to the operating system or a common feature of the operating system that result in system hardening against techniques.",
+                "coreLangAsset": {}
             },
             "M1053": {
                 "name": "Data Backup",
                 "id": "M1053",
                 "url": "https://attack.mitre.org/mitigations/M1053",
-                "description": "Take and store data backups from end user systems and critical servers. Ensure backup and storage systems are hardened and kept separate from the corporate network to prevent compromise."
+                "description": "Take and store data backups from end user systems and critical servers. Ensure backup and storage systems are hardened and kept separate from the corporate network to prevent compromise.",
+                "coreLangAsset": {"DataResources":["Data", "Information"], "ComputeResources":["Application", "Hardware"]}
             },
             "M1038": {
                 "name": "Execution Prevention",
                 "id": "M1038",
                 "url": "https://attack.mitre.org/mitigations/M1038",
-                "description": "Block execution of code on a system through application control, and/or script blocking."
+                "description": "Block execution of code on a system through application control, and/or script blocking.",
+                "coreLangAsset": {"IAM":["Privileges"], "ComputeResources":["Application"]}
             },
             "M1043": {
                 "name": "Credential Access Protection",
                 "id": "M1043",
                 "url": "https://attack.mitre.org/mitigations/M1043",
-                "description": "Use capabilities to prevent successful credential access by adversaries; including blocking forms of credential dumping."
+                "description": "Use capabilities to prevent successful credential access by adversaries; including blocking forms of credential dumping.",
+                "coreLangAsset": {"IAM":["Credentials"]}
             },
             "M1045": {
                 "name": "Code Signing",
                 "id": "M1045",
                 "url": "https://attack.mitre.org/mitigations/M1045",
-                "description": "Enforce binary and application integrity with digital signature verification to prevent untrusted code from executing."
+                "description": "Enforce binary and application integrity with digital signature verification to prevent untrusted code from executing.",
+                "coreLangAsset": {"DataResources":["Data"], "IAM":["Credentials"]}
             },
             "M1039": {
                 "name": "Environment Variable Permissions",
                 "id": "M1039",
                 "url": "https://attack.mitre.org/mitigations/M1039",
-                "description": "Prevent modification of environment variables by unauthorized users and groups."
+                "description": "Prevent modification of environment variables by unauthorized users and groups.",
+                "coreLangAsset": {"IAM":["Privileges", "Identity", "Group"]}
             },
             "M1057": {
                 "name": "Data Loss Prevention",
                 "id": "M1057",
                 "url": "https://attack.mitre.org/mitigations/M1057",
-                "description": "Use a data loss prevention (DLP) strategy to categorize sensitive data, identify data formats indicative of personal identifiable information (PII), and restrict exfiltration of sensitive data.(Citation: PurpleSec Data Loss Prevention)"
+                "description": "Use a data loss prevention (DLP) strategy to categorize sensitive data, identify data formats indicative of personal identifiable information (PII), and restrict exfiltration of sensitive data.(Citation: PurpleSec Data Loss Prevention)",
+                "coreLangAsset": {"ComputeResources":["IDPS"]}
             },
             "M1025": {
                 "name": "Privileged Process Integrity",
                 "id": "M1025",
                 "url": "https://attack.mitre.org/mitigations/M1025",
-                "description": "Protect processes with high privileges that can be used to interact with critical system components through use of protected process light, anti-process injection defenses, or other process integrity enforcement measures."
+                "description": "Protect processes with high privileges that can be used to interact with critical system components through use of protected process light, anti-process injection defenses, or other process integrity enforcement measures.",
+                "coreLangAsset": {"ComputeResources":["IDPS", "Application", "SoftwareProduct"], "IAM":["Privileges"]}
             },
             "M1055": {
                 "name": "Do Not Mitigate",
                 "id": "M1055",
                 "url": "https://attack.mitre.org/mitigations/M1055",
-                "description": "This category is to associate techniques that mitigation might increase risk of compromise and therefore mitigation is not recommended."
+                "description": "This category is to associate techniques that mitigation might increase risk of compromise and therefore mitigation is not recommended.",
+                "coreLangAsset": {}
             },
             "M1056": {
                 "name": "Pre-compromise",
                 "id": "M1056",
                 "url": "https://attack.mitre.org/mitigations/M1056",
-                "description": "This category is used for any applicable mitigation activities that apply to techniques occurring before an adversary gains Initial Access, such as Reconnaissance and Resource Development techniques."
+                "description": "This category is used for any applicable mitigation activities that apply to techniques occurring before an adversary gains Initial Access, such as Reconnaissance and Resource Development techniques.",
+                "coreLangAsset": {}
             },
             "M1020": {
                 "name": "SSL/TLS Inspection",
                 "id": "M1020",
                 "url": "https://attack.mitre.org/mitigations/M1020",
-                "description": "Break and inspect SSL/TLS sessions to look at encrypted web traffic for adversary activity."
+                "description": "Break and inspect SSL/TLS sessions to look at encrypted web traffic for adversary activity.",
+                "coreLangAsset": {"ComputeResources":["IDPS"], "Networking":["RoutingFirewall"]}
             },
             "M1046": {
                 "name": "Boot Integrity",
                 "id": "M1046",
                 "url": "https://attack.mitre.org/mitigations/M1046",
-                "description": "Use secure methods to boot a system and verify the integrity of the operating system and loading mechanisms."
+                "description": "Use secure methods to boot a system and verify the integrity of the operating system and loading mechanisms.",
+                "coreLangAsset": {}
             },
             "M1030": {
                 "name": "Network Segmentation",
                 "id": "M1030",
                 "url": "https://attack.mitre.org/mitigations/M1030",
-                "description": "Architect sections of the network to isolate critical systems, functions, or resources. Use physical and logical segmentation to prevent access to potentially sensitive systems and information. Use a DMZ to contain any internet-facing services that should not be exposed from the internal network. Configure separate virtual private cloud (VPC) instances to isolate critical cloud systems."
+                "description": "Architect sections of the network to isolate critical systems, functions, or resources. Use physical and logical segmentation to prevent access to potentially sensitive systems and information. Use a DMZ to contain any internet-facing services that should not be exposed from the internal network. Configure separate virtual private cloud (VPC) instances to isolate critical cloud systems.",
+                "coreLangAsset": {"Networking":["Network", "ConnectionRule"]}
             },
             "M1019": {
                 "name": "Threat Intelligence Program",
                 "id": "M1019",
                 "url": "https://attack.mitre.org/mitigations/M1019",
-                "description": "A threat intelligence program helps an organization generate their own threat intelligence information and track trends to inform defensive priorities to mitigate risk."
+                "description": "A threat intelligence program helps an organization generate their own threat intelligence information and track trends to inform defensive priorities to mitigate risk.",
+                "coreLangAsset": {"ComputeResources":["IDPS"]}
             },
             "M1027": {
                 "name": "Password Policies",
                 "id": "M1027",
                 "url": "https://attack.mitre.org/mitigations/M1027",
-                "description": "Set and enforce secure password policies for accounts."
+                "description": "Set and enforce secure password policies for accounts.",
+                "coreLangAsset": {"IAM":["Credentials", "Identity", "Group"]}
             },
             "M1040": {
                 "name": "Behavior Prevention on Endpoint",
                 "id": "M1040",
                 "url": "https://attack.mitre.org/mitigations/M1040",
-                "description": "Use capabilities to prevent suspicious behavior patterns from occurring on endpoint systems. This could include suspicious process, file, API call, etc. behavior."
+                "description": "Use capabilities to prevent suspicious behavior patterns from occurring on endpoint systems. This could include suspicious process, file, API call, etc. behavior.",
+                "coreLangAsset": {"ComputeResources":["IDPS"]}
             },
             "M1018": {
                 "name": "User Account Management",
                 "id": "M1018",
                 "url": "https://attack.mitre.org/mitigations/M1018",
-                "description": "Manage the creation, modification, use, and permissions associated to user accounts."
+                "description": "Manage the creation, modification, use, and permissions associated to user accounts.",
+                "coreLangAsset": {"IAM":["Privileges","Identity", "Group"], "User":["User"]}
             },
             "M1022": {
                 "name": "Restrict File and Directory Permissions",
                 "id": "M1022",
                 "url": "https://attack.mitre.org/mitigations/M1022",
-                "description": "Restrict access by setting directory and file permissions that are not specific to users or privileged accounts."
+                "description": "Restrict access by setting directory and file permissions that are not specific to users or privileged accounts.",
+                "coreLangAsset": {"IAM":["Privileges", "Identity"], "DataResources":["Data", "Information"], "ComputeResources":["Application"]}
             },
             "M1026": {
                 "name": "Privileged Account Management",
                 "id": "M1026",
                 "url": "https://attack.mitre.org/mitigations/M1026",
-                "description": "Manage the creation, modification, use, and permissions associated to privileged accounts, including SYSTEM and root."
+                "description": "Manage the creation, modification, use, and permissions associated to privileged accounts, including SYSTEM and root.",
+                "coreLangAsset": {"IAM":["Privileges", "Identity", "Group"]}
             },
             "M1024": {
                 "name": "Restrict Registry Permissions",
                 "id": "M1024",
                 "url": "https://attack.mitre.org/mitigations/M1024",
-                "description": "Restrict the ability to modify certain hives or keys in the Windows Registry."
+                "description": "Restrict the ability to modify certain hives or keys in the Windows Registry.",
+                "coreLangAsset": {"IAM":["Privileges"], "DataResources":["Data", "Information"]}
             },
             "M1049": {
                 "name": "Antivirus/Antimalware",
                 "id": "M1049",
                 "url": "https://attack.mitre.org/mitigations/M1049",
-                "description": "Use signatures or heuristics to detect malicious software."
+                "description": "Use signatures or heuristics to detect malicious software.",
+                "coreLangAsset": {"ComputeResources":["IDPS"]}
             },
             "M1032": {
                 "name": "Multi-factor Authentication",
                 "id": "M1032",
                 "url": "https://attack.mitre.org/mitigations/M1032",
-                "description": "Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator."
+                "description": "Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator.",
+                "coreLangAsset": {"IAM":["Credentials", "Identity"]}
             },
             "M1054": {
                 "name": "Software Configuration",
                 "id": "M1054",
                 "url": "https://attack.mitre.org/mitigations/M1054",
-                "description": "Implement configuration changes to software (other than the operating system) to mitigate security risks associated to how the software operates."
+                "description": "Implement configuration changes to software (other than the operating system) to mitigate security risks associated to how the software operates.",
+                "coreLangAsset": {}
             },
             "M1048": {
                 "name": "Application Isolation and Sandboxing",
                 "id": "M1048",
                 "url": "https://attack.mitre.org/mitigations/M1048",
-                "description": "Restrict execution of code to a virtual environment on or in transit to an endpoint system."
+                "description": "Restrict execution of code to a virtual environment on or in transit to an endpoint system.",
+                "coreLangAsset": {"ComputeResources":["Application"]}
             },
             "M1047": {
                 "name": "Audit",
                 "id": "M1047",
                 "url": "https://attack.mitre.org/mitigations/M1047",
-                "description": "Perform audits or scans of systems, permissions, insecure software, insecure configurations, etc. to identify potential weaknesses."
+                "description": "Perform audits or scans of systems, permissions, insecure software, insecure configurations, etc. to identify potential weaknesses.",
+                "coreLangAsset": {"ComputeResources":["IDPS"]}
             },
             "M1050": {
                 "name": "Exploit Protection",
                 "id": "M1050",
                 "url": "https://attack.mitre.org/mitigations/M1050",
-                "description": "Use capabilities to detect and block conditions that may lead to or be indicative of a software exploit occurring."
+                "description": "Use capabilities to detect and block conditions that may lead to or be indicative of a software exploit occurring.",
+                "coreLangAsset": {"ComputeResources":["IDPS"]}
             },
             "M1015": {
                 "name": "Active Directory Configuration",
                 "id": "M1015",
                 "url": "https://attack.mitre.org/mitigations/M1015",
-                "description": "Configure Active Directory to prevent use of certain techniques; use SID Filtering, etc."
+                "description": "Configure Active Directory to prevent use of certain techniques; use SID Filtering, etc.",
+                "coreLangAsset": {}
             },
             "M1051": {
                 "name": "Update Software",
                 "id": "M1051",
                 "url": "https://attack.mitre.org/mitigations/M1051",
-                "description": "Perform regular software updates to mitigate exploitation risk."
+                "description": "Perform regular software updates to mitigate exploitation risk.",
+                "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"]}
             },
             "M1044": {
                 "name": "Restrict Library Loading",
                 "id": "M1044",
                 "url": "https://attack.mitre.org/mitigations/M1044",
-                "description": "Prevent abuse of library loading mechanisms in the operating system and software to load untrusted code by configuring appropriate library loading mechanisms and investigating potential vulnerable software."
+                "description": "Prevent abuse of library loading mechanisms in the operating system and software to load untrusted code by configuring appropriate library loading mechanisms and investigating potential vulnerable software.",
+                "coreLangAsset": {}
             },
             "M1042": {
                 "name": "Disable or Remove Feature or Program",
                 "id": "M1042",
                 "url": "https://attack.mitre.org/mitigations/M1042",
-                "description": "Remove or deny access to unnecessary and potentially vulnerable software to prevent abuse by adversaries."
+                "description": "Remove or deny access to unnecessary and potentially vulnerable software to prevent abuse by adversaries.",
+                "coreLangAsset": {"ComputeResources":["Application", "SoftwareProduct"], "IAM":["Privileges"]}
             },
             "M1036": {
                 "name": "Account Use Policies",
                 "id": "M1036",
                 "url": "https://attack.mitre.org/mitigations/M1036",
-                "description": "Configure features related to account use like login attempt lockouts, specific login times, etc."
+                "description": "Configure features related to account use like login attempt lockouts, specific login times, etc.",
+                "coreLangAsset": {"IAM":["Privileges", "Identity", "Group"]}
             },
             "M1041": {
                 "name": "Encrypt Sensitive Information",
                 "id": "M1041",
                 "url": "https://attack.mitre.org/mitigations/M1041",
-                "description": "Protect sensitive information with strong encryption."
+                "description": "Protect sensitive information with strong encryption.",
+                "coreLangAsset": {"IAM":["Credentials"], "DataResources":["Data", "Information"]}
             }
         }
-    },
-    "CAPEC": {}
+    }
 }

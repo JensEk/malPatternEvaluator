@@ -1,0 +1,52 @@
+{
+    "metadata": {
+        "name": "M1",
+        "langVersion": "1.0.0",
+        "langID": "org.mal-lang.coreLang",
+        "malVersion": "0.1.0-SNAPSHOT",
+        "MAL-Toolbox Version": "0.1.4",
+        "info": "Created by the mal-toolbox model python module."
+    },
+    "assets": {
+        "0": {
+            "name": "App 1.0_OS_Windows",
+            "type": "Application"
+        },
+        "1": {
+            "name": "Data Secret",
+            "type": "Data"
+        },
+        "2": {
+            "name": "EncryptionKey",
+            "type": "Credentials"
+        }
+    },
+    "associations": [
+        {
+            "AppContainment": {
+                "containedData": [
+                    1
+                ],
+                "containingApp": [
+                    0
+                ]
+            }
+        },
+        {
+            "EncryptionCredentials": {
+                "encryptCreds": [
+                    2
+                ],
+                "encryptedData": [
+                    1
+                ]
+            }
+        }
+    ],
+    "attackers": {
+        "3": {
+            "name": "Attacker:3",
+            "entry_points": {}
+        }
+    }
+}

@@ -3,21 +3,18 @@
 import logging
 
 import maltoolbox
-from maltoolbox.language import classes_factory
-from maltoolbox.language import specification
-from maltoolbox.model import model as malmodel
+from maltoolbox.language import LanguageGraph, LanguageClassesFactory
+from maltoolbox.model import Model, AttackerAttachment
+from maltoolbox.ingestors import neo4j
+
 
 logger = logging.getLogger(__name__)
 
 lang_file = '../../org.mal-lang.coreLang-1.0.0.mar'
-lang_spec = specification.load_language_specification_from_mar(lang_file)
-specification.save_language_specification_to_json(lang_spec, 'lang_spec.json')
-lang_classes_factory = classes_factory.LanguageClassesFactory(lang_spec)
-lang_classes_factory.create_classes()
+lang_graph = LanguageGraph.from_mar_archive(lang_file)
+lang_classes_factory = LanguageClassesFactory(lang_graph)
+model = Model('M1', lang_classes_factory)
 
-
-
-model = malmodel.Model('M2', lang_spec, lang_classes_factory)
 
 # ComputeResources Section
 

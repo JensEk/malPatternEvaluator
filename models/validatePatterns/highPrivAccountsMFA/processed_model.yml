@@ -1,0 +1,43 @@
+assets:
+  0:
+    name: App 1.0_OS_Windows
+    type: Application
+  1:
+    name: User Admin_1
+    type: User
+  2:
+    name: Id Admin_1
+    type: Identity
+  3:
+    name: Cred Admin_1
+    type: Credentials
+  4:
+    name: MFA
+    type: Credentials
+associations:
+- UserAssignedIdentities:
+    userIds:
+    - 2
+    users:
+    - 1
+- HighPrivilegeApplicationAccess:
+    highPrivAppIAMs:
+    - 2
+    highPrivApps:
+    - 0
+- ConditionalAuthentication:
+    credentials:
+    - 3
+    requiredFactors:
+    - 4
+attackers:
+  5:
+    entry_points: {}
+    name: Attacker:5
+metadata:
+  MAL-Toolbox Version: 0.1.4
+  info: Created by the mal-toolbox model python module.
+  langID: org.mal-lang.coreLang
+  langVersion: 1.0.0
+  malVersion: 0.1.0-SNAPSHOT
+  name: M1

@@ -1,7 +1,8 @@
 {
     "remoteAccessMFA": {
-        "description": "Identifies [Credentials] linked to [Application] with name matching of remote access where association {ConditionalAuthentication} is missing.",
+        "badDescription": "Identifies [Credentials] linked to [Application] with name matching of remote access where association {ConditionalAuthentication} is missing.",
         "impact": "Missing Multi-Factor Authentication (MFA) on a remote access service may enable successful authentication by brute force attacks or login with compromised credentials.",
+        "mitigationDescription": "Add [Credentials] with {ConditionalAuthentication} to the identified [Credentials] where MFA is missing.",
         "badPattern": [
             "MATCH (app:Application) WHERE app.name =~ '(?i).*VPN.*|.*RDP.*|.*Remote Access.*|.*Remote Service.*|.*Remote Desktop.*|.*Remote.*|.*RMM.*|.*SSH.*'",
             "WITH app",
@@ -30,8 +31,9 @@
             }
     },
     "highPrivAccountsMFA": {
-        "description": "Identifies [Credentials] linked to a [User] associated [Identity] with extended privileges where association {ConditionalAuthentication} is missing.",
+        "badDescription": "Identifies [Credentials] linked to a [User] associated [Identity] with extended privileges where association {ConditionalAuthentication} is missing.",
         "impact": "Missing Multi-Factor Authentication (MFA) on accounts with high privileges may enable lateral movements and unauthorized access to resources.",
+        "mitigationDescription": "Add [Credentials] with {ConditionalAuthentication} to the identified [Credentials] where MFA is missing.",
         "badPattern": [
             "MATCH (:User)--(id:Identity)-[:highPrivAppIAMs|executionPrivIAMs|writingIAMs|deletingIAMs]->(),(id)--(cred:Credentials)",
             "WHERE NOT (cred)<-[:requiredFactors]-()",
@@ -53,8 +55,9 @@
             }
     },
     "unencryptedData": {
-        "description": "Identifies [Data] linked to an [Application] where associated {encryptCreds} are missing.",
+        "badDescription": "Identifies [Data] linked to an [Application] where associated {encryptCreds} are missing.",
         "impact": "Sensitive data (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.",
+        "mitigationDescription": "Add [Credentials] with {EncryptionCredentials} to the identified [Data] where encryption is missing.",
         "badPattern": [
             "MATCH (data:Data)-[:containedData]->(:Application)",
             "WHERE data.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials)",
@@ -76,8 +79,9 @@
             }
     },
     "unencryptedInfo": {
-        "description": "Identifies [Information] contained in [Data] where associated {encryptCreds} are missing.",
+        "badDescription": "Identifies [Information] contained in [Data] where associated {encryptCreds} are missing.",
         "impact": "Sensitive information (e.g., credentials, keys, tokens) stored in plaintext without encryption may be susceptible to unauthorized access and compromise.",
+        "mitigationDescription": "Add [Credentials] with {EncryptionCredentials} to the identified [Data] where encryption is missing.",
         "badPattern": [
             "MATCH (info:Information)<-[:containerData]-(data:Data)",
             "WHERE info.name =~ '(?i).*Secret.*|.*Sensitive.*|.*Key.*|.*Password.*|.*Credential.*|.*Token.*|.*Certificate.*|.*Ticket.*|.*Cookie.*' AND NOT (data)-[:encryptedData]->(:Credentials)",
@@ -99,8 +103,9 @@
             }
     },
     "shadowAdmins": {
-        "description": "Identifies [User] associated [Identity] with {highPrivAppIAMs} association to [Application] where name is not matching admin/root.",
+        "badDescription": "Identifies [User] associated [Identity] with {highPrivAppIAMs} association to [Application] where name is not matching admin/root.",
         "impact": "User accounts that have inadvertently been assigned admin privilege may enable attackers to control accounts with unrestricted access and movement.",
+        "mitigationDescription": "Remove {highPrivAppIAMs} from the identified [Identity] and add {lowPrivAppIAMs} instead.",
         "badPattern": [
             "MATCH (:User)--(acc:Identity)-[:highPrivAppIAMs]->(app:Application)",
             "WHERE NOT acc.name =~ '(?i).*Admin.*|.*Root.*|.*Superuser.*'",
@@ -123,8 +128,9 @@
             }
     },
     "highPrivServiceAccounts": {
-        "description": "Identifies [Identity] with name matching of service account  with {highPrivAppIAMs} association.",
+        "badDescription": "Identifies [Identity] with name matching of service account with {highPrivAppIAMs} association.",
         "impact": "Existence of service, support or any other non user accounts with high privileges may facilitate lateral movement and privilege escalation.",
+        "mitigationDescription": "Remove [Identity] from [Network] and add it to new segmented [Network].",
         "badPattern": [
             "MATCH (acc:Identity)-[:highPrivAppIAMs]->(:Application)-->(cr:ConnectionRule)-[r1]->(net:Network)-[r3]->(cr2:ConnectionRule)--(fw:RoutingFirewall), (cr)<-[r2]-(net)<-[r4]-(cr2)",
             "WHERE acc.name =~ '(?i).*Service.*|.*Support.*'",
@@ -149,8 +155,9 @@
             }
     },
     "userExposedNetworks": {
-        "description": "Identifies [Network] where [User] exists but [IDPS] or other [Application] matching a security tool is missing.",
+        "badDescription": "Identifies [Network] where [User] exists but [IDPS] or other [Application] matching a security tool is missing.",
         "impact": "Networks without any security tool may faciliate user targeted attack such as phising to deliver malicious attachments or links which are not detected and blocked.",
+        "mitigationDescription": "Add [IDPS] between the [RoutingFirewall] and [Network] where [User] exists.",
         "badPattern": [
             "MATCH (:RoutingFirewall)-->(cr:ConnectionRule)-[r1]->(net:Network)-->(:ConnectionRule)-->(app:Application), (cr)<-[r2]-(net)",
             "WHERE NOT app.name =~ '(?i).*Antivirus.*|.*IPS.*|.*IDS.*|.*EDR.*' AND NOT (net)-[*1..]->(:IDPS) AND (net)-[*1..]->(:User)",
@@ -172,19 +179,21 @@
             }
     },   
     "exploitVulnerablePublicApp": {
-        "description": "Identifies [Application] linked to a [SoftwareVulnerability] with association {ingoingAppConnections} to a [Network] not identified as DMZ.",
+        "badDescription": "Identifies [Application] linked to a [SoftwareVulnerability] with association {ingoingAppConnections} to a [Network] not identified as DMZ.",
         "impact": "Application with known vulnerabilities accessible from the internet may be exploited by attackers to gain unauthorized access to the network and resources.",
+        "mitigationDescription": "Remove [ConnectionRule] from [Application] to the [Network], and then create a new segmented [Network].",
         "badPattern": [
-            "MATCH (net:Network)-->(:ConnectionRule)-[:ingoingAppConnections|appConnections]->(app:Application)<-[:vulnerabilities]-(sw:SoftwareVulnerability)",
+            "MATCH (net:Network)-[r1]->(cr:ConnectionRule)-[:ingoingAppConnections|appConnections]->(:Application)<-[:vulnerabilities]-(sw:SoftwareVulnerability), (net)<-[r2]-(cr), (net)-[r3]->(cr2:ConnectionRule)--(:RoutingFirewall), (net)<-[r4]-(cr2)",
             "WHERE NOT net.name =~ '(?i).*DMZ.*|.*Demilitarized Zone.*'",
-            "RETURN DISTINCT app.name, net.name;",
-            "MATCH (net:Network)-->(:ConnectionRule)-[:ingoingAppConnections|appConnections]->(app:Application)-[:hostApp]->(:Application)<-[:vulnerabilities]-(sw:SoftwareVulnerability)",
+            "RETURN DISTINCT net.name, cr.name, type(r1), type(r2), type(r3), type(r4);",
+            "MATCH (net:Network)-->(cr:ConnectionRule)-[:ingoingAppConnections|appConnections]->(:Application)-[:hostApp]->(:Application)<-[:vulnerabilities]-(sw:SoftwareVulnerability), (net)<-[r2]-(cr), (net)-[r3]->(cr2:ConnectionRule)--(:RoutingFirewall), (net)<-[r4]-(cr2)",
             "WHERE NOT net.name =~ '(?i).*DMZ.*|.*Demilitarized Zone.*'",
-            "RETURN DISTINCT app.name, net.name;"
+            "RETURN DISTINCT net.name, cr.name, type(r1), type(r2), type(r3), type(r4);"
         ],    
         "mitigationPattern": [
-            "MATCH (app:Application {name: '$1'})--(cr:ConnectionRule)-[r1]->(net:Network {name: '$2'}), (cr)<-[r2]-(net)",
-            "DELETE r1,r2"
+            "MATCH (net:Network {name: '$1'})<-[r1]-(cr:ConnectionRule {name: '$2'}), (net)-[r2]->(cr), (net)--(:ConnectionRule)--(fw:RoutingFirewall)", 
+            "DELETE r1,r2",
+            "CREATE (net2:Network {metaconcept: 'Network', name: 'Net segmentedNetwork'}), (net2)-[:$3]->(cr), (net2)<-[:$4]-(cr), (cr2:ConnectionRule {metaconcept: 'ConnectionRule', name: 'CR Net_segmentedNetwork'}), (net2)-[:$5]->(cr2), (net2)<-[:$6]-(cr2), (cr2)-[:connectionRules]->(fw), (cr2)<-[:routingFirewalls]-(fw)"
         ],
         "attackIDs": 
             {
@@ -195,8 +204,9 @@
             }
     },
     "exploitVulnerableApp": {
-        "description": "Identifies [SoftwareVulnerability] linked to an [Application] or [SoftwareProduct] with associated [Identity].",
+        "badDescription": "Identifies [SoftwareVulnerability] linked to an [Application] or [SoftwareProduct] with associated [Identity].",
         "impact": "Applications with known vulnerabilities may be exploited by attackers to elevate privileges or to bypass security features.",
+        "mitigationDescription": "Remove any associations to [Application] except the ones to [SoftwareVulnerability] and [SoftwareProduct] to isolate.",
         "badPattern": [
             "MATCH (:Identity)-[r]->(app:Application)<-[:vulnerabilities]-(sw:SoftwareVulnerability)",
             "WHERE TYPE(r) IN ['highPrivAppIAMs', 'executionPrivIAMs', 'writingIAMs', 'deletingIAMs']",
@@ -222,8 +232,9 @@
             }
     },
     "activeNetworkScan": {
-        "description": "Identifies [Network] with connected [Application] where [Network] is not identified as DMZ but with {ingoingNetConnections} association to [RoutingFirewall].",
+        "badDescription": "Identifies [Network] with connected [Application] where [Network] is not identified as DMZ but with {ingoingNetConnections} association to [RoutingFirewall].",
         "impact": "A network that allows ingoing traffic may enable active reconnaissance scans that probes infrastructure via network traffic to gather information.",
+        "mitigationDescription": "Remove {ingoingNetConnections} to the identified [Network] and add {outgoingNetConnections} instead.",
         "badPattern": [
             "MATCH (net:Network)<-[:ingoingNetConnections]-(cr:ConnectionRule)",
             "WHERE NOT net.name =~ '(?i).*DMZ.*|.*Demilitarized Zone.*' AND (net)<-[*1..]-(:Application)",
@@ -244,8 +255,9 @@
             }
     },
     "userExposedHardware": {
-        "description": "Identifies [Hardware] with {hostHardware} association to a [Network] linked [Application] where a [User] is not matching the name of [Hardware].",
+        "badDescription": "Identifies [Hardware] with {hostHardware} association to a [Network] linked [Application] where a [User] is not matching the name of [Hardware].",
         "impact": "Adversaries may deliver malware through removable media such as USB and use the Autorun features when inserted into hardware to gain access to the network and resources. Alternatively, adversaries may introduce hardware devices into a system or network to gain access.",
+        "mitigationDescription": "Remove the association between identified [Hardware] and [User], then add new [PhysicalZone] with {ZoneInclusion} to the [Hardware] to restrict access.",
         "badPattern": [
             "MATCH (usr:User)<-[:hardwareSystems]-(hw:Hardware)-[:hostHardware]->(:Application)-[*1..3]->(:Network)",
             "WHERE NOT hw.name =~ ('(?i).*' + usr.name + '.*')",
@@ -266,8 +278,9 @@
             }
     },
     "zoneExposedHardware": {
-        "description": "Identifies [Hardware] where a [User] is not associated with the [PhysicalZone] linked to the [Hardware].",
+        "badDescription": "Identifies [Hardware] where a [User] is not associated with the [PhysicalZone] linked to the [Hardware].",
         "impact": "Adversaries may deliver malware through removable media such as USB and use the Autorun features when inserted into hardware to gain access to the network and resources. Alternatively, adversaries may introduce hardware devices into a system or network to gain access.",
+        "mitigationDescription": "Remove the association between identified [Hardware] and [User].",
         "badPattern": [
             "MATCH (usr:User)<-[:hardwareSystems]-(hw:Hardware)<-[:physicalZones]-(pz:PhysicalZone)",
             "WHERE NOT (usr)<-[:physicalZones]-(pz)",
@@ -287,8 +300,9 @@
             }
     },
     "groupIdentityAppMismatch": {
-        "description": "Identifies [Identity] with {memberOf} association to a [Group] where the [Identity] has different privileges than the [Group] on an [Application].",
+        "badDescription": "Identifies [Identity] with {memberOf} association to [Group] where the [Identity] has different privileges than the [Group] on [Application].",
         "impact": "Misconfigured privileges may enable unauthorized access and permissions to applications in a network.",
+        "mitigationDescription": "Remove the association between identified [Identity] and [Application].",
         "badPattern": [
             "MATCH (id:Identity)<-[:memberOf]-(:Group)-[r1]->(app:Application), (id)-[r2]->(app)",
             "WHERE NOT TYPE(r1) = TYPE(r2)",
@@ -317,8 +331,9 @@
             }
     },
     "groupIdentityDataMismatch": {
-        "description": "Identifies [Identity] with {memberOf} association to a [Group] where the [Identity] has different privileges than the [Group] on a [Data].",
+        "badDescription": "Identifies [Identity] with {memberOf} association to [Group] where the [Identity] has different privileges than the [Group] on [Data].",
         "impact": "Misconfigured privileges may enable unauthorized access and permissions to resources.",
+        "mitigationDescription": "Remove the association between identified [Identity] and [Application].",
         "badPattern": [
             "MATCH (id:Identity)<-[:memberOf]-(:Group)-[r1]->(dat:Data), (id)-[r2]->(dat)",
             "WHERE NOT TYPE(r1) = TYPE(r2)",
@@ -347,8 +362,9 @@
             }
     },  
     "nonSegmentedPublicApp": {
-        "description": "Identifies [Application] with name matching as an internet-facing service with {ingoingAppConnections} association to a [Network] that is not identified as DMZ.",
+        "badDescription": "Identifies [Application] with name matching as an internet-facing service with {ingoingAppConnections} association to [Network] that is not identified as DMZ.",
         "impact": "Internet facing applications that are not segmented from the internal network may be exploited by attackers to gain unauthorized access to the network and resources.",
+        "mitigationDescription": "Remove the association between identified [Application] and [Network], then add it to a new segmented [Network].",
         "badPattern": [
             "MATCH (app:Application)<-[:ingoingAppConnections|appConnections]-(cr:ConnectionRule)-[r1]->(net:Network)-[r3]->(cr2:ConnectionRule)--(fw:RoutingFirewall), (cr)<-[r2]-(net)<-[r4]-(cr2)",
             "WHERE app.name =~ '(?i).*Public.*|.*Public Facing.*|.*PublicFacing.*|.*Web Server.*|.*WebServer.*|.*Web.*|.*HTTP.*|.*Internet.*|.*External.*' AND NOT net.name =~ '(?i).*DMZ.*|.*Demilitarized Zone.*'", 
@@ -378,8 +394,9 @@
             }
     },
     "supplyChainVulnApp": {
-        "description": "Identifies [Application] with associated [SoftwareProduct] where no {protectedApps} association to an [IDPS] exists.",
+        "badDescription": "Identifies [Application] with associated [SoftwareProduct] where no {protectedApps} association to an [IDPS] exists.",
         "impact": "Supply chain compromise may enable adversaries to exploit vulnerabilities in software to gain unauthorized access to the network and resources.",
+        "mitigationDescription": "Add [IDPS] with association {AppProtection} to the identified [Application].",
         "badPattern": [
             "MATCH (app:Application)<-[:appSoftProduct]-(:SoftwareProduct)",
             "WHERE NOT (app)-[:protectedApps]->(:IDPS)",
@@ -399,8 +416,9 @@
             }
     },
     "dataAiTM": {
-        "description": "Identifies [Data] with association {transitData} to a [Network] where [User] have access to it.",
+        "badDescription": "Identifies [Data] with association {transitData} to a [Network] where [User] have access to it.",
         "impact": "An adversary may attempt to position themselves to intercept data in transit between two network devices to intercept and collect data.",
+        "mitigationDescription": "Remove the {DataInTransit} association between identified [Data] and [Network].",
         "badPattern": [
             "MATCH (net:Network)<-[:transitData]-(dat:Data)", 
             "WHERE (net)<-[*1..]-(:User)",
@@ -420,8 +438,9 @@
             }
     },
     "containerCompromise": {
-        "description": "Identifies [Application] with name matching of containerized services where [Identity] with extended privileges exists.",
+        "badDescription": "Identifies [Application] with name matching of containerized services where [Identity] with extended privileges exists.",
         "impact": "Adversaries may deploy malicious containers to facilitate execution or evade defenses. Alternatively, they may try to break out of a container to gain access to the underlying host.",
+        "mitigationDescription": "Add [IDPS] to the identified [Application].",
         "badPattern": [
             "MATCH (:Application)-[:hostApp]->(app:Application), (:Identity)-[:highPrivAppIAMs|executionPrivIAMs]->(app)",
             "WHERE app.name =~ '(?i).*Container.*|.*Docker.*|.*Kubernetes.*|.*Containerized.*|.*VM.*|.*Virtual.*'",
@@ -446,8 +465,9 @@
             }
     },
     "accountManagerMFA": {
-        "description": "Identifies [Identity] with {managers} association to another [Group], [Identity], or [Privileges] where association {ConditionalAuthentication} is missing.",
+        "badDescription": "Identifies [Identity] with {managers} association to another [Group], [Identity], or [Privileges] where association {ConditionalAuthentication} is missing.",
         "impact": "Adversaries may modify permissions or credentials to compromised accounts to maintain or elevate access to a network and its systems.",
+        "mitigationDescription": "Add [Credentials] with {ConditionalAuthentication} to the identified [Credentials] where MFA is missing.",
         "badPattern": [
             "MATCH (id:Identity)-[:managers]->(:Group), (id)<-[:credentials]-(cred:Credentials)",
             "WHERE NOT (cred)<-[:requiredFactors]-(:Credentials)",
@@ -473,8 +493,9 @@
             }
     },
     "userImpersonation": {
-        "description": "Identifies [User] with an associated [Identity] that is linked to another [User].",
+        "badDescription": "Identifies [User] with an associated [Identity] that is linked to another [User].",
         "impact": "Adversaries may try to impersonate a trusted person in order to persuade and trick other users conduct actions on their behalf.",
+        "mitigationDescription": "Add [Credentials] with {ConditionalAuthentication} to the identified [Credentials] where MFA is missing.",
         "badPattern": [
             "MATCH (usr1:User)-->(:Identity), (usr2:User)-->(:Identity)",
             "WHERE (usr1)-[*1..]->(usr2) AND usr1 <> usr2",
@@ -494,20 +515,21 @@
             }
     },
     "networkPerimeterCompromise": {
-        "description": "Identifies [RoutingFirewall] with associated [Application] or [Hardware] where [Identity] is linked to it.",
+        "badDescription": "Identifies [RoutingFirewall] with associated [Application] or [Hardware] where [Identity] is linked to it.",
         "impact": "By compromising perimeter network devices adversaries may try to bridge network boundaries to bypass restrictions on traffic routing.",
+        "mitigationDescription": "Add [Credentials] with {ConditionalAuthentication} to the identified [Credentials] where MFA is missing. Then add [IDPS] to the identified [Application].",
         "badPattern": [
             "MATCH (:RoutingFirewall)<-[:managerApp]-(app:Application), (app)<--(id:Identity)",
-            "RETURN DISTINCT id.name;",
+            "RETURN DISTINCT id.name, app.name;",
             "MATCH (:RoutingFirewall)<-[:managerApp]-(:Application)<-[:hostApp]-(app:Application), (app)<--(id:Identity)",
-            "RETURN DISTINCT id.name;",
-            "MATCH (:RoutingFirewall)<-[:hostHardware]-(hw:Hardware), (hw)<--(usr:User), (usr)-->(id:Identity)",
+            "RETURN DISTINCT id.name, app.name;",
+            "MATCH (:RoutingFirewall)<-[:hostHardware]-(hw:Hardware), (hw)-[:hostHardware]->(app:Application), (hw)<--(usr:User), (usr)-->(id:Identity)",
             "RETURN DISTINCT id.name;"
         ],    
         "mitigationPattern": [
-            "MATCH (id:Identity {name: '$1'})-->(cred:Credential)",
-            "MERGE (cred2:Credential {metaconcept: 'Credential', name: 'MFA'})", 
-            "CREATE (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred)"
+            "MATCH (id:Identity {name: '$1'})-->(cred:Credential), (app:Application {name: '$2'})",
+            "MERGE (cred2:Credential {metaconcept: 'Credential', name: 'MFA'}), (idps:IDPS {metaconcept: 'IDPS', name: 'IDPS'})", 
+            "CREATE (cred)-[:credentials]->(cred2), (cred2)-[:requiredFactors]->(cred), (app)-[:protectedApps]->(idps), (app)<-[:protectorIDPSs]-(idps)"
         ],
         "attackIDs": 
             {
@@ -518,8 +540,9 @@
             }
     },
     "identityDiscovery": {
-        "description": "Identifies [Application] with multiple associated [Identity] with different types of privileges on the [Application].",
+        "badDescription": "Identifies [Application] with multiple associated [Identity] with different types of privileges on the [Application].",
         "impact": "Adversaries may attempt to enumerate valid accounts on compromised networks or systems to facilitate lateral movement and privilege escalation.",
+        "mitigationDescription": "Delete the association between identified [Identity] and [Application], then add a new anonomous [Identity] with {CanAssume} to sensitive [Identity].",
         "badPattern": [
             "MATCH (id1:Identity)-[r1:highPrivAppIAMs]->(app:Application),(id2:Identity)-[r2]->(app)",
             "WHERE NOT type(r1) = type(r2)",
@@ -539,8 +562,9 @@
             }
     },
     "taintSharedStorage": {
-        "description": "Identifies [Data] that is hosted on [Hardware] or contained in [Application] where multiple [Identity] have write privileges indicating shared storage.",
+        "badDescription": "Identifies [Data] that is hosted on [Hardware] or contained in [Application] where multiple [Identity] have write privileges indicating shared storage.",
         "impact": "Shared storage locations may be abused by adversaries to deliver payloads or move laterally within a network.",
+        "mitigationDescription": "Remove the association between identified [Data] and [Identity] to restrict access.",
         "badPattern": [
             "MATCH (id1:Identity)-[:writingIAMs]->(dat:Data), (id2:Identity)-[:writingIAMs]->(dat)",
             "WHERE (dat)-[:hostedData]->(:Hardware) OR (dat)-[:containedData]->(:Application) AND id1 <> id2",
@@ -559,8 +583,9 @@
             }
     },
     "remoteAccessC2": {
-        "description": "Identifies [Application] with name matching of remote access tools where no {protectedApps} association to an [IDPS] exists.",
+        "badDescription": "Identifies [Application] with name matching of remote access tools where no {protectedApps} association to an [IDPS] exists.",
         "impact": "Legitimate remote access tools may be exploited by adversaries to establish command and control channels to control compromised systems and exfiltrate data.",
+        "mitigationDescription": "Add [IDPS] to the identified [Application].",
         "badPattern": [
             "MATCH (app:Application)",
             "WHERE app.name =~ '(?i).*Remote.*|.*RMM.*|.*VNC.*|.*Team Viewer.*|.*AnyDesk.*|.*ScreenConnect.*|.*LogMein.*|.*AmmyyAdmin.*' AND NOT (app)-[:protectedApps]->(:IDPS)",
@@ -581,8 +606,9 @@
             }
     },
     "dataDestruction": {
-        "description": "Identifies [Data] where [Identity] is associated with {writingIAMs} or {deletingIAMs}.",
+        "badDescription": "Identifies [Data] where [Identity] is associated with {writingIAMs} or {deletingIAMs}.",
         "impact": "Adversaries may attempt to destroy data to disrupt operations by deleting or corrupting data.",
+        "mitigationDescription": "Add new [Data] as backup and add it to new [Hardware] for offline backup.",
         "badPattern": [
             "MATCH (dat:Data)",
             "WHERE (dat)<-[:writingIAMs|deletingIAMs]-(:Identity) OR (dat)<-[:writingIAMs|deletingIAMs]-(:Group) OR (dat)<-[:writingIAMs|deletingIAMs]-(:Privileges)",

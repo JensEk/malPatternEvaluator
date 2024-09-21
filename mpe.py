@@ -8,12 +8,17 @@ import argparse
 import pyfiglet
 import json
 from tqdm import tqdm
-from maltoolbox.language import classes_factory
-from maltoolbox.language import specification
-from maltoolbox.model import model as malmodel
 from maltoolbox.ingestors import neo4j
 from py2neo import Graph, Node, Relationship, Subgraph
 
+import logging
+
+import maltoolbox
+from maltoolbox.language import LanguageGraph, LanguageClassesFactory
+from maltoolbox.model import Model, AttackerAttachment
+from maltoolbox.attackgraph import AttackGraph, query
+from maltoolbox.attackgraph.analyzers import apriori
+from maltoolbox.ingestors import neo4j
 
 
 # Initialize the program by loading the model and patterns file
@@ -35,14 +40,12 @@ def init(modelFile: str, patternFile: str) -> dict:
 
 # Load MAL model into Neo4j instance
 def ingest_model(modelFile):
-    lang_file = "org.mal-lang.coreLang-1.0.0.mar"
-    lang_spec = specification.load_language_specification_from_mar(lang_file)
-    lang_classes_factory = classes_factory.LanguageClassesFactory(lang_spec)
-    lang_classes_factory.create_classes()
-    
-    model = malmodel.Model('M1', lang_spec, lang_classes_factory)
+    lang_file = 'org.mal-lang.coreLang-1.0.0.mar'
+    lang_graph = LanguageGraph.from_mar_archive(lang_file)
+    lang_classes_factory = LanguageClassesFactory(lang_graph)
+    #model = Model('M1', lang_classes_factory)
     try:
-        model.load_from_file(modelFile)
+        model = Model.load_from_file(modelFile, lang_classes_factory)
         neo4j.ingest_model(model,
                 "bolt://localhost:7687", 
                 "neo4j",
@@ -70,8 +73,9 @@ def load_patterns(filename: str) -> dict:
         patterns = raw_patterns.copy()
         for pattern,attribs in raw_patterns.items():
             patterns[pattern] = {}
-            patterns[pattern]['description'] = attribs['description']
+            patterns[pattern]['badDescription'] = attribs['badDescription']
             patterns[pattern]['impact'] = attribs['impact']
+            patterns[pattern]['mitigationDescription'] = attribs['mitigationDescription']
             patterns[pattern]['badPattern'] = ' '.join(attribs['badPattern'])
             patterns[pattern]['mitigationPattern'] = ' '.join(attribs['mitigationPattern'])
             patterns[pattern]['attackIDs'] = attribs['attackIDs']
@@ -126,7 +130,7 @@ def analyze_patterns(patterns) -> dict:
                 
                 
                 # Log the detected pattern with ATT&CK data
-                logger.info(f"""Id: {log_id}\nPattern: {name}\nDescription: {attribs['description']}\nImpact: {attribs['impact']}\nNeo4j_Assets:{assets}\n\n----------ATT&CK----------\nTactic:""")
+                logger.info(f"""Id: {log_id}\nPattern: {name}\nBadDescription: {attribs['badDescription']}\nImpact: {attribs['impact']}\nMitigationDescription: {attribs['mitigationDescription']}\nNeo4j_Assets:{assets}\n\n----------ATT&CK----------\nTactic:""")
                 for tactic in tactics:
                     logger.info(f"\n      {tactic}:")
                     for technique in tactics[tactic]:
