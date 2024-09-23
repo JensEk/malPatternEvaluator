@@ -1,5 +1,5 @@
 # malPatternEvaluator
-A tool to evaluate structural patterns from Mitre ATT&CK on MAL coreLang models in Neo4j. In total 25 different patterns mapping 42 unique ATT&CK techniques to 16 different coreLang assets.
+A tool to evaluate structural patterns from Mitre ATT&CK on MAL coreLang models in Neo4j. In total 25 different patterns mapping 42 unique ATT&CK techniques and 27 mitigations to 16 different coreLang assets.
 
 ## Installment and usage
 1. git clone https://github.com/JensEk/malPatternEvaluator.git
@@ -10,6 +10,19 @@ A tool to evaluate structural patterns from Mitre ATT&CK on MAL coreLang models 
      password="dynp12345!",
      dbname="neo4j",
 5. python3 mpe.py -m models/mX/model_X.json -p patterns.json
+
+
+
+## Pattern collection
+| Group of patterns | Pattern name | BadPattern description | Mitigation-Pattern description | ATT&CK IDs |
+| ----------------- | ------------ | ---------------------- | ----------------------------- | ---------- |
+| IAM | remoteAccessMFA | Identifies [Credentials] linked to [Application] with name matching of remote access where association {ConditionalAuthentication} is missing. | Add [Credentials] with {ConditionalAuthentication} to the identified [Credentials] where MFA is missing. | **_Initial Access:_** [T1133, T1078], **_Persistence:_** [T1078], **_Credential Access:_** [T1110], **_Mitigation:_** [M1036, M1032, M1030, M1017] |
+| IAM | highPrivAccountsMFA | Identifies [Credentials] linked to [User] associated [Identity] with extended privileges where association {ConditionalAuthentication} is missing. | Add [Credentials] with {ConditionalAuthentication} to the identified [Credentials] where MFA is missing. | **_Privilege Escalation:_** [T1078], **_Defense Evasion:_** [T1078], **_Credential Access:_** [T1110], **_Mitigation:_** [M1032, M1027, M1026] |
+| IAM | shadowAdmin | Identifies [User] associated [Identity] with {highPrivAppIAMs} association to [Application] where name is not matching admin/root. | Remove {highPrivAppIAMs} from the identified [Identity] and add {lowPrivAppIAMs} instead. | **_Initial Access:_** [T1078], **_Privilege Escalation:_** [T1078], **_Mitigation:_** [M1032, M1018, M1026, M1036] |
+
+
+
+
 
 
 ## Pattern collection
