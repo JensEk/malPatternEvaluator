@@ -40,14 +40,14 @@ model.add_association(assoc_app_1_0_data_s1_1)
 
 # Credentials Section
 encr_s1_1 = lang_classes_factory.ns.Credentials(name = "EncryptionKey")
-model.add_asset(encr_s1_1)
+#model.add_asset(encr_s1_1)
 
 assoc_data_s1_1_encr_s1_1 =\
     lang_classes_factory.ns.EncryptionCredentials(
     encryptCreds = [encr_s1_1],
     encryptedData = [data_s1_1]
     )
-model.add_association(assoc_data_s1_1_encr_s1_1)
+#model.add_association(assoc_data_s1_1_encr_s1_1)
 
 # Attack Vectors Section
 
@@ -69,7 +69,7 @@ initial_node = graph.get_node_by_full_name('App 1.0_OS_Windows:localAccess')
 initial_node_np = graph.get_node_by_full_name('App 1.0_OS_Windows:localAccess')
 initial_node_np.defense_status = 1.0
 
-target_node = graph.get_node_by_full_name('Data Secret:accessUnencryptedData')
+target_node = graph.get_node_by_full_name('Data Secret:dataEncrypted')
 
 
 #graph.save_to_file('ag.yml')
@@ -77,10 +77,10 @@ apriori.calculate_viability_and_necessity(graph)
 graph.save_to_file('post_ag.yml')
 
 attacker = graph.attackers[0]
-#attacker.compromise(initial_node)
+attacker.compromise(initial_node)
 
 
-with open('validateLog_miti.txt', 'w') as log_file:
+with open('validateLog_bad.txt', 'w') as log_file:
     print('Reached attack steps:', file=log_file)
     for step in graph.attackers[0].reached_attack_steps:
         print(step.full_name, file=log_file)

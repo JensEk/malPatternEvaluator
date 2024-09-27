@@ -1,6 +1,6 @@
 attack_steps:
-  App 1.0_OS_Windows:accessNetworkAndConnections:
-    asset: App 1.0_OS_Windows
+  App1:accessNetworkAndConnections:
+    asset: App1
     children: {}
     compromised_by: []
     id: 12
@@ -8,13 +8,13 @@ attack_steps:
     is_viable: 'True'
     name: accessNetworkAndConnections
     parents:
-      17: App 1.0_OS_Windows:specificAccess
-      23: App 1.0_OS_Windows:fullAccess
+      17: App1:specificAccess
+      23: App1:fullAccess
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:applicationRespondConnectThroughData:
-    asset: App 1.0_OS_Windows
+  App1:applicationRespondConnectThroughData:
+    asset: App1
     children: {}
     compromised_by: []
     id: 53
@@ -22,106 +22,106 @@ attack_steps:
     is_viable: 'True'
     name: applicationRespondConnectThroughData
     parents:
-      52: App 1.0_OS_Windows:successfulApplicationRespondConnectThroughData
+      52: App1:successfulApplicationRespondConnectThroughData
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attackerUnsafeUserActivityCapability:
-    asset: App 1.0_OS_Windows
+  App1:attackerUnsafeUserActivityCapability:
+    asset: App1
     children:
-      26: App 1.0_OS_Windows:successfulUnsafeUserActivity
+      26: App1:successfulUnsafeUserActivity
     compromised_by: []
     id: 28
     is_necessary: 'True'
     is_viable: 'True'
     name: attackerUnsafeUserActivityCapability
     parents:
-      29: App 1.0_OS_Windows:attackerUnsafeUserActivityCapabilityWithReverseReach
-      30: App 1.0_OS_Windows:attackerUnsafeUserActivityCapabilityWithoutReverseReach
+      29: App1:attackerUnsafeUserActivityCapabilityWithReverseReach
+      30: App1:attackerUnsafeUserActivityCapabilityWithoutReverseReach
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attackerUnsafeUserActivityCapabilityWithReverseReach:
-    asset: App 1.0_OS_Windows
+  App1:attackerUnsafeUserActivityCapabilityWithReverseReach:
+    asset: App1
     children:
-      28: App 1.0_OS_Windows:attackerUnsafeUserActivityCapability
+      28: App1:attackerUnsafeUserActivityCapability
     compromised_by: []
     id: 29
     is_necessary: 'True'
     is_viable: 'True'
     name: attackerUnsafeUserActivityCapabilityWithReverseReach
     parents:
-      6: App 1.0_OS_Windows:reverseReach
-      25: App 1.0_OS_Windows:attemptUnsafeUserActivity
+      6: App1:reverseReach
+      25: App1:attemptUnsafeUserActivity
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:attackerUnsafeUserActivityCapabilityWithoutReverseReach:
-    asset: App 1.0_OS_Windows
+  App1:attackerUnsafeUserActivityCapabilityWithoutReverseReach:
+    asset: App1
     children:
-      28: App 1.0_OS_Windows:attackerUnsafeUserActivityCapability
+      28: App1:attackerUnsafeUserActivityCapability
     compromised_by: []
     id: 30
     is_necessary: 'True'
     is_viable: 'True'
     name: attackerUnsafeUserActivityCapabilityWithoutReverseReach
     parents:
-      25: App 1.0_OS_Windows:attemptUnsafeUserActivity
+      25: App1:attemptUnsafeUserActivity
     tags: '[''hidden'']'
     ttc:
       arguments: []
       name: VeryHardAndUncertain
       type: function
     type: or
-  App 1.0_OS_Windows:attemptApplicationRespondConnectThroughData:
-    asset: App 1.0_OS_Windows
+  App1:attemptApplicationRespondConnectThroughData:
+    asset: App1
     children:
-      52: App 1.0_OS_Windows:successfulApplicationRespondConnectThroughData
+      52: App1:successfulApplicationRespondConnectThroughData
     compromised_by: []
     id: 51
     is_necessary: 'True'
     is_viable: 'True'
     name: attemptApplicationRespondConnectThroughData
     parents:
-      23: App 1.0_OS_Windows:fullAccess
+      23: App1:fullAccess
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptAuthorizedApplicationRespondConnectThroughData:
-    asset: App 1.0_OS_Windows
+  App1:attemptAuthorizedApplicationRespondConnectThroughData:
+    asset: App1
     children:
-      55: App 1.0_OS_Windows:successfulAuthorizedApplicationRespondConnectThroughData
+      55: App1:successfulAuthorizedApplicationRespondConnectThroughData
     compromised_by: []
     id: 54
     is_necessary: 'True'
     is_viable: 'True'
     name: attemptAuthorizedApplicationRespondConnectThroughData
     parents:
-      17: App 1.0_OS_Windows:specificAccess
+      17: App1:specificAccess
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptDeny:
-    asset: App 1.0_OS_Windows
+  App1:attemptDeny:
+    asset: App1
     children:
-      66: App 1.0_OS_Windows:successfulDeny
+      66: App1:successfulDeny
     compromised_by: []
     id: 65
     is_necessary: 'True'
     is_viable: 'True'
     name: attemptDeny
     parents:
-      23: App 1.0_OS_Windows:fullAccess
-      50: App 1.0_OS_Windows:denyFromSoftProdVulnerability
-      69: App 1.0_OS_Windows:denyFromNetworkingAsset
-      70: App 1.0_OS_Windows:denyFromLockout
+      23: App1:fullAccess
+      50: App1:denyFromSoftProdVulnerability
+      69: App1:denyFromNetworkingAsset
+      70: App1:denyFromLockout
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptDenyFromSoftProdVulnerability:
-    asset: App 1.0_OS_Windows
+  App1:attemptDenyFromSoftProdVulnerability:
+    asset: App1
     children:
-      50: App 1.0_OS_Windows:denyFromSoftProdVulnerability
+      50: App1:denyFromSoftProdVulnerability
     compromised_by: []
     id: 38
     is_necessary: 'True'
@@ -131,11 +131,11 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptFullAccessFromSupplyChainCompromise:
-    asset: App 1.0_OS_Windows
+  App1:attemptFullAccessFromSupplyChainCompromise:
+    asset: App1
     children:
-      32: App 1.0_OS_Windows:bypassSupplyChainAuditing
-      35: App 1.0_OS_Windows:fullAccessFromSupplyChainCompromise
+      32: App1:bypassSupplyChainAuditing
+      35: App1:fullAccessFromSupplyChainCompromise
     compromised_by: []
     id: 34
     is_necessary: 'True'
@@ -145,25 +145,25 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptModify:
-    asset: App 1.0_OS_Windows
+  App1:attemptModify:
+    asset: App1
     children:
-      62: App 1.0_OS_Windows:successfulModify
+      62: App1:successfulModify
     compromised_by: []
     id: 61
     is_necessary: 'True'
     is_viable: 'True'
     name: attemptModify
     parents:
-      23: App 1.0_OS_Windows:fullAccess
-      49: App 1.0_OS_Windows:modifyFromSoftProdVulnerability
+      23: App1:fullAccess
+      49: App1:modifyFromSoftProdVulnerability
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptModifyFromSoftProdVulnerability:
-    asset: App 1.0_OS_Windows
+  App1:attemptModifyFromSoftProdVulnerability:
+    asset: App1
     children:
-      49: App 1.0_OS_Windows:modifyFromSoftProdVulnerability
+      49: App1:modifyFromSoftProdVulnerability
     compromised_by: []
     id: 37
     is_necessary: 'True'
@@ -173,10 +173,10 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptNetworkConnectFromResponse:
-    asset: App 1.0_OS_Windows
+  App1:attemptNetworkConnectFromResponse:
+    asset: App1
     children:
-      14: App 1.0_OS_Windows:networkConnectFromResponse
+      14: App1:networkConnectFromResponse
     compromised_by: []
     id: 13
     is_necessary: 'True'
@@ -186,25 +186,25 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptRead:
-    asset: App 1.0_OS_Windows
+  App1:attemptRead:
+    asset: App1
     children:
-      58: App 1.0_OS_Windows:successfulRead
+      58: App1:successfulRead
     compromised_by: []
     id: 57
     is_necessary: 'True'
     is_viable: 'True'
     name: attemptRead
     parents:
-      23: App 1.0_OS_Windows:fullAccess
-      48: App 1.0_OS_Windows:readFromSoftProdVulnerability
+      23: App1:fullAccess
+      48: App1:readFromSoftProdVulnerability
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptReadFromSoftProdVulnerability:
-    asset: App 1.0_OS_Windows
+  App1:attemptReadFromSoftProdVulnerability:
+    asset: App1
     children:
-      48: App 1.0_OS_Windows:readFromSoftProdVulnerability
+      48: App1:readFromSoftProdVulnerability
     compromised_by: []
     id: 36
     is_necessary: 'True'
@@ -214,10 +214,10 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptReverseReach:
-    asset: App 1.0_OS_Windows
+  App1:attemptReverseReach:
+    asset: App1
     children:
-      5: App 1.0_OS_Windows:successfulReverseReach
+      5: App1:successfulReverseReach
     compromised_by: []
     id: 4
     is_necessary: 'True'
@@ -227,26 +227,26 @@ attack_steps:
     tags: '[''entrypoint'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptSoftwareProductAbuse:
-    asset: App 1.0_OS_Windows
+  App1:attemptSoftwareProductAbuse:
+    asset: App1
     children:
-      47: App 1.0_OS_Windows:softwareProductAbuse
+      47: App1:softwareProductAbuse
     compromised_by: []
     id: 46
     is_necessary: 'True'
     is_viable: 'True'
     name: attemptSoftwareProductAbuse
     parents:
-      3: App 1.0_OS_Windows:useVulnerability
+      3: App1:useVulnerability
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptUnsafeUserActivity:
-    asset: App 1.0_OS_Windows
+  App1:attemptUnsafeUserActivity:
+    asset: App1
     children:
-      26: App 1.0_OS_Windows:successfulUnsafeUserActivity
-      29: App 1.0_OS_Windows:attackerUnsafeUserActivityCapabilityWithReverseReach
-      30: App 1.0_OS_Windows:attackerUnsafeUserActivityCapabilityWithoutReverseReach
+      26: App1:successfulUnsafeUserActivity
+      29: App1:attackerUnsafeUserActivityCapabilityWithReverseReach
+      30: App1:attackerUnsafeUserActivityCapabilityWithoutReverseReach
     compromised_by: []
     id: 25
     is_necessary: 'True'
@@ -256,28 +256,28 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:attemptUseVulnerability:
-    asset: App 1.0_OS_Windows
+  App1:attemptUseVulnerability:
+    asset: App1
     children:
-      2: App 1.0_OS_Windows:successfulUseVulnerability
+      2: App1:successfulUseVulnerability
     compromised_by: []
     id: 1
     is_necessary: 'True'
     is_viable: 'True'
     name: attemptUseVulnerability
     parents:
-      7: App 1.0_OS_Windows:localConnect
-      8: App 1.0_OS_Windows:networkConnectUninspected
-      17: App 1.0_OS_Windows:specificAccess
+      7: App1:localConnect
+      8: App1:networkConnectUninspected
+      17: App1:specificAccess
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:authenticate:
-    asset: App 1.0_OS_Windows
+  App1:authenticate:
+    asset: App1
     children:
-      21: App 1.0_OS_Windows:localAccess
-      22: App 1.0_OS_Windows:networkAccess
-      44: App 1.0_OS_Windows:softwareProductVulnerabilityHighPrivilegesAchieved
+      21: App1:localAccess
+      22: App1:networkAccess
+      44: App1:softwareProductVulnerabilityHighPrivilegesAchieved
     compromised_by: []
     id: 19
     is_necessary: 'True'
@@ -286,8 +286,8 @@ attack_steps:
     parents: {}
     ttc: null
     type: or
-  App 1.0_OS_Windows:authorizedApplicationRespondConnectThroughData:
-    asset: App 1.0_OS_Windows
+  App1:authorizedApplicationRespondConnectThroughData:
+    asset: App1
     children: {}
     compromised_by: []
     id: 56
@@ -295,12 +295,12 @@ attack_steps:
     is_viable: 'True'
     name: authorizedApplicationRespondConnectThroughData
     parents:
-      55: App 1.0_OS_Windows:successfulAuthorizedApplicationRespondConnectThroughData
+      55: App1:successfulAuthorizedApplicationRespondConnectThroughData
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:bypassContainerization:
-    asset: App 1.0_OS_Windows
+  App1:bypassContainerization:
+    asset: App1
     children: {}
     compromised_by: []
     id: 18
@@ -308,45 +308,45 @@ attack_steps:
     is_viable: 'True'
     name: bypassContainerization
     parents:
-      17: App 1.0_OS_Windows:specificAccess
+      17: App1:specificAccess
     ttc:
       arguments: []
       name: HardAndUncertain
       type: function
     type: or
-  App 1.0_OS_Windows:bypassSupplyChainAuditing:
-    asset: App 1.0_OS_Windows
+  App1:bypassSupplyChainAuditing:
+    asset: App1
     children:
-      33: App 1.0_OS_Windows:supplyChainAuditingBypassed
+      33: App1:supplyChainAuditingBypassed
     compromised_by: []
     id: 32
     is_necessary: 'True'
     is_viable: 'True'
     name: bypassSupplyChainAuditing
     parents:
-      34: App 1.0_OS_Windows:attemptFullAccessFromSupplyChainCompromise
+      34: App1:attemptFullAccessFromSupplyChainCompromise
     ttc:
       arguments: []
       name: VeryHardAndUncertain
       type: function
     type: or
-  App 1.0_OS_Windows:deny:
-    asset: App 1.0_OS_Windows
+  App1:deny:
+    asset: App1
     children:
-      104: Data Secret:attemptDeny
+      104: Secret:attemptDeny
     compromised_by: []
     id: 67
     is_necessary: 'True'
     is_viable: 'True'
     name: deny
     parents:
-      66: App 1.0_OS_Windows:successfulDeny
+      66: App1:successfulDeny
     ttc: null
     type: or
-  App 1.0_OS_Windows:denyFromLockout:
-    asset: App 1.0_OS_Windows
+  App1:denyFromLockout:
+    asset: App1
     children:
-      65: App 1.0_OS_Windows:attemptDeny
+      65: App1:attemptDeny
     compromised_by: []
     id: 70
     is_necessary: 'True'
@@ -356,10 +356,10 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:denyFromNetworkingAsset:
-    asset: App 1.0_OS_Windows
+  App1:denyFromNetworkingAsset:
+    asset: App1
     children:
-      65: App 1.0_OS_Windows:attemptDeny
+      65: App1:attemptDeny
     compromised_by: []
     id: 69
     is_necessary: 'True'
@@ -369,181 +369,182 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:denyFromSoftProdVulnerability:
-    asset: App 1.0_OS_Windows
+  App1:denyFromSoftProdVulnerability:
+    asset: App1
     children:
-      65: App 1.0_OS_Windows:attemptDeny
+      65: App1:attemptDeny
     compromised_by: []
     id: 50
     is_necessary: 'True'
     is_viable: 'False'
     name: denyFromSoftProdVulnerability
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      3: App 1.0_OS_Windows:useVulnerability
-      38: App 1.0_OS_Windows:attemptDenyFromSoftProdVulnerability
-      39: App 1.0_OS_Windows:softwareCheck
-      47: App 1.0_OS_Windows:softwareProductAbuse
+      0: App1:notPresent
+      3: App1:useVulnerability
+      38: App1:attemptDenyFromSoftProdVulnerability
+      39: App1:softwareCheck
+      47: App1:softwareProductAbuse
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:fullAccess:
-    asset: App 1.0_OS_Windows
+  App1:fullAccess:
+    asset: App1
     children:
-      12: App 1.0_OS_Windows:accessNetworkAndConnections
-      17: App 1.0_OS_Windows:specificAccess
-      51: App 1.0_OS_Windows:attemptApplicationRespondConnectThroughData
-      57: App 1.0_OS_Windows:attemptRead
-      61: App 1.0_OS_Windows:attemptModify
-      65: App 1.0_OS_Windows:attemptDeny
+      12: App1:accessNetworkAndConnections
+      17: App1:specificAccess
+      51: App1:attemptApplicationRespondConnectThroughData
+      57: App1:attemptRead
+      61: App1:attemptModify
+      65: App1:attemptDeny
     compromised_by: []
     id: 23
     is_necessary: 'True'
     is_viable: 'True'
     name: fullAccess
     parents:
-      21: App 1.0_OS_Windows:localAccess
-      22: App 1.0_OS_Windows:networkAccess
-      35: App 1.0_OS_Windows:fullAccessFromSupplyChainCompromise
-      63: App 1.0_OS_Windows:modify
+      21: App1:localAccess
+      22: App1:networkAccess
+      35: App1:fullAccessFromSupplyChainCompromise
+      63: App1:modify
     tags: '[''entrypoint'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:fullAccessFromSupplyChainCompromise:
-    asset: App 1.0_OS_Windows
+  App1:fullAccessFromSupplyChainCompromise:
+    asset: App1
     children:
-      23: App 1.0_OS_Windows:fullAccess
+      23: App1:fullAccess
     compromised_by: []
     id: 35
     is_necessary: 'True'
     is_viable: 'True'
     name: fullAccessFromSupplyChainCompromise
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      33: App 1.0_OS_Windows:supplyChainAuditingBypassed
-      34: App 1.0_OS_Windows:attemptFullAccessFromSupplyChainCompromise
+      0: App1:notPresent
+      33: App1:supplyChainAuditingBypassed
+      34: App1:attemptFullAccessFromSupplyChainCompromise
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:localAccess:
-    asset: App 1.0_OS_Windows
+  App1:localAccess:
+    asset: App1
     children:
-      23: App 1.0_OS_Windows:fullAccess
+      23: App1:fullAccess
     compromised_by: []
+    defense_status: '1.0'
     id: 21
     is_necessary: 'True'
     is_viable: 'True'
     name: localAccess
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      7: App 1.0_OS_Windows:localConnect
-      19: App 1.0_OS_Windows:authenticate
+      0: App1:notPresent
+      7: App1:localConnect
+      19: App1:authenticate
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:localConnect:
-    asset: App 1.0_OS_Windows
+  App1:localConnect:
+    asset: App1
     children:
-      1: App 1.0_OS_Windows:attemptUseVulnerability
-      15: App 1.0_OS_Windows:specificAccessFromLocalConnection
-      21: App 1.0_OS_Windows:localAccess
-      40: App 1.0_OS_Windows:softwareProductVulnerabilityLocalAccessAchieved
+      1: App1:attemptUseVulnerability
+      15: App1:specificAccessFromLocalConnection
+      21: App1:localAccess
+      40: App1:softwareProductVulnerabilityLocalAccessAchieved
     compromised_by: []
     id: 7
     is_necessary: 'True'
     is_viable: 'True'
     name: localConnect
     parents:
-      27: App 1.0_OS_Windows:unsafeUserActivity
+      27: App1:unsafeUserActivity
     ttc: null
     type: or
-  App 1.0_OS_Windows:modify:
-    asset: App 1.0_OS_Windows
+  App1:modify:
+    asset: App1
     children:
-      23: App 1.0_OS_Windows:fullAccess
-      92: Data Secret:attemptWrite
+      23: App1:fullAccess
+      92: Secret:attemptWrite
     compromised_by: []
     id: 63
     is_necessary: 'True'
     is_viable: 'True'
     name: modify
     parents:
-      62: App 1.0_OS_Windows:successfulModify
+      62: App1:successfulModify
     ttc: null
     type: or
-  App 1.0_OS_Windows:modifyFromSoftProdVulnerability:
-    asset: App 1.0_OS_Windows
+  App1:modifyFromSoftProdVulnerability:
+    asset: App1
     children:
-      61: App 1.0_OS_Windows:attemptModify
+      61: App1:attemptModify
     compromised_by: []
     id: 49
     is_necessary: 'True'
     is_viable: 'False'
     name: modifyFromSoftProdVulnerability
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      3: App 1.0_OS_Windows:useVulnerability
-      37: App 1.0_OS_Windows:attemptModifyFromSoftProdVulnerability
-      39: App 1.0_OS_Windows:softwareCheck
-      47: App 1.0_OS_Windows:softwareProductAbuse
+      0: App1:notPresent
+      3: App1:useVulnerability
+      37: App1:attemptModifyFromSoftProdVulnerability
+      39: App1:softwareCheck
+      47: App1:softwareProductAbuse
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:networkAccess:
-    asset: App 1.0_OS_Windows
+  App1:networkAccess:
+    asset: App1
     children:
-      23: App 1.0_OS_Windows:fullAccess
+      23: App1:fullAccess
     compromised_by: []
     id: 22
     is_necessary: 'True'
     is_viable: 'True'
     name: networkAccess
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      10: App 1.0_OS_Windows:networkConnect
-      19: App 1.0_OS_Windows:authenticate
+      0: App1:notPresent
+      10: App1:networkConnect
+      19: App1:authenticate
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:networkConnect:
-    asset: App 1.0_OS_Windows
+  App1:networkConnect:
+    asset: App1
     children:
-      22: App 1.0_OS_Windows:networkAccess
+      22: App1:networkAccess
     compromised_by: []
     id: 10
     is_necessary: 'True'
     is_viable: 'True'
     name: networkConnect
     parents:
-      8: App 1.0_OS_Windows:networkConnectUninspected
-      9: App 1.0_OS_Windows:networkConnectInspected
+      8: App1:networkConnectUninspected
+      9: App1:networkConnectInspected
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:networkConnectFromResponse:
-    asset: App 1.0_OS_Windows
+  App1:networkConnectFromResponse:
+    asset: App1
     children:
-      8: App 1.0_OS_Windows:networkConnectUninspected
+      8: App1:networkConnectUninspected
     compromised_by: []
     id: 14
     is_necessary: 'True'
     is_viable: 'True'
     name: networkConnectFromResponse
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      6: App 1.0_OS_Windows:reverseReach
-      13: App 1.0_OS_Windows:attemptNetworkConnectFromResponse
+      0: App1:notPresent
+      6: App1:reverseReach
+      13: App1:attemptNetworkConnectFromResponse
     tags: '[''hidden'']'
     ttc:
       arguments: []
       name: VeryHardAndUncertain
       type: function
     type: and
-  App 1.0_OS_Windows:networkConnectInspected:
-    asset: App 1.0_OS_Windows
+  App1:networkConnectInspected:
+    asset: App1
     children:
-      10: App 1.0_OS_Windows:networkConnect
-      11: App 1.0_OS_Windows:specificAccessNetworkConnect
+      10: App1:networkConnect
+      11: App1:specificAccessNetworkConnect
     compromised_by: []
     id: 9
     is_necessary: 'True'
@@ -552,43 +553,43 @@ attack_steps:
     parents: {}
     ttc: null
     type: or
-  App 1.0_OS_Windows:networkConnectUninspected:
-    asset: App 1.0_OS_Windows
+  App1:networkConnectUninspected:
+    asset: App1
     children:
-      1: App 1.0_OS_Windows:attemptUseVulnerability
-      10: App 1.0_OS_Windows:networkConnect
-      11: App 1.0_OS_Windows:specificAccessNetworkConnect
-      41: App 1.0_OS_Windows:softwareProductVulnerabilityNetworkAccessAchieved
+      1: App1:attemptUseVulnerability
+      10: App1:networkConnect
+      11: App1:specificAccessNetworkConnect
+      41: App1:softwareProductVulnerabilityNetworkAccessAchieved
     compromised_by: []
     id: 8
     is_necessary: 'True'
     is_viable: 'True'
     name: networkConnectUninspected
     parents:
-      14: App 1.0_OS_Windows:networkConnectFromResponse
-      27: App 1.0_OS_Windows:unsafeUserActivity
+      14: App1:networkConnectFromResponse
+      27: App1:unsafeUserActivity
     ttc: null
     type: or
-  App 1.0_OS_Windows:notPresent:
-    asset: App 1.0_OS_Windows
+  App1:notPresent:
+    asset: App1
     children:
-      2: App 1.0_OS_Windows:successfulUseVulnerability
-      5: App 1.0_OS_Windows:successfulReverseReach
-      14: App 1.0_OS_Windows:networkConnectFromResponse
-      15: App 1.0_OS_Windows:specificAccessFromLocalConnection
-      16: App 1.0_OS_Windows:specificAccessFromNetworkConnection
-      21: App 1.0_OS_Windows:localAccess
-      22: App 1.0_OS_Windows:networkAccess
-      26: App 1.0_OS_Windows:successfulUnsafeUserActivity
-      35: App 1.0_OS_Windows:fullAccessFromSupplyChainCompromise
-      48: App 1.0_OS_Windows:readFromSoftProdVulnerability
-      49: App 1.0_OS_Windows:modifyFromSoftProdVulnerability
-      50: App 1.0_OS_Windows:denyFromSoftProdVulnerability
-      52: App 1.0_OS_Windows:successfulApplicationRespondConnectThroughData
-      55: App 1.0_OS_Windows:successfulAuthorizedApplicationRespondConnectThroughData
-      58: App 1.0_OS_Windows:successfulRead
-      62: App 1.0_OS_Windows:successfulModify
-      66: App 1.0_OS_Windows:successfulDeny
+      2: App1:successfulUseVulnerability
+      5: App1:successfulReverseReach
+      14: App1:networkConnectFromResponse
+      15: App1:specificAccessFromLocalConnection
+      16: App1:specificAccessFromNetworkConnection
+      21: App1:localAccess
+      22: App1:networkAccess
+      26: App1:successfulUnsafeUserActivity
+      35: App1:fullAccessFromSupplyChainCompromise
+      48: App1:readFromSoftProdVulnerability
+      49: App1:modifyFromSoftProdVulnerability
+      50: App1:denyFromSoftProdVulnerability
+      52: App1:successfulApplicationRespondConnectThroughData
+      55: App1:successfulAuthorizedApplicationRespondConnectThroughData
+      58: App1:successfulRead
+      62: App1:successfulModify
+      66: App1:successfulDeny
     compromised_by: []
     defense_status: '0.0'
     id: 0
@@ -601,10 +602,10 @@ attack_steps:
       name: Disabled
       type: function
     type: defense
-  App 1.0_OS_Windows:physicalAccessAchieved:
-    asset: App 1.0_OS_Windows
+  App1:physicalAccessAchieved:
+    asset: App1
     children:
-      42: App 1.0_OS_Windows:softwareProductVulnerabilityPhysicalAccessAchieved
+      42: App1:softwareProductVulnerabilityPhysicalAccessAchieved
     compromised_by: []
     id: 24
     is_necessary: 'True'
@@ -614,59 +615,59 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:read:
-    asset: App 1.0_OS_Windows
+  App1:read:
+    asset: App1
     children:
-      86: Data Secret:attemptRead
+      86: Secret:attemptRead
     compromised_by: []
     id: 59
     is_necessary: 'True'
     is_viable: 'True'
     name: read
     parents:
-      58: App 1.0_OS_Windows:successfulRead
+      58: App1:successfulRead
     ttc: null
     type: or
-  App 1.0_OS_Windows:readFromSoftProdVulnerability:
-    asset: App 1.0_OS_Windows
+  App1:readFromSoftProdVulnerability:
+    asset: App1
     children:
-      57: App 1.0_OS_Windows:attemptRead
+      57: App1:attemptRead
     compromised_by: []
     id: 48
     is_necessary: 'True'
     is_viable: 'False'
     name: readFromSoftProdVulnerability
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      3: App 1.0_OS_Windows:useVulnerability
-      36: App 1.0_OS_Windows:attemptReadFromSoftProdVulnerability
-      39: App 1.0_OS_Windows:softwareCheck
-      47: App 1.0_OS_Windows:softwareProductAbuse
+      0: App1:notPresent
+      3: App1:useVulnerability
+      36: App1:attemptReadFromSoftProdVulnerability
+      39: App1:softwareCheck
+      47: App1:softwareProductAbuse
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:reverseReach:
-    asset: App 1.0_OS_Windows
+  App1:reverseReach:
+    asset: App1
     children:
-      14: App 1.0_OS_Windows:networkConnectFromResponse
-      29: App 1.0_OS_Windows:attackerUnsafeUserActivityCapabilityWithReverseReach
-      108: Data Secret:attemptReverseReach
+      14: App1:networkConnectFromResponse
+      29: App1:attackerUnsafeUserActivityCapabilityWithReverseReach
+      108: Secret:attemptReverseReach
     compromised_by: []
     id: 6
     is_necessary: 'True'
     is_viable: 'True'
     name: reverseReach
     parents:
-      5: App 1.0_OS_Windows:successfulReverseReach
+      5: App1:successfulReverseReach
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:softwareCheck:
-    asset: App 1.0_OS_Windows
+  App1:softwareCheck:
+    asset: App1
     children:
-      48: App 1.0_OS_Windows:readFromSoftProdVulnerability
-      49: App 1.0_OS_Windows:modifyFromSoftProdVulnerability
-      50: App 1.0_OS_Windows:denyFromSoftProdVulnerability
+      48: App1:readFromSoftProdVulnerability
+      49: App1:modifyFromSoftProdVulnerability
+      50: App1:denyFromSoftProdVulnerability
     compromised_by: []
     existence_status: 'False'
     id: 39
@@ -677,102 +678,102 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: exist
-  App 1.0_OS_Windows:softwareProductAbuse:
-    asset: App 1.0_OS_Windows
+  App1:softwareProductAbuse:
+    asset: App1
     children:
-      48: App 1.0_OS_Windows:readFromSoftProdVulnerability
-      49: App 1.0_OS_Windows:modifyFromSoftProdVulnerability
-      50: App 1.0_OS_Windows:denyFromSoftProdVulnerability
+      48: App1:readFromSoftProdVulnerability
+      49: App1:modifyFromSoftProdVulnerability
+      50: App1:denyFromSoftProdVulnerability
     compromised_by: []
     id: 47
     is_necessary: 'True'
     is_viable: 'True'
     name: softwareProductAbuse
     parents:
-      40: App 1.0_OS_Windows:softwareProductVulnerabilityLocalAccessAchieved
-      41: App 1.0_OS_Windows:softwareProductVulnerabilityNetworkAccessAchieved
-      42: App 1.0_OS_Windows:softwareProductVulnerabilityPhysicalAccessAchieved
-      43: App 1.0_OS_Windows:softwareProductVulnerabilityLowPrivilegesAchieved
-      44: App 1.0_OS_Windows:softwareProductVulnerabilityHighPrivilegesAchieved
-      45: App 1.0_OS_Windows:softwareProductVulnerabilityUserInteractionAchieved
-      46: App 1.0_OS_Windows:attemptSoftwareProductAbuse
+      40: App1:softwareProductVulnerabilityLocalAccessAchieved
+      41: App1:softwareProductVulnerabilityNetworkAccessAchieved
+      42: App1:softwareProductVulnerabilityPhysicalAccessAchieved
+      43: App1:softwareProductVulnerabilityLowPrivilegesAchieved
+      44: App1:softwareProductVulnerabilityHighPrivilegesAchieved
+      45: App1:softwareProductVulnerabilityUserInteractionAchieved
+      46: App1:attemptSoftwareProductAbuse
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:softwareProductVulnerabilityHighPrivilegesAchieved:
-    asset: App 1.0_OS_Windows
+  App1:softwareProductVulnerabilityHighPrivilegesAchieved:
+    asset: App1
     children:
-      47: App 1.0_OS_Windows:softwareProductAbuse
+      47: App1:softwareProductAbuse
     compromised_by: []
     id: 44
     is_necessary: 'True'
     is_viable: 'True'
     name: softwareProductVulnerabilityHighPrivilegesAchieved
     parents:
-      19: App 1.0_OS_Windows:authenticate
+      19: App1:authenticate
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:softwareProductVulnerabilityLocalAccessAchieved:
-    asset: App 1.0_OS_Windows
+  App1:softwareProductVulnerabilityLocalAccessAchieved:
+    asset: App1
     children:
-      47: App 1.0_OS_Windows:softwareProductAbuse
+      47: App1:softwareProductAbuse
     compromised_by: []
     id: 40
     is_necessary: 'True'
     is_viable: 'True'
     name: softwareProductVulnerabilityLocalAccessAchieved
     parents:
-      7: App 1.0_OS_Windows:localConnect
+      7: App1:localConnect
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:softwareProductVulnerabilityLowPrivilegesAchieved:
-    asset: App 1.0_OS_Windows
+  App1:softwareProductVulnerabilityLowPrivilegesAchieved:
+    asset: App1
     children:
-      47: App 1.0_OS_Windows:softwareProductAbuse
+      47: App1:softwareProductAbuse
     compromised_by: []
     id: 43
     is_necessary: 'True'
     is_viable: 'True'
     name: softwareProductVulnerabilityLowPrivilegesAchieved
     parents:
-      20: App 1.0_OS_Windows:specificAccessAuthenticate
+      20: App1:specificAccessAuthenticate
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:softwareProductVulnerabilityNetworkAccessAchieved:
-    asset: App 1.0_OS_Windows
+  App1:softwareProductVulnerabilityNetworkAccessAchieved:
+    asset: App1
     children:
-      47: App 1.0_OS_Windows:softwareProductAbuse
+      47: App1:softwareProductAbuse
     compromised_by: []
     id: 41
     is_necessary: 'True'
     is_viable: 'True'
     name: softwareProductVulnerabilityNetworkAccessAchieved
     parents:
-      8: App 1.0_OS_Windows:networkConnectUninspected
+      8: App1:networkConnectUninspected
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:softwareProductVulnerabilityPhysicalAccessAchieved:
-    asset: App 1.0_OS_Windows
+  App1:softwareProductVulnerabilityPhysicalAccessAchieved:
+    asset: App1
     children:
-      47: App 1.0_OS_Windows:softwareProductAbuse
+      47: App1:softwareProductAbuse
     compromised_by: []
     id: 42
     is_necessary: 'True'
     is_viable: 'True'
     name: softwareProductVulnerabilityPhysicalAccessAchieved
     parents:
-      24: App 1.0_OS_Windows:physicalAccessAchieved
+      24: App1:physicalAccessAchieved
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:softwareProductVulnerabilityUserInteractionAchieved:
-    asset: App 1.0_OS_Windows
+  App1:softwareProductVulnerabilityUserInteractionAchieved:
+    asset: App1
     children:
-      47: App 1.0_OS_Windows:softwareProductAbuse
+      47: App1:softwareProductAbuse
     compromised_by: []
     id: 45
     is_necessary: 'True'
@@ -782,33 +783,33 @@ attack_steps:
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:specificAccess:
-    asset: App 1.0_OS_Windows
+  App1:specificAccess:
+    asset: App1
     children:
-      1: App 1.0_OS_Windows:attemptUseVulnerability
-      12: App 1.0_OS_Windows:accessNetworkAndConnections
-      18: App 1.0_OS_Windows:bypassContainerization
-      54: App 1.0_OS_Windows:attemptAuthorizedApplicationRespondConnectThroughData
-      60: App 1.0_OS_Windows:specificAccessRead
-      64: App 1.0_OS_Windows:specificAccessModify
-      68: App 1.0_OS_Windows:specificAccessDelete
+      1: App1:attemptUseVulnerability
+      12: App1:accessNetworkAndConnections
+      18: App1:bypassContainerization
+      54: App1:attemptAuthorizedApplicationRespondConnectThroughData
+      60: App1:specificAccessRead
+      64: App1:specificAccessModify
+      68: App1:specificAccessDelete
     compromised_by: []
     id: 17
     is_necessary: 'True'
     is_viable: 'True'
     name: specificAccess
     parents:
-      15: App 1.0_OS_Windows:specificAccessFromLocalConnection
-      16: App 1.0_OS_Windows:specificAccessFromNetworkConnection
-      23: App 1.0_OS_Windows:fullAccess
+      15: App1:specificAccessFromLocalConnection
+      16: App1:specificAccessFromNetworkConnection
+      23: App1:fullAccess
     ttc: null
     type: or
-  App 1.0_OS_Windows:specificAccessAuthenticate:
-    asset: App 1.0_OS_Windows
+  App1:specificAccessAuthenticate:
+    asset: App1
     children:
-      15: App 1.0_OS_Windows:specificAccessFromLocalConnection
-      16: App 1.0_OS_Windows:specificAccessFromNetworkConnection
-      43: App 1.0_OS_Windows:softwareProductVulnerabilityLowPrivilegesAchieved
+      15: App1:specificAccessFromLocalConnection
+      16: App1:specificAccessFromNetworkConnection
+      43: App1:softwareProductVulnerabilityLowPrivilegesAchieved
     compromised_by: []
     id: 20
     is_necessary: 'True'
@@ -817,217 +818,217 @@ attack_steps:
     parents: {}
     ttc: null
     type: or
-  App 1.0_OS_Windows:specificAccessDelete:
-    asset: App 1.0_OS_Windows
+  App1:specificAccessDelete:
+    asset: App1
     children:
-      102: Data Secret:authorizedDeleteFromApplication
+      102: Secret:authorizedDeleteFromApplication
     compromised_by: []
     id: 68
     is_necessary: 'True'
     is_viable: 'True'
     name: specificAccessDelete
     parents:
-      17: App 1.0_OS_Windows:specificAccess
+      17: App1:specificAccess
     ttc: null
     type: or
-  App 1.0_OS_Windows:specificAccessFromLocalConnection:
-    asset: App 1.0_OS_Windows
+  App1:specificAccessFromLocalConnection:
+    asset: App1
     children:
-      17: App 1.0_OS_Windows:specificAccess
+      17: App1:specificAccess
     compromised_by: []
     id: 15
     is_necessary: 'True'
     is_viable: 'True'
     name: specificAccessFromLocalConnection
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      7: App 1.0_OS_Windows:localConnect
-      20: App 1.0_OS_Windows:specificAccessAuthenticate
+      0: App1:notPresent
+      7: App1:localConnect
+      20: App1:specificAccessAuthenticate
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:specificAccessFromNetworkConnection:
-    asset: App 1.0_OS_Windows
+  App1:specificAccessFromNetworkConnection:
+    asset: App1
     children:
-      17: App 1.0_OS_Windows:specificAccess
+      17: App1:specificAccess
     compromised_by: []
     id: 16
     is_necessary: 'True'
     is_viable: 'True'
     name: specificAccessFromNetworkConnection
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      11: App 1.0_OS_Windows:specificAccessNetworkConnect
-      20: App 1.0_OS_Windows:specificAccessAuthenticate
+      0: App1:notPresent
+      11: App1:specificAccessNetworkConnect
+      20: App1:specificAccessAuthenticate
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:specificAccessModify:
-    asset: App 1.0_OS_Windows
+  App1:specificAccessModify:
+    asset: App1
     children:
-      96: Data Secret:authorizedWriteFromApplication
+      96: Secret:authorizedWriteFromApplication
     compromised_by: []
     id: 64
     is_necessary: 'True'
     is_viable: 'True'
     name: specificAccessModify
     parents:
-      17: App 1.0_OS_Windows:specificAccess
+      17: App1:specificAccess
     ttc: null
     type: or
-  App 1.0_OS_Windows:specificAccessNetworkConnect:
-    asset: App 1.0_OS_Windows
+  App1:specificAccessNetworkConnect:
+    asset: App1
     children:
-      16: App 1.0_OS_Windows:specificAccessFromNetworkConnection
+      16: App1:specificAccessFromNetworkConnection
     compromised_by: []
     id: 11
     is_necessary: 'True'
     is_viable: 'True'
     name: specificAccessNetworkConnect
     parents:
-      8: App 1.0_OS_Windows:networkConnectUninspected
-      9: App 1.0_OS_Windows:networkConnectInspected
+      8: App1:networkConnectUninspected
+      9: App1:networkConnectInspected
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:specificAccessRead:
-    asset: App 1.0_OS_Windows
+  App1:specificAccessRead:
+    asset: App1
     children:
-      90: Data Secret:authorizedReadFromApplication
+      90: Secret:authorizedReadFromApplication
     compromised_by: []
     id: 60
     is_necessary: 'True'
     is_viable: 'True'
     name: specificAccessRead
     parents:
-      17: App 1.0_OS_Windows:specificAccess
+      17: App1:specificAccess
     ttc: null
     type: or
-  App 1.0_OS_Windows:successfulApplicationRespondConnectThroughData:
-    asset: App 1.0_OS_Windows
+  App1:successfulApplicationRespondConnectThroughData:
+    asset: App1
     children:
-      53: App 1.0_OS_Windows:applicationRespondConnectThroughData
+      53: App1:applicationRespondConnectThroughData
     compromised_by: []
     id: 52
     is_necessary: 'True'
     is_viable: 'True'
     name: successfulApplicationRespondConnectThroughData
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      51: App 1.0_OS_Windows:attemptApplicationRespondConnectThroughData
+      0: App1:notPresent
+      51: App1:attemptApplicationRespondConnectThroughData
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:successfulAuthorizedApplicationRespondConnectThroughData:
-    asset: App 1.0_OS_Windows
+  App1:successfulAuthorizedApplicationRespondConnectThroughData:
+    asset: App1
     children:
-      56: App 1.0_OS_Windows:authorizedApplicationRespondConnectThroughData
+      56: App1:authorizedApplicationRespondConnectThroughData
     compromised_by: []
     id: 55
     is_necessary: 'True'
     is_viable: 'True'
     name: successfulAuthorizedApplicationRespondConnectThroughData
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      54: App 1.0_OS_Windows:attemptAuthorizedApplicationRespondConnectThroughData
+      0: App1:notPresent
+      54: App1:attemptAuthorizedApplicationRespondConnectThroughData
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:successfulDeny:
-    asset: App 1.0_OS_Windows
+  App1:successfulDeny:
+    asset: App1
     children:
-      67: App 1.0_OS_Windows:deny
+      67: App1:deny
     compromised_by: []
     id: 66
     is_necessary: 'True'
     is_viable: 'True'
     name: successfulDeny
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      65: App 1.0_OS_Windows:attemptDeny
+      0: App1:notPresent
+      65: App1:attemptDeny
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:successfulModify:
-    asset: App 1.0_OS_Windows
+  App1:successfulModify:
+    asset: App1
     children:
-      63: App 1.0_OS_Windows:modify
+      63: App1:modify
     compromised_by: []
     id: 62
     is_necessary: 'True'
     is_viable: 'True'
     name: successfulModify
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      61: App 1.0_OS_Windows:attemptModify
+      0: App1:notPresent
+      61: App1:attemptModify
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:successfulRead:
-    asset: App 1.0_OS_Windows
+  App1:successfulRead:
+    asset: App1
     children:
-      59: App 1.0_OS_Windows:read
+      59: App1:read
     compromised_by: []
     id: 58
     is_necessary: 'True'
     is_viable: 'True'
     name: successfulRead
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      57: App 1.0_OS_Windows:attemptRead
+      0: App1:notPresent
+      57: App1:attemptRead
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:successfulReverseReach:
-    asset: App 1.0_OS_Windows
+  App1:successfulReverseReach:
+    asset: App1
     children:
-      6: App 1.0_OS_Windows:reverseReach
+      6: App1:reverseReach
     compromised_by: []
     id: 5
     is_necessary: 'True'
     is_viable: 'True'
     name: successfulReverseReach
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      4: App 1.0_OS_Windows:attemptReverseReach
+      0: App1:notPresent
+      4: App1:attemptReverseReach
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:successfulUnsafeUserActivity:
-    asset: App 1.0_OS_Windows
+  App1:successfulUnsafeUserActivity:
+    asset: App1
     children:
-      27: App 1.0_OS_Windows:unsafeUserActivity
+      27: App1:unsafeUserActivity
     compromised_by: []
     id: 26
     is_necessary: 'True'
     is_viable: 'True'
     name: successfulUnsafeUserActivity
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      25: App 1.0_OS_Windows:attemptUnsafeUserActivity
-      28: App 1.0_OS_Windows:attackerUnsafeUserActivityCapability
+      0: App1:notPresent
+      25: App1:attemptUnsafeUserActivity
+      28: App1:attackerUnsafeUserActivityCapability
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:successfulUseVulnerability:
-    asset: App 1.0_OS_Windows
+  App1:successfulUseVulnerability:
+    asset: App1
     children:
-      3: App 1.0_OS_Windows:useVulnerability
+      3: App1:useVulnerability
     compromised_by: []
     id: 2
     is_necessary: 'True'
     is_viable: 'True'
     name: successfulUseVulnerability
     parents:
-      0: App 1.0_OS_Windows:notPresent
-      1: App 1.0_OS_Windows:attemptUseVulnerability
+      0: App1:notPresent
+      1: App1:attemptUseVulnerability
     tags: '[''hidden'']'
     ttc: null
     type: and
-  App 1.0_OS_Windows:supplyChainAuditing:
-    asset: App 1.0_OS_Windows
+  App1:supplyChainAuditing:
+    asset: App1
     children:
-      33: App 1.0_OS_Windows:supplyChainAuditingBypassed
+      33: App1:supplyChainAuditingBypassed
     compromised_by: []
     defense_status: '0.0'
     id: 31
@@ -1037,634 +1038,49 @@ attack_steps:
     parents: {}
     ttc: null
     type: defense
-  App 1.0_OS_Windows:supplyChainAuditingBypassed:
-    asset: App 1.0_OS_Windows
+  App1:supplyChainAuditingBypassed:
+    asset: App1
     children:
-      35: App 1.0_OS_Windows:fullAccessFromSupplyChainCompromise
+      35: App1:fullAccessFromSupplyChainCompromise
     compromised_by: []
     id: 33
     is_necessary: 'False'
     is_viable: 'True'
     name: supplyChainAuditingBypassed
     parents:
-      31: App 1.0_OS_Windows:supplyChainAuditing
-      32: App 1.0_OS_Windows:bypassSupplyChainAuditing
+      31: App1:supplyChainAuditing
+      32: App1:bypassSupplyChainAuditing
     tags: '[''hidden'']'
     ttc: null
     type: or
-  App 1.0_OS_Windows:unsafeUserActivity:
-    asset: App 1.0_OS_Windows
+  App1:unsafeUserActivity:
+    asset: App1
     children:
-      7: App 1.0_OS_Windows:localConnect
-      8: App 1.0_OS_Windows:networkConnectUninspected
+      7: App1:localConnect
+      8: App1:networkConnectUninspected
     compromised_by: []
     id: 27
     is_necessary: 'True'
     is_viable: 'True'
     name: unsafeUserActivity
     parents:
-      26: App 1.0_OS_Windows:successfulUnsafeUserActivity
+      26: App1:successfulUnsafeUserActivity
     ttc: null
     type: or
-  App 1.0_OS_Windows:useVulnerability:
-    asset: App 1.0_OS_Windows
+  App1:useVulnerability:
+    asset: App1
     children:
-      46: App 1.0_OS_Windows:attemptSoftwareProductAbuse
-      48: App 1.0_OS_Windows:readFromSoftProdVulnerability
-      49: App 1.0_OS_Windows:modifyFromSoftProdVulnerability
-      50: App 1.0_OS_Windows:denyFromSoftProdVulnerability
+      46: App1:attemptSoftwareProductAbuse
+      48: App1:readFromSoftProdVulnerability
+      49: App1:modifyFromSoftProdVulnerability
+      50: App1:denyFromSoftProdVulnerability
     compromised_by: []
     id: 3
     is_necessary: 'True'
     is_viable: 'True'
     name: useVulnerability
     parents:
-      2: App 1.0_OS_Windows:successfulUseVulnerability
-    ttc: null
-    type: or
-  Data Secret:accessDecryptedData:
-    asset: Data Secret
-    children:
-      82: Data Secret:applicationRespondConnect
-      87: Data Secret:successfulRead
-      93: Data Secret:successfulWrite
-      99: Data Secret:successfulDelete
-    compromised_by: []
-    id: 80
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: accessDecryptedData
-    parents:
-      77: Data Secret:accessUnencryptedData
-      129: EncryptionKey:use
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:accessSpoofedData:
-    asset: Data Secret
-    children:
-      82: Data Secret:applicationRespondConnect
-      93: Data Secret:successfulWrite
-    compromised_by: []
-    id: 79
-    is_necessary: 'False'
-    is_viable: 'True'
-    name: accessSpoofedData
-    parents:
-      78: Data Secret:accessUnsignedData
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:accessUnencryptedData:
-    asset: Data Secret
-    children:
-      80: Data Secret:accessDecryptedData
-    compromised_by: []
-    id: 77
-    is_necessary: 'True'
-    is_viable: 'False'
-    name: accessUnencryptedData
-    parents:
-      73: Data Secret:dataEncrypted
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:accessUnsignedData:
-    asset: Data Secret
-    children:
-      79: Data Secret:accessSpoofedData
-    compromised_by: []
-    id: 78
-    is_necessary: 'False'
-    is_viable: 'True'
-    name: accessUnsignedData
-    parents:
-      74: Data Secret:dataSigned
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:applicationRespondConnect:
-    asset: Data Secret
-    children: {}
-    compromised_by: []
-    id: 82
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: applicationRespondConnect
-    parents:
-      71: Data Secret:notPresent
-      79: Data Secret:accessSpoofedData
-      80: Data Secret:accessDecryptedData
-      81: Data Secret:attemptApplicationRespondConnect
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:attemptApplicationRespondConnect:
-    asset: Data Secret
-    children:
-      82: Data Secret:applicationRespondConnect
-    compromised_by: []
-    id: 81
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: attemptApplicationRespondConnect
-    parents:
-      85: Data Secret:authorizedApplicationRespondConnect
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:attemptDelete:
-    asset: Data Secret
-    children:
-      99: Data Secret:successfulDelete
-    compromised_by: []
-    id: 98
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: attemptDelete
-    parents:
-      94: Data Secret:write
-      103: Data Secret:authorizedDelete
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:attemptDeny:
-    asset: Data Secret
-    children:
-      105: Data Secret:successfulDeny
-    compromised_by: []
-    id: 104
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: attemptDeny
-    parents:
-      67: App 1.0_OS_Windows:deny
-      100: Data Secret:delete
-      107: Data Secret:denyFromLockout
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:attemptRead:
-    asset: Data Secret
-    children:
-      87: Data Secret:successfulRead
-    compromised_by: []
-    id: 86
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: attemptRead
-    parents:
-      59: App 1.0_OS_Windows:read
-      91: Data Secret:authorizedRead
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:attemptReverseReach:
-    asset: Data Secret
-    children:
-      109: Data Secret:reverseReach
-    compromised_by: []
-    id: 108
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: attemptReverseReach
-    parents:
-      6: App 1.0_OS_Windows:reverseReach
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:attemptWrite:
-    asset: Data Secret
-    children:
-      93: Data Secret:successfulWrite
-    compromised_by: []
-    id: 92
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: attemptWrite
-    parents:
-      63: App 1.0_OS_Windows:modify
-      97: Data Secret:authorizedWrite
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:authorizedAccessFromApplication:
-    asset: Data Secret
-    children:
-      90: Data Secret:authorizedReadFromApplication
-      96: Data Secret:authorizedWriteFromApplication
-      102: Data Secret:authorizedDeleteFromApplication
-    compromised_by: []
-    id: 72
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedAccessFromApplication
-    parents: {}
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:authorizedApplicationRespondConnect:
-    asset: Data Secret
-    children:
-      81: Data Secret:attemptApplicationRespondConnect
-    compromised_by: []
-    id: 85
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedApplicationRespondConnect
-    parents:
-      83: Data Secret:authorizedApplicationRespondConnectFromApplication
-      84: Data Secret:authorizedApplicationRespondConnectFromIAM
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:authorizedApplicationRespondConnectFromApplication:
-    asset: Data Secret
-    children:
-      85: Data Secret:authorizedApplicationRespondConnect
-    compromised_by: []
-    id: 83
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedApplicationRespondConnectFromApplication
-    parents: {}
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:authorizedApplicationRespondConnectFromIAM:
-    asset: Data Secret
-    children:
-      85: Data Secret:authorizedApplicationRespondConnect
-    compromised_by: []
-    id: 84
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedApplicationRespondConnectFromIAM
-    parents: {}
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:authorizedDelete:
-    asset: Data Secret
-    children:
-      98: Data Secret:attemptDelete
-    compromised_by: []
-    id: 103
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedDelete
-    parents:
-      101: Data Secret:authorizedDeleteFromIAM
-      102: Data Secret:authorizedDeleteFromApplication
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:authorizedDeleteFromApplication:
-    asset: Data Secret
-    children:
-      103: Data Secret:authorizedDelete
-    compromised_by: []
-    id: 102
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedDeleteFromApplication
-    parents:
-      68: App 1.0_OS_Windows:specificAccessDelete
-      72: Data Secret:authorizedAccessFromApplication
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:authorizedDeleteFromIAM:
-    asset: Data Secret
-    children:
-      103: Data Secret:authorizedDelete
-    compromised_by: []
-    id: 101
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedDeleteFromIAM
-    parents: {}
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:authorizedRead:
-    asset: Data Secret
-    children:
-      86: Data Secret:attemptRead
-    compromised_by: []
-    id: 91
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedRead
-    parents:
-      89: Data Secret:authorizedReadFromIAM
-      90: Data Secret:authorizedReadFromApplication
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:authorizedReadFromApplication:
-    asset: Data Secret
-    children:
-      91: Data Secret:authorizedRead
-    compromised_by: []
-    id: 90
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedReadFromApplication
-    parents:
-      60: App 1.0_OS_Windows:specificAccessRead
-      72: Data Secret:authorizedAccessFromApplication
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:authorizedReadFromIAM:
-    asset: Data Secret
-    children:
-      91: Data Secret:authorizedRead
-    compromised_by: []
-    id: 89
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedReadFromIAM
-    parents: {}
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:authorizedWrite:
-    asset: Data Secret
-    children:
-      92: Data Secret:attemptWrite
-    compromised_by: []
-    id: 97
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedWrite
-    parents:
-      95: Data Secret:authorizedWriteFromIAM
-      96: Data Secret:authorizedWriteFromApplication
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:authorizedWriteFromApplication:
-    asset: Data Secret
-    children:
-      97: Data Secret:authorizedWrite
-    compromised_by: []
-    id: 96
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedWriteFromApplication
-    parents:
-      64: App 1.0_OS_Windows:specificAccessModify
-      72: Data Secret:authorizedAccessFromApplication
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:authorizedWriteFromIAM:
-    asset: Data Secret
-    children:
-      97: Data Secret:authorizedWrite
-    compromised_by: []
-    id: 95
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: authorizedWriteFromIAM
-    parents: {}
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:bypassPayloadInspectionFromEncryptedData:
-    asset: Data Secret
-    children: {}
-    compromised_by: []
-    id: 76
-    is_necessary: 'False'
-    is_viable: 'True'
-    name: bypassPayloadInspectionFromEncryptedData
-    parents:
-      75: Data Secret:payloadInspectionBypassFromEncryptedData
-    tags: '[''hidden'']'
-    ttc: null
-    type: or
-  Data Secret:dataEncrypted:
-    asset: Data Secret
-    children:
-      77: Data Secret:accessUnencryptedData
-    compromised_by: []
-    existence_status: 'True'
-    id: 73
-    is_necessary: 'True'
-    is_viable: 'False'
-    name: dataEncrypted
-    parents: {}
-    tags: '[''hidden'']'
-    ttc: null
-    type: notExist
-  Data Secret:dataSigned:
-    asset: Data Secret
-    children:
-      78: Data Secret:accessUnsignedData
-    compromised_by: []
-    existence_status: 'False'
-    id: 74
-    is_necessary: 'False'
-    is_viable: 'True'
-    name: dataSigned
-    parents: {}
-    tags: '[''hidden'']'
-    ttc: null
-    type: notExist
-  Data Secret:delete:
-    asset: Data Secret
-    children:
-      104: Data Secret:attemptDeny
-    compromised_by: []
-    id: 100
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: delete
-    parents:
-      99: Data Secret:successfulDelete
-    ttc: null
-    type: or
-  Data Secret:deny:
-    asset: Data Secret
-    children: {}
-    compromised_by: []
-    id: 106
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: deny
-    parents:
-      105: Data Secret:successfulDeny
-    ttc: null
-    type: or
-  Data Secret:denyFromLockout:
-    asset: Data Secret
-    children:
-      104: Data Secret:attemptDeny
-    compromised_by: []
-    id: 107
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: denyFromLockout
-    parents: {}
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:extract:
-    asset: Data Secret
-    children: {}
-    compromised_by: []
-    id: 110
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: extract
-    parents:
-      71: Data Secret:notPresent
-      88: Data Secret:read
-      109: Data Secret:reverseReach
-    ttc: null
-    type: and
-  Data Secret:notPresent:
-    asset: Data Secret
-    children:
-      82: Data Secret:applicationRespondConnect
-      87: Data Secret:successfulRead
-      93: Data Secret:successfulWrite
-      99: Data Secret:successfulDelete
-      105: Data Secret:successfulDeny
-      109: Data Secret:reverseReach
-      110: Data Secret:extract
-    compromised_by: []
-    defense_status: '0.0'
-    id: 71
-    is_necessary: 'False'
-    is_viable: 'True'
-    name: notPresent
-    parents: {}
-    ttc:
-      arguments: []
-      name: Disabled
-      type: function
-    type: defense
-  Data Secret:payloadInspectionBypassFromEncryptedData:
-    asset: Data Secret
-    children:
-      76: Data Secret:bypassPayloadInspectionFromEncryptedData
-    compromised_by: []
-    existence_status: 'True'
-    id: 75
-    is_necessary: 'False'
-    is_viable: 'True'
-    name: payloadInspectionBypassFromEncryptedData
-    parents: {}
-    tags: '[''hidden'']'
-    ttc: null
-    type: exist
-  Data Secret:read:
-    asset: Data Secret
-    children:
-      110: Data Secret:extract
-    compromised_by: []
-    id: 88
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: read
-    parents:
-      87: Data Secret:successfulRead
-    ttc: null
-    type: or
-  Data Secret:reverseReach:
-    asset: Data Secret
-    children:
-      110: Data Secret:extract
-    compromised_by: []
-    id: 109
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: reverseReach
-    parents:
-      71: Data Secret:notPresent
-      108: Data Secret:attemptReverseReach
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:successfulDelete:
-    asset: Data Secret
-    children:
-      100: Data Secret:delete
-    compromised_by: []
-    id: 99
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: successfulDelete
-    parents:
-      71: Data Secret:notPresent
-      80: Data Secret:accessDecryptedData
-      98: Data Secret:attemptDelete
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:successfulDeny:
-    asset: Data Secret
-    children:
-      106: Data Secret:deny
-    compromised_by: []
-    id: 105
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: successfulDeny
-    parents:
-      71: Data Secret:notPresent
-      104: Data Secret:attemptDeny
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:successfulRead:
-    asset: Data Secret
-    children:
-      88: Data Secret:read
-    compromised_by: []
-    id: 87
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: successfulRead
-    parents:
-      71: Data Secret:notPresent
-      80: Data Secret:accessDecryptedData
-      86: Data Secret:attemptRead
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:successfulWrite:
-    asset: Data Secret
-    children:
-      94: Data Secret:write
-    compromised_by: []
-    id: 93
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: successfulWrite
-    parents:
-      71: Data Secret:notPresent
-      79: Data Secret:accessSpoofedData
-      80: Data Secret:accessDecryptedData
-      92: Data Secret:attemptWrite
-    tags: '[''hidden'']'
-    ttc: null
-    type: and
-  Data Secret:write:
-    asset: Data Secret
-    children:
-      98: Data Secret:attemptDelete
-    compromised_by: []
-    id: 94
-    is_necessary: 'True'
-    is_viable: 'True'
-    name: write
-    parents:
-      93: Data Secret:successfulWrite
+      2: App1:successfulUseVulnerability
     ttc: null
     type: or
   EncryptionKey:attemptCredentialTheft:
@@ -2016,7 +1432,7 @@ attack_steps:
   EncryptionKey:use:
     asset: EncryptionKey
     children:
-      80: Data Secret:accessDecryptedData
+      80: Secret:accessDecryptedData
       130: EncryptionKey:attemptPropagateOneCredentialCompromised
     compromised_by: []
     id: 129
@@ -2071,9 +1487,599 @@ attack_steps:
       117: EncryptionKey:attemptWriteFromReplica
     ttc: null
     type: or
+  Secret:accessDecryptedData:
+    asset: Secret
+    children:
+      82: Secret:applicationRespondConnect
+      87: Secret:successfulRead
+      93: Secret:successfulWrite
+      99: Secret:successfulDelete
+    compromised_by: []
+    id: 80
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: accessDecryptedData
+    parents:
+      77: Secret:accessUnencryptedData
+      129: EncryptionKey:use
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:accessSpoofedData:
+    asset: Secret
+    children:
+      82: Secret:applicationRespondConnect
+      93: Secret:successfulWrite
+    compromised_by: []
+    id: 79
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: accessSpoofedData
+    parents:
+      78: Secret:accessUnsignedData
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:accessUnencryptedData:
+    asset: Secret
+    children:
+      80: Secret:accessDecryptedData
+    compromised_by: []
+    id: 77
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: accessUnencryptedData
+    parents:
+      73: Secret:dataEncrypted
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:accessUnsignedData:
+    asset: Secret
+    children:
+      79: Secret:accessSpoofedData
+    compromised_by: []
+    id: 78
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: accessUnsignedData
+    parents:
+      74: Secret:dataSigned
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:applicationRespondConnect:
+    asset: Secret
+    children: {}
+    compromised_by: []
+    id: 82
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: applicationRespondConnect
+    parents:
+      71: Secret:notPresent
+      79: Secret:accessSpoofedData
+      80: Secret:accessDecryptedData
+      81: Secret:attemptApplicationRespondConnect
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:attemptApplicationRespondConnect:
+    asset: Secret
+    children:
+      82: Secret:applicationRespondConnect
+    compromised_by: []
+    id: 81
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptApplicationRespondConnect
+    parents:
+      85: Secret:authorizedApplicationRespondConnect
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:attemptDelete:
+    asset: Secret
+    children:
+      99: Secret:successfulDelete
+    compromised_by: []
+    id: 98
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptDelete
+    parents:
+      94: Secret:write
+      103: Secret:authorizedDelete
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:attemptDeny:
+    asset: Secret
+    children:
+      105: Secret:successfulDeny
+    compromised_by: []
+    id: 104
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptDeny
+    parents:
+      67: App1:deny
+      100: Secret:delete
+      107: Secret:denyFromLockout
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:attemptRead:
+    asset: Secret
+    children:
+      87: Secret:successfulRead
+    compromised_by: []
+    id: 86
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptRead
+    parents:
+      59: App1:read
+      91: Secret:authorizedRead
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:attemptReverseReach:
+    asset: Secret
+    children:
+      109: Secret:reverseReach
+    compromised_by: []
+    id: 108
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptReverseReach
+    parents:
+      6: App1:reverseReach
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:attemptWrite:
+    asset: Secret
+    children:
+      93: Secret:successfulWrite
+    compromised_by: []
+    id: 92
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: attemptWrite
+    parents:
+      63: App1:modify
+      97: Secret:authorizedWrite
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:authorizedAccessFromApplication:
+    asset: Secret
+    children:
+      90: Secret:authorizedReadFromApplication
+      96: Secret:authorizedWriteFromApplication
+      102: Secret:authorizedDeleteFromApplication
+    compromised_by: []
+    id: 72
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedAccessFromApplication
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:authorizedApplicationRespondConnect:
+    asset: Secret
+    children:
+      81: Secret:attemptApplicationRespondConnect
+    compromised_by: []
+    id: 85
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedApplicationRespondConnect
+    parents:
+      83: Secret:authorizedApplicationRespondConnectFromApplication
+      84: Secret:authorizedApplicationRespondConnectFromIAM
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:authorizedApplicationRespondConnectFromApplication:
+    asset: Secret
+    children:
+      85: Secret:authorizedApplicationRespondConnect
+    compromised_by: []
+    id: 83
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedApplicationRespondConnectFromApplication
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:authorizedApplicationRespondConnectFromIAM:
+    asset: Secret
+    children:
+      85: Secret:authorizedApplicationRespondConnect
+    compromised_by: []
+    id: 84
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedApplicationRespondConnectFromIAM
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:authorizedDelete:
+    asset: Secret
+    children:
+      98: Secret:attemptDelete
+    compromised_by: []
+    id: 103
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedDelete
+    parents:
+      101: Secret:authorizedDeleteFromIAM
+      102: Secret:authorizedDeleteFromApplication
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:authorizedDeleteFromApplication:
+    asset: Secret
+    children:
+      103: Secret:authorizedDelete
+    compromised_by: []
+    id: 102
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedDeleteFromApplication
+    parents:
+      68: App1:specificAccessDelete
+      72: Secret:authorizedAccessFromApplication
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:authorizedDeleteFromIAM:
+    asset: Secret
+    children:
+      103: Secret:authorizedDelete
+    compromised_by: []
+    id: 101
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedDeleteFromIAM
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:authorizedRead:
+    asset: Secret
+    children:
+      86: Secret:attemptRead
+    compromised_by: []
+    id: 91
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedRead
+    parents:
+      89: Secret:authorizedReadFromIAM
+      90: Secret:authorizedReadFromApplication
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:authorizedReadFromApplication:
+    asset: Secret
+    children:
+      91: Secret:authorizedRead
+    compromised_by: []
+    id: 90
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedReadFromApplication
+    parents:
+      60: App1:specificAccessRead
+      72: Secret:authorizedAccessFromApplication
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:authorizedReadFromIAM:
+    asset: Secret
+    children:
+      91: Secret:authorizedRead
+    compromised_by: []
+    id: 89
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedReadFromIAM
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:authorizedWrite:
+    asset: Secret
+    children:
+      92: Secret:attemptWrite
+    compromised_by: []
+    id: 97
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedWrite
+    parents:
+      95: Secret:authorizedWriteFromIAM
+      96: Secret:authorizedWriteFromApplication
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:authorizedWriteFromApplication:
+    asset: Secret
+    children:
+      97: Secret:authorizedWrite
+    compromised_by: []
+    id: 96
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedWriteFromApplication
+    parents:
+      64: App1:specificAccessModify
+      72: Secret:authorizedAccessFromApplication
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:authorizedWriteFromIAM:
+    asset: Secret
+    children:
+      97: Secret:authorizedWrite
+    compromised_by: []
+    id: 95
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: authorizedWriteFromIAM
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:bypassPayloadInspectionFromEncryptedData:
+    asset: Secret
+    children: {}
+    compromised_by: []
+    id: 76
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: bypassPayloadInspectionFromEncryptedData
+    parents:
+      75: Secret:payloadInspectionBypassFromEncryptedData
+    tags: '[''hidden'']'
+    ttc: null
+    type: or
+  Secret:dataEncrypted:
+    asset: Secret
+    children:
+      77: Secret:accessUnencryptedData
+    compromised_by: []
+    existence_status: 'True'
+    id: 73
+    is_necessary: 'True'
+    is_viable: 'False'
+    name: dataEncrypted
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: notExist
+  Secret:dataSigned:
+    asset: Secret
+    children:
+      78: Secret:accessUnsignedData
+    compromised_by: []
+    existence_status: 'False'
+    id: 74
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: dataSigned
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: notExist
+  Secret:delete:
+    asset: Secret
+    children:
+      104: Secret:attemptDeny
+    compromised_by: []
+    id: 100
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: delete
+    parents:
+      99: Secret:successfulDelete
+    ttc: null
+    type: or
+  Secret:deny:
+    asset: Secret
+    children: {}
+    compromised_by: []
+    id: 106
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: deny
+    parents:
+      105: Secret:successfulDeny
+    ttc: null
+    type: or
+  Secret:denyFromLockout:
+    asset: Secret
+    children:
+      104: Secret:attemptDeny
+    compromised_by: []
+    id: 107
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: denyFromLockout
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:extract:
+    asset: Secret
+    children: {}
+    compromised_by: []
+    id: 110
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: extract
+    parents:
+      71: Secret:notPresent
+      88: Secret:read
+      109: Secret:reverseReach
+    ttc: null
+    type: and
+  Secret:notPresent:
+    asset: Secret
+    children:
+      82: Secret:applicationRespondConnect
+      87: Secret:successfulRead
+      93: Secret:successfulWrite
+      99: Secret:successfulDelete
+      105: Secret:successfulDeny
+      109: Secret:reverseReach
+      110: Secret:extract
+    compromised_by: []
+    defense_status: '0.0'
+    id: 71
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: notPresent
+    parents: {}
+    ttc:
+      arguments: []
+      name: Disabled
+      type: function
+    type: defense
+  Secret:payloadInspectionBypassFromEncryptedData:
+    asset: Secret
+    children:
+      76: Secret:bypassPayloadInspectionFromEncryptedData
+    compromised_by: []
+    existence_status: 'True'
+    id: 75
+    is_necessary: 'False'
+    is_viable: 'True'
+    name: payloadInspectionBypassFromEncryptedData
+    parents: {}
+    tags: '[''hidden'']'
+    ttc: null
+    type: exist
+  Secret:read:
+    asset: Secret
+    children:
+      110: Secret:extract
+    compromised_by: []
+    id: 88
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: read
+    parents:
+      87: Secret:successfulRead
+    ttc: null
+    type: or
+  Secret:reverseReach:
+    asset: Secret
+    children:
+      110: Secret:extract
+    compromised_by: []
+    id: 109
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: reverseReach
+    parents:
+      71: Secret:notPresent
+      108: Secret:attemptReverseReach
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:successfulDelete:
+    asset: Secret
+    children:
+      100: Secret:delete
+    compromised_by: []
+    id: 99
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulDelete
+    parents:
+      71: Secret:notPresent
+      80: Secret:accessDecryptedData
+      98: Secret:attemptDelete
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:successfulDeny:
+    asset: Secret
+    children:
+      106: Secret:deny
+    compromised_by: []
+    id: 105
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulDeny
+    parents:
+      71: Secret:notPresent
+      104: Secret:attemptDeny
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:successfulRead:
+    asset: Secret
+    children:
+      88: Secret:read
+    compromised_by: []
+    id: 87
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulRead
+    parents:
+      71: Secret:notPresent
+      80: Secret:accessDecryptedData
+      86: Secret:attemptRead
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:successfulWrite:
+    asset: Secret
+    children:
+      94: Secret:write
+    compromised_by: []
+    id: 93
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: successfulWrite
+    parents:
+      71: Secret:notPresent
+      79: Secret:accessSpoofedData
+      80: Secret:accessDecryptedData
+      92: Secret:attemptWrite
+    tags: '[''hidden'']'
+    ttc: null
+    type: and
+  Secret:write:
+    asset: Secret
+    children:
+      98: Secret:attemptDelete
+    compromised_by: []
+    id: 94
+    is_necessary: 'True'
+    is_viable: 'True'
+    name: write
+    parents:
+      93: Secret:successfulWrite
+    ttc: null
+    type: or
 attackers:
-  Attacker:3:
+  Attacker:2:
     entry_points: {}
     id: 0
-    name: Attacker:3
+    name: Attacker:2
+    reached_attack_steps: {}
+  Attacker:4:
+    entry_points: {}
+    id: 1
+    name: Attacker:4
     reached_attack_steps: {}

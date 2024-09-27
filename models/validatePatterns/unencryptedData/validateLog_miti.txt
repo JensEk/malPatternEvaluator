@@ -1,6 +1,8 @@
 Reached attack steps:
+App 1.0_OS_Windows:localAccess
 
 Attack Surface:
+{'id': 23, 'type': 'or', 'name': 'fullAccess', 'ttc': None, 'children': {57: 'App 1.0_OS_Windows:attemptRead', 61: 'App 1.0_OS_Windows:attemptModify', 65: 'App 1.0_OS_Windows:attemptDeny', 51: 'App 1.0_OS_Windows:attemptApplicationRespondConnectThroughData', 12: 'App 1.0_OS_Windows:accessNetworkAndConnections', 17: 'App 1.0_OS_Windows:specificAccess'}, 'parents': {21: 'App 1.0_OS_Windows:localAccess', 22: 'App 1.0_OS_Windows:networkAccess', 35: 'App 1.0_OS_Windows:fullAccessFromSupplyChainCompromise', 63: 'App 1.0_OS_Windows:modify'}, 'compromised_by': [], 'asset': 'App 1.0_OS_Windows', 'is_viable': 'True', 'is_necessary': 'True', 'tags': "['entrypoint']"}
 
 Defense Surface:
 App 1.0_OS_Windows:notPresent

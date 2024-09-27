@@ -9,14 +9,14 @@
     },
     "assets": {
         "0": {
-            "name": "App 1.0_OS_Windows",
+            "name": "App1",
             "type": "Application"
         },
         "1": {
-            "name": "Data Secret",
+            "name": "Secret",
             "type": "Data"
         },
-        "2": {
+        "3": {
             "name": "EncryptionKey",
             "type": "Credentials"
         }
@@ -35,7 +35,7 @@
         {
             "EncryptionCredentials": {
                 "encryptCreds": [
-                    2
+                    3
                 ],
                 "encryptedData": [
                     1
@@ -44,8 +44,12 @@
         }
     ],
     "attackers": {
-        "3": {
-            "name": "Attacker:3",
+        "2": {
+            "name": "Attacker:2",
+            "entry_points": {}
+        },
+        "4": {
+            "name": "Attacker:4",
             "entry_points": {}
         }
     }
