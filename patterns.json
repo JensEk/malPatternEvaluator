@@ -181,7 +181,7 @@
     "exploitVulnerablePublicApp": {
         "badDescription": "Identifies [Application] linked to a [SoftwareVulnerability] with association {ingoingAppConnections} to a [Network] not identified as DMZ.",
         "impact": "Application with known vulnerabilities accessible from the internet may be exploited by attackers to gain unauthorized access to the network and resources.",
-        "mitigationDescription": "Remove [ConnectionRule] from [Application] to the [Network], and then create a new segmented [Network].",
+        "mitigationDescription": "Remove [ConnectionRule] from [Application] to the [Network], then assign it to a new segmented [Network].",
         "badPattern": [
             "MATCH (net:Network)-[r1]->(cr:ConnectionRule)-[:ingoingAppConnections|appConnections]->(:Application)<-[:vulnerabilities]-(sw:SoftwareVulnerability), (net)<-[r2]-(cr), (net)-[r3]->(cr2:ConnectionRule)--(:RoutingFirewall), (net)<-[r4]-(cr2)",
             "WHERE NOT net.name =~ '(?i).*DMZ.*|.*Demilitarized Zone.*'",
@@ -418,15 +418,16 @@
     "dataAiTM": {
         "badDescription": "Identifies [Data] with association {transitData} to a [Network] where [User] have access to it.",
         "impact": "An adversary may attempt to position themselves to intercept data in transit between two network devices to intercept and collect data.",
-        "mitigationDescription": "Remove the {DataInTransit} association between identified [Data] and [Network].",
+        "mitigationDescription": "Remove the {DataInTransit} association between identified [Data] and [Network], then transit over new [Network].",
         "badPattern": [
-            "MATCH (net:Network)<-[:transitData]-(dat:Data)", 
+            "MATCH (net:Network)<-[:transitData]-(dat:Data), (net)-[r1]->(cr:ConnectionRule)--(:RoutingFirewall), (net)<-[r2]-(cr)", 
             "WHERE (net)<-[*1..]-(:User)",
-            "RETURN DISTINCT dat.name;"
+            "RETURN DISTINCT net.name, dat.name, cr.name, type(r1), type(r2);"
         ],    
         "mitigationPattern": [
-            "MATCH (dat:Data {name: '$1'})<-[r1:transitNetwork]-(net:Network), (dat)-[r2:transitData]->(net)",
-            "DELETE r1,r2"
+            "MATCH (net:Network {name: '$1'})-[r1:transitNetwork]->(dat:Data {name: '$1'}), (dat)-[r2:transitData]->(net)",
+            "DELETE r1,r2",
+            "CREATE (net2:Network {metaconcept: 'Network', name: 'Net secureNetwork'}), (net2)-[:$4]->(cr:ConnectionRule {name: '$3'}), (net2)<-[:$5]-(cr), (net2)<-[:transitData]-(dat), (net2)-[:transitNetwork]->(dat) "
         ],
         "attackIDs": 
             {
