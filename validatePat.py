@@ -10,7 +10,7 @@ from maltoolbox.ingestors import neo4j
 
 logger = logging.getLogger(__name__)
 
-lang_file = '../../../org.mal-lang.coreLang-1.0.0.mar'
+lang_file = './org.mal-lang.coreLang-1.0.0.mar'
 lang_graph = LanguageGraph.from_mar_archive(lang_file)
 lang_classes_factory = LanguageClassesFactory(lang_graph)
 model = Model('M1', lang_classes_factory)
