@@ -1,15 +1,20 @@
 # malPatternEvaluator
-A tool to evaluate structural patterns from Mitre ATT&CK on MAL coreLang models in Neo4j. In total 25 different patterns mapping 42 unique ATT&CK techniques and 27 mitigations to 16 different coreLang assets.
+A tool to evaluate structural patterns from Mitre ATT&CK on MAL coreLang models in Neo4j. In total 25 different patterns capable of identifying potentially vulnerable structures and proposing 14 unique structural defenses as mitigiation. In total 42 ATT&CK techniques and 27 mitigations are mapped to the pattern collection.
 
-## Installment and usage
+## Installment
 1. git clone https://github.com/JensEk/malPatternEvaluator.git
 2. pip install -r requirements.txt
-3. Connect to Neo4j desktop instance:
+3. Install Neo4j graph database
+4. Connect to Neo4j desktop instance:
      uri="bolt://localhost:7687",
      username="neo4j",
      password="dynp12345!",
      dbname="neo4j",
-5. python3 mpe.py -m models/mX/model_X.json -p patterns.json
+
+## Usage
+1. Compile coreLang model using the MAL-Toolbox or use example models provided in the models directory
+2. python3 mpe.py -m models/mX/model_X.json -p patterns.json
+
 
 
 
