@@ -66,7 +66,7 @@
         "mitigationPattern": [
             "MATCH (data:Data) WHERE data.name = '$1'",
             "WITH data",
-            "CREATE (cred:Credentials {metaconcept: 'Credentials', name: 'EncryptionKey'}), (cred)<-[:encryptedData]-(data), (cred)-[:encryptCreds]->(data)"
+            "CREATE (cred:Credentials {metaconcept: 'Credentials', name: 'EncryptKey'}), (cred)<-[:encryptedData]-(data), (cred)-[:encryptCreds]->(data)"
         ],
         "attackIDs": 
             {
