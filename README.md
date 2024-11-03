@@ -1,24 +1,30 @@
 # malPatternEvaluator
-A tool to evaluate structural patterns from Mitre ATT&CK on MAL coreLang models in Neo4j. In total 25 different patterns capable of identifying potentially vulnerable structures and proposing 14 unique structural defenses as mitigiation. In total 42 ATT&CK techniques and 27 mitigations are mapped to the pattern collection.
+A CLI tool to evaluate structural patterns derived from the MITRE ATT&CK framework on coreLang models using the Neo4j graph database. 
+The pattern collection consists of 25 different patterns capable of identifying specific components in a model where structural defenses can be applied. In total 14 unique structural defenses are proposed that can alter the available attack paths that are generated in an attack graph.
 
 ## Installment
 1. git clone https://github.com/JensEk/malPatternEvaluator.git
 2. pip install -r requirements.txt
-3. Install Neo4j graph database
-4. Connect to Neo4j desktop instance:
+3. Install Neo4j Desktop:
+   - https://neo4j.com/docs/desktop-manual/current/
+5. Connect to Neo4j desktop instance:
      uri="bolt://localhost:7687",
      username="neo4j",
      password="dynp12345!",
      dbname="neo4j",
 
 ## Usage
-1. Compile coreLang model using the MAL-Toolbox or use example models provided in the models directory
+1. Compile coreLang model using the MAL-Toolbox or use the example models provided in the /models directory
 2. python3 mpe.py -m models/mX/model_X.json -p patterns.json
 
 
 
 
 ## Pattern collection
+Each pattern consists of two sub-patterns (BadPattern & MitigationPattern) that are encoded into Cypher queries that may be processed by the Neo4j graph database. The BadPattern blueprint identifies the components that may pose a threat and the MitigationPattern blueprint propose the structural changes.
+To provide additional guidance, a mapping has been made from the pattern collection to 42 ATT&CK techniques and 27 mitigations.
+
+
 | Group of patterns | Pattern name | BadPattern description | Mitigation-Pattern description | ATT&CK IDs |
 | ----------------- | ------------ | ---------------------- | ----------------------------- | ---------- |
 | IAM | remoteAccessMFA | Identifies [Credentials] linked to [Application] with name matching of remote access where association {ConditionalAuthentication} is missing. | Add [Credentials] with {ConditionalAuthentication} to the identified [Credentials] where MFA is missing. | **_Initial Access:_** [T1133, T1078], **_Persistence:_** [T1078], **_Credential Access:_** [T1110], **_Mitigation:_** [M1036, M1032, M1030, M1017] |
