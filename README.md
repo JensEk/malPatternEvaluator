@@ -1,6 +1,6 @@
 # malPatternEvaluator
 A CLI tool to evaluate structural patterns derived from the MITRE ATT&CK framework on coreLang models using the Neo4j graph database. 
-The pattern collection consists of 25 different patterns capable of identifying specific components in a model where structural defenses can be applied. In total 14 unique structural defenses are proposed that can alter the available attack paths that are generated in an attack graph.
+The pattern collection consists of 25 different patterns capable of identifying specific components in a model where structural defenses can be applied. In total 14 unique structural defenses are proposed that can alter the available attack paths generated in an attack graph.
 
 ## Installment
 1. git clone https://github.com/JensEk/malPatternEvaluator.git
