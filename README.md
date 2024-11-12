@@ -17,7 +17,7 @@ The pattern collection consists of 25 different patterns capable of identifying 
 1. Compile coreLang model using the MAL-Toolbox or use the example models provided in the /models directory
 2. python3 mpe.py -m models/mX/model_X.json -p patterns.json
 
-![CLI usage](mpaUsage.png)
+![CLI usage](mpeUsage.png)
 
 
 
