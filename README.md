@@ -21,8 +21,8 @@ The pattern collection consists of 25 different patterns capable of identifying 
 
 
 ## Pattern collection
-Each pattern consists of two sub-patterns (BadPattern & MitigationPattern) that are encoded into Cypher queries that may be processed by the Neo4j graph database. The BadPattern blueprint identifies the components that may pose a threat and the MitigationPattern blueprint propose the structural changes.
-To provide additional guidance, a mapping has been made from the pattern collection to 42 ATT&CK techniques and 27 mitigations.
+Each pattern consists of two sub-patterns (BadPattern & MitigationPattern) that are encoded into Cypher queries that can be processed by the Neo4j graph database. The *BadPattern* blueprint identifies the components that may pose a threat and the *MitigationPattern* blueprint propose the structural changes.
+To provide additional security guidance, a mapping has been made from each pattern to a selection of ATT&CK Technique and Mitigation IDs.
 
 
 | Group of patterns | Pattern name | BadPattern description | Mitigation-Pattern description | ATT&CK IDs |
